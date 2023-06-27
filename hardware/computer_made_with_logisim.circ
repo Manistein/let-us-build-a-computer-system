@@ -846,4 +846,101 @@
     <wire from="(420,300)" to="(470,300)"/>
     <wire from="(420,370)" to="(470,370)"/>
   </circuit>
+  <circuit name="halfadder">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="halfadder"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="1.0"/>
+    <comp lib="0" loc="(120,150)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="a"/>
+    </comp>
+    <comp lib="0" loc="(120,230)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="b"/>
+    </comp>
+    <comp lib="0" loc="(420,150)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="sum"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(420,220)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="carry"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="1" loc="(300,150)" name="XOR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(300,220)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <wire from="(120,150)" to="(130,150)"/>
+    <wire from="(120,230)" to="(130,230)"/>
+    <wire from="(130,140)" to="(130,150)"/>
+    <wire from="(130,140)" to="(200,140)"/>
+    <wire from="(130,160)" to="(130,230)"/>
+    <wire from="(130,160)" to="(260,160)"/>
+    <wire from="(130,230)" to="(270,230)"/>
+    <wire from="(200,140)" to="(200,210)"/>
+    <wire from="(200,140)" to="(260,140)"/>
+    <wire from="(200,210)" to="(270,210)"/>
+    <wire from="(300,150)" to="(420,150)"/>
+    <wire from="(300,220)" to="(420,220)"/>
+  </circuit>
+  <circuit name="fulladder">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="fulladder"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="1.0"/>
+    <comp lib="0" loc="(110,150)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="carry"/>
+    </comp>
+    <comp lib="0" loc="(110,320)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="a"/>
+    </comp>
+    <comp lib="0" loc="(110,460)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="b"/>
+    </comp>
+    <comp lib="0" loc="(700,150)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="sum"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(700,330)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="ca"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="1" loc="(660,330)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp loc="(420,370)" name="halfadder"/>
+    <comp loc="(660,150)" name="halfadder"/>
+    <wire from="(110,150)" to="(440,150)"/>
+    <wire from="(110,320)" to="(150,320)"/>
+    <wire from="(110,460)" to="(150,460)"/>
+    <wire from="(150,320)" to="(150,370)"/>
+    <wire from="(150,370)" to="(200,370)"/>
+    <wire from="(150,390)" to="(150,460)"/>
+    <wire from="(150,390)" to="(200,390)"/>
+    <wire from="(420,170)" to="(420,370)"/>
+    <wire from="(420,170)" to="(440,170)"/>
+    <wire from="(420,390)" to="(460,390)"/>
+    <wire from="(460,270)" to="(460,320)"/>
+    <wire from="(460,270)" to="(660,270)"/>
+    <wire from="(460,320)" to="(630,320)"/>
+    <wire from="(460,340)" to="(460,390)"/>
+    <wire from="(460,340)" to="(630,340)"/>
+    <wire from="(660,150)" to="(700,150)"/>
+    <wire from="(660,170)" to="(660,270)"/>
+    <wire from="(660,330)" to="(700,330)"/>
+  </circuit>
 </project>
