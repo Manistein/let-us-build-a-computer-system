@@ -558,23 +558,23 @@
     <comp lib="1" loc="(440,180)" name="OR Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="6" loc="(211,285)" name="Text">
+    <comp lib="6" loc="(210,285)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="sel"/>
     </comp>
-    <comp lib="6" loc="(353,66)" name="Text">
+    <comp lib="6" loc="(350,65)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="if sel == 0 then out = a else out = b"/>
     </comp>
-    <comp lib="6" loc="(515,186)" name="Text">
+    <comp lib="6" loc="(515,185)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="out"/>
     </comp>
-    <comp lib="6" loc="(86,144)" name="Text">
+    <comp lib="6" loc="(85,140)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="a"/>
     </comp>
-    <comp lib="6" loc="(89,204)" name="Text">
+    <comp lib="6" loc="(85,200)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="b"/>
     </comp>
@@ -670,21 +670,21 @@
     <comp lib="1" loc="(650,190)" name="OR Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="6" loc="(265,463)" name="Text">
+    <comp lib="6" loc="(265,460)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="out = a if sel == 00 "/>
     </comp>
-    <comp lib="6" loc="(271,498)" name="Text">
+    <comp lib="6" loc="(270,480)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="= b if sel == 01"/>
+    </comp>
+    <comp lib="6" loc="(270,495)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="= c if sel == 10"/>
     </comp>
-    <comp lib="6" loc="(271,514)" name="Text">
+    <comp lib="6" loc="(270,510)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="= d if sel == 11"/>
-    </comp>
-    <comp lib="6" loc="(273,481)" name="Text">
-      <a name="font" val="SansSerif plain 12"/>
-      <a name="text" val="= b if sel == 01"/>
     </comp>
     <wire from="(200,100)" to="(300,100)"/>
     <wire from="(200,160)" to="(300,160)"/>
@@ -2754,12 +2754,133 @@
     <a name="circuit" val="Computer"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="1.0"/>
-    <comp lib="4" loc="(1030,300)" name="RAM">
+    <comp lib="0" loc="(320,150)" name="Clock"/>
+    <comp lib="0" loc="(450,520)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="radix" val="16"/>
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="1" loc="(900,490)" name="Controlled Buffer">
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="1" loc="(910,360)" name="NOT Gate"/>
+    <comp lib="4" loc="(1140,320)" name="RAM">
+      <a name="addrWidth" val="16"/>
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="dataWidth" val="16"/>
+    </comp>
+    <comp lib="4" loc="(90,330)" name="ROM">
+      <a name="addrWidth" val="16"/>
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="contents">addr/data: 16 16
+0
+</a>
+      <a name="dataWidth" val="16"/>
+    </comp>
+    <comp lib="5" loc="(460,380)" name="Button"/>
+    <comp loc="(800,340)" name="CPU"/>
+    <wire from="(1030,360)" to="(1030,380)"/>
+    <wire from="(1030,380)" to="(1140,380)"/>
+    <wire from="(1050,410)" to="(1050,490)"/>
+    <wire from="(1050,410)" to="(1140,410)"/>
+    <wire from="(1110,340)" to="(1110,360)"/>
+    <wire from="(1110,360)" to="(1140,360)"/>
+    <wire from="(1140,360)" to="(1140,370)"/>
+    <wire from="(1380,410)" to="(1430,410)"/>
+    <wire from="(1430,210)" to="(1430,410)"/>
+    <wire from="(320,150)" to="(380,150)"/>
+    <wire from="(330,340)" to="(330,390)"/>
+    <wire from="(330,340)" to="(580,340)"/>
+    <wire from="(380,150)" to="(380,400)"/>
+    <wire from="(380,400)" to="(380,460)"/>
+    <wire from="(380,400)" to="(580,400)"/>
+    <wire from="(380,460)" to="(980,460)"/>
+    <wire from="(430,290)" to="(430,440)"/>
+    <wire from="(430,440)" to="(430,520)"/>
+    <wire from="(430,440)" to="(800,440)"/>
+    <wire from="(430,520)" to="(450,520)"/>
+    <wire from="(460,380)" to="(580,380)"/>
+    <wire from="(510,210)" to="(1430,210)"/>
+    <wire from="(510,210)" to="(510,360)"/>
+    <wire from="(510,360)" to="(580,360)"/>
+    <wire from="(80,290)" to="(430,290)"/>
+    <wire from="(80,290)" to="(80,340)"/>
+    <wire from="(80,340)" to="(90,340)"/>
+    <wire from="(800,340)" to="(820,340)"/>
+    <wire from="(800,360)" to="(850,360)"/>
+    <wire from="(800,380)" to="(980,380)"/>
+    <wire from="(800,400)" to="(800,440)"/>
+    <wire from="(820,340)" to="(820,490)"/>
+    <wire from="(820,490)" to="(880,490)"/>
+    <wire from="(850,340)" to="(1110,340)"/>
+    <wire from="(850,340)" to="(850,360)"/>
+    <wire from="(850,360)" to="(850,520)"/>
+    <wire from="(850,360)" to="(880,360)"/>
+    <wire from="(850,520)" to="(890,520)"/>
+    <wire from="(890,500)" to="(890,520)"/>
+    <wire from="(900,490)" to="(1050,490)"/>
+    <wire from="(910,360)" to="(1030,360)"/>
+    <wire from="(980,330)" to="(1140,330)"/>
+    <wire from="(980,330)" to="(980,380)"/>
+    <wire from="(980,390)" to="(1140,390)"/>
+    <wire from="(980,390)" to="(980,460)"/>
+  </circuit>
+  <circuit name="TestRAM">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="TestRAM"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="1.0"/>
+    <comp lib="0" loc="(1080,500)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="0" loc="(560,460)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="load"/>
+    </comp>
+    <comp lib="0" loc="(560,480)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="clock"/>
+    </comp>
+    <comp lib="0" loc="(580,380)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="address"/>
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="0" loc="(580,580)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="1" loc="(660,430)" name="NOT Gate"/>
+    <comp lib="1" loc="(660,580)" name="Controlled Buffer">
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="4" loc="(770,410)" name="RAM">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <comp lib="4" loc="(280,310)" name="ROM">
-      <a name="appearance" val="logisim_evolution"/>
-    </comp>
-    <comp loc="(880,310)" name="CPU"/>
+    <wire from="(1010,500)" to="(1080,500)"/>
+    <wire from="(560,460)" to="(590,460)"/>
+    <wire from="(560,480)" to="(770,480)"/>
+    <wire from="(580,380)" to="(730,380)"/>
+    <wire from="(580,580)" to="(640,580)"/>
+    <wire from="(590,430)" to="(590,460)"/>
+    <wire from="(590,430)" to="(630,430)"/>
+    <wire from="(590,460)" to="(590,470)"/>
+    <wire from="(590,470)" to="(770,470)"/>
+    <wire from="(650,590)" to="(650,600)"/>
+    <wire from="(650,600)" to="(680,600)"/>
+    <wire from="(660,430)" to="(680,430)"/>
+    <wire from="(660,500)" to="(660,580)"/>
+    <wire from="(660,500)" to="(770,500)"/>
+    <wire from="(680,430)" to="(680,600)"/>
+    <wire from="(680,430)" to="(730,430)"/>
+    <wire from="(730,380)" to="(730,420)"/>
+    <wire from="(730,420)" to="(770,420)"/>
+    <wire from="(730,430)" to="(730,460)"/>
+    <wire from="(730,460)" to="(770,460)"/>
   </circuit>
 </project>
