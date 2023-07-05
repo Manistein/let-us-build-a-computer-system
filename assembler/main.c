@@ -22,11 +22,15 @@ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 #include "parser.h"
 
 int main(int argc, char** argv) {
-	parser_init("");
 
-	parse();
+	struct Context context;
+	context_init(&context, "", "");
 
-	parser_uninit();
+	parser_init(&context);
+	parse(&context);
+	parser_uninit(&context);
+
+	context_uninit(&context);
 
 	return 0;
 }

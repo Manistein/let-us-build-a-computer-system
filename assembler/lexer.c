@@ -3,11 +3,9 @@
 #include <ctype.h>
 #include <stdio.h>
 
-int g_linenumbers = 1;
-
 // The order of the following keywords must be the same as the TokenType defined in lexer.h
 static const char* s_keywords[] = {
-	"JGT", "JEQ", "JGE", "JLT", "JNE", "JLE", "JMP"
+	"JGT", "JEQ", "JGE", "JLT", "JNE", "JLE", "JMP", "GOTO"
 };
 
 struct KeywordHashNode {
@@ -17,17 +15,6 @@ struct KeywordHashNode {
 };
 
 struct KeywordHashNode** s_keyword_hashtable = NULL;
-
-static int str_hash(const char* str) {
-	int hash = 0;
-
-	int sz = strlen(str);
-	for (int i = 0; i < sz; i++) {
-		hash += str[i];
-	}
-
-	return hash;
-}
 
 static BOOL init_keyword_hashtable() {
 	int keywords_num = sizeof(s_keywords) / sizeof(char*);
@@ -90,12 +77,7 @@ static struct KeywordHashNode* find_keyword(const char* str) {
 	return node;
 }
 
-BOOL lexer_init(const char* file) {
-	if (!codeloader_init(file)) {
-		LOG_ERROR("init_codelader fail");
-		return FALSE;
-	}
-
+BOOL lexer_init(struct Context* context) {
 	if (!init_keyword_hashtable()) {
 		LOG_ERROR("init_keyword_hashtable fail");
 		return FALSE;
@@ -104,22 +86,26 @@ BOOL lexer_init(const char* file) {
 	return TRUE;
 }
 
-BOOL lexer_uninit() {
+BOOL lexer_uninit(struct Context* context) {
 	uninit_keyword_hashtable();
-	codeloader_uninit();
 	return TRUE;
 }
 
-static char try_get_string_token(char first, struct Token* r) {
-	char var_buf[MAX_TOKEN_SIZE] = { 0 };
+static char try_get_string_token(struct Context* context, char first, struct Token* r) {
+	char var_buf[MAX_TOKEN_SIZE + 1] = { 0 };
 	var_buf[0] = first;
 
 	int index = 1;
-	char c = nextchar();
+	char c = nextchar(context);
 	while (isalpha(c) || isdigit(c) || c == '_') {
+		if (index >= MAX_TOKEN_SIZE) {
+			LOG_ERROR("line:%d The token exceeds the max token length.", g_linenumbers);
+			abort();
+		}
+
 		var_buf[index] = c;
 
-		c = nextchar();
+		c = nextchar(context);
 		index++;
 	}
 
@@ -136,18 +122,18 @@ static char try_get_string_token(char first, struct Token* r) {
 	return c;
 }
 
-static char try_get_label_token(struct Token* r) {
-	char c = nextchar();
+static char try_get_label_token(struct Context* context, struct Token* r) {
+	char c = nextchar(context);
 	if (!isalpha(c)) {
 		LOG_ERROR("line:%d Label must start with a letter.", g_linenumbers);
 		abort();
 	}
 
-	char label_buf[MAX_LABEL_SIZE] = { 0 };
+	char label_buf[MAX_LABEL_SIZE + 1] = { 0 };
 	label_buf[0] = c;
 
 	for (int i = 1; i < MAX_LABEL_SIZE; i++) {
-		c = nextchar();
+		c = nextchar(context);
 		if (c == ')') {
 			break;
 		}
@@ -166,32 +152,32 @@ static char try_get_label_token(struct Token* r) {
 		abort();
 	}
 
-	nextchar();
+	nextchar(context);
 	strcpy(r->buf, label_buf);
 	r->type = TK_LABEL;
 
 	return c;
 }
 
-static char try_get_number_token(char first, struct Token* r) {
+static char try_get_number_token(struct Context* context, char first, struct Token* r) {
 	char number_buf[MAX_DIGIT_NUM + 1] = { 0 };
 	number_buf[0] = first;
 
 	int index = 1;
-	char c = nextchar();
+	char c = nextchar(context);
 	while (isdigit(c)) {
-		if (index >= MAX_DIGIT_NUM - 1) {
+		if (index >= MAX_DIGIT_NUM) {
 			break;
 		}
 
 		number_buf[index] = c;
 
-		c = nextchar();
+		c = nextchar(context);
 		index++;
 	}
 
 	if (c != ' ' && c != '\t' && c != '\v' && c != '\n' && c != '\r') {
-		LOG_ERROR("line:%d A number format is incorrect.", g_linenumbers);
+		LOG_ERROR("line:%d A number format is incorrect.", context->linenumber);
 		abort();
 	}
 
@@ -201,55 +187,54 @@ static char try_get_number_token(char first, struct Token* r) {
 	return c;
 }
 
-static char skipcomment() {
-	char c = nextchar();
+static char skipcomment(struct Context* context) {
+	char c = nextchar(context);
 	if (c != '/') {
 		LOG_ERROR("line:%d The CPU don't support division operation.");
 		abort();
 	}
 
 	while (c != '\r' && c != '\n' && c != EOF) {
-		c = nextchar();
+		c = nextchar(context);
 	}
 
 	return c;
 }
 
-BOOL next(struct Token* r) {
-	char c = getchar();
+void next(struct Context* context, struct Token* r) {
+	char c = getchar(context);
 	BOOL is_break_loop = FALSE;
 
 	for (;;) {
 		switch (c) {
 		case '(': {
-			try_get_label_token(r);
+			try_get_label_token(context, r);
 			is_break_loop = TRUE;
 		} break;
 		case '0': case '1': case '2': case '3': case '4':
 		case '5': case '6': case '7': case '8': case '9': {
-			try_get_number_token(c, r);
+			try_get_number_token(context, c, r);
 
 			is_break_loop = TRUE;
 		} break;
 		case '\r': case '\n': {
 			g_linenumbers++;
-			c = nextchar();
+			c = nextchar(context);
 		} break;
 		case ' ': case '\t': case '\v': {
-			c = nextchar();
+			c = nextchar(context);
 		} break;
 		case '/': {
-			c = skipcomment();
+			c = skipcomment(context);
 		} break;
 		case 'A': case 'M': case 'D': case '@': case ';':
 		case '=': case '+': case '-': case '&': case '|':
-		case '!': {
+		case '!': case EOF: {
 			r->type = (unsigned short)c;
 			is_break_loop = TRUE;
 		} break;
 		default: {
-			try_get_string_token(c, r);
-
+			try_get_string_token(context, c, r);
 			is_break_loop = TRUE;
 		} break;
 		}
@@ -258,6 +243,4 @@ BOOL next(struct Token* r) {
 			break;
 		}
 	}
-
-	return TRUE;
 }

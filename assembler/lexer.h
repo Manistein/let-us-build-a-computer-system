@@ -15,6 +15,7 @@ enum TokenType {
 	TK_JNE,
 	TK_JLE,
 	TK_JMP,
+	TK_GOTO,
 	TK_NUMBER,
 	TK_LABEL,
 	TK_VAR,
@@ -25,14 +26,14 @@ enum TokenType {
 struct Token {
 	unsigned short type;
 	union u {
-		char buf[MAX_TOKEN_SIZE];
-		int number;		// only support integer value now.
+		char buf[MAX_TOKEN_SIZE + 1];
+		short number;		// only support integer value now.
 	};
 };
 
-BOOL lexer_init(const char* file);
-BOOL lexer_uninit();
+BOOL lexer_init(struct Context* context);
+BOOL lexer_uninit(struct Context* context);
 
-BOOL next(struct Token* r);
+void next(struct Context* context, struct Token* r);
 
 #endif

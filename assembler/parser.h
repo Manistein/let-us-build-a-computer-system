@@ -3,8 +3,11 @@
 
 #include "lexer.h"
 
-BOOL parser_init(const char* file, const char* save_path);
-void parse();
-void parser_uninit();
+BOOL context_init(struct Context* context, const char* asm_file, const char* executable_file);
+void context_uninit(struct Context* context);
+
+BOOL parser_init(struct Context* context);
+void parse(struct Context* context);
+void parser_uninit(struct Context* context);
 
 #endif

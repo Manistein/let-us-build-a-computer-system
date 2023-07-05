@@ -3,10 +3,10 @@
 
 #include "assembler.h"
 
-BOOL codeloader_init(const char* file_name);
-BOOL codeloader_uninit();
+BOOL codeloader_init(struct Context* context, const char* file_name);
+BOOL codeloader_uninit(struct Context* context);
 
-char getchar();
-char nextchar();
+char getchar(struct Context* context);
+char nextchar(struct Context* context);
 
 #endif

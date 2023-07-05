@@ -1,22 +1,13 @@
 #include "codeloader.h"
 
-struct CodeLoader {
-	char buffer[CODELOADER_BUFFER_SIZE];
-	unsigned int read_num;
-	char* current;
-	FILE* file;
-};
+BOOL codeloader_init(struct Context* context, const char* file_name) {
+	memset(context->loader.buffer, 0, CODELOADER_BUFFER_SIZE);
+	context->loader.read_num = 0;
+	context->loader.current = context->loader.buffer;
 
-static struct CodeLoader s_codeloader;
-
-BOOL codeloader_init(const char* file_name) {
-	memset(s_codeloader.buffer, 0, CODELOADER_BUFFER_SIZE);
-	s_codeloader.read_num = 0;
-	s_codeloader.current = s_codeloader.buffer;
-
-	s_codeloader.file = fopen(file_name, "r");
+	context->loader.file = fopen(file_name, "r");
 	
-	if (s_codeloader.file == NULL) {
+	if (context->loader.file == NULL) {
 		LOG_ERROR("can't open assembler file:");
 		LOG_ERROR(file_name);
 
@@ -26,8 +17,8 @@ BOOL codeloader_init(const char* file_name) {
 	return TRUE;
 }
 
-BOOL codeloader_uninit() {
-	if (fclose(s_codeloader.file)) {
+BOOL codeloader_uninit(struct Context* context) {
+	if (fclose(context->loader.file)) {
 		LOG_ERROR("file close error");
 
 		return FALSE;
@@ -36,24 +27,24 @@ BOOL codeloader_uninit() {
 	return TRUE;
 }
 
-char getchar() {
-	if (s_codeloader.current >= s_codeloader.buffer + s_codeloader.read_num) {
-		s_codeloader.read_num = (int)fread(s_codeloader.buffer, sizeof(char), CODELOADER_BUFFER_SIZE, s_codeloader.file);
+char getchar(struct Context* context) {
+	if (context->loader.current >= context->loader.buffer + context->loader.read_num) {
+		context->loader.read_num = (int)fread(context->loader.buffer, sizeof(char), CODELOADER_BUFFER_SIZE, context->loader.file);
 
-		if (s_codeloader.read_num <= 0) {
+		if (context->loader.read_num <= 0) {
 			LOG_ERROR("nothing to read.");
 			abort();
 		}
 
-		s_codeloader.current = s_codeloader.buffer;
+		context->loader.current = context->loader.buffer;
 	}
 
-	char ret = *s_codeloader.current;
+	char ret = *context->loader.current;
 	return ret;
 }
 
-char nextchar() {
-	s_codeloader.current++;
+char nextchar(struct Context* context) {
+	context->loader.current++;
 
-	return getchar();
+	return getchar(context);
 }
