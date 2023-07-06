@@ -1,11 +1,12 @@
 #include "parser.h"
 
 #define MIN_LABEL_HT_SIZE 16
+#define MIN_TOKEN_STACK_SIZE 8
 
 // The common header instruction of C-Instruction is "111"(binary value).
 #define CI_SET_COMMON(i) { (i) = (0xffff) & (0xE000); }     
 
-// The a bit must either be 0 or 1.
+// The 'A' bit must either be 0 or 1.
 #define CI_SET_A_BIT(i, a) { (i) |= (0x1000) & (a << 12); } 
 
 // c1~c6 must either be 0 or 1.
@@ -17,6 +18,32 @@
 // j1~j3 must either be 0 or 1.
 #define CI_SET_J_BITS(i, j1, j2, j3) { (i) |= (j1 << 2) | (j2 << 1) | (j1); } 
 
+#define BINARY_OP(d, am) \
+	if (ts_ptr->top != 1) { \
+		LOG_ERROR("line:%d Binary operators must have got two operands."); \
+		abort(); \
+	} \
+	int token_type = pop_token(ts_ptr); \
+	next(context, t_ptr); \
+	check_amd(context, token_type); \
+	check_amd(context, t_ptr->type); \
+	if (token_type == t_ptr->type) { \
+		LOG_ERROR("line %d Syntax error: Operands of binary operators can't be the same."); \
+		abort(); \
+	} \
+	if (token_type == 'M' || t_ptr->type == 'M') { \
+		CI_SET_A_BIT(c_instruction, 1); \
+	} \
+	if (token_type == 'D') { \
+		d; \
+	} \
+	else { \
+		am; \
+	} \
+
+// -----------------------------------------------------------
+// Label Hash Table
+// -----------------------------------------------------------
 struct Label {
 	int hash;
 	char* name;
@@ -141,6 +168,68 @@ static void insert_label(struct LabelHashTable* ht, const char* name, int addres
 	ht->elements++;
 }
 
+// -----------------------------------------------------------
+// The token stack used to construct C-Instructions
+// -----------------------------------------------------------
+struct TokenStack {
+	int* stack;
+	int stack_size;
+	int top;
+};
+
+static void token_stack_init(struct TokenStack* ts) {
+	if (!ts) 
+		return;
+
+	ts->stack = NULL;
+	ts->stack_size = 0;
+	ts->top = 0;
+}
+
+static void token_stack_uninit(struct TokenStack* ts) {
+	if (!ts || !ts->stack) {
+		return;
+	}
+
+	free(ts->stack);
+}
+
+static void push_token(struct TokenStack* ts, int token_type) {
+	if (ts->top >= ts->stack_size) {
+		if (ts->stack) {
+			int new_size = ts->stack_size * 2;
+			new_size = new_size > INT_MAX / 2 ? INT_MAX / 2 : new_size;
+
+			int* stack = (int*)malloc(sizeof(int) * new_size);
+			for (int i = 0; i < ts->stack_size; i++) {
+				stack[i] = ts->stack[i];
+			}
+
+			free(ts->stack);
+			ts->stack = stack;
+			ts->stack_size = new_size;
+		}
+		else {
+			ts->stack = (int*)malloc(sizeof(int) * MIN_TOKEN_STACK_SIZE);
+			ts->stack_size = MIN_TOKEN_STACK_SIZE;
+		}
+	}
+
+	ts->stack[ts->top] = token_type;
+	ts->top++;
+}
+
+static int pop_token(struct TokenStack* ts) {
+	if (ts->top > 0) {
+		int token = ts->stack[ts->top - 1];
+		ts->top--;
+		return token;
+	}
+	else {
+		return TK_INVALID;
+	}
+}
+
 static void codecache_init(struct Context* context) {
 	context->cache.current_pos = 0;
 }
@@ -210,6 +299,61 @@ BOOL parser_init(struct Context* context) {
 	return TRUE;
 }
 
+static void check_amd(struct Context* context, int token_type) {
+	if (token_type != 'A' && token_type != 'M' && token_type != 'D') {
+		LOG_ERROR("line:%d Operands of unary or binary operators must be an 'A', 'M' or 'D'", context->linenumber);
+		abort();
+	}
+}
+
+static void try_process_jump(struct Context* context, struct Token* token, short* inst_ptr) {
+	if (token->type != ';') {
+		return;
+	}
+
+	next(context, token);
+	BOOL is_jump = FALSE;
+	for (int i = TK_JGT; i < TK_GOTO; i++) {
+		if (token->type == i) {
+			is_jump = TRUE;
+			break;
+		}
+	}
+
+	if (!is_jump) {
+		LOG_ERROR("line:%d There must be a jump instruction following the ';'", context->linenumber);
+		abort();
+		return;
+	}
+
+	switch (token->type) {
+		case TK_JGT: {
+			CI_SET_J_BITS(*inst_ptr, 0, 0, 1);
+		} break;
+		case TK_JEQ: {
+			CI_SET_J_BITS(*inst_ptr, 0, 1, 0);
+		} break;
+		case TK_JGE: {
+			CI_SET_J_BITS(*inst_ptr, 0, 1, 1);
+		} break;
+		case TK_JLT: {
+			CI_SET_J_BITS(*inst_ptr, 1, 0, 0);
+		} break;
+		case TK_JNE: {
+			CI_SET_J_BITS(*inst_ptr, 1, 0, 1);
+		} break;
+		case TK_JLE: {
+			CI_SET_J_BITS(*inst_ptr, 1, 1, 0);
+		} break;
+		case TK_JMP: {
+			CI_SET_J_BITS(*inst_ptr, 1, 1, 1);
+		} break;
+		default: break;
+	}
+
+	next(context, token);
+}
+
 void parse(struct Context* context) {
 	struct Token t;
 	struct Token* t_ptr = &t;
@@ -218,6 +362,12 @@ void parse(struct Context* context) {
 	struct LabelHashTable* ht_ptr = &ht;
 
 	label_hashtable_init(ht_ptr);
+
+	struct TokenStack ts;
+	struct TokenStack* ts_ptr;
+	token_stack_init(ts_ptr);
+
+	BOOL is_file_end = FALSE;
 
 	for (;;) {
 		next(context, t_ptr);
@@ -273,63 +423,144 @@ void parse(struct Context* context) {
 
 				append_instruction(context, jump);
 			} break;
+			case EOF: {
+				is_file_end = TRUE;
+			} break;
 			default: { // C-Instruction ?
-				struct Token next_token;
-				struct Token* nt_ptr = &next_token;
-
-				Instruction new_i = 0;
-				BOOL is_break_loop = FALSE;
+				Instruction c_instruction = 0;
+				CI_SET_COMMON(c_instruction);
+				BOOL can_break;
 
 				for (;;) {
-					next(context, nt_ptr);
+					switch (t_ptr->type) {
+						case 'A': case 'D': case 'M': {
+							push_token(ts_ptr, t_ptr->type);
+							next(context, t_ptr);
+						} break;
+						case '=': {
+							if (ts_ptr->top <= 0 || ts_ptr->top > 3) {
+								LOG_ERROR("line %d Syntax error: There must be an 'A', 'M' or 'D' token on the left of '=' and the amount of tokens can't greater than 3.",
+									context->linenumber);
+								abort();
+							}
 
-					switch (nt_ptr->type) {
-					case '=': {
-						CI_SET_COMMON(new_i);
+							int top_token = TK_INVALID;
+							while (top_token = pop_token(ts_ptr)) {
+								switch (top_token) {
+								case 'A': {
+									CI_SET_D_BITS(c_instruction, 1, 0, 0);
+								} break;
+								case 'M': {
+									CI_SET_D_BITS(c_instruction, 0, 0, 1);
+								} break;
+								case 'D': {
+									CI_SET_D_BITS(c_instruction, 0, 1, 0);
+								} break;
+								default: {
+									check_amd(context, top_token);
+								} break;
+								}
+							}
 
-						if (t_ptr->type == 'A') {
-						}
-						else if (t_ptr->type == 'M') {
+							next(context, t_ptr);
+						} break;
+						case '+': {
+							BINARY_OP(CI_SET_COMP_BITS(c_instruction, 0, 0, 0, 0, 1, 0), CI_SET_COMP_BITS(c_instruction, 0, 0, 0, 0, 1, 0));
+							try_process_jump(context, t_ptr, &c_instruction);
+							can_break = TRUE;
+						} break;
+						case '&': {
+							BINARY_OP(CI_SET_COMP_BITS(c_instruction, 0, 0, 0, 0, 0, 0), CI_SET_COMP_BITS(c_instruction, 0, 0, 0, 0, 0, 0));
+							try_process_jump(context, t_ptr, &c_instruction);
+							can_break = TRUE;
+						} break;
+						case '|': {
+							BINARY_OP(CI_SET_COMP_BITS(c_instruction, 0, 1, 0, 1, 0, 1), CI_SET_COMP_BITS(c_instruction, 0, 1, 0, 1, 0, 1));
+							try_process_jump(context, t_ptr, &c_instruction);
+							can_break = TRUE;
+						} break;
+						case '-': {
+							if (ts_ptr->top > 0) {
+								if (ts_ptr->top > 1) {
+									LOG_ERROR("line %d Syntax error: Too many tokens on the left of the '-'.", context->linenumber);
+									abort();
+								}
 
-						}
-						else if (t_ptr->type == 'D') {
+								BINARY_OP(CI_SET_COMP_BITS(c_instruction, 0, 1, 0, 0, 1, 1), CI_SET_COMP_BITS(c_instruction, 0, 0, 0, 1, 1, 1));
+							}
+							else {
+								next(context, t_ptr);
 
-						}
-						else {
-							LOG_ERROR("line:%d The character before '=' must either be 'A', 'M', or 'D'");
+								switch (t_ptr->type) {
+									case 'A': {
+										CI_SET_A_BIT(c_instruction, 0);
+										CI_SET_COMP_BITS(c_instruction, 1, 1, 0, 0, 1, 1);
+									} break;
+									case 'D': {
+										CI_SET_A_BIT(c_instruction, 0);
+										CI_SET_COMP_BITS(c_instruction, 0, 0, 1, 1, 1, 1);
+									} break;
+									case 'M': {
+										CI_SET_A_BIT(c_instruction, 1);
+										CI_SET_COMP_BITS(c_instruction, 1, 1, 0, 0, 1, 1);
+									} break;
+									default: {
+										LOG_ERROR("line %d Syntax error: there must be an 'A', 'M' or 'D' token following the '-'.", context->linenumber);
+										abort();
+									} break;
+								}
+							}
+
+							next(context, t_ptr);
+							try_process_jump(context, t_ptr, &c_instruction);
+
+							can_break = TRUE;
+						} break;
+						case '!': {
+							if (ts_ptr->top > 0) {
+								LOG_ERROR("line %d Syntax error: You can't write any token before unary operators.", context->linenumber);
+								abort();
+							}
+
+							next(context, t_ptr);
+							check_amd(context, t_ptr->type);
+
+							if (t_ptr->type == 'A') {
+								CI_SET_A_BIT(c_instruction, 0);
+								CI_SET_COMP_BITS(c_instruction, 1, 1, 0, 0, 0, 1);
+							}
+							else if (t_ptr->type == 'M') {
+								CI_SET_A_BIT(c_instruction, 1);
+								CI_SET_COMP_BITS(c_instruction, 1, 1, 0, 0, 0, 1);
+							}
+							else {
+								CI_SET_A_BIT(c_instruction, 0);
+								CI_SET_COMP_BITS(c_instruction, 0, 0, 1, 1, 0, 1);
+							}
+
+							next(context, t_ptr);
+							try_process_jump(context, t_ptr, &c_instruction);
+
+							can_break = TRUE;
+						} break;
+						default: {
+							LOG_ERROR("line %d Syntax error.", context->linenumber);
 							abort();
-						}
-
-
-					} break;
-					case '+': {
-
-					} break;
-					case '-': {
-
-					} break;
-					case '|': {
-
-					} break;
-					case '&': {
-
-					} break;
-					case ';': {
-
-					} break;
-					default: {
-
-					} break;
+						} break;
 					}
 
-					if (is_break_loop) {
+					if (can_break)
 						break;
-					}
 				}
 			} break;
 		}
+
+		if (is_file_end) {
+			break;
+		}
 	}
 
+	token_stack_uninit(ts_ptr);
 	label_hashtable_uninit(ht_ptr);
 }
 

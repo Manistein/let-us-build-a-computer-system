@@ -20,7 +20,7 @@ enum TokenType {
 	TK_LABEL,
 	TK_VAR,
 
-	TK_TOTAL
+	TK_INVALID
 };
 
 struct Token {
