@@ -31,12 +31,41 @@ struct CodeCache {
 	int current_pos;
 };
 
+// -----------------------------------------------------------
+// Label Hash Table
+// -----------------------------------------------------------
+struct Label {
+	int hash;
+	char* name;
+	int name_size;
+	int address;
+
+	struct Label* next;
+};
+
+struct LabelHashTable {
+	struct Label** hash_table;
+	int table_size;
+	int elements;
+};
+
+// -----------------------------------------------------------
+// The token stack used to construct C-Instructions
+// -----------------------------------------------------------
+struct TokenStack {
+	int* stack;
+	int stack_size;
+	int top;
+};
+
 struct Context {
 	int linenumber;
 	struct CodeLoader loader;
 	struct CodeCache cache;
 	FILE* executable_file;
 	short address;
+	struct LabelHashTable* label_ht;
+	struct TokenStack* token_stack;
 };
 
 int str_hash(const char* str) {
