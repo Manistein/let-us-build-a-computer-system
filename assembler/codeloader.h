@@ -6,7 +6,7 @@
 BOOL codeloader_init(struct Context* context, const char* file_name);
 BOOL codeloader_uninit(struct Context* context);
 
-char getchar(struct Context* context);
+char get_current_char(struct Context* context);
 char nextchar(struct Context* context);
 
 #endif

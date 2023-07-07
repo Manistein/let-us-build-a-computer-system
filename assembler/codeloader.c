@@ -27,7 +27,7 @@ BOOL codeloader_uninit(struct Context* context) {
 	return TRUE;
 }
 
-char getchar(struct Context* context) {
+char get_current_char(struct Context* context) {
 	if (context->loader.current >= context->loader.buffer + context->loader.read_num) {
 		context->loader.read_num = (int)fread(context->loader.buffer, sizeof(char), CODELOADER_BUFFER_SIZE, context->loader.file);
 
@@ -46,5 +46,5 @@ char getchar(struct Context* context) {
 char nextchar(struct Context* context) {
 	context->loader.current++;
 
-	return getchar(context);
+	return get_current_char(context);
 }

@@ -3,8 +3,6 @@
 
 #include "assembler.h"
 
-extern int g_linenumbers;
-
 // Numbers under 256 are reserved for ASCII code.
 #define TOKEN_RESERVED 256
 enum TokenType {

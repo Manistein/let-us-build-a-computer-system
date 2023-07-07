@@ -1,5 +1,6 @@
 #include "parser.h"
 #include "statement.h"
+#include "codeloader.h"
 
 static void codecache_init(struct Context* context) {
 	context->cache.current_pos = 0;
@@ -47,7 +48,7 @@ BOOL parser_init(struct Context* context) {
 }
 
 void parse(struct Context* context) {
-	statement_list(context);
+	statements_list(context);
 }
 
 void parser_uninit(struct Context* context) {

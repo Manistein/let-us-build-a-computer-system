@@ -8,9 +8,20 @@ static const char* s_keywords[] = {
 	"JGT", "JEQ", "JGE", "JLT", "JNE", "JLE", "JMP", "GOTO"
 };
 
+int str_hash(const char* str) {
+	int hash = 0;
+
+	int sz = strlen(str);
+	for (int i = 0; i < sz; i++) {
+		hash += str[i];
+	}
+
+	return hash;
+}
+
 struct KeywordHashNode {
 	char* v;
-	struct HashNode* next;
+	struct KeywordHashNode* next;
 	int type;
 };
 
@@ -37,7 +48,7 @@ static BOOL init_keyword_hashtable() {
 			abort();
 		}
 
-		node->v = jmp_str;
+		node->v = (char*)jmp_str;
 		node->next = NULL;
 		node->type = TOKEN_RESERVED + i;
 
@@ -45,6 +56,8 @@ static BOOL init_keyword_hashtable() {
 		s_keyword_hashtable[index] = node;
 		node->next = old_node;
 	}
+
+	return TRUE;
 }
 
 static void uninit_keyword_hashtable() {
@@ -99,7 +112,7 @@ static char try_get_string_token(struct Context* context, char first, struct Tok
 	char c = nextchar(context);
 	while (isalpha(c) || isdigit(c) || c == '_') {
 		if (index >= MAX_TOKEN_SIZE) {
-			LOG_ERROR("line:%d The token exceeds the max token length.", g_linenumbers);
+			LOG_ERROR("line:%d The token exceeds the max token length.", context->linenumber);
 			abort();
 		}
 
@@ -125,7 +138,7 @@ static char try_get_string_token(struct Context* context, char first, struct Tok
 static char try_get_label_token(struct Context* context, struct Token* r) {
 	char c = nextchar(context);
 	if (!isalpha(c)) {
-		LOG_ERROR("line:%d Label must start with a letter.", g_linenumbers);
+		LOG_ERROR("line:%d Label must start with a letter.", context->linenumber);
 		abort();
 	}
 
@@ -142,13 +155,13 @@ static char try_get_label_token(struct Context* context, struct Token* r) {
 			label_buf[i] = c;
 		}
 		else {
-			LOG_ERROR("line %d The label must be an identifier which is constructed of alphabets.", g_linenumbers);
+			LOG_ERROR("line %d The label must be an identifier which is constructed of alphabets.", context->linenumber);
 			abort();
 		}
 	}
 
 	if (c != ')') {
-		LOG_ERROR("line:%d The label's length is larger than max limit (32 alphabets).", g_linenumbers);
+		LOG_ERROR("line:%d The label's length is larger than max limit (32 alphabets).", context->linenumber);
 		abort();
 	}
 
@@ -190,7 +203,7 @@ static char try_get_number_token(struct Context* context, char first, struct Tok
 static char skipcomment(struct Context* context) {
 	char c = nextchar(context);
 	if (c != '/') {
-		LOG_ERROR("line:%d The CPU don't support division operation.");
+		LOG_ERROR("line:%d The CPU don't support division operation.", context->linenumber);
 		abort();
 	}
 
@@ -202,7 +215,7 @@ static char skipcomment(struct Context* context) {
 }
 
 void next(struct Context* context, struct Token* r) {
-	char c = getchar(context);
+	char c = get_current_char(context);
 	BOOL is_break_loop = FALSE;
 
 	for (;;) {
@@ -218,7 +231,7 @@ void next(struct Context* context, struct Token* r) {
 			is_break_loop = TRUE;
 		} break;
 		case '\r': case '\n': {
-			g_linenumbers++;
+			context->linenumber++;
 			c = nextchar(context);
 		} break;
 		case ' ': case '\t': case '\v': {

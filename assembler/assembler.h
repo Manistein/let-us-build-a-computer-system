@@ -1,6 +1,8 @@
 #ifndef _assembler_h_
 #define _assembler_h_
 
+#define _CRT_SECURE_NO_WARNINGS
+
 #define MAX_CODE_CACHE_SIZE 8
 #define MAX_TOKEN_SIZE 63
 #define CODELOADER_BUFFER_SIZE 512
@@ -68,15 +70,6 @@ struct Context {
 	struct TokenStack* token_stack;
 };
 
-int str_hash(const char* str) {
-	int hash = 0;
-
-	int sz = strlen(str);
-	for (int i = 0; i < sz; i++) {
-		hash += str[i];
-	}
-
-	return hash;
-}
+int str_hash(const char* str);
 
 #endif

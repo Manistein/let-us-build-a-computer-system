@@ -22,9 +22,18 @@ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 #include "parser.h"
 
 int main(int argc, char** argv) {
+	if (argc < 3) {
+		printf("The input arguments must at least contain a save path and an assembler file path.\n");
+		printf("For example, a comand can be as following.\n");
+		printf("./assembler ./asm_file_path ./save_path .\n");
+		return 0;
+	}
+
+	char* asm_file = argv[1];
+	char* save_file = argv[2];
 
 	struct Context context;
-	context_init(&context, "", "");
+	context_init(&context, asm_file, save_file);
 
 	parser_init(&context);
 	parse(&context);
@@ -32,5 +41,5 @@ int main(int argc, char** argv) {
 
 	context_uninit(&context);
 
-	return 0;
+	return 1;
 }

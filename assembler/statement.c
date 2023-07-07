@@ -19,13 +19,14 @@
 #define CI_SET_J_BITS(i, j1, j2, j3) { (i) |= (j1 << 2) | (j2 << 1) | (j1); } 
 
 void check_amd(struct Context* context, int token_type);
+BOOL is_amd(struct Token* token);
 
-static void append_instruction(struct Context* context, Instruction instruction) {
+static void append_instruction(struct Context* context, Instruction instruction, BOOL force_flush) {
 	context->cache.code[context->cache.current_pos] = instruction;
 	context->cache.current_pos++;
 
-	if (context->cache.current_pos >= MAX_CODE_CACHE_SIZE) {
-		for (int i = 0; i < MAX_CODE_CACHE_SIZE; i++) {
+	if (context->cache.current_pos >= MAX_CODE_CACHE_SIZE || force_flush) {
+		for (int i = 0; i < context->cache.current_pos; i++) {
 			if (i > 0) {
 				fwrite(" ", sizeof(char), 1, context->executable_file);
 			}
@@ -158,8 +159,6 @@ static void label_ht_rehash(struct LabelHashTable* ht) {
 		new_size = new_size > (INT_MAX / 2) ? (INT_MAX / 2) : new_size;
 
 		struct Label** new_ht = (struct Label**)malloc(sizeof(struct Label*) * new_size);
-		assert(new_ht);
-
 		memset(new_ht, 0, sizeof(struct Label*) * new_size);
 
 		for (int i = 0; i < ht->table_size; i++) {
@@ -186,10 +185,7 @@ static void insert_label(struct LabelHashTable* ht, const char* name, int addres
 
 	int name_len = strlen(name);
 	struct Label* label = (struct Label*)malloc(sizeof(struct Label));
-	assert(label);
-
 	label->name = (char*)malloc(sizeof(char) * (name_len + 1));
-	assert(label->name);
 
 	strcpy(label->name, name);
 	label->name[name_len] = '\0';
@@ -465,7 +461,7 @@ static void create_binary_instruction(struct Context* context, int left_operand,
 static void binary_expr(struct Context* context, struct Token* token, Instruction* instruction) {
 	check_amd(context, token->type);
 
-	while (is_amd(token->type)) {
+	while (is_amd(token)) {
 		push_token(context->token_stack, token->type);
 		next(context, token);
 	}
@@ -493,7 +489,7 @@ void address_statement(struct Context* context, struct Token* token) {
 
 	switch (token->type) {
 	case TK_NUMBER: {
-		append_instruction(context, token->number & 0x7FFF);
+		append_instruction(context, token->number & 0x7FFF, FALSE);
 	} break;
 	case TK_VAR: {
 		struct Label* label = find_label(context->label_ht, token->buf);
@@ -502,7 +498,7 @@ void address_statement(struct Context* context, struct Token* token) {
 			abort();
 		}
 
-		append_instruction(context, label->address);
+		append_instruction(context, label->address, FALSE);
 	} break;
 	default: {
 		LOG_ERROR("line:%d Syntax Error:The token '@' must be followed by numbers or a variable to construct A-Instruction.", context->linenumber);
@@ -604,7 +600,7 @@ void amd_statement(struct Context* context, struct Token* token) {
 		}
 	}
 
-	append_instruction(context, instruction);
+	append_instruction(context, instruction, FALSE);
 }
 
 void unary_statement(struct Context* context, struct Token* token) {
@@ -614,7 +610,7 @@ void unary_statement(struct Context* context, struct Token* token) {
 	unary_expr(context, token, &instruction);
 	next(context, token);
 
-	append_instruction(context, instruction);
+	append_instruction(context, instruction, FALSE);
 }
 
 void const_jump_statement(struct Context* context, struct Token* token) {
@@ -643,7 +639,7 @@ void const_jump_statement(struct Context* context, struct Token* token) {
 		abort();
 	}
 
-	append_instruction(context, instruction);
+	append_instruction(context, instruction, FALSE);
 }
 
 void label_statement(struct Context* context, struct Token* token) {
@@ -665,7 +661,7 @@ void goto_statement(struct Context* context, struct Token* token) {
 		abort();
 	}
 
-	append_instruction(context, label->address & 0x7fff);
+	append_instruction(context, label->address & 0x7fff, FALSE);
 
 	Instruction jump;
 	CI_SET_COMMON(jump);
@@ -674,12 +670,12 @@ void goto_statement(struct Context* context, struct Token* token) {
 	CI_SET_D_BITS(jump, 0, 0, 0);
 	CI_SET_J_BITS(jump, 1, 1, 1);
 
-	append_instruction(context, jump);
+	append_instruction(context, jump, FALSE);
 
 	next(context, token);
 }
 
-void statement_list(struct Context* context) {
+void statements_list(struct Context* context) {
 	struct Token token;
 	struct Token* token_ptr = &token;
 
@@ -719,6 +715,8 @@ void statement_list(struct Context* context) {
 	}
 	
 END:
+	append_instruction(context, 0, TRUE);
+
 	token_stack_uninit(context->token_stack);
 	label_hashtable_uninit(context->label_ht);
 
