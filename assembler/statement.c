@@ -1,4 +1,5 @@
 #include "statement.h"
+#include <assert.h>
 
 #define MIN_TOKEN_STACK_SIZE 8
 #define MIN_LABEL_HT_SIZE 16
@@ -45,21 +46,23 @@ static void append_instruction(struct Context* context, Instruction instruction,
 	context->address++;
 }
 
-static void token_stack_init(struct TokenStack* ts) {
-	if (!ts)
-		return;
+static void token_stack_init(struct Context* context) {
+	context->token_stack = (struct TokenStack*)malloc(sizeof(struct TokenStack));
+	assert(context->token_stack);
 
-	ts->stack = NULL;
-	ts->stack_size = 0;
-	ts->top = 0;
+	context->token_stack->stack = NULL;
+	context->token_stack->stack_size = 0;
+	context->token_stack->top = 0;
 }
 
-static void token_stack_uninit(struct TokenStack* ts) {
-	if (!ts || !ts->stack) {
+static void token_stack_uninit(struct Context* context) {
+	if (!context->token_stack || !context->token_stack->stack) {
 		return;
 	}
 
-	free(ts->stack);
+	free(context->token_stack->stack);
+	free(context->token_stack);
+	context->token_stack = NULL;
 }
 
 static void push_token(struct TokenStack* ts, int token_type) {
@@ -98,18 +101,21 @@ static int pop_token(struct TokenStack* ts) {
 	}
 }
 
-static void label_hashtable_init(struct LabelHashTable* ht) {
-	ht->hash_table = NULL;
-	ht->elements = 0;
-	ht->table_size = 0;
+static void label_hashtable_init(struct Context* context) {
+	context->label_ht = (struct LabelHashTable*)malloc(sizeof(struct LabelHashTable));
+	assert(context->label_ht);
+
+	context->label_ht->hash_table = NULL;
+	context->label_ht->elements = 0;
+	context->label_ht->table_size = 0;
 }
 
-static void label_hashtable_uninit(struct LabelHashTable* ht) {
-	if (!ht->hash_table)
+static void label_hashtable_uninit(struct Context* context) {
+	if (!context->label_ht || !context->label_ht->hash_table)
 		return;
 
-	for (int i = 0; i < ht->elements; i++) {
-		struct Label* label = ht->hash_table[i];
+	for (int i = 0; i < context->label_ht->elements; i++) {
+		struct Label* label = context->label_ht->hash_table[i];
 
 		while (label) {
 			struct Label* next = label->next;
@@ -120,6 +126,9 @@ static void label_hashtable_uninit(struct LabelHashTable* ht) {
 			label = next;
 		}
 	}
+
+	free(context->label_ht);
+	context->label_ht = NULL;
 }
 
 static struct Label* find_label(struct LabelHashTable* ht, const char* name) {
@@ -594,9 +603,20 @@ void amd_statement(struct Context* context, struct Token* token) {
 			jump_expr(context, token, &instruction);
 			next(context, token);
 		}
-		else {
+		else if (token->type == '='){
+			next(context, token);
+			expr(context, token, &instruction);
+			next(context, token);
+		}
+		else if (token->type == '+' || token->type == '-' || token->type == '|' || token->type == '&') {
+			token_type = token->type;
+			next(context, token);
 			create_binary_instruction(context, token_type, token, &instruction);
 			next(context, token);
+		}
+		else {
+			LOG_ERROR("line:%d Syntax Error: Unknow condition.", context->linenumber);
+			abort();
 		}
 	}
 
@@ -679,8 +699,8 @@ void statements_list(struct Context* context) {
 	struct Token token;
 	struct Token* token_ptr = &token;
 
-	label_hashtable_init(context->label_ht);
-	token_stack_init(context->token_stack);
+	label_hashtable_init(context);
+	token_stack_init(context);
 
 	next(context, token_ptr);
 
@@ -717,8 +737,8 @@ void statements_list(struct Context* context) {
 END:
 	append_instruction(context, 0, TRUE);
 
-	token_stack_uninit(context->token_stack);
-	label_hashtable_uninit(context->label_ht);
+	token_stack_uninit(context);
+	label_hashtable_uninit(context);
 
 	LOG_ERROR("Finish.");
 }

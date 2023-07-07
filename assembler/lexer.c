@@ -70,6 +70,8 @@ static void uninit_keyword_hashtable() {
 			node = next;
 		}
 	}
+	free(s_keyword_hashtable);
+	s_keyword_hashtable = NULL;
 }
 
 static struct KeywordHashNode* find_keyword(const char* str) {
@@ -245,6 +247,8 @@ void next(struct Context* context, struct Token* r) {
 		case '!': case EOF: {
 			r->type = (unsigned short)c;
 			is_break_loop = TRUE;
+
+			nextchar(context);
 		} break;
 		default: {
 			try_get_string_token(context, c, r);

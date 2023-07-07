@@ -24,7 +24,7 @@ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 int main(int argc, char** argv) {
 	if (argc < 3) {
 		printf("The input arguments must at least contain a save path and an assembler file path.\n");
-		printf("For example, a comand can be as following.\n");
+		printf("For example, a command can be as the following.\n");
 		printf("./assembler ./asm_file_path ./save_path .\n");
 		return 0;
 	}
