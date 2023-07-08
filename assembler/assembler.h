@@ -37,10 +37,10 @@ struct CodeCache {
 // Label Hash Table
 // -----------------------------------------------------------
 struct Label {
-	int hash;
 	char* name;
 	int name_size;
-	int address;
+	int hash;
+	unsigned short address;
 
 	struct Label* next;
 };
@@ -60,14 +60,41 @@ struct TokenStack {
 	int top;
 };
 
+// Numbers under 256 are reserved for ASCII code.
+#define TOKEN_RESERVED 256
+enum TokenType {
+	TK_JGT = TOKEN_RESERVED,
+	TK_JEQ,
+	TK_JGE,
+	TK_JLT,
+	TK_JNE,
+	TK_JLE,
+	TK_JMP,
+	TK_GOTO,
+	TK_NUMBER,
+	TK_LABEL,
+	TK_VAR,
+
+	TK_INVALID
+};
+
+struct Token {
+	short type;
+	union u {
+		char buf[MAX_TOKEN_SIZE + 1];
+		short number;		// only support integer value now.
+	};
+};
+
 struct Context {
 	int linenumber;
 	struct CodeLoader loader;
 	struct CodeCache cache;
 	FILE* executable_file;
-	short address;
+	unsigned short address;
 	struct LabelHashTable* label_ht;
 	struct TokenStack* token_stack;
+	struct Token look_ahead;
 };
 
 int str_hash(const char* str);

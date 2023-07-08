@@ -25,6 +25,8 @@ BOOL context_init(struct Context* context, const char* asm_file, const char* exe
 
 	context->executable_file = f;
 	context->address = 0;
+	context->look_ahead.type = TK_INVALID;
+	memset(context->look_ahead.buf, 0, MAX_TOKEN_SIZE + 1);
 
 	return TRUE;
 }

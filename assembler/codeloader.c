@@ -31,12 +31,11 @@ char get_current_char(struct Context* context) {
 	if (context->loader.current >= context->loader.buffer + context->loader.read_num) {
 		context->loader.read_num = (int)fread(context->loader.buffer, sizeof(char), CODELOADER_BUFFER_SIZE, context->loader.file);
 
-		if (context->loader.read_num <= 0) {
-			LOG_ERROR("nothing to read.");
-			abort();
-		}
-
 		context->loader.current = context->loader.buffer;
+
+		if (context->loader.read_num <= 0) {
+			return EOF;
+		}
 	}
 
 	char ret = *context->loader.current;

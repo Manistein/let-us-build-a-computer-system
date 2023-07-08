@@ -45,7 +45,7 @@ static BOOL init_keyword_hashtable() {
 		struct KeywordHashNode* node = (struct KeywordHashNode*)malloc(sizeof(struct KeywordHashNode));
 		if (!node) {
 			LOG_ERROR("init_keyword_hashtable:not enough memory.");
-			abort();
+			exit(0);
 		}
 
 		node->v = (char*)jmp_str;
@@ -115,7 +115,7 @@ static char try_get_string_token(struct Context* context, char first, struct Tok
 	while (isalpha(c) || isdigit(c) || c == '_') {
 		if (index >= MAX_TOKEN_SIZE) {
 			LOG_ERROR("line:%d The token exceeds the max token length.", context->linenumber);
-			abort();
+			exit(0);
 		}
 
 		var_buf[index] = c;
@@ -128,10 +128,12 @@ static char try_get_string_token(struct Context* context, char first, struct Tok
 	if (node) {
 		strcpy(r->buf, node->v);
 		r->type = node->type;
+		r->buf[strlen(node->v)] = '\0';
 	}
 	else {
 		strcpy(r->buf, var_buf);
 		r->type = TK_VAR;
+		r->buf[strlen(var_buf)] = '\0';
 	}
 
 	return c;
@@ -141,7 +143,7 @@ static char try_get_label_token(struct Context* context, struct Token* r) {
 	char c = nextchar(context);
 	if (!isalpha(c)) {
 		LOG_ERROR("line:%d Label must start with a letter.", context->linenumber);
-		abort();
+		exit(0);
 	}
 
 	char label_buf[MAX_LABEL_SIZE + 1] = { 0 };
@@ -158,18 +160,19 @@ static char try_get_label_token(struct Context* context, struct Token* r) {
 		}
 		else {
 			LOG_ERROR("line %d The label must be an identifier which is constructed of alphabets.", context->linenumber);
-			abort();
+			exit(0);
 		}
 	}
 
 	if (c != ')') {
 		LOG_ERROR("line:%d The label's length is larger than max limit (32 alphabets).", context->linenumber);
-		abort();
+		exit(0);
 	}
 
 	nextchar(context);
 	strcpy(r->buf, label_buf);
 	r->type = TK_LABEL;
+	r->buf[strlen(label_buf)] = '\0';
 
 	return c;
 }
@@ -193,7 +196,7 @@ static char try_get_number_token(struct Context* context, char first, struct Tok
 
 	if (c != ' ' && c != '\t' && c != '\v' && c != '\n' && c != '\r') {
 		LOG_ERROR("line:%d A number format is incorrect.", context->linenumber);
-		abort();
+		exit(0);
 	}
 
 	r->number = atoi(number_buf);
@@ -206,7 +209,7 @@ static char skipcomment(struct Context* context) {
 	char c = nextchar(context);
 	if (c != '/') {
 		LOG_ERROR("line:%d The CPU don't support division operation.", context->linenumber);
-		abort();
+		exit(0);
 	}
 
 	while (c != '\r' && c != '\n' && c != EOF) {
@@ -216,7 +219,21 @@ static char skipcomment(struct Context* context) {
 	return c;
 }
 
-void next(struct Context* context, struct Token* r) {
+void lexer_next(struct Context* context, struct Token* r) {
+	if (context->look_ahead.type != TK_INVALID) {
+		r->type = context->look_ahead.type;
+		if (r->type == TK_NUMBER) {
+			r->number = context->look_ahead.number;
+		}
+		else {
+			strcpy(r->buf, context->look_ahead.buf);
+			r->buf[strlen(context->look_ahead.buf)] = '\0';
+		}
+
+		context->look_ahead.type = TK_INVALID;
+		return;
+	}
+
 	char c = get_current_char(context);
 	BOOL is_break_loop = FALSE;
 
@@ -260,4 +277,12 @@ void next(struct Context* context, struct Token* r) {
 			break;
 		}
 	}
+}
+
+void lexer_lookahead(struct Context* context) {
+	if (context->look_ahead.type != TK_INVALID) {
+		return;
+	}
+
+	lexer_next(context, &context->look_ahead);
 }

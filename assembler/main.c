@@ -41,5 +41,7 @@ int main(int argc, char** argv) {
 
 	context_uninit(&context);
 
+	getchar();
+
 	return 1;
 }
