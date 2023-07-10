@@ -603,7 +603,7 @@ void amd_statement(struct Context* context, struct Token* token) {
 	// If there are more than 1 tokens in the token stack, the statement must be an assignment.
 	if (context->token_stack->top > 1) {
 		int token_type = TK_INVALID;
-		while (token_type = pop_token(context->token_stack)) {
+		while ((token_type = pop_token(context->token_stack)) != TK_INVALID) {
 			amd_assign(context, token_type, &instruction);
 		}
 
