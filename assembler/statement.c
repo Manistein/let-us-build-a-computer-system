@@ -17,7 +17,7 @@
 #define CI_SET_D_BITS(i, d1, d2, d3) { (i) |= (d1 << 5) | (d2 << 4) | (d3 << 3); } 
 
 // j1~j3 must either be 0 or 1.
-#define CI_SET_J_BITS(i, j1, j2, j3) { (i) |= (j1 << 2) | (j2 << 1) | (j1); } 
+#define CI_SET_J_BITS(i, j1, j2, j3) { (i) |= (j1 << 2) | (j2 << 1) | (j3); } 
 
 void check_amd(struct Context* context, int token_type);
 BOOL is_amd(struct Token* token);

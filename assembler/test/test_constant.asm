@@ -14,7 +14,7 @@ M = D
 D = D - A
 
 @LOOP
-D;JGE
+D;JLT
 
 @0
 0;JMP
