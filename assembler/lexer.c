@@ -194,7 +194,7 @@ static char try_get_number_token(struct Context* context, char first, struct Tok
 		index++;
 	}
 
-	if (c != ' ' && c != '\t' && c != '\v' && c != '\n' && c != '\r') {
+	if (c != ' ' && c != '\t' && c != '\v' && c != '\n' && c != '\r' && c!= ';') {
 		LOG_ERROR("line:%d A number format is incorrect.", context->linenumber);
 		exit(0);
 	}
