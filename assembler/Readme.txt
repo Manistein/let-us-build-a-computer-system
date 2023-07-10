@@ -1,2 +1,2 @@
 # let-us-build-a-computer-system
-This project is the assembler for Hack.
+This project is an assembler for the Hack.
