@@ -2,6 +2,7 @@ AMD = 0
 
 (LOOP)
 @0
+0  // nop, wait to sync data
 D = M
 D = D + 1
 

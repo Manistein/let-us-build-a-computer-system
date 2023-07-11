@@ -688,7 +688,7 @@ void unary_statement(struct Context* context, struct Token* token) {
 	append_instruction(context, instruction, FALSE);
 }
 
-void const_jump_statement(struct Context* context, struct Token* token) {
+void const_statement(struct Context* context, struct Token* token) {
 	Instruction instruction = 0;
 	CI_SET_COMMON(instruction);
 	CI_SET_A_BIT(instruction, 0);
@@ -700,14 +700,19 @@ void const_jump_statement(struct Context* context, struct Token* token) {
 		else if (token->number == 1) {
 			CI_SET_COMP_BITS(instruction, 1, 1, 1, 1, 1, 1);
 		}
+		else if (token->number == -1) {
+			CI_SET_COMP_BITS(instruction, 1, 1, 1, 0, 1, 0);
+		}
 		else {
 			LOG_ERROR("line:%d Syntax Error: Unsupport condition jump.", context->linenumber);
 			exit(0);
 		}
 
 		lexer_next(context, token);
-		jump_expr(context, token, &instruction);
-		lexer_next(context, token);
+		if (token->type == ';') {
+			jump_expr(context, token, &instruction);
+			lexer_next(context, token);
+		}
 	}
 	else {
 		LOG_ERROR("line:%d Syntax Error: Unsupport condition jump.", context->linenumber);
@@ -768,7 +773,7 @@ void statements_list(struct Context* context) {
 				amd_statement(context, token_ptr);
 			} break;
 			case TK_NUMBER: {
-				const_jump_statement(context, token_ptr);
+				const_statement(context, token_ptr);
 			} break;
 			case '-': case '!': {
 				unary_statement(context, token_ptr);
