@@ -2158,6 +2158,7 @@
       <a name="width" val="16"/>
     </comp>
     <comp lib="1" loc="(890,1000)" name="NOT Gate"/>
+    <comp lib="1" loc="(890,810)" name="NOT Gate"/>
     <comp lib="2" loc="(1350,690)" name="Multiplexer">
       <a name="width" val="16"/>
     </comp>
@@ -2276,6 +2277,8 @@
     <wire from="(800,280)" to="(800,380)"/>
     <wire from="(800,380)" to="(930,380)"/>
     <wire from="(830,140)" to="(830,260)"/>
+    <wire from="(830,260)" to="(830,810)"/>
+    <wire from="(830,810)" to="(860,810)"/>
     <wire from="(840,1000)" to="(840,1020)"/>
     <wire from="(840,1000)" to="(860,1000)"/>
     <wire from="(840,1020)" to="(940,1020)"/>
@@ -2296,6 +2299,7 @@
     <wire from="(880,770)" to="(930,770)"/>
     <wire from="(880,90)" to="(880,100)"/>
     <wire from="(890,1000)" to="(940,1000)"/>
+    <wire from="(890,810)" to="(930,810)"/>
     <wire from="(910,1060)" to="(940,1060)"/>
     <wire from="(910,140)" to="(910,300)"/>
     <wire from="(910,140)" to="(930,140)"/>
@@ -2669,7 +2673,7 @@
     <a name="circuit" val="JumpChecker"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="1.0"/>
-    <comp lib="0" loc="(1000,290)" name="Pin">
+    <comp lib="0" loc="(1120,310)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="west"/>
       <a name="label" val="jmp"/>
@@ -2686,11 +2690,16 @@
       <a name="appearance" val="NewPins"/>
       <a name="label" val="ng"/>
     </comp>
+    <comp lib="0" loc="(290,600)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="enable"/>
+    </comp>
     <comp lib="0" loc="(300,510)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="label" val="jc"/>
       <a name="width" val="3"/>
     </comp>
+    <comp lib="1" loc="(1070,310)" name="AND Gate"/>
     <comp lib="1" loc="(500,480)" name="NOT Gate"/>
     <comp lib="1" loc="(510,220)" name="NOT Gate"/>
     <comp lib="1" loc="(510,280)" name="NOT Gate"/>
@@ -2699,9 +2708,11 @@
     <comp lib="2" loc="(940,290)" name="Multiplexer">
       <a name="select" val="3"/>
     </comp>
+    <wire from="(1070,310)" to="(1120,310)"/>
     <wire from="(290,160)" to="(340,160)"/>
     <wire from="(290,220)" to="(450,220)"/>
     <wire from="(290,280)" to="(390,280)"/>
+    <wire from="(290,600)" to="(960,600)"/>
     <wire from="(300,510)" to="(920,510)"/>
     <wire from="(340,160)" to="(340,480)"/>
     <wire from="(340,160)" to="(770,160)"/>
@@ -2748,13 +2759,15 @@
     <wire from="(840,320)" to="(840,480)"/>
     <wire from="(840,320)" to="(900,320)"/>
     <wire from="(920,330)" to="(920,510)"/>
-    <wire from="(940,290)" to="(1000,290)"/>
+    <wire from="(940,290)" to="(1020,290)"/>
+    <wire from="(960,330)" to="(1020,330)"/>
+    <wire from="(960,330)" to="(960,600)"/>
   </circuit>
   <circuit name="TestInstructions">
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="TestInstructions"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="16.0"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(1510,860)" name="Splitter">
       <a name="bit1" val="0"/>
       <a name="bit10" val="2"/>
@@ -2852,8 +2865,8 @@
       <a name="addrWidth" val="16"/>
       <a name="appearance" val="logisim_evolution"/>
       <a name="contents">addr/data: 16 16
-eab8 0 ea80 fc10 e7d0 0 e308 4000
-e308 a e4d0 1 e304 0 ea87
+ea80 0 ea80 fc50 e308 4000 ea80 e308
+1 ea87
 </a>
       <a name="dataWidth" val="16"/>
     </comp>
