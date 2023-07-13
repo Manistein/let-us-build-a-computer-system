@@ -284,7 +284,7 @@ static void unary_expr(struct Context* context, struct Token* token, Instruction
 		} break;
 		case 'M': { // -M
 			CI_SET_A_BIT(*instruction, 1);
-			CI_SET_COMP_BITS(*instruction, 1, 1, 0, 0, 0, 1);
+			CI_SET_COMP_BITS(*instruction, 1, 1, 0, 0, 1, 1);
 		} break;
 		case 'D': { // -D
 			CI_SET_A_BIT(*instruction, 0);
@@ -755,6 +755,19 @@ void goto_statement(struct Context* context, struct Token* token) {
 	lexer_next(context, token);
 }
 
+static void load_statement(struct Context* context, struct Token* token) {
+	Instruction instruction = 0;
+	CI_SET_COMMON(instruction);
+	CI_SET_A_BIT(instruction, 0);
+	CI_SET_COMP_BITS(instruction, 1, 0, 1, 0, 1, 0);
+	CI_SET_D_BITS(instruction, 0, 0, 0);
+	CI_SET_J_BITS(instruction, 0, 0, 0);
+
+	append_instruction(context, instruction, FALSE);
+
+	lexer_next(context, token);
+}
+
 void statements_list(struct Context* context) {
 	struct Token token;
 	struct Token* token_ptr = &token;
@@ -783,6 +796,9 @@ void statements_list(struct Context* context) {
 			} break;
 			case TK_GOTO: {
 				goto_statement(context, token_ptr);
+			} break;
+			case TK_NOP: {
+				load_statement(context, token_ptr);
 			} break;
 			case EOF: {
 				goto END;

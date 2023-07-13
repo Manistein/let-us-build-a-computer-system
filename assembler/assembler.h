@@ -71,6 +71,7 @@ enum TokenType {
 	TK_JLE,
 	TK_JMP,
 	TK_GOTO,
+	TK_NOP,
 	TK_NUMBER,
 	TK_LABEL,
 	TK_VAR,

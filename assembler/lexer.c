@@ -5,7 +5,7 @@
 
 // The order of the following keywords must be the same as the TokenType defined in lexer.h
 static const char* s_keywords[] = {
-	"JGT", "JEQ", "JGE", "JLT", "JNE", "JLE", "JMP", "GOTO"
+	"JGT", "JEQ", "JGE", "JLT", "JNE", "JLE", "JMP", "GOTO", "NOP"
 };
 
 int str_hash(const char* str) {
