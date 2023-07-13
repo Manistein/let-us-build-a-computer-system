@@ -1,0 +1,16 @@
+NOP
+
+(LOOP)
+@16384
+NOP
+D = -A
+
+@0
+NOP 
+M = D
+
+@16384
+NOP
+M = D
+
+GOTO LOOP
