@@ -393,7 +393,7 @@ static void binary_expr(struct Context* context, int left_operand, struct Token*
 			}
 			else if (left_operand == 'M') { // M - D
 				CI_SET_A_BIT(*instruction, 1);
-				CI_SET_COMP_BITS(*instruction, 0, 1, 0, 0, 1, 1);
+				CI_SET_COMP_BITS(*instruction, 0, 0, 0, 1, 1, 1);
 			}
 			else {
 				LOG_ERROR("line:%d Syntax Error: Unknow binary instruction.", context->linenumber);
