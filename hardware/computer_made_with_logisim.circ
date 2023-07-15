@@ -1325,6 +1325,18 @@
     <a name="circuit" val="ALU"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="1.0"/>
+    <comp lib="0" loc="(1000,390)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="zr"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(1000,450)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="ng"/>
+      <a name="output" val="true"/>
+    </comp>
     <comp lib="0" loc="(120,240)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="label" val="zx"/>
@@ -1374,18 +1386,6 @@
       <a name="output" val="true"/>
       <a name="width" val="16"/>
     </comp>
-    <comp lib="0" loc="(930,390)" name="Pin">
-      <a name="appearance" val="NewPins"/>
-      <a name="facing" val="west"/>
-      <a name="label" val="zr"/>
-      <a name="output" val="true"/>
-    </comp>
-    <comp lib="0" loc="(930,450)" name="Pin">
-      <a name="appearance" val="NewPins"/>
-      <a name="facing" val="west"/>
-      <a name="label" val="ng"/>
-      <a name="output" val="true"/>
-    </comp>
     <comp lib="1" loc="(280,230)" name="NOT Gate">
       <a name="width" val="16"/>
     </comp>
@@ -1398,6 +1398,7 @@
     <comp lib="1" loc="(610,440)" name="NOT Gate">
       <a name="width" val="16"/>
     </comp>
+    <comp lib="1" loc="(960,390)" name="NOT Gate"/>
     <comp lib="2" loc="(220,180)" name="Multiplexer">
       <a name="width" val="16"/>
     </comp>
@@ -1477,9 +1478,10 @@
     <wire from="(670,430)" to="(670,600)"/>
     <wire from="(670,600)" to="(680,600)"/>
     <wire from="(700,590)" to="(720,590)"/>
+    <wire from="(720,450)" to="(1000,450)"/>
     <wire from="(720,450)" to="(720,590)"/>
-    <wire from="(720,450)" to="(930,450)"/>
     <wire from="(910,390)" to="(930,390)"/>
+    <wire from="(960,390)" to="(1000,390)"/>
   </circuit>
   <circuit name="Bit">
     <a name="appearance" val="logisim_evolution"/>
@@ -2767,7 +2769,7 @@
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="TestInstructions"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="16.0"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(1510,860)" name="Splitter">
       <a name="bit1" val="0"/>
       <a name="bit10" val="2"/>
@@ -2865,8 +2867,7 @@
       <a name="addrWidth" val="16"/>
       <a name="appearance" val="logisim_evolution"/>
       <a name="contents">addr/data: 16 16
-ea80 efd0 1 e010 0 ea80 f548 4
-ea87
+ea80 1 ec01
 </a>
       <a name="dataWidth" val="16"/>
     </comp>
