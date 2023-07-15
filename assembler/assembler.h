@@ -29,24 +29,46 @@ struct CodeLoader {
 };
 
 struct CodeCache {
-	Instruction code[MAX_CODE_CACHE_SIZE];
+	Instruction* code;
+	int size;
 	int current_pos;
 };
 
 // -----------------------------------------------------------
 // Label Hash Table
 // -----------------------------------------------------------
-struct Label {
-	char* name;
-	int name_size;
-	int hash;
-	unsigned short address;
 
+#define COMMON_LABEL_HEADER char* name; int name_size; int hash
+
+struct Label {
+	COMMON_LABEL_HEADER;
 	struct Label* next;
+
+	unsigned short address;
 };
 
 struct LabelHashTable {
 	struct Label** hash_table;
+	int table_size;
+	int elements;
+};
+
+struct JumpInstruction {
+	int instruction_index; // The index of code cache instruction vector;
+	int linenumber;		   // code linenumber;
+	struct JumpInstruction* next;
+};
+
+struct UndefineLabel {
+	COMMON_LABEL_HEADER;
+	struct UndefineLabel* next;
+
+	struct JumpInstruction* head;
+	BOOL has_adjust;
+};
+
+struct UndefineLabelHashTable {
+	struct UndefineLabel** hash_table;
 	int table_size;
 	int elements;
 };
@@ -94,6 +116,7 @@ struct Context {
 	FILE* executable_file;
 	unsigned short address;
 	struct LabelHashTable* label_ht;
+	struct UndefineLabelHashTable* undefine_label_ht;
 	struct TokenStack* token_stack;
 	struct Token look_ahead;
 };

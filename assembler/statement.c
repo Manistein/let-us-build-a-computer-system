@@ -22,31 +22,59 @@
 void check_amd(struct Context* context, int token_type);
 BOOL is_amd(struct Token* token);
 
-static void append_instruction(struct Context* context, Instruction instruction, BOOL force_flush) {
-	context->cache.code[context->cache.current_pos] = instruction;
-	context->cache.current_pos++;
+// ------------------------------------------------------------------------------
+// Instruction
+// ------------------------------------------------------------------------------
 
-	if (context->cache.current_pos >= MAX_CODE_CACHE_SIZE || force_flush) {
-		for (int i = 0; i < context->cache.current_pos; i++) {
-			if (i > 0) {
-				fwrite(" ", sizeof(char), 1, context->executable_file);
-			}
+static int append_instruction(struct Context* context, Instruction instruction) {
+	if (!context->cache.code || context->cache.current_pos >= context->cache.size) {
+		int new_size = context->cache.size * 2;
+		new_size = new_size < (INT_MAX / 2) ? new_size : (INT_MAX / 2);
+		new_size = new_size > 0 ? new_size : MAX_CODE_CACHE_SIZE;
 
-			Instruction inst = context->cache.code[i];
-
-			char hexbuf[5] = { 0 };
-			sprintf(hexbuf, "%04x", inst);
-			fwrite(hexbuf, 4, 1, context->executable_file);
+		context->cache.code = (Instruction*)realloc(context->cache.code, sizeof(Instruction) * new_size);
+		if (!context->cache.code) {
+			LOG_ERROR("There is not enough memory for allocing a new block.");
+			exit(1);
 		}
 
-		fwrite("\n", sizeof(char), 1, context->executable_file);
-		context->cache.current_pos = 0;
-
-		fflush(context->executable_file);
+		context->cache.size = new_size;
 	}
 
+	context->cache.code[context->cache.current_pos] = instruction;
+	context->cache.current_pos++;
 	context->address++;
+
+	return context->cache.current_pos - 1;
 }
+
+static void dump_instructions(struct Context* context) {
+	int index = 0;
+	for (int i = 0; i < context->cache.current_pos; i++) {
+		if (index >= MAX_CODE_CACHE_SIZE) {
+			fwrite("\n", sizeof(char), 1, context->executable_file);
+			index = 0;
+		}
+
+		if (index > 0) {
+			fwrite(" ", sizeof(char), 1, context->executable_file);
+		}
+
+		Instruction inst = context->cache.code[i];
+
+		char hexbuf[5] = { 0 };
+		sprintf(hexbuf, "%04x", inst);
+		fwrite(hexbuf, 4, 1, context->executable_file);
+
+		index++;
+	}
+
+	fflush(context->executable_file);
+}
+
+// ------------------------------------------------------------------------------
+// Token Stack
+// ------------------------------------------------------------------------------
 
 static void token_stack_init(struct Context* context) {
 	context->token_stack = (struct TokenStack*)malloc(sizeof(struct TokenStack));
@@ -103,6 +131,54 @@ static int pop_token(struct TokenStack* ts) {
 	}
 }
 
+// ------------------------------------------------------------------------------
+// Label
+// ------------------------------------------------------------------------------
+
+#define FIND_LABEL_COMMON(type, ht, name) {\
+	if (!ht || !ht->hash_table) \
+		return NULL; \
+	int hash = str_hash(name);	\
+	int index = hash % ht->table_size; \
+	type* node = ht->hash_table[index]; \
+	while (node) { \
+		type* next = node->next; \
+		if (strcmp(node->name, name) == 0) { \
+			return node; \
+		} \
+		node = next; \
+	} \
+	return NULL; \
+}
+
+#define LABEL_REHASH_COMMON(type, ht) { \
+	if (!ht->hash_table) { \
+		ht->hash_table = (type**)malloc(sizeof(type*) * MIN_LABEL_HT_SIZE); \
+		for (int i = 0; i < MIN_LABEL_HT_SIZE; i++) { \
+			ht->hash_table[i] = NULL; \
+		} \
+		ht->table_size = MIN_LABEL_HT_SIZE;  \
+		ht->elements = 0; \
+	} \
+	else { \
+		int new_size = ht->table_size * 2; \
+		new_size = new_size > (INT_MAX / 2) ? (INT_MAX / 2) : new_size; \
+		type** new_ht = (type**)malloc(sizeof(type*) * new_size); \
+		memset(new_ht, 0, sizeof(type*) * new_size); \
+		for (int i = 0; i < ht->table_size; i++) { \
+			type* lb = ht->hash_table[i]; \
+			int index = lb->hash % new_size; \
+			type* head = new_ht[index]; \
+			lb->next = head; \
+			new_ht[index] = lb; \
+		} \
+		type** old_ht = ht->hash_table; \
+		ht->hash_table = new_ht; \
+		ht->table_size = new_size; \
+		free(old_ht); \
+	} \
+}
+
 static void label_hashtable_init(struct Context* context) {
 	context->label_ht = (struct LabelHashTable*)malloc(sizeof(struct LabelHashTable));
 	assert(context->label_ht);
@@ -134,59 +210,11 @@ static void label_hashtable_uninit(struct Context* context) {
 }
 
 static struct Label* find_label(struct LabelHashTable* ht, const char* name) {
-	if (!ht || !ht->hash_table)
-		return NULL;
-
-	int hash = str_hash(name);
-	int index = hash % ht->table_size;
-
-	struct Label* node = ht->hash_table[index];
-	while (node) {
-		struct Label* next = node->next;
-
-		if (strcmp(node->name, name) == 0) {
-			return node;
-		}
-
-		node = next;
-	}
-
-	return NULL;
+	FIND_LABEL_COMMON(struct Label, ht, name);
 }
 
 static void label_ht_rehash(struct LabelHashTable* ht) {
-	if (!ht->hash_table) {
-		ht->hash_table = (struct Label**)malloc(sizeof(struct Label*) * MIN_LABEL_HT_SIZE);
-
-		for (int i = 0; i < MIN_LABEL_HT_SIZE; i++) {
-			ht->hash_table[i] = NULL;
-		}
-
-		ht->table_size = MIN_LABEL_HT_SIZE;
-		ht->elements = 0;
-	}
-	else {
-		int new_size = ht->table_size * 2;
-		new_size = new_size > (INT_MAX / 2) ? (INT_MAX / 2) : new_size;
-
-		struct Label** new_ht = (struct Label**)malloc(sizeof(struct Label*) * new_size);
-		memset(new_ht, 0, sizeof(struct Label*) * new_size);
-
-		for (int i = 0; i < ht->table_size; i++) {
-			struct Label* lb = ht->hash_table[i];
-			int index = lb->hash % new_size;
-
-			struct Label* head = new_ht[index];
-			lb->next = head;
-			new_ht[index] = lb;
-		}
-
-		struct Label** old_ht = ht->hash_table;
-		ht->hash_table = new_ht;
-		ht->table_size = new_size;
-
-		free(old_ht);
-	}
+	LABEL_REHASH_COMMON(struct Label, ht);
 }
 
 static void insert_label(struct LabelHashTable* ht, const char* name, unsigned short address) {
@@ -213,6 +241,137 @@ static void insert_label(struct LabelHashTable* ht, const char* name, unsigned s
 
 	ht->elements++;
 }
+
+static void undefine_label_hashtable_init(struct Context* context) {
+	context->undefine_label_ht = (struct UndefineLabelHashTable*)malloc(sizeof(struct UndefineLabelHashTable));
+	assert(context->undefine_label_ht);
+
+	context->undefine_label_ht->hash_table = NULL;
+	context->undefine_label_ht->elements = 0;
+	context->undefine_label_ht->table_size = 0;
+}
+
+static void undefine_label_hashtable_uninit(struct Context* context) {
+	if (!context->undefine_label_ht || !context->undefine_label_ht->hash_table)
+		return;
+
+	for (int i = 0; i < context->undefine_label_ht->elements; i++) {
+		struct UndefineLabel* label = context->undefine_label_ht->hash_table[i];
+
+		while (label) {
+			struct UndefineLabel* next = label->next;
+
+			struct JumpInstruction* head = label->head;
+			while (head) {
+				struct JumpInstruction* next_jump_instruction = head->next;
+				free(head);
+
+				head = next_jump_instruction;
+			}
+
+			free(label->name);
+			free(label);
+
+			label = next;
+		}
+	}
+
+	free(context->undefine_label_ht);
+	context->undefine_label_ht = NULL;
+}
+
+static struct UndefineLabel* find_undefine_label(struct UndefineLabelHashTable* ht, const char* name) {
+	FIND_LABEL_COMMON(struct UndefineLabel, ht, name);
+}
+
+static void undefine_label_rehash(struct UndefineLabelHashTable* ht) {
+	LABEL_REHASH_COMMON(struct UndefineLabel, ht);
+}
+
+static void append_undefine_jump_instruction(struct Context* context, const char* label_name, unsigned short address, int linenumber) {
+	struct UndefineLabel* undefine_label = find_undefine_label(context->undefine_label_ht, label_name);
+	if (!undefine_label) {
+		undefine_label = (struct UndefineLabel*)malloc(sizeof(struct UndefineLabel));
+		assert(undefine_label);
+
+		int name_len = strlen(label_name);
+		undefine_label->name = (char*)malloc(sizeof(char) * (name_len + 1));
+		strcpy(undefine_label->name, label_name);
+		undefine_label->name[name_len] = '\0';
+		undefine_label->name_size = name_len;
+		undefine_label->hash = str_hash(label_name);
+		undefine_label->head = NULL;
+		undefine_label->has_adjust = FALSE;
+
+		if (!context->undefine_label_ht->elements >= context->undefine_label_ht->table_size) {
+			undefine_label_rehash(context->undefine_label_ht);
+		}
+
+		int index = undefine_label->hash % context->undefine_label_ht->table_size;
+		struct UndefineLabel* head = context->undefine_label_ht->hash_table[index];
+		undefine_label->next = head;
+		context->undefine_label_ht->hash_table[index] = undefine_label;
+	}
+
+	struct JumpInstruction* jhead = undefine_label->head;
+	struct JumpInstruction* njhead = (struct JumpInstruction*)malloc(sizeof(struct JumpInstruction));
+	njhead->instruction_index = address;
+	njhead->linenumber = linenumber;
+	njhead->next = jhead;
+
+	undefine_label->head = njhead;
+}
+
+static void adjust_undefine_labels(struct Context* context) {
+	for (int i = 0; i < context->label_ht->table_size; i++) {
+		struct Label* l = context->label_ht->hash_table[i];
+		while (l) {
+			struct Label* lnext = l->next;
+
+			struct UndefineLabel* ul = find_undefine_label(context->undefine_label_ht, l->name);
+			if (ul) {
+				struct JumpInstruction* ji = ul->head;
+				while (ji) {
+					struct JumpInstruction* jinext = ji->next;
+
+					context->cache.code[ji->instruction_index] = l->address & 0x7fff;
+
+					ji = jinext;
+				}
+
+				ul->has_adjust = TRUE;
+			}
+
+			l = lnext;
+		}
+	}
+}
+
+static void check_undefine_labels(struct Context* context) {
+	for (int i = 0; i < context->undefine_label_ht->table_size; i ++) {
+		struct UndefineLabel* ul = context->undefine_label_ht->hash_table[i];
+		while (ul) {
+			struct UndefineLabel* ulnext = ul->next;
+			struct JumpInstruction* jh = ul->head;
+			
+			int linenumber = 0;
+			if (jh) {
+				linenumber = jh->linenumber;
+			}
+
+			if (!ul->has_adjust) {
+				LOG_ERROR("line:%d Syntax error: unknow label %s", linenumber, ul->name);
+				exit(1);
+			}
+
+			ul = ulnext;
+		}
+	}
+}
+
+// ------------------------------------------------------------------------------
+// Expressions
+// ------------------------------------------------------------------------------
 
 static void jump_expr(struct Context* context, struct Token* token, Instruction* instruction) {
 	if (token->type != ';') {
@@ -538,16 +697,17 @@ void address_statement(struct Context* context, struct Token* token) {
 
 	switch (token->type) {
 	case TK_NUMBER: {
-		append_instruction(context, token->number & 0x7FFF, FALSE);
+		append_instruction(context, token->number & 0x7FFF);
 	} break;
 	case TK_VAR: {
 		struct Label* label = find_label(context->label_ht, token->buf);
-		if (!label) {
-			LOG_ERROR("line:%d Syntax Error:The label named %s is not exist", context->linenumber, token->buf);
-			exit(0);
+		if (label) {
+			append_instruction(context, label->address);
 		}
-
-		append_instruction(context, label->address, FALSE);
+		else {
+			unsigned short address = append_instruction(context, 0);
+			append_undefine_jump_instruction(context, token->buf, address, context->linenumber);
+		}
 	} break;
 	default: {
 		LOG_ERROR("line:%d Syntax Error:The token '@' must be followed by numbers or a variable to construct A-Instruction.", context->linenumber);
@@ -672,7 +832,7 @@ void amd_statement(struct Context* context, struct Token* token) {
 		}
 	}
 
-	append_instruction(context, instruction, FALSE);
+	append_instruction(context, instruction);
 }
 
 void unary_statement(struct Context* context, struct Token* token) {
@@ -685,7 +845,7 @@ void unary_statement(struct Context* context, struct Token* token) {
 	jump_expr(context, token, &instruction);
 	lexer_next(context, token);
 
-	append_instruction(context, instruction, FALSE);
+	append_instruction(context, instruction);
 }
 
 void const_statement(struct Context* context, struct Token* token) {
@@ -719,7 +879,7 @@ void const_statement(struct Context* context, struct Token* token) {
 		exit(0);
 	}
 
-	append_instruction(context, instruction, FALSE);
+	append_instruction(context, instruction);
 }
 
 void label_statement(struct Context* context, struct Token* token) {
@@ -736,12 +896,13 @@ void goto_statement(struct Context* context, struct Token* token) {
 	}
 
 	struct Label* label = find_label(context->label_ht, token->buf);
-	if (!label) {
-		LOG_ERROR("line:%d Undefine variable %s.", context->linenumber, token->buf);
-		exit(0);
+	if (label) {
+		append_instruction(context, label->address & 0x7fff);
 	}
-
-	append_instruction(context, label->address & 0x7fff, FALSE);
+	else {
+		unsigned short address = append_instruction(context, 0);
+		append_undefine_jump_instruction(context, token->buf, address, context->linenumber);
+	}
 
 	Instruction jump;
 	CI_SET_COMMON(jump);
@@ -750,7 +911,7 @@ void goto_statement(struct Context* context, struct Token* token) {
 	CI_SET_D_BITS(jump, 0, 0, 0);
 	CI_SET_J_BITS(jump, 1, 1, 1);
 
-	append_instruction(context, jump, FALSE);
+	append_instruction(context, jump);
 
 	lexer_next(context, token);
 }
@@ -763,7 +924,7 @@ static void load_statement(struct Context* context, struct Token* token) {
 	CI_SET_D_BITS(instruction, 0, 0, 0);
 	CI_SET_J_BITS(instruction, 0, 0, 0);
 
-	append_instruction(context, instruction, FALSE);
+	append_instruction(context, instruction);
 
 	lexer_next(context, token);
 }
@@ -773,6 +934,7 @@ void statements_list(struct Context* context) {
 	struct Token* token_ptr = &token;
 
 	label_hashtable_init(context);
+	undefine_label_hashtable_init(context);
 	token_stack_init(context);
 
 	lexer_next(context, token_ptr);
@@ -811,9 +973,13 @@ void statements_list(struct Context* context) {
 	}
 	
 END:
-	append_instruction(context, 0, TRUE);
+	adjust_undefine_labels(context);
+	check_undefine_labels(context);
+
+	dump_instructions(context);
 
 	token_stack_uninit(context);
+	undefine_label_hashtable_uninit(context);
 	label_hashtable_uninit(context);
 
 	LOG_ERROR("Finish.");

@@ -4,12 +4,21 @@
 
 static void codecache_init(struct Context* context) {
 	context->cache.current_pos = 0;
+	context->cache.size = 0;
+	context->cache.code = NULL;
+}
+
+static void codecache_uninit(struct Context* context) {
+	if (context->cache.code) {
+		free(context->cache.code);
+		context->cache.code = NULL;
+		context->cache.size = 0;
+		context->cache.current_pos = 0;
+	}
 }
 
 BOOL context_init(struct Context* context, const char* asm_file, const char* executable_file) {
 	context->linenumber = 1;
-	context->cache.current_pos = 0;
-
 	context->executable_file = NULL;
 
 	if (!codeloader_init(context, asm_file)) {
@@ -19,7 +28,13 @@ BOOL context_init(struct Context* context, const char* asm_file, const char* exe
 
 	codecache_init(context);
 
-	FILE* f = fopen(executable_file, "a+");
+	// clear content
+	FILE* f = fopen(executable_file, "w");
+	if (f) {
+		fclose(f);
+	}
+
+	f = fopen(executable_file, "a+");
 	if (!f)
 		return FALSE;
 
@@ -38,6 +53,7 @@ void context_uninit(struct Context* context) {
 	if (context->executable_file)
 		fclose(context->executable_file);
 
+	codecache_uninit(context);
 	codeloader_uninit(context);
 }
 
