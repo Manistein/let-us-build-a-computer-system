@@ -1,0 +1,7 @@
+NOP
+
+(LABEL1)
+
+D = 0
+@LABEL1
+D;JEQ
