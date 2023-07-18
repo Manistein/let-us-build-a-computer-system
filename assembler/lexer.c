@@ -180,9 +180,18 @@ static char try_get_label_token(struct Context* context, struct Token* r) {
 static char try_get_number_token(struct Context* context, char first, struct Token* r) {
 	char number_buf[MAX_DIGIT_NUM + 1] = { 0 };
 	number_buf[0] = first;
-
 	int index = 1;
 	char c = nextchar(context);
+	BOOL is_hex = FALSE;
+
+	if (first == '0' && (c == 'x' || c == 'X')) {
+		c = nextchar(context);
+		number_buf[0] = c;
+		is_hex = TRUE;
+
+		c = nextchar(context);
+	}
+
 	while (isdigit(c)) {
 		if (index >= MAX_DIGIT_NUM) {
 			break;
@@ -199,7 +208,12 @@ static char try_get_number_token(struct Context* context, char first, struct Tok
 		exit(0);
 	}
 
-	r->number = atoi(number_buf);
+	if (is_hex) {
+		r->number = strtol(number_buf, NULL, 16);
+	}
+	else {
+		r->number = atoi(number_buf);
+	}
 	r->type = TK_NUMBER;
 
 	return c;
