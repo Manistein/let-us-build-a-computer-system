@@ -3234,11 +3234,6 @@ e308 2 ea87
       <a name="fanout" val="8"/>
       <a name="incoming" val="16"/>
     </comp>
-    <comp lib="0" loc="(850,130)" name="Constant">
-      <a name="facing" val="west"/>
-      <a name="value" val="0x0"/>
-      <a name="width" val="2"/>
-    </comp>
     <comp lib="0" loc="(940,230)" name="Constant"/>
     <comp lib="0" loc="(940,40)" name="Splitter">
       <a name="bit1" val="0"/>
@@ -3340,16 +3335,11 @@ e308 2 ea87
     <wire from="(750,230)" to="(830,230)"/>
     <wire from="(750,330)" to="(750,980)"/>
     <wire from="(750,330)" to="(840,330)"/>
-    <wire from="(780,100)" to="(920,100)"/>
-    <wire from="(780,110)" to="(920,110)"/>
-    <wire from="(780,120)" to="(810,120)"/>
     <wire from="(780,50)" to="(920,50)"/>
     <wire from="(780,60)" to="(920,60)"/>
     <wire from="(780,70)" to="(920,70)"/>
     <wire from="(780,80)" to="(920,80)"/>
     <wire from="(780,90)" to="(920,90)"/>
-    <wire from="(810,120)" to="(810,130)"/>
-    <wire from="(810,130)" to="(850,130)"/>
     <wire from="(840,240)" to="(840,330)"/>
     <wire from="(840,330)" to="(1120,330)"/>
     <wire from="(860,220)" to="(910,220)"/>
@@ -4595,8 +4585,8 @@ e308 2 ea87
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="HackComputer"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="downloadFrequency" val="4000.0"/>
-    <a name="simulationFrequency" val="16.0"/>
+    <a name="downloadFrequency" val="1020408.1632653062"/>
+    <a name="simulationFrequency" val="2048000.0"/>
     <comp lib="0" loc="(1580,250)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="west"/>
@@ -4690,8 +4680,9 @@ e308 2 ea87
       <a name="addrWidth" val="16"/>
       <a name="appearance" val="logisim_evolution"/>
       <a name="contents">addr/data: 16 16
-ea80 ea90 e7d0 0 ea80 e308 4000 ea80
-e308 2 ea87
+ea80 4000 ec10 0 ea80 e308 0 ea80
+fc10 e320 ea80 efc8 e7d0 0 ea80 e308
+4400 e1d0 6 e301 1 ea87
 </a>
       <a name="dataWidth" val="16"/>
     </comp>
@@ -4743,10 +4734,10 @@ e308 2 ea87
     <wire from="(1480,290)" to="(1590,290)"/>
     <wire from="(1480,360)" to="(1500,360)"/>
     <wire from="(1480,800)" to="(1590,800)"/>
-    <wire from="(1500,180)" to="(1500,250)"/>
+    <wire from="(1500,160)" to="(1500,250)"/>
     <wire from="(1500,250)" to="(1500,360)"/>
     <wire from="(1500,250)" to="(1580,250)"/>
-    <wire from="(1540,160)" to="(1540,1180)"/>
+    <wire from="(1540,180)" to="(1540,1180)"/>
     <wire from="(1580,250)" to="(1580,260)"/>
     <wire from="(1590,290)" to="(1590,480)"/>
     <wire from="(1590,480)" to="(1630,480)"/>
@@ -4902,8 +4893,8 @@ e308 2 ea87
     <wire from="(840,1240)" to="(880,1240)"/>
     <wire from="(850,190)" to="(850,440)"/>
     <wire from="(850,440)" to="(890,440)"/>
-    <wire from="(860,160)" to="(1540,160)"/>
-    <wire from="(860,180)" to="(1500,180)"/>
+    <wire from="(860,160)" to="(1500,160)"/>
+    <wire from="(860,180)" to="(1540,180)"/>
     <wire from="(860,700)" to="(860,830)"/>
     <wire from="(870,280)" to="(870,360)"/>
     <wire from="(870,280)" to="(960,280)"/>

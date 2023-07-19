@@ -209,7 +209,7 @@ static char try_get_number_token(struct Context* context, char first, struct Tok
 	}
 
 	if (is_hex) {
-		r->number = strtol(number_buf, NULL, 16);
+		r->number = (short)strtol(number_buf, NULL, 16);
 	}
 	else {
 		r->number = atoi(number_buf);

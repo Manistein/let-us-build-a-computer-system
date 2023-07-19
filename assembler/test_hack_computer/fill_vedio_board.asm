@@ -1,32 +1,29 @@
 NOP
 
+(START)
 @0x4000
 D = A
 @0
 NOP
 M = D
 
-@0xffff
-D = A
-@1
-NOP
-M = D
-
 (LOOP)
 
-@1
+@0
 NOP
 D = M
-
-@0
+A = D
 NOP
-A = M
-NOP
-M = D
-D = A + 1
+M = 1
 
+D = D + 1
 @0
 NOP
 M = D
 
-GOTO LOOP
+@0x4400
+D = A - D
+@LOOP
+D;JGT
+
+GOTO START
