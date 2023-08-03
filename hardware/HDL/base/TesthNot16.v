@@ -13,7 +13,7 @@
 // Tool versions:  
 // Description: 
 //
-// Verilog Test Fixture created by ISE for module: hNot16
+// Verilog Test Fixture created by ISE for module: hNot16l
 //
 // Dependencies:
 // 

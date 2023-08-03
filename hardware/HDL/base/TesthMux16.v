@@ -1,19 +1,19 @@
 `timescale 1ns / 1ps
-`include "hXOr.v"
+`include "hMux16.v"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer:
 //
-// Create Date:   04:05:56 08/01/2023
-// Design Name:   hXor
-// Module Name:   /home/ise/HDL/base/TesthXor.v
+// Create Date:   04:23:21 08/03/2023
+// Design Name:   hMux16
+// Module Name:   /home/ise/HDL/base/TesthMux16.v
 // Project Name:  hack_computer
 // Target Device:  
 // Tool versions:  
 // Description: 
-//l
-// Verilog Test Fixture created by ISE for module: hXor
+//
+// Verilog Test Fixture created by ISE for module: hMux16
 //
 // Dependencies:
 // 
@@ -23,19 +23,21 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-module TesthXor;
+module TesthMux16;
 
 	// Inputs
-	reg a;
-	reg b;
+	reg [15:0] a;
+	reg [15:0] b;
+	reg sel;
 
 	// Outputs
-	wire out;
+	wire [15:0] out;
 
 	// Instantiate the Unit Under Test (UUT)
-	hXOr uut (
+	hMux16 uut (
 		.a(a), 
 		.b(b), 
+		.sel(sel), 
 		.out(out)
 	);
 
@@ -43,23 +45,27 @@ module TesthXor;
 		// Initialize Inputs
 		a = 0;
 		b = 0;
+		sel = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
         
 		// Add stimulus here
 		a = 0;
-		b = 1;
-		
-		#100
-		
-		a = 1;
 		b = 0;
+		sel = 1;
 		
 		#100;
 		
-		a = 1;
+		a = 0;
 		b = 1;
+		sel = 0;
+
+		#100;
+		
+		a = 0;
+		b = 1;
+		sel = 1;
 		
 		#100;
 	end
