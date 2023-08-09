@@ -30,7 +30,7 @@ module hALU(
     input ny,
     input f,
     input no,
-    output [15:0] out,
+    output reg [15:0] out,
     output reg zr,
     output reg ng
     );
@@ -71,16 +71,16 @@ module hALU(
 		if (temp_out == 0) begin
 			zr = 1'b1;
 			ng = 1'b0;
-		end else if (temp_out > 0) begin
+		end else if (temp_out[15] == 1'b0) begin
 			zr = 1'b0;
 			ng = 1'b0;
 		end else begin
 			zr = 1'b0;
 			ng = 1'b1;
 		end
+		
+		out = temp_out;
 	end
-	
-	assign out = temp_out;
 
 endmodule
 
