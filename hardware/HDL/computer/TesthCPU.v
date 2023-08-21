@@ -139,8 +139,14 @@ module TesthCPU;
 		inM = 16'b0;
 		instruction = 16'b1110001111011000;
 		reset =0;
-		
 		@(negedge clock);
+		
+		// test D
+		inM = 16'b0;
+		instruction = 16'b1110001100001000;
+		reset =0;
+		@(negedge clock);
+		
 		if (!(outM == 16'b1 && writeM == 16'b1)) begin
 			$display("test -D fail.");
 			$finish;
@@ -150,8 +156,14 @@ module TesthCPU;
 		inM = 16'b0;
 		instruction = 16'b1110110011101000;
 		reset =0;
-		
 		@(negedge clock);
+		
+		// test A
+		inM = 16'b0;
+		instruction = 16'b1110110000001000;
+		reset =0;
+		@(negedge clock);
+		
 		if (!(outM == 16'b1 && writeM == 16'b1)) begin
 			$display("test -A fail.");
 			$finish;
@@ -161,8 +173,14 @@ module TesthCPU;
 		inM = 16'b0;
 		instruction = 16'b1110011111011000;
 		reset =0;
-		
 		@(negedge clock);
+		
+		// test D
+		inM = 16'b0;
+		instruction = 16'b1110001100001000;
+		reset =0;
+		@(negedge clock);
+		
 		if (!(outM == 16'b10 && writeM == 16'b1)) begin
 			$display("test D+1 fail.");
 			$finish;
@@ -172,8 +190,14 @@ module TesthCPU;
 		inM = 16'b0;
 		instruction = 16'b1110110111101000;
 		reset =0;
-		
 		@(negedge clock);
+		
+		// test A
+		inM = 16'b0;
+		instruction = 16'b1110110000001000;
+		reset =0;
+		@(negedge clock);
+		
 		if (!(outM == 16'b10 && writeM == 16'b1)) begin
 			$display("test A+1 fail.");
 			$finish;
@@ -183,8 +207,14 @@ module TesthCPU;
 		inM = 16'b0;
 		instruction = 16'b1110001110011000;
 		reset =0;
-		
 		@(negedge clock);
+		
+		// test D
+		inM = 16'b0;
+		instruction = 16'b1110001100001000;
+		reset =0;
+		@(negedge clock);
+		
 		if (!(outM == 16'b1 && writeM == 16'b1)) begin
 			$display("test D-1 fail.");
 			$finish;
@@ -194,8 +224,14 @@ module TesthCPU;
 		inM = 16'b0;
 		instruction = 16'b1110110010101000;
 		reset =0;
-		
 		@(negedge clock);
+		
+		// test A
+		inM = 16'b0;
+		instruction = 16'b1110110000001000;
+		reset =0;
+		@(negedge clock);
+		
 		if (!(outM == 16'b1 && writeM == 16'b1)) begin
 			$display("test A-1 fail.");
 			$finish;
@@ -205,8 +241,8 @@ module TesthCPU;
 		inM = 16'b0;
 		instruction = 16'b1110000010001000;
 		reset =0;
-		
 		@(negedge clock);
+		
 		if (!(outM == 16'b10 && writeM == 16'b1)) begin
 			$display("test D+A fail.");
 			$finish;
@@ -216,8 +252,8 @@ module TesthCPU;
 		inM = 16'b0;
 		instruction = 16'b1110010011001000;
 		reset =0;
-		
 		@(negedge clock);
+		
 		if (!(outM == 16'b0 && writeM == 16'b1)) begin
 			$display("test D-A fail.");
 			$finish;
