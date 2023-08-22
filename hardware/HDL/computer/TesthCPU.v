@@ -61,7 +61,7 @@ module TesthCPU;
 		// test 0
 		inM = 16'b1;
 		instruction = 16'b1110101010111000;
-		reset = 0;
+		reset = 1;
 		
 		@(negedge clock);
 		if (!(outM == 16'b0 && writeM == 16'b1)) begin
