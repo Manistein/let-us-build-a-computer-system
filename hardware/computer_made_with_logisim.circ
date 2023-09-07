@@ -58,12 +58,18 @@
     <a name="clabel" val="cNot"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="simulationFrequency" val="1.0"/>
+    <boardmap boardname="BASYS3">
+      <mc/>
+      <mc/>
+    </boardmap>
     <comp lib="0" loc="(100,80)" name="Pin">
       <a name="appearance" val="classic"/>
+      <a name="label" val="a"/>
     </comp>
     <comp lib="0" loc="(240,100)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
+      <a name="label" val="r"/>
       <a name="output" val="true"/>
     </comp>
     <comp lib="1" loc="(210,100)" name="NAND Gate"/>
@@ -4393,7 +4399,6 @@ e308 2 ea87
     <comp lib="0" loc="(240,390)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="label" val="data"/>
-      <a name="radix" val="16"/>
     </comp>
     <comp lib="0" loc="(240,480)" name="Pin">
       <a name="appearance" val="NewPins"/>
@@ -4843,7 +4848,7 @@ e308 2 ea87
     <a name="circuit" val="HackComputer"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="downloadFrequency" val="1020408.1632653062"/>
-    <a name="simulationFrequency" val="2048000.0"/>
+    <a name="simulationFrequency" val="4000.0"/>
     <comp lib="0" loc="(1580,250)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="west"/>

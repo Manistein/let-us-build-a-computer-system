@@ -49,25 +49,27 @@ static int append_instruction(struct Context* context, Instruction instruction) 
 }
 
 static void dump_instructions(struct Context* context) {
-	int index = 0;
-	for (int i = 0; i < context->cache.current_pos; i++) {
-		if (index >= MAX_CODE_CACHE_SIZE) {
-			fwrite("\n", sizeof(char), 1, context->executable_file);
-			index = 0;
-		}
+	const char* hex_radix_str = "memory_initialization_radix=16;\n";
+	fwrite(hex_radix_str, sizeof(char), strlen(hex_radix_str), context->executable_file);
 
-		if (index > 0) {
-			fwrite(" ", sizeof(char), 1, context->executable_file);
+	const char* vector_name = "memory_initialization_vector=\n";
+	fwrite(vector_name, sizeof(char), strlen(vector_name), context->executable_file);
+
+	for (int i = 0; i < context->cache.current_pos; i++) {
+		if (i > 0) {
+			fwrite(",", sizeof(char), 1, context->executable_file);
 		}
 
 		Instruction inst = context->cache.code[i];
 
-		char hexbuf[5] = { 0 };
-		sprintf(hexbuf, "%04x", inst);
-		fwrite(hexbuf, 4, 1, context->executable_file);
+		char hexbuf[3] = { 0 };
+		sprintf(hexbuf, "%02x", (inst & 0xff00) >> 8);
+		fwrite(hexbuf, 2, 1, context->executable_file);
 
-		index++;
+		sprintf(hexbuf, "%02x", (inst & 0x00ff));
+		fwrite(hexbuf, 2, 1, context->executable_file);
 	}
+	fwrite(";", 1, 1, context->executable_file);
 
 	fflush(context->executable_file);
 }

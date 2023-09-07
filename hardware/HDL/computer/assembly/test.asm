@@ -1,0 +1,9 @@
+(START)
+@0
+D=A
+M=0
+
+(LOOP)
+D=D+1
+M=D
+GOTO LOOP
