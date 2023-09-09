@@ -156,6 +156,8 @@ module hCPU(
 	 hJmpCheck h_jmp_check(.reg_a_next(reg_a_next), .pc_in(pc_next), .zr(zr), .ng(ng), .msb(msb),.jump(jump), .pc_out(to_hpc), .pc_load(enable_load_pc), .pc_inc(enable_inc_pc));
 	
 	 always @(posedge clock) begin
+		$write("hCPU::instruction %x;reset %x;pc_next %x\n", instruction, reset, pc_next);
+	 
 		if (msb == 0) begin
 			reg_a <= instruction[14:0];
 			reg_d <= reg_d_next;
@@ -177,7 +179,7 @@ module hCPU(
 	 assign reg_d_next = reg_d;
 	 
 	 hPC hpc(.in(to_hpc), .load(enable_load_pc), .inc(enable_inc_pc), .reset(reset), .clock(clock), .out(pc_next));
-	 
+	 	 
 	 assign pc = pc_next;
 	 assign outM = (dest[0] == 1'b1) ? alu_out : 16'b0;
 	 assign writeM = (dest[0] == 1'b1) ? 1'b1 : 1'b0;

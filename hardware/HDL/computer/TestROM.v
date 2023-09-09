@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+`include "hCPU.v"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Company: 
@@ -25,20 +26,41 @@
 module TestROM;
 	localparam T = 10;
 
-	// Inputs
+	// ROM Inputs
 	reg clka;
 	reg ena;
-	reg [31:0] addra;
 
-	// Outputs
+	// ROM Outputs
 	wire [31:0] douta;
+	
+	// CPU Inputs
+	reg [15:0] inM;
+	reg reset;
+
+	// CPU Outputs
+	wire [15:0] outM;
+	wire writeM;
+	wire [15:0] addressM;
+	wire [15:0] pc;
 
 	// Instantiate the Unit Under Test (UUT)
 	test_rom uut (
 		.clka(clka), 
 		.ena(ena), 
-		.addra(addra), 
+		.addra({14'b0, pc, 2'b0}), 
 		.douta(douta)
+	);
+
+	// Instantiate the Unit Under Test (UUT)
+	hCPU uut2 (
+		.inM(inM), 
+		.instruction(douta[15:0]), 
+		.reset(reset), 
+		.clock(clka), 
+		.outM(outM), 
+		.writeM(writeM), 
+		.addressM(addressM), 
+		.pc(pc)
 	);
 	
 	always begin
@@ -47,14 +69,22 @@ module TestROM;
 		
 		clka = 1'b1;
 		#(T/2);
-		
-		addra = addra + 3'b100;
+	end
+	
+	reg [15:0] pc_temp;
+	always @(posedge clka) begin
+		pc_temp <= pc;
+		$write("TestROM::pc_temp %d\n", pc);
 	end
 
 	initial begin
 		// Initialize Inputs
 		ena = 1;
-		addra = 0;
+		reset = 1;
+		inM = 16'b0;
+		
+		#10;
+		reset = 0;
 
 		#1000;
 	end

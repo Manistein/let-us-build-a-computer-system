@@ -1,5 +1,7 @@
 `timescale 1ns / 1ps
 
+`include "segdisplay.v"
+
 ////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer:
@@ -28,26 +30,17 @@ module TestSegdisplay;
 	// Inputs
 	reg clock;
 	reg reset;
-	reg [15:0] pc;
-	reg [15:0] instruction;
 
 	// Outputs
-	// wire [7:0] sel;
-	// wire [7:0] data;
+	wire [7:0] sel;
+	wire [7:0] data;
 
 	// Instantiate the Unit Under Test (UUT)
-	// segdisplay uut (
-		// .clock(clock), 
-		// .reset(reset), 
-		// .sel(sel), 
-		// .data(data)
-	// );
-	
-	test_rom uut (
-		.clka(clock), 
-		.ena(1'b1), 
-		.addra({16'b0, pc}), 
-		.douta(instruction)
+	segdisplay uut (
+		.clock(clock), 
+		.reset(reset), 
+		.sel(sel), 
+		.data(data)
 	);
 	
 	always begin
@@ -59,15 +52,13 @@ module TestSegdisplay;
 	end
 
 	initial begin
+		reset = 1;
+		
+		#40;
+		
 		reset = 0;
-		pc = 16'b0;
 		
-		if (instruction != 16'h0000) begin
-			$display("error");
-			$finish;
-		end
-		
-		@(negedge clock);
+		#1000;
 	end
       
 endmodule

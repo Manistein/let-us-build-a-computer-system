@@ -43,6 +43,8 @@ module hPC(
 		end else begin
 			h_reg <= reg_next;
 		end
+		
+		$write("hPC::h_reg %x reg_next %x\n", h_reg, reg_next);
 	end
 	
 	assign reg_next = h_reg;
