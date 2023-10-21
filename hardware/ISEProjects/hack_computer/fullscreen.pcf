@@ -1,0 +1,27 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Fri Sep 22 11:34:51 2023
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "r<2>" LOCATE = SITE "P95" LEVEL 1;
+COMP "r<3>" LOCATE = SITE "P97" LEVEL 1;
+COMP "r<4>" LOCATE = SITE "P98" LEVEL 1;
+COMP "g<0>" LOCATE = SITE "P83" LEVEL 1;
+COMP "g<1>" LOCATE = SITE "P84" LEVEL 1;
+COMP "g<2>" LOCATE = SITE "P85" LEVEL 1;
+COMP "g<3>" LOCATE = SITE "P87" LEVEL 1;
+COMP "g<4>" LOCATE = SITE "P88" LEVEL 1;
+COMP "g<5>" LOCATE = SITE "P92" LEVEL 1;
+COMP "hsync" LOCATE = SITE "P74" LEVEL 1;
+COMP "clock" LOCATE = SITE "P22" LEVEL 1;
+COMP "b<0>" LOCATE = SITE "P78" LEVEL 1;
+COMP "b<1>" LOCATE = SITE "P79" LEVEL 1;
+COMP "b<2>" LOCATE = SITE "P80" LEVEL 1;
+COMP "vsync" LOCATE = SITE "P75" LEVEL 1;
+COMP "b<3>" LOCATE = SITE "P81" LEVEL 1;
+COMP "reset" LOCATE = SITE "P27" LEVEL 1;
+COMP "b<4>" LOCATE = SITE "P82" LEVEL 1;
+COMP "r<0>" LOCATE = SITE "P93" LEVEL 1;
+COMP "r<1>" LOCATE = SITE "P94" LEVEL 1;
+SCHEMATIC END;
+
