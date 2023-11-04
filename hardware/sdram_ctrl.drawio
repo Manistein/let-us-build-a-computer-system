@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-11-04T04:28:51.739Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="XA1rNYd0Ip_q3LZ4cF9R" version="22.0.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-04T04:31:35.455Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="NjcM1UStXTs-2ayuX9v6" version="22.0.8" type="github">
   <diagram name="Page-1" id="QzKriibWGeIbcQBbAOVL">
     <mxGraphModel dx="2284" dy="758" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -55,7 +55,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="-hZiaQxBjhqHarwySM8e-18" value="[inout] sdram_data" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="90" y="790" width="110" height="20" as="geometry" />
+          <mxGeometry x="90" y="890" width="110" height="20" as="geometry" />
         </mxCell>
         <mxCell id="-hZiaQxBjhqHarwySM8e-19" value="sdram_wr_ack" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1020" y="140" width="110" height="20" as="geometry" />
@@ -106,7 +106,7 @@
           <mxGeometry x="1020" y="700" width="110" height="20" as="geometry" />
         </mxCell>
         <mxCell id="-hZiaQxBjhqHarwySM8e-33" value="sys_data_in" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="90" y="830" width="110" height="20" as="geometry" />
+          <mxGeometry x="90" y="930" width="110" height="20" as="geometry" />
         </mxCell>
         <mxCell id="nmadv54hfyfQ1lx8FfqC-4" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="-hZiaQxBjhqHarwySM8e-10">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -184,7 +184,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="nmadv54hfyfQ1lx8FfqC-30" value="S_DB" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-60" y="790" width="110" height="20" as="geometry" />
+          <mxGeometry x="-60" y="890" width="110" height="20" as="geometry" />
         </mxCell>
         <mxCell id="nmadv54hfyfQ1lx8FfqC-33" value="S_NCAS" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1180" y="620" width="110" height="20" as="geometry" />
