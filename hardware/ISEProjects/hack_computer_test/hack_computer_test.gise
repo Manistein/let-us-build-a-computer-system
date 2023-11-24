@@ -23,11 +23,6 @@
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="../../HDL/computer/rom/test/coregen.log"/>
-    <file xil_pn:fileType="FILE_ASY" xil_pn:name="../../HDL/computer/rom/test/test_rom.asy" xil_pn:origination="imported"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="../../HDL/computer/rom/test/test_rom.ngc" xil_pn:origination="imported"/>
-    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="../../HDL/computer/rom/test/test_rom.sym" xil_pn:origination="imported"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_VERILOG" xil_pn:name="../../HDL/computer/rom/test/test_rom.v" xil_pn:origination="imported"/>
-    <file xil_pn:fileType="FILE_VEO" xil_pn:name="../../HDL/computer/rom/test/test_rom.veo" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="../HDL/computer/rom/test/coregen.log"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TestSegdisplay_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="TestSegdisplay_isim_beh.exe"/>
