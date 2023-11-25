@@ -1,0 +1,105 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    06:02:20 11/25/2023 
+// Design Name: 
+// Module Name:    sdram_ctrl 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module sdram_ctrl(
+    input clk_100m,
+    input rst_n,
+    input sdram_wr_req,
+    input sdram_rd_req,
+    input [0:7] sdwr_bytes,
+    input [0:7] sdrd_bytes,
+    output sdram_wr_ack,
+    output sdram_rd_ack,
+    output sdram_init_done,
+    output [0:3] init_state,
+    output [0:3] work_state,
+    output [0:31] cnt_clk,
+    output sys_rw_n  // 0 for read, 1 for write
+    );
+
+	`include "sdram_para.v"
+	
+	reg [0:31] cnt_clk_r;
+	reg [0:3] work_state_r;
+	reg [0:3] init_state_r;
+	reg done_200us;
+	reg sys_rw_n_r;
+
+	always @(posedge clk_100m or negedge rst_n) begin
+		if (!rst_n) begin
+			cnt_clk_r <= 0;
+			done_200us = 0;
+			work_state_r = W_IDLE;
+			init_state_r = I_NOP;
+		end else begin
+			cnt_clk_r <= cnt_clk_r + 1;
+		end
+	
+		if (cnt_clk_r == 10'd20000) begin
+			done_200us <= 1;
+		end
+		
+		case (init_state_r)
+		I_NOP: init_state_r <= done_200us ? I_PRECHARGE : I_NOP;
+		I_PRECHARGE: init_state_r <= I_TRP;
+		I_TRP: init_state_r <= (`end_trp) ? I_AUTO_REFRESH1 : I_TRP;
+		I_AUTO_REFRESH1: init_state_r <= I_TRF1;
+		I_TRF1: init_state_r <= (`end_trf) ? I_AUTO_REFRESH2 : I_TRF1;
+		I_AUTO_REFRESH2: init_state_r <= I_TRF2;
+		I_TRF2: init_state_r <= (`end_trf) ? I_MRS : I_TRF2;
+		I_MRS: init_state_r <= I_TMRD;
+		I_TMRD: init_state_r <= (`end_tmrd) ? I_DONE : I_TMRD;
+		default: begin
+			case (work_state_r)
+			W_IDLE: begin
+				if (done_200us && (sdram_rd_req || sdram_wr_req)) begin
+					work_state_r <= W_ACTIVE;
+				end else begin
+					work_state_r <= W_IDLE;
+				end
+			end
+			W_ACTIVE: work_state_r <= W_TRCD;
+			W_TRCD: begin
+				if (`end_trcd) begin
+					work_state_r <= (sdram_rd_req == 1) ? W_READ : W_WRITE;
+				end else begin
+					work_state_r <= W_TRCD;
+				end
+			end
+			
+			// read operation
+			W_READ: work_state_r <= W_CL;
+			W_CL: work_state_r <= (`end_tcl) ? W_RD : W_CL;
+			W_RD: work_state_r <= (`end_tread) ? W_IDLE : W_RD;
+			
+			// write operation
+			W_WRITE: work_state_r <= W_WD;
+			W_WD: work_state_r <= (`end_twrite) ? W_TDAL : W_WD;
+			W_TDAL: work_state_r <= (`end_tdal) ? W_IDLE : W_TDAL;
+			
+			// auto-refresh
+			
+			endcase
+		end
+		endcase
+	end
+
+	assign cnt_clk = cnt_clk_reg;
+endmodule

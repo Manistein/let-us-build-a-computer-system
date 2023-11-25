@@ -78,8 +78,8 @@
 `define CLK_TDAL 10'd4  // tDPL + tRP = 2 + 2 = 4
 
 // end time
-`define end_trp 	 cnt_clk_r == CLK_TRP
-`define end_trf 	 cnt_clk_r == CLK_TRF
+`define end_trp 	 cnt_clk_r == CLK_TRP	// precharge time
+`define end_trf 	 cnt_clk_r == CLK_TRF   // auto-refresh time
 `define end_tmrd 	 cnt_clk_r == CLK_TMRD
 `define end_trcd 	 cnt_clk_r == CLK_TRCD
 `define end_tcl 	 cnt_clk_r == CLK_TCL
