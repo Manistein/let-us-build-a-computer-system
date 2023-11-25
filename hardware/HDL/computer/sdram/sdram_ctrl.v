@@ -39,17 +39,33 @@ module sdram_ctrl(
 	reg [0:31] cnt_clk_r;
 	reg [0:3] work_state_r;
 	reg [0:3] init_state_r;
+	reg [0:31] cnt_ref_r;
 	reg done_200us;
 	reg sys_rw_n_r;
+	
+	reg sdram_ref_req;
+	reg sdram_ref_ack;
 
 	always @(posedge clk_100m or negedge rst_n) begin
 		if (!rst_n) begin
 			cnt_clk_r <= 0;
-			done_200us = 0;
-			work_state_r = W_IDLE;
-			init_state_r = I_NOP;
+			done_200us <= 0;
+			work_state_r <= W_IDLE;
+			init_state_r <= I_NOP;
+			cnt_ref_r <= 0;
+			
+			sdram_ref_req <= 0;
+			sdram_ref_ack <= 0;
 		end else begin
 			cnt_clk_r <= cnt_clk_r + 1;
+			
+			// 64ms / 8192 is about 7500ns, a clock is about 10ns in 100Mhz clock;
+			if (cnt_ref_r == 10'd750) begin
+				sdram_ref_req <= 1'b1;
+				cnt_ref_r <= 0;
+			end else begin
+				cnt_ref_r <= cnt_ref_r + 1'b1;
+			end
 		end
 	
 		if (cnt_clk_r == 10'd20000) begin
@@ -66,11 +82,19 @@ module sdram_ctrl(
 		I_TRF2: init_state_r <= (`end_trf) ? I_MRS : I_TRF2;
 		I_MRS: init_state_r <= I_TMRD;
 		I_TMRD: init_state_r <= (`end_tmrd) ? I_DONE : I_TMRD;
+		I_DONE: init_state_r <= I_DONE;
 		default: begin
 			case (work_state_r)
 			W_IDLE: begin
-				if (done_200us && (sdram_rd_req || sdram_wr_req)) begin
-					work_state_r <= W_ACTIVE;
+				if (sdram_ref_req && sdram_init_done) begin
+					work_state_r <= W_AR;
+					sys_rw_n_r <= 0;
+				end else if (sdram_rd_req && sdram_init_done) begin
+					work_state_r <= W_READ;
+					sys_rw_n_r <= 0;
+				end else if (sdram_wr_req && sdram_init_done) begin
+					work_state_r <= W_WRITE;
+					sys_rw_n_r <= 1;
 				end else begin
 					work_state_r <= W_IDLE;
 				end
@@ -78,7 +102,7 @@ module sdram_ctrl(
 			W_ACTIVE: work_state_r <= W_TRCD;
 			W_TRCD: begin
 				if (`end_trcd) begin
-					work_state_r <= (sdram_rd_req == 1) ? W_READ : W_WRITE;
+					work_state_r <= (sys_rw_n_r == 0) ? W_READ : W_WRITE;
 				end else begin
 					work_state_r <= W_TRCD;
 				end
@@ -95,11 +119,14 @@ module sdram_ctrl(
 			W_TDAL: work_state_r <= (`end_tdal) ? W_IDLE : W_TDAL;
 			
 			// auto-refresh
-			
+			W_AR: work_state_r <= W_TRFC;
+			W_TRFC: work_state_r <= (`end_trf) ? W_IDLE : W_TRFC;
 			endcase
 		end
 		endcase
 	end
 
 	assign cnt_clk = cnt_clk_reg;
+	assign sdram_init_done = init_state == I_DONE;
+	assign sys_rw_n = sys_rw_n_r;
 endmodule
