@@ -147,6 +147,26 @@ module sdram_ctrl(
 		endcase
 	end
 	
+	// try to reset cnt_clk_r
+	always @(posedge clk_100m or negedge rst_n) begin
+		case (init_state_r)
+			`I_NOP: reset_cnt_clk_n <= 1'b1;
+			`I_PRECHARGE: reset_cnt_clk_n <= 1'b1;
+			`I_TRP: reset_cnt_clk_n <= (`end_trp)?1'b1:1'b0;
+			`I_TRF1, `I_TRF1: reset_cnt_clk_n <= (`end_trf)?1'b1:1'b0;
+			`I_TMRD: reset_cnt_clk_n <= (`end_tmrd)?1'b1:1'b0;
+			default: begin
+				case (work_state_r) 
+					`W_IDLE: reset_cnt_clk_n <= 1'b1;
+					`W_ACTIVE: reset_cnt_clk_n <= 1'b0;
+					`W_TRCD: reset_cnt_clk_n <= (`end_trcd)?1'b1:1'b0;
+					`W_CL: reset_cnt_clk_n <= (`end_tcl)?1'b1:1'b0;
+					
+				endcase
+			end
+		endcase
+	end
+	
 	assign sdram_ref_ack = work_state_r == `W_AR;
 
 	assign sdram_rd_ack = work_state_r == `W_RD;
