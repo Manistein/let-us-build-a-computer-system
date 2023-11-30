@@ -155,15 +155,27 @@ module sdram_ctrl(
 			`I_TRP: reset_cnt_clk_n <= (`end_trp)?1'b1:1'b0;
 			`I_TRF1, `I_TRF1: reset_cnt_clk_n <= (`end_trf)?1'b1:1'b0;
 			`I_TMRD: reset_cnt_clk_n <= (`end_tmrd)?1'b1:1'b0;
-			default: begin
+			`I_DONE: begin
 				case (work_state_r) 
 					`W_IDLE: reset_cnt_clk_n <= 1'b1;
 					`W_ACTIVE: reset_cnt_clk_n <= 1'b0;
 					`W_TRCD: reset_cnt_clk_n <= (`end_trcd)?1'b1:1'b0;
+
+					// read operation
 					`W_CL: reset_cnt_clk_n <= (`end_tcl)?1'b1:1'b0;
-					
+					`W_RD: reset_cnt_clk_n <= (`end_tread)?1'b1:1'b0;
+
+					// write operation
+					`W_WD: reset_cnt_clk_n <= (`end_twrite)?1'b1:1'b0;
+					`W_TDAL: reset_cnt_clk_n <= (`end_tdal)?1'b1:1'b0;
+
+					// auto refresh
+					`W_AR: reset_cnt_clk_n <= 1'b0;
+					`W_TRFC: reset_cnt_clk_n <= (`end_trf)?1'b1:1'b0;
+					default: reset_cnt_clk_n <= 1'b1;
 				endcase
 			end
+			default: reset_cnt_clk_n <= 1'b1;
 		endcase
 	end
 	
