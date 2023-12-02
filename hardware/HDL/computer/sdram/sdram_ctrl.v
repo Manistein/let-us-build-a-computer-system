@@ -56,7 +56,7 @@ module sdram_ctrl(
 			
 			reset_cnt_clk_n <= 0;
 		end else begin
-			if (reset_cnt_clk_n) begin
+			if (!reset_cnt_clk_n) begin
 				cnt_clk_r <= 0;
 			end else begin 
 				cnt_clk_r <= cnt_clk_r + 1;
@@ -148,34 +148,38 @@ module sdram_ctrl(
 	end
 	
 	// try to reset cnt_clk_r
-	always @(posedge clk_100m or negedge rst_n) begin
+	always @(init_state_r or work_state_r or cnt_clk_r or sdrd_bytes or sdwr_bytes) begin
 		case (init_state_r)
-			`I_NOP: reset_cnt_clk_n <= 1'b1;
+			`I_NOP: reset_cnt_clk_n <= 1'b0;
 			`I_PRECHARGE: reset_cnt_clk_n <= 1'b1;
-			`I_TRP: reset_cnt_clk_n <= (`end_trp)?1'b1:1'b0;
-			`I_TRF1, `I_TRF1: reset_cnt_clk_n <= (`end_trf)?1'b1:1'b0;
-			`I_TMRD: reset_cnt_clk_n <= (`end_tmrd)?1'b1:1'b0;
+			`I_TRP: reset_cnt_clk_n <= (`end_trp)?1'b0:1'b1;
+			`I_AUTO_REFRESH1, `I_AUTO_REFRESH2: reset_cnt_clk_n <= 1'b1; 
+			`I_TRF1, `I_TRF1: reset_cnt_clk_n <= (`end_trf)?1'b0:1'b1;
+			`I_MRS: reset_cnt_clk_n <= 1'b1;
+			`I_TMRD: reset_cnt_clk_n <= (`end_tmrd)?1'b0:1'b1;
 			`I_DONE: begin
 				case (work_state_r) 
-					`W_IDLE: reset_cnt_clk_n <= 1'b1;
-					`W_ACTIVE: reset_cnt_clk_n <= 1'b0;
-					`W_TRCD: reset_cnt_clk_n <= (`end_trcd)?1'b1:1'b0;
+					`W_IDLE: reset_cnt_clk_n <= 1'b0;
+					`W_ACTIVE: reset_cnt_clk_n <= 1'b1;
+					`W_TRCD: reset_cnt_clk_n <= (`end_trcd)?1'b1:0'b1;
 
 					// read operation
-					`W_CL: reset_cnt_clk_n <= (`end_tcl)?1'b1:1'b0;
-					`W_RD: reset_cnt_clk_n <= (`end_tread)?1'b1:1'b0;
+					`W_READ: reset_cnt_clk_n <= 1'b1; 
+					`W_CL: reset_cnt_clk_n <= (`end_tcl)?1'b0:1'b1;
+					`W_RD: reset_cnt_clk_n <= (`end_tread)?1'b0:1'b1;
 
 					// write operation
-					`W_WD: reset_cnt_clk_n <= (`end_twrite)?1'b1:1'b0;
-					`W_TDAL: reset_cnt_clk_n <= (`end_tdal)?1'b1:1'b0;
+					`W_WRITE: reset_cnt_clk_n <= 1'b1;
+					`W_WD: reset_cnt_clk_n <= (`end_twrite)?1'b0:1'b1;
+					`W_TDAL: reset_cnt_clk_n <= (`end_tdal)?1'b0:1'b1;
 
 					// auto refresh
-					`W_AR: reset_cnt_clk_n <= 1'b0;
-					`W_TRFC: reset_cnt_clk_n <= (`end_trf)?1'b1:1'b0;
-					default: reset_cnt_clk_n <= 1'b1;
+					`W_AR: reset_cnt_clk_n <= 1'b1;
+					`W_TRFC: reset_cnt_clk_n <= (`end_trf)?1'b0:1'b1;
+					default: reset_cnt_clk_n <= 1'b0;
 				endcase
 			end
-			default: reset_cnt_clk_n <= 1'b1;
+			default: reset_cnt_clk_n <= 1'b0;
 		endcase
 	end
 	
