@@ -70,12 +70,12 @@
  
  
 // Time for states
-`define CLK_TRP  10'd2
-`define CLK_TRF  10'd6  // 60ns
-`define CLK_TMRD 10'd2
-`define CLK_TRCD 10'd2  // 20ns
-`define CLK_TCL  10'd3  // CAS lagency
-`define CLK_TDAL 10'd4  // tDPL + tRP = 2 + 2 = 4
+`define CLK_TRP  16'd2
+`define CLK_TRF  16'd6  // 60ns
+`define CLK_TMRD 16'd2
+`define CLK_TRCD 16'd2  // 20ns
+`define CLK_TCL  16'd3  // CAS lagency
+`define CLK_TDAL 16'd4  // tDPL + tRP = 2 + 2 = 4
 
 // end time
 `define end_trp 	 cnt_clk_r == CLK_TRP	// precharge time

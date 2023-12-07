@@ -37,23 +37,23 @@ module sdram_cmd(
         if (!rst_n) begin
             sdram_cmd_r <= CMD_INIT;
             sdram_ba_r <= 2'b11;
-            sdram_addr_r <= 4'hfff;
+            sdram_addr_r <= 16'hfff;
         end else begin
             case (init_state) 
                 `I_NOP, `I_TRP, `I_TRF1, `I_TRF2, `I_TMRD: begin 
                     sdram_cmd_r <= `CMD_NOP;
                     sdram_ba_r <= 2'b11;
-                    sdram_addr_r <= 4'hfff;
+                    sdram_addr_r <= 16'hfff;
                 end
                 `I_PRECHARGE: begin
                     sdram_cmd_r <= `CMD_PRECHARGE;
                     sdram_ba_r <= 2'b11;
-                    sdram_addr_r <= 4'hfff;
+                    sdram_addr_r <= 16'hfff;
                 end
                 `I_AUTO_REFRESH1, `I_AUTO_REFRESH2: begin
                     sdram_cmd_r <= `CMD_AUTO_REFRESH;
                     sdram_ba_r <= 2'b11;
-                    sdram_addr_r <= 4'hfff;
+                    sdram_addr_r <= 16'hfff;
                 end
                 `I_MRS: begin // read the BASIC FUNCTIONAL DESCRIPTION section in the datasheet
                     sdram_cmd_r <= `CMD_MRS;
@@ -72,7 +72,7 @@ module sdram_cmd(
                         `W_IDLE, `W_TRCD, `W_CL, `W_RD, `W_WD, `W_TDAL, `W_TRFC: begin
                             sdram_cmd_r <= `CMD_NOP,
                             sdram_ba_r <= 2'b11;
-                            sdram_addr_r <= 4'hfff;
+                            sdram_addr_r <= 16'hfff;
                         end
                         `W_ACTIVE: begin
                             sdram_cmd_r <= `CMD_ACTIVE;
@@ -92,19 +92,19 @@ module sdram_cmd(
                         `W_AR: begin
                             sdram_cmd_r <= `CMD_AUTO_REFRESH;
                             sdram_ba_r <= 2'b11;
-                            sdram_addr_r <= 2'hfff;
+                            sdram_addr_r <= 16'hfff;
                         end
                         default: begin
                             sdram_cmd_r <= CMD_NOP;
                             sdram_ba_r <= 2'b11;
-                            sdram_addr_r <= 4'hfff;
+                            sdram_addr_r <= 16'hfff;
                         end
                     endcase
                 end
                 default: begin
                     sdram_cmd_r <= CMD_NOP;
                     sdram_ba_r <= 2'b11;
-                    sdram_addr_r <= 4'hfff;
+                    sdram_addr_r <= 16'hfff;
                 end
             endcase
         end

@@ -63,7 +63,7 @@ module sdram_ctrl(
 			end
 		end
 		
-		if (cnt_clk_r == 10'd20000) begin
+		if (cnt_clk_r == 16'd20000) begin
 			done_200us <= 1;
 		end
 	end
@@ -74,7 +74,7 @@ module sdram_ctrl(
 			cnt_ref_r <= 0;
 		end else begin
 			// 64ms / 8192 is about 7500ns, a clock cycle is about 10ns in 100Mhz clock;
-			if (cnt_ref_r == 10'd748) begin
+			if (cnt_ref_r == 16'd748) begin
 				sdram_ref_req <= 1'b1;
 			end else if (sdram_ref_ack) begin
 				sdram_ref_req <= 0;
