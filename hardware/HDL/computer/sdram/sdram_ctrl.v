@@ -1,4 +1,6 @@
-`timescale 1ns / 1ps
+`ifndef _sdram_ctrl_
+`define _sdram_ctrl_
+
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -23,18 +25,19 @@ module sdram_ctrl(
     input rst_n,
     input sdram_wr_req,
     input sdram_rd_req,
-    input [0:7] sdwr_bytes,
-    input [0:7] sdrd_bytes,
+    input [0:8] sdwr_bytes,
+    input [0:8] sdrd_bytes,
     output sdram_wr_ack,
     output sdram_rd_ack,
     output sdram_init_done,
     output [0:3] init_state,
     output [0:3] work_state,
     output [0:31] cnt_clk,
+	output sdram_busy,
     output sys_rw_n  // 0 for read, 1 for write
     );
 
-	`include "sdram_para.v"
+	`include "sdram_para.v";
 	
 	reg [0:31] cnt_clk_r;
 	reg [0:3] work_state_r;
@@ -44,7 +47,7 @@ module sdram_ctrl(
 	reg sys_rw_n_r;
 	
 	reg sdram_ref_req;
-	wire sdram_ref_ack;
+	reg sdram_ref_ack;
 	
 	reg reset_cnt_clk_n;
 	
@@ -90,8 +93,8 @@ module sdram_ctrl(
 			work_state_r <= `W_IDLE;
 			init_state_r <= `I_NOP;
 			
-			sdram_ref_req <= 0;
-			sdram_ref_ack <= 0;
+			sdram_ref_req <= 1'b0;
+			sdram_ref_ack <= 1'b0;
 		end
 		
 		case (init_state_r)
@@ -161,7 +164,7 @@ module sdram_ctrl(
 				case (work_state_r) 
 					`W_IDLE: reset_cnt_clk_n <= 1'b0;
 					`W_ACTIVE: reset_cnt_clk_n <= 1'b1;
-					`W_TRCD: reset_cnt_clk_n <= (`end_trcd)?1'b1:0'b1;
+					`W_TRCD: reset_cnt_clk_n <= (`end_trcd)?1'b1:1'b1;
 
 					// read operation
 					`W_READ: reset_cnt_clk_n <= 1'b1; 
@@ -183,13 +186,23 @@ module sdram_ctrl(
 		endcase
 	end
 	
-	assign sdram_ref_ack = work_state_r == `W_AR;
+	always @(work_state_r) begin
+		if (work_state_r == `W_AR) begin
+			sdram_ref_ack <= 1'b1;
+		end else begin
+			sdram_ref_ack <= 1'b0;
+		end
+	end
+	
+	assign sdram_busy = ((init_state_r == `I_DONE) && (work_state_r == `W_IDLE));
 
 	assign sdram_rd_ack = work_state_r == `W_RD;
 	assign sdram_wr_ack = work_state_r == `W_TDAL;
-	assign sdram_init_done = init_state == `I_DONE;
+	assign sdram_init_done = init_state_r == `I_DONE;
 	assign init_state = init_state_r;
 	assign work_state = work_state_r;
 	assign cnt_clk = cnt_clk_r;
 	assign sys_rw_n = sys_rw_n_r;
 endmodule
+
+`endif 

@@ -1,4 +1,5 @@
-`timescale 1ns / 1ps
+`ifndef _sdram_cmd_
+`define _sdram_cmd_
 
 module sdram_cmd(
     input clk_100m,
@@ -20,8 +21,8 @@ module sdram_cmd(
     output [0:1] sdram_ba,
     output [0:12] sdram_addr,
     output sdram_we_n
-)
-    `include "sdram_para"
+);
+    `include "sdram_para.v";
 
     reg [0:4] sdram_cmd_r;
     reg [0:1] sdram_ba_r;
@@ -35,7 +36,7 @@ module sdram_cmd(
 
     always @(posedge clk_100m or negedge rst_n) begin
         if (!rst_n) begin
-            sdram_cmd_r <= CMD_INIT;
+            sdram_cmd_r <= `CMD_INIT;
             sdram_ba_r <= 2'b11;
             sdram_addr_r <= 16'hfff;
         end else begin
@@ -70,7 +71,7 @@ module sdram_cmd(
                 `I_DONE: begin
                     case (work_state)
                         `W_IDLE, `W_TRCD, `W_CL, `W_RD, `W_WD, `W_TDAL, `W_TRFC: begin
-                            sdram_cmd_r <= `CMD_NOP,
+                            sdram_cmd_r <= `CMD_NOP;
                             sdram_ba_r <= 2'b11;
                             sdram_addr_r <= 16'hfff;
                         end
@@ -95,14 +96,14 @@ module sdram_cmd(
                             sdram_addr_r <= 16'hfff;
                         end
                         default: begin
-                            sdram_cmd_r <= CMD_NOP;
+                            sdram_cmd_r <= `CMD_NOP;
                             sdram_ba_r <= 2'b11;
                             sdram_addr_r <= 16'hfff;
                         end
                     endcase
                 end
                 default: begin
-                    sdram_cmd_r <= CMD_NOP;
+                    sdram_cmd_r <= `CMD_NOP;
                     sdram_ba_r <= 2'b11;
                     sdram_addr_r <= 16'hfff;
                 end
@@ -111,3 +112,5 @@ module sdram_cmd(
     end
 
 endmodule
+
+`endif 

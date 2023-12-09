@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -78,11 +77,11 @@
 `define CLK_TDAL 16'd4  // tDPL + tRP = 2 + 2 = 4
 
 // end time
-`define end_trp 	 cnt_clk_r == CLK_TRP	// precharge time
-`define end_trf 	 cnt_clk_r == CLK_TRF   // auto-refresh time
-`define end_tmrd 	 cnt_clk_r == CLK_TMRD
-`define end_trcd 	 cnt_clk_r == CLK_TRCD
-`define end_tcl 	 cnt_clk_r == CLK_TCL
-`define end_tread  cnt_clk_r == CLK_TRP + sdrd_byte
-`define end_twrite cnt_clk_r == sdwr_byte - 1
-`define end_tdal 	 cnt_clk_r == CLK_TDAL
+`define end_trp 	 cnt_clk_r == `CLK_TRP	// precharge time
+`define end_trf 	 cnt_clk_r == `CLK_TRF   // auto-refresh time
+`define end_tmrd 	 cnt_clk_r == `CLK_TMRD
+`define end_trcd 	 cnt_clk_r == `CLK_TRCD
+`define end_tcl 	 cnt_clk_r == `CLK_TCL
+`define end_tread  cnt_clk_r == `CLK_TRP + sdrd_bytes
+`define end_twrite cnt_clk_r == sdwr_bytes - 1
+`define end_tdal 	 cnt_clk_r == `CLK_TDAL

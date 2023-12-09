@@ -1,0 +1,4 @@
+verilog isim_temp "ipcore_dir/sdram_pll.v"
+verilog isim_temp "../../HDL/computer/sdram/sdram_top.v"
+verilog isim_temp "../../HDL/computer/sdram/sdram_test.v"
+verilog isim_temp "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
