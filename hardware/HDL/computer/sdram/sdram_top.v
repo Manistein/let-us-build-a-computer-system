@@ -1,5 +1,3 @@
-`timescale 1ns / 1ps
-
 `include "sdram_ctrl.v"
 `include "sdram_cmd.v"
 `include "sdram_rw_data.v"
@@ -40,11 +38,11 @@ module sdram_top(
     wire sys_rw_n;
 		
 	 sdram_pll	u_sdram_pll(
-		.CLK_IN1	(clk_50m),
-		.RESET	(~rst_n),
-		.LOCKED	(),
+		.CLK_IN1(clk_50m),
+		.RESET(~rst_n),
+		.LOCKED(),
 			
-		.CLK_OUT1      (clk_100m)
+		.CLK_OUT1(clk_100m)
 	 );
 
     sdram_ctrl fsm(

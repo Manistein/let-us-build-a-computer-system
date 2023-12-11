@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+`timescale 1us / 10ns
 
 ////////////////////////////////////////////////////////////////////////////////
 // Company: 
@@ -79,6 +79,14 @@ module sdram_test;
 		.sdram_addr(sdram_addr), 
 		.sdram_we_n(sdram_we_n)
 	);
+	
+	always begin
+		clk_50m = 1'b0;
+		# 0.01;
+		
+		clk_50m = 1'b1;
+		# 0.01;
+	end
 
 	initial begin
 		// Initialize Inputs
@@ -92,12 +100,12 @@ module sdram_test;
 		sdram_rd_req = 0;
 		sdrd_bytes = 0;
 
-		// Wait 100 ns for global reset to finish
-		# 10;
+		// Wait 60 us for global reset to finish
+		# 0.06;
 		
 		rst_n = 1;
 		
-		# 30000;
+		# 300;
         
 		// Add stimulus here
 
