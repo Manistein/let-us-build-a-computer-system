@@ -10,7 +10,18 @@ This is a Full version of ISim.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
-# run 1000 ns
+# run 1000 us
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-Input Error : RST on instance sdram_test.uut.u_sdram_pll.dcm_sp_inst must be asserted for 3 CLKIN clock cycles.
+# run all
+Stopped at time : 16753210 ns : File "/home/ise/hardware/HDL/computer/sdram/sdram_ctrl.v" Line 55
+ISim P.20131013 (signature 0xfbc00daa)
+----------------------------------------------------------------------
+WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
+
+
+----------------------------------------------------------------------
+This is a Full version of ISim.
+# run 1000 us
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.

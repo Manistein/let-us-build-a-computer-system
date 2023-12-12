@@ -11,7 +11,7 @@ module sdram_cmd(
 
     input [0:3] init_state,
     input [0:3] work_state,
-    input [0:31] cnt_clk,
+    input [0:15] cnt_clk,
     input sys_r_wn,
 
     output sdram_cke,

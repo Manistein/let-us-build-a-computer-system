@@ -34,7 +34,7 @@ module sdram_top(
     wire clk_100m;
     wire [0:3] init_state;
     wire [0:3] work_state;
-    wire [0:31] cnt_clk;
+    wire [0:15] cnt_clk;
     wire sys_rw_n;
 		
 	 sdram_pll	u_sdram_pll(

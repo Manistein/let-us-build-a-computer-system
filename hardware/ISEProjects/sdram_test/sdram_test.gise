@@ -27,6 +27,7 @@
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="sdram_ctrl_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="sdram_test_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="sdram_test_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="sdram_test_isim_beh.wdb"/>
@@ -39,7 +40,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1702116384" xil_pn:in_ck="6104437859906087108" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1702116383">
+    <transform xil_pn:end_ts="1702397260" xil_pn:in_ck="6104437859906087108" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1702397260">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="../../HDL/computer/sdram/sdram_cmd.v"/>
@@ -49,11 +50,11 @@
       <outfile xil_pn:name="../../HDL/computer/sdram/sdram_test.v"/>
       <outfile xil_pn:name="../../HDL/computer/sdram/sdram_top.v"/>
     </transform>
-    <transform xil_pn:end_ts="1702116101" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="7332342239331855277" xil_pn:start_ts="1702116101">
+    <transform xil_pn:end_ts="1702396261" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="7332342239331855277" xil_pn:start_ts="1702396261">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1702116101" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-7751955527665091221" xil_pn:start_ts="1702116101">
+    <transform xil_pn:end_ts="1702396261" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-7751955527665091221" xil_pn:start_ts="1702396261">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -62,7 +63,7 @@
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ipcore_dir/sdram_pll.v"/>
     </transform>
-    <transform xil_pn:end_ts="1702116394" xil_pn:in_ck="-1887590021998048747" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1702116394">
+    <transform xil_pn:end_ts="1702397267" xil_pn:in_ck="6104437859906087108" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1702397267">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="../../HDL/computer/sdram/sdram_cmd.v"/>
@@ -71,9 +72,8 @@
       <outfile xil_pn:name="../../HDL/computer/sdram/sdram_rw_data.v"/>
       <outfile xil_pn:name="../../HDL/computer/sdram/sdram_test.v"/>
       <outfile xil_pn:name="../../HDL/computer/sdram/sdram_top.v"/>
-      <outfile xil_pn:name="ipcore_dir/sdram_pll.v"/>
     </transform>
-    <transform xil_pn:end_ts="1702116397" xil_pn:in_ck="-1887590021998048747" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="5137759781824639257" xil_pn:start_ts="1702116394">
+    <transform xil_pn:end_ts="1702397270" xil_pn:in_ck="-1887590021998048747" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="5137759781824639257" xil_pn:start_ts="1702397267">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="fuse.log"/>
@@ -83,7 +83,7 @@
       <outfile xil_pn:name="sdram_test_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1702116397" xil_pn:in_ck="-4318086541568202587" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="8506718180531874972" xil_pn:start_ts="1702116397">
+    <transform xil_pn:end_ts="1702397270" xil_pn:in_ck="-4318086541568202587" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="2625728355861312547" xil_pn:start_ts="1702397270">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="isim.cmd"/>

@@ -2,9 +2,9 @@ Command line:
    sdram_test_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  41296
+     -socket  33032
 
-Sat Dec  9 10:06:38 2023
+Tue Dec 12 16:08:35 2023
 
 
- Elaboration Time: 0.01 sec
+ Elaboration Time: 0.02 sec

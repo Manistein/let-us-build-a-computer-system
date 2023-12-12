@@ -32,17 +32,17 @@ module sdram_ctrl(
     output sdram_init_done,
     output [0:3] init_state,
     output [0:3] work_state,
-    output [0:31] cnt_clk,
+    output [0:15] cnt_clk,
 	output sdram_busy,
     output sys_rw_n  // 0 for read, 1 for write
     );
 
 	`include "sdram_para.v";
 	
-	reg [0:31] cnt_clk_r;
+	reg [0:15] cnt_clk_r;
 	reg [0:3] work_state_r;
 	reg [0:3] init_state_r;
-	reg [0:31] cnt_ref_r;  // refresh
+	reg [0:15] cnt_ref_r;  // refresh
 	reg done_200us;
 	reg sys_rw_n_r;
 	
@@ -61,6 +61,7 @@ module sdram_ctrl(
 		end else begin
 			if (!reset_cnt_clk_n) begin
 				cnt_clk_r <= 0;
+				reset_cnt_clk_n <= 1;
 			end else begin 
 				cnt_clk_r <= cnt_clk_r + 1;
 			end
@@ -153,7 +154,7 @@ module sdram_ctrl(
 	// try to reset cnt_clk_r
 	always @(init_state_r or work_state_r or cnt_clk_r or sdrd_bytes or sdwr_bytes) begin
 		case (init_state_r)
-			`I_NOP: reset_cnt_clk_n <= 1'b0;
+			// `I_NOP: reset_cnt_clk_n <= 1'b0;
 			`I_PRECHARGE: reset_cnt_clk_n <= 1'b1;
 			`I_TRP: reset_cnt_clk_n <= (`end_trp)?1'b0:1'b1;
 			`I_AUTO_REFRESH1, `I_AUTO_REFRESH2: reset_cnt_clk_n <= 1'b1; 
@@ -182,7 +183,7 @@ module sdram_ctrl(
 					default: reset_cnt_clk_n <= 1'b0;
 				endcase
 			end
-			default: reset_cnt_clk_n <= 1'b0;
+			default: reset_cnt_clk_n <= 1'b1;
 		endcase
 	end
 	

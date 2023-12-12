@@ -1,4 +1,4 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/ise/hardware/ISEProjects/sdram_test/sdram_test_isim_beh.exe -prj /home/ise/hardware/ISEProjects/sdram_test/sdram_test_beh.prj work.sdram_test work.glbl 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/ise/hardware/ISEProjects/sdram_test/sdram_test_isim_beh.exe" -prj "/home/ise/hardware/ISEProjects/sdram_test/sdram_test_beh.prj" "work.sdram_test" "work.glbl" 
 ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 1
 Turning on mult-threading, number of parallel sub-compilation jobs: 0 
@@ -21,8 +21,8 @@ WARNING:HDLCompiler:327 - "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/c
 WARNING:HDLCompiler:327 - "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_cmd.v" Line 67: Concatenation with unsized literal; will interpret as 32 bits
 WARNING:HDLCompiler:327 - "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_cmd.v" Line 68: Concatenation with unsized literal; will interpret as 32 bits
 Completed static elaboration
-Fuse Memory Usage: 95736 KB
-Fuse CPU Usage: 680 ms
+Fuse Memory Usage: 95740 KB
+Fuse CPU Usage: 740 ms
 Compiling module IBUFG
 Compiling module dcm_sp_clock_divide_by_2
 Compiling module dcm_sp_maximum_period_check(cloc...
@@ -40,6 +40,6 @@ Compiling module glbl
 Time Resolution for simulation is 1ps.
 Compiled 14 Verilog Units
 Built simulation executable /home/ise/hardware/ISEProjects/sdram_test/sdram_test_isim_beh.exe
-Fuse Memory Usage: 102580 KB
-Fuse CPU Usage: 740 ms
-GCC CPU Usage: 630 ms
+Fuse Memory Usage: 103076 KB
+Fuse CPU Usage: 780 ms
+GCC CPU Usage: 80 ms
