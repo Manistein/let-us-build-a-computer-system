@@ -40,7 +40,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1702464634" xil_pn:in_ck="6104437859906087108" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1702464634">
+    <transform xil_pn:end_ts="1702484173" xil_pn:in_ck="6104437859906087108" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1702484173">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="../../HDL/computer/sdram/sdram_cmd.v"/>
@@ -63,7 +63,7 @@
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ipcore_dir/sdram_pll.v"/>
     </transform>
-    <transform xil_pn:end_ts="1702464638" xil_pn:in_ck="6104437859906087108" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1702464638">
+    <transform xil_pn:end_ts="1702484177" xil_pn:in_ck="6104437859906087108" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1702484177">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="../../HDL/computer/sdram/sdram_cmd.v"/>
@@ -73,11 +73,9 @@
       <outfile xil_pn:name="../../HDL/computer/sdram/sdram_test.v"/>
       <outfile xil_pn:name="../../HDL/computer/sdram/sdram_top.v"/>
     </transform>
-    <transform xil_pn:end_ts="1702464644" xil_pn:in_ck="-1887590021998048747" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="5137759781824639257" xil_pn:start_ts="1702464638">
+    <transform xil_pn:end_ts="1702484180" xil_pn:in_ck="-1887590021998048747" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="5137759781824639257" xil_pn:start_ts="1702484177">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
@@ -85,7 +83,7 @@
       <outfile xil_pn:name="sdram_test_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1702464645" xil_pn:in_ck="-4318086541568202587" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="2625728355861312547" xil_pn:start_ts="1702464644">
+    <transform xil_pn:end_ts="1702484180" xil_pn:in_ck="-4318086541568202587" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="2625728355861312547" xil_pn:start_ts="1702484180">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="isim.cmd"/>
