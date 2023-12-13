@@ -2304,7 +2304,7 @@ LAB25:    xsi_set_current_line(186, ng0);
 LAB27:    goto LAB2;
 
 LAB7:    xsi_set_current_line(158, ng0);
-    t9 = ((char*)((ng5)));
+    t9 = ((char*)((ng6)));
     t10 = (t0 + 4808);
     xsi_vlogvar_wait_assign_value(t10, t9, 0, 0, 1, 0LL);
     goto LAB27;

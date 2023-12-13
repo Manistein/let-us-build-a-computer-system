@@ -155,7 +155,7 @@ module sdram_ctrl(
 	always @(init_state_r or work_state_r or cnt_clk_r or sdrd_bytes or sdwr_bytes) begin
 		case (init_state_r)
 			// `I_NOP: reset_cnt_clk_n <= 1'b0;
-			`I_PRECHARGE: reset_cnt_clk_n <= 1'b1;
+			`I_PRECHARGE: reset_cnt_clk_n <= 1'b0;
 			`I_TRP: reset_cnt_clk_n <= (`end_trp)?1'b0:1'b1;
 			`I_AUTO_REFRESH1, `I_AUTO_REFRESH2: reset_cnt_clk_n <= 1'b1; 
 			`I_TRF1, `I_TRF1: reset_cnt_clk_n <= (`end_trf)?1'b0:1'b1;
