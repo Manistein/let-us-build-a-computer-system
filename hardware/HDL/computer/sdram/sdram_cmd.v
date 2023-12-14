@@ -61,7 +61,7 @@ module sdram_cmd(
                     sdram_ba_r <= 2'b00;
                     sdram_addr_r <= {
                         0, 0, 0, // A12,A11,A10
-                        1, // A9, burst read and signle write
+                        0, // A9, burst read and burst write
                         0, 0, // A8, A7
                         0, 1, 1, // A4~A6 CAS Latency is 3
                         0, // A3, burst type is sequential

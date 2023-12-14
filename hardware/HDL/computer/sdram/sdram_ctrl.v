@@ -82,6 +82,7 @@ module sdram_ctrl(
 				sdram_ref_req <= 1'b1;
 			end else if (sdram_ref_ack) begin
 				sdram_ref_req <= 0;
+				cnt_ref_r <= 0;
 			end else begin
 				cnt_ref_r <= cnt_ref_r + 1'b1;
 			end
@@ -178,7 +179,7 @@ module sdram_ctrl(
 					`W_TDAL: reset_cnt_clk_n <= (`end_tdal)?1'b0:1'b1;
 
 					// auto refresh
-					`W_AR: reset_cnt_clk_n <= 1'b1;
+					`W_AR: reset_cnt_clk_n <= 1'b0;
 					`W_TRFC: reset_cnt_clk_n <= (`end_trf)?1'b0:1'b1;
 					default: reset_cnt_clk_n <= 1'b1;
 				endcase

@@ -107,6 +107,12 @@ module sdram_test;
 		
 		# 300;
         
+		sdram_wr_addr = {00, 0000000000010, 000000000};
+		sdwr_bytes = 9'b1;
+		sdram_wr_req = 1'b1;
+		sdram_wr_data = 16'b1111;
+
+		# 1;
 		// Add stimulus here
 
 	end
