@@ -47,7 +47,8 @@ module sdram_ctrl(
 	reg sys_rw_n_r;
 	
 	reg sdram_ref_req;
-	reg sdram_ref_ack;
+	wire sdram_ref_ack;
+	wire init_done;
 	
 	reg reset_cnt_clk_n;
 	
@@ -73,17 +74,21 @@ module sdram_ctrl(
 	end
 	
 	//auto-refresh counter
+	assign sdram_ref_ack = (work_state_r == `W_AR) ? 1'b1 : 1'b0;
+	assign init_done = (init_state_r == `I_DONE) ? 1'b1 : 1'b0;
 	always @(posedge clk_100m or negedge rst_n) begin
 		if (!rst_n) begin
 			cnt_ref_r <= 0;
+			sdram_ref_req <= 1'b0;
 		end else begin
 			// 64ms / 8192 is about 7500ns, a clock cycle is about 10ns in 100Mhz clock;
 			if (cnt_ref_r == 16'd748) begin
 				sdram_ref_req <= 1'b1;
+				cnt_ref_r <= cnt_ref_r + 1'b1;
 			end else if (sdram_ref_ack) begin
 				sdram_ref_req <= 0;
 				cnt_ref_r <= 0;
-			end else begin
+			end else if (init_done) begin
 				cnt_ref_r <= cnt_ref_r + 1'b1;
 			end
 		end
@@ -94,9 +99,6 @@ module sdram_ctrl(
 		if (!rst_n) begin
 			work_state_r <= `W_IDLE;
 			init_state_r <= `I_NOP;
-			
-			sdram_ref_req <= 1'b0;
-			sdram_ref_ack <= 1'b0;
 		end
 		
 		case (init_state_r)
@@ -187,15 +189,7 @@ module sdram_ctrl(
 			default: reset_cnt_clk_n <= 1'b1;
 		endcase
 	end
-	
-	always @(work_state_r) begin
-		if (work_state_r == `W_AR) begin
-			sdram_ref_ack <= 1'b1;
-		end else begin
-			sdram_ref_ack <= 1'b0;
-		end
-	end
-	
+		
 	assign sdram_busy = ((init_state_r == `I_DONE) && (work_state_r == `W_IDLE));
 
 	assign sdram_rd_ack = work_state_r == `W_RD;

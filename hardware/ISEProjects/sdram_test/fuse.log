@@ -23,8 +23,8 @@ WARNING:HDLCompiler:327 - "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/c
 WARNING:HDLCompiler:327 - "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_cmd.v" Line 67: Concatenation with unsized literal; will interpret as 32 bits
 WARNING:HDLCompiler:327 - "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_cmd.v" Line 68: Concatenation with unsized literal; will interpret as 32 bits
 Completed static elaboration
-Fuse Memory Usage: 95740 KB
-Fuse CPU Usage: 700 ms
+Fuse Memory Usage: 95744 KB
+Fuse CPU Usage: 720 ms
 Compiling module IBUFG
 Compiling module dcm_sp_clock_divide_by_2
 Compiling module dcm_sp_maximum_period_check(cloc...
@@ -42,6 +42,6 @@ Compiling module glbl
 Time Resolution for simulation is 1ps.
 Compiled 14 Verilog Units
 Built simulation executable /home/ise/hardware/ISEProjects/sdram_test/sdram_test_isim_beh.exe
-Fuse Memory Usage: 103076 KB
-Fuse CPU Usage: 740 ms
-GCC CPU Usage: 130 ms
+Fuse Memory Usage: 103084 KB
+Fuse CPU Usage: 770 ms
+GCC CPU Usage: 90 ms
