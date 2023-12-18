@@ -88,6 +88,12 @@ module sdram_test;
 		# 0.01;
 	end
 
+	always @(sdram_wr_ack) begin
+		if (sdram_wr_ack) begin
+			sdram_wr_req <= 1'b0;
+		end
+	end
+
 	initial begin
 		// Initialize Inputs
 		clk_50m = 0;
@@ -100,7 +106,7 @@ module sdram_test;
 		sdram_rd_req = 0;
 		sdrd_bytes = 0;
 
-		// Wait 60 us for global reset to finish
+		// Wait 60 ns for global reset to finish
 		# 0.06;
 		
 		rst_n = 1;

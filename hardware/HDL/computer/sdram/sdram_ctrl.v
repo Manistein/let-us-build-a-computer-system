@@ -171,12 +171,12 @@ module sdram_ctrl(
 					`W_TRCD: reset_cnt_clk_n <= (`end_trcd)?1'b0:1'b1;
 
 					// read operation
-					`W_READ: reset_cnt_clk_n <= 1'b1; 
+					`W_READ: reset_cnt_clk_n <= 1'b0; 
 					`W_CL: reset_cnt_clk_n <= (`end_tcl)?1'b0:1'b1;
 					`W_RD: reset_cnt_clk_n <= (`end_tread)?1'b0:1'b1;
 
 					// write operation
-					`W_WRITE: reset_cnt_clk_n <= 1'b1;
+					`W_WRITE: reset_cnt_clk_n <= 1'b0;
 					`W_WD: reset_cnt_clk_n <= (`end_twrite)?1'b0:1'b1;
 					`W_TDAL: reset_cnt_clk_n <= (`end_tdal)?1'b0:1'b1;
 

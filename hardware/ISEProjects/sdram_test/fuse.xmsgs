@@ -23,10 +23,10 @@
 <msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_cmd.v" Line 68: Concatenation with unsized literal; will interpret as 32 bits
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_test.v" Line 110: Concatenation with unsized literal; will interpret as 32 bits
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_test.v" Line 116: Concatenation with unsized literal; will interpret as 32 bits
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_test.v" Line 110: Concatenation with unsized literal; will interpret as 32 bits
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_test.v" Line 116: Concatenation with unsized literal; will interpret as 32 bits
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_cmd.v" Line 63: Concatenation with unsized literal; will interpret as 32 bits

@@ -3197,7 +3197,7 @@ LAB137:    t46 = (t0 + 4968);
     goto LAB120;
 
 LAB102:    xsi_set_current_line(174, ng0);
-    t3 = ((char*)((ng5)));
+    t3 = ((char*)((ng6)));
     t4 = (t0 + 4968);
     xsi_vlogvar_wait_assign_value(t4, t3, 0, 0, 1, 0LL);
     goto LAB120;
@@ -3341,7 +3341,7 @@ LAB171:    t48 = (t0 + 4968);
     goto LAB120;
 
 LAB108:    xsi_set_current_line(179, ng0);
-    t3 = ((char*)((ng5)));
+    t3 = ((char*)((ng6)));
     t4 = (t0 + 4968);
     xsi_vlogvar_wait_assign_value(t4, t3, 0, 0, 1, 0LL);
     goto LAB120;
