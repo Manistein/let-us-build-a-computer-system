@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2023-12-18T15:04:20</DateModified>
+  <DateModified>2023-12-19T15:23:28</DateModified>
   <ModuleName>sdram_top</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/ise/hardware/ISEProjects/sdram_test/iseconfig/sdram_top.xreport</SavedFilePath>

@@ -12,10 +12,12 @@ WARNING:HDLCompiler:327 - "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/c
 WARNING:HDLCompiler:327 - "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_cmd.v" Line 67: Concatenation with unsized literal; will interpret as 32 bits
 WARNING:HDLCompiler:327 - "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_cmd.v" Line 68: Concatenation with unsized literal; will interpret as 32 bits
 Analyzing Verilog file "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_test.v" into library work
-WARNING:HDLCompiler:327 - "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_test.v" Line 116: Concatenation with unsized literal; will interpret as 32 bits
+WARNING:HDLCompiler:327 - "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_test.v" Line 120: Concatenation with unsized literal; will interpret as 32 bits
+WARNING:HDLCompiler:327 - "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_test.v" Line 128: Concatenation with unsized literal; will interpret as 32 bits
 Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
-WARNING:HDLCompiler:327 - "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_test.v" Line 116: Concatenation with unsized literal; will interpret as 32 bits
+WARNING:HDLCompiler:327 - "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_test.v" Line 120: Concatenation with unsized literal; will interpret as 32 bits
+WARNING:HDLCompiler:327 - "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_test.v" Line 128: Concatenation with unsized literal; will interpret as 32 bits
 WARNING:HDLCompiler:327 - "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_cmd.v" Line 63: Concatenation with unsized literal; will interpret as 32 bits
 WARNING:HDLCompiler:327 - "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_cmd.v" Line 64: Concatenation with unsized literal; will interpret as 32 bits
 WARNING:HDLCompiler:327 - "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_cmd.v" Line 65: Concatenation with unsized literal; will interpret as 32 bits
@@ -23,7 +25,7 @@ WARNING:HDLCompiler:327 - "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/c
 WARNING:HDLCompiler:327 - "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_cmd.v" Line 67: Concatenation with unsized literal; will interpret as 32 bits
 WARNING:HDLCompiler:327 - "/home/ise/hardware/ISEProjects/sdram_test/../../HDL/computer/sdram/sdram_cmd.v" Line 68: Concatenation with unsized literal; will interpret as 32 bits
 Completed static elaboration
-Fuse Memory Usage: 95744 KB
+Fuse Memory Usage: 95740 KB
 Fuse CPU Usage: 720 ms
 Compiling module IBUFG
 Compiling module dcm_sp_clock_divide_by_2
@@ -44,4 +46,4 @@ Compiled 14 Verilog Units
 Built simulation executable /home/ise/hardware/ISEProjects/sdram_test/sdram_test_isim_beh.exe
 Fuse Memory Usage: 103084 KB
 Fuse CPU Usage: 770 ms
-GCC CPU Usage: 80 ms
+GCC CPU Usage: 90 ms

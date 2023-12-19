@@ -88,9 +88,13 @@ module sdram_test;
 		# 0.01;
 	end
 
-	always @(sdram_wr_ack) begin
+	always @(sdram_wr_ack or sdram_rd_ack) begin
 		if (sdram_wr_ack) begin
 			sdram_wr_req <= 1'b0;
+		end
+
+		if (sdram_rd_ack) begin
+			sdram_rd_req <= 1'b0;
 		end
 	end
 
@@ -118,9 +122,12 @@ module sdram_test;
 		sdram_wr_req = 1'b1;
 		sdram_wr_data = 16'b1111;
 
-		# 1;
+		# 0.01;
 		// Add stimulus here
 
+		sdram_rd_addr = {00, 0000000000010, 000000000};
+		sdrd_bytes = 9'b1;
+		sdram_rd_req = 1'b1;
 	end
       
 endmodule

@@ -15,11 +15,11 @@ module sdram_rw_data(
     `include "sdram_para.v";
 
     reg we_r;
-    always @(posedge clk_100m or negedge rst_n) begin
+    always @(negedge rst_n or work_state) begin
         if (!rst_n) begin
             we_r <= 1'b0;
         end else begin
-            if (work_state == `W_WRITE || work_state == `W_WD) begin
+            if (work_state == `W_WD) begin
                 we_r <= 1'b1;
             end else begin
                 we_r <= 1'b0;
@@ -30,7 +30,7 @@ module sdram_rw_data(
     assign sdram_data = we_r ? sys_data_in : 16'hzzzz;
 
     reg [0:15] data_out_r;
-    always @(posedge clk_100m or negedge rst_n) begin
+    always @(negedge rst_n or work_state) begin
         if (!rst_n) begin
             data_out_r <= 16'b0;
         end else begin
