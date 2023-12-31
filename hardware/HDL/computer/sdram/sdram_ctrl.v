@@ -57,12 +57,9 @@ module sdram_ctrl(
 		if (!rst_n) begin
 			cnt_clk_r <= 0;
 			done_200us <= 0;
-			
-			reset_cnt_clk_n <= 0;
 		end else begin
 			if (!reset_cnt_clk_n) begin
 				cnt_clk_r <= 0;
-				reset_cnt_clk_n <= 1;
 			end else begin 
 				cnt_clk_r <= cnt_clk_r + 1;
 			end

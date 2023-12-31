@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2023-12-26T15:41:55</DateModified>
+  <DateModified>2023-12-31T09:04:49</DateModified>
   <ModuleName>sdram_test</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>/home/ise/hardware/ISEProjects/sdram_test/iseconfig/sdram_top.xreport</SavedFilePath>
+  <SavedFilePath>/home/ise/hardware/ISEProjects/sdram_test/iseconfig/sdram_test.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/home/ise/hardware/ISEProjects/sdram_test/</ImplementationReportsDirectory>
-  <DateInitialized>2023-12-26T15:41:55</DateInitialized>
+  <DateInitialized>2023-12-31T07:23:21</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>
