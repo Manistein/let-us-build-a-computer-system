@@ -4,30 +4,30 @@
 module sdram_cmd(
     input clk_100m,
     input rst_n,
-    input [0:8] sdwr_bytes, // 1~512 bytes
-    input [0:8] sdrd_bytes, // 1~512 bytes
-    input [0:23] sys_wraddr, // [22:23] for bank select, [9:21] for row address, [0:8] for column address
-    input [0:23] sys_rdaddr,
+    input [8:0] sdwr_bytes, // 1~512 bytes
+    input [8:0] sdrd_bytes, // 1~512 bytes
+    input [23:0] sys_wraddr, // [22:23] for bank select, [9:21] for row address, [0:8] for column address
+    input [23:0] sys_rdaddr,
 
-    input [0:3] init_state,
-    input [0:3] work_state,
-    input [0:15] cnt_clk,
+    input [3:0] init_state,
+    input [3:0] work_state,
+    input [15:0] cnt_clk,
     input sys_r_wn,
 
     output sdram_cke,
     output sdram_cs_n,
     output sdram_ras_n,
     output sdram_cas_n,
-    output [0:1] sdram_ba,
-    output [0:12] sdram_addr,
+    output [1:0] sdram_ba,
+    output [12:0] sdram_addr,
     output sdram_we_n
 );
     `include "sdram_para.v";
 
-    reg [0:4] sdram_cmd_r;
-    reg [0:1] sdram_ba_r;
-    reg [0:12] sdram_addr_r;
-    wire [0:23] sys_addr; 
+    reg [4:0] sdram_cmd_r;
+    reg [1:0] sdram_ba_r;
+    reg [12:0] sdram_addr_r;
+    wire [23:0] sys_addr; 
 
     assign {sdram_cke, sdram_cs_n, sdram_ras_n, sdram_cas_n, sdram_we_n} = sdram_cmd_r;
     assign sdram_ba = sdram_ba_r;
@@ -77,18 +77,18 @@ module sdram_cmd(
                         end
                         `W_ACTIVE: begin
                             sdram_cmd_r <= `CMD_ACTIVE;
-                            sdram_ba_r <= sys_addr[22:23];
-                            sdram_addr_r <= sys_addr[9:21]; // select row
+                            sdram_ba_r <= sys_addr[23:22];
+                            sdram_addr_r <= sys_addr[21:9]; // select row
                         end
                         `W_READ: begin
                             sdram_cmd_r <= `CMD_READ;
-                            sdram_ba_r <= sys_addr[22:23];
-                            sdram_addr_r <= sys_addr[0:8]; // select column
+                            sdram_ba_r <= sys_addr[23:22];
+                            sdram_addr_r <= sys_addr[8:0]; // select column
                         end
                         `W_WRITE: begin
                             sdram_cmd_r <= `CMD_WRITE;
-                            sdram_ba_r <= sys_addr[22:23];
-                            sdram_addr_r <= sys_addr[0:8];
+                            sdram_ba_r <= sys_addr[23:22];
+                            sdram_addr_r <= sys_addr[8:0];
                         end
                         `W_AR: begin
                             sdram_cmd_r <= `CMD_AUTO_REFRESH;

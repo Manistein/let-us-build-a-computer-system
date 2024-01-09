@@ -25,24 +25,24 @@ module sdram_ctrl(
     input rst_n,
     input sdram_wr_req,
     input sdram_rd_req,
-    input [0:8] sdwr_bytes,
-    input [0:8] sdrd_bytes,
+    input [8:0] sdwr_bytes,
+    input [8:0] sdrd_bytes,
     output sdram_wr_ack,
     output sdram_rd_ack,
     output sdram_init_done,
-    output [0:3] init_state,
-    output [0:3] work_state,
-    output [0:15] cnt_clk,
+    output [3:0] init_state,
+    output [3:0] work_state,
+    output [15:0] cnt_clk,
 	output sdram_busy,
     output sys_rw_n  // 0 for read, 1 for write
     );
 
 	`include "sdram_para.v";
 	
-	reg [0:15] cnt_clk_r;
-	reg [0:3] work_state_r;
-	reg [0:3] init_state_r;
-	reg [0:15] cnt_ref_r;  // refresh
+	reg [15:0] cnt_clk_r;
+	reg [3:0] work_state_r;
+	reg [3:0] init_state_r;
+	reg [15:0] cnt_ref_r;  // refresh
 	reg done_200us;
 	reg sys_rw_n_r;
 	
@@ -53,7 +53,7 @@ module sdram_ctrl(
 	reg reset_cnt_clk_n;
 	
 	// update clock counter
-	always @(posedge clk_100m or negedge rst_n) begin
+	always @(posedge clk_100m) begin
 		if (!rst_n) begin
 			cnt_clk_r <= 0;
 			done_200us <= 0;
@@ -73,7 +73,7 @@ module sdram_ctrl(
 	//auto-refresh counter
 	assign sdram_ref_ack = (work_state_r == `W_AR) ? 1'b1 : 1'b0;
 	assign init_done = (init_state_r == `I_DONE) ? 1'b1 : 1'b0;
-	always @(posedge clk_100m or negedge rst_n) begin
+	always @(posedge clk_100m) begin
 		if (!rst_n) begin
 			cnt_ref_r <= 0;
 			sdram_ref_req <= 1'b0;
@@ -92,7 +92,7 @@ module sdram_ctrl(
 	end
 
 	// state fsm
-	always @(posedge clk_100m or negedge rst_n) begin
+	always @(posedge clk_100m) begin
 		if (!rst_n) begin
 			work_state_r <= `W_IDLE;
 			init_state_r <= `I_NOP;

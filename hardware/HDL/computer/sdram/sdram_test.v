@@ -27,17 +27,17 @@ module sdram_test;
 	// Inputs
 	reg clk_50m;
 	reg rst_n;
-	reg [0:23] sdram_wr_addr;
-	reg [0:15] sdram_wr_data;
+	reg [23:0] sdram_wr_addr;
+	reg [15:0] sdram_wr_data;
 	reg sdram_wr_req;
-	reg [0:8] sdwr_bytes;
-	reg [0:23] sdram_rd_addr;
+	reg [8:0] sdwr_bytes;
+	reg [23:0] sdram_rd_addr;
 	reg sdram_rd_req;
-	reg [0:8] sdrd_bytes;
+	reg [8:0] sdrd_bytes;
 
 	// Outputs
 	wire sdram_wr_ack;
-	wire [0:15] sdram_rd_data;
+	wire [15:0] sdram_rd_data;
 	wire sdram_rd_ack;
 	wire sdram_init_done;
 	wire sdram_busy;
@@ -46,12 +46,12 @@ module sdram_test;
 	wire sdram_cs_n;
 	wire sdram_ras_n;
 	wire sdram_cas_n;
-	wire [0:1] sdram_ba;
-	wire [0:12] sdram_addr;
+	wire [1:0] sdram_ba;
+	wire [12:0] sdram_addr;
 	wire sdram_we_n;
 
 	// Bidirs
-	wire [0:15] sdram_data;
+	wire [15:0] sdram_data;
 
 	// Instantiate the Unit Under Test (UUT)
 	sdram_top uut (

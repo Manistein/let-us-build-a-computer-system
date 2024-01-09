@@ -6,17 +6,17 @@ module counter (
 	input reset_n,
 
 	output led0,
-	output [0:7] sel,
-	output [0:7] data,
+	output [7:0] sel,
+	output [7:0] data,
 
-	inout [0:15] sdram_data,
+	inout [15:0] sdram_data,
     output sdram_clk,
     output sdram_cke, 
     output sdram_cs_n, 
     output sdram_ras_n, 
     output sdram_cas_n, 
-    output [0:1] sdram_ba,
-    output [0:12] sdram_addr,
+    output [1:0] sdram_ba,
+    output [12:0] sdram_addr,
     output sdram_we_n
 );
 	localparam CLOCK_CYCLE_PER_SEC = 50000000;
@@ -24,29 +24,41 @@ module counter (
 	localparam WRITE_ADDR = 24'b0;
 	localparam READ_ADDR = 24'b0;
 
-	reg [0:31] clock_counter;
-	reg [0:15] v_wr_reg; // accumulator register
-	reg [0:15] v_rd_reg;
+	wire clk_50m;
+	wire clk_100m;
+	
+	sdram_pll	u_sdram_pll(
+		.CLK_IN1(clock_50m),
+		.RESET(~reset_n),
+		.LOCKED(),
+			
+		.CLK_OUT1(clk_100m),
+		.CLK_OUT2(clk_50m)
+	 );
+
+	reg [31:0] clock_counter;
+	reg [15:0] v_wr_reg; // accumulator register
+	reg [15:0] v_rd_reg;
 	reg read_req;
 	reg write_req;
 
+	wire [15:0] rd_from_sdram;
 	wire sdram_wr_ack;
 	wire sdram_rd_ack;
 	wire sdram_init_done;
 	wire sdram_busy;
 
-	always @(posedge clock_50m or negedge reset_n) begin
+	always @(posedge clk_50m or negedge reset_n) begin
 		if (!reset_n) begin
 			clock_counter <= 32'b0;
 			v_wr_reg <= 16'b0;
-			v_rd_reg <= 16'b0;
 			read_req <= 1'b0;
 			write_req <= 1'b0;
-		end else if (clock_counter == CLOCK_CYCLE_HALF_SEC and sdram_init_done) begin
+		end else if ((clock_counter == CLOCK_CYCLE_HALF_SEC) && sdram_init_done) begin
 			read_req <= 1'b1;
-		end else if (clock_counter == CLOCK_CYCLE_PER_SEC and sdram_init_done) begin
+		end else if ((clock_counter == CLOCK_CYCLE_PER_SEC) && sdram_init_done) begin
 			clock_counter <= 32'b0;
-			v_wr_reg <= v_reg + 1'b1;
+			v_wr_reg <= v_wr_reg + 1'b1;
 			write_req <= 1'b1;
 		end else if (sdram_init_done) begin
 			clock_counter <= clock_counter + 1'b1;
@@ -56,7 +68,8 @@ module counter (
 	end
 
 	sdram_top sdram_com(
-		.clk_50m(clock_50m),
+		.clk_50m(clk_50m),
+		.clk_100m(clk_100m),
     	.rst_n(reset_n),
 
     	.sdram_wr_addr(WRITE_ADDR),
@@ -66,7 +79,7 @@ module counter (
     	.sdram_wr_ack(sdram_wr_ack),
 
     	.sdram_rd_addr(READ_ADDR),
-    	.sdram_rd_data(v_rd_reg),
+    	.sdram_rd_data(rd_from_sdram),
     	.sdram_rd_req(read_req),
     	.sdrd_bytes(9'b1), // brust read size
     	.sdram_rd_ack(sdram_rd_ack),
@@ -85,9 +98,13 @@ module counter (
     	.sdram_we_n(sdram_we_n)
 	);
 
+	always @(rd_from_sdram) begin
+		v_rd_reg <= (!reset_n) ? 16'b0 : rd_from_sdram;
+	end
+
 	// output to seg display
-	reg [0:7] sel_reg;
-	reg [0:7] seg_data_reg;
+	reg [7:0] sel_reg;
+	reg [7:0] seg_data_reg;
 	reg [9:0] segcounter;
 
 	wire [7:0] segdata0;
@@ -100,7 +117,7 @@ module counter (
 	segcom hseg2(.val(v_rd_reg[11:8]), .data(segdata2));
 	segcom hseg3(.val(v_rd_reg[15:12]), .data(segdata3));
 
-	always @(posedge clock_50m or negedge reset_n) begin
+	always @(posedge clk_50m or negedge reset_n) begin
 		if (!reset_n) begin
 			sel_reg <= 8'b0;
 			seg_data_reg <= 8'b0;
