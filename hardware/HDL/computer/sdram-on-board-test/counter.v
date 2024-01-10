@@ -25,16 +25,36 @@ module counter (
 	localparam READ_ADDR = 24'b0;
 
 	wire clk_50m;
-	wire clk_100m;
+	wire clk_sdram_ref;
+	wire clk_sdram_refout;
+	wire clk_sdram_oddr;
 	
 	sdram_pll	u_sdram_pll(
 		.CLK_IN1(clock_50m),
 		.RESET(~reset_n),
 		.LOCKED(),
 			
-		.CLK_OUT1(clk_100m),
-		.CLK_OUT2(clk_50m)
+		.CLK_OUT1(clk_sdram_ref),
+		.CLK_OUT2(clk_sdram_oddr),
+		.CLK_OUT3(clk_50m)
 	 );
+
+	ODDR2 #(
+    	.DDR_ALIGNMENT("NONE"), // Sets output alignment to "NONE", "C0" or "C1" 
+    	.INIT(1'b0),    // Sets initial state of the Q output to 1'b0 or 1'b1
+    	.SRTYPE("SYNC") // Specifies "SYNC" or "ASYNC" set/reset
+    ) U_ODDR2_c2 (
+      .Q(clk_sdram_refout),   // 1-bit DDR output data
+      .C0(clk_sdram_oddr),   // 1-bit clock input
+      .C1(~clk_sdram_oddr),   // 1-bit clock input
+      .CE(1'b1), // 1-bit clock enable input
+      .D0(1'b1), // 1-bit data input (associated with C0)
+      .D1(1'b0), // 1-bit data input (associated with C1)
+      .R(1'b0),   // 1-bit reset input
+      .S(1'b0)    // 1-bit set input
+	);
+
+	assign sdram_clk = clk_sdram_refout;
 
 	reg [31:0] clock_counter;
 	reg [15:0] v_wr_reg; // accumulator register
@@ -68,8 +88,7 @@ module counter (
 	end
 
 	sdram_top sdram_com(
-		.clk_50m(clk_50m),
-		.clk_100m(clk_100m),
+		.clk_100m(clk_sdram_ref),
     	.rst_n(reset_n),
 
     	.sdram_wr_addr(WRITE_ADDR),
@@ -88,7 +107,7 @@ module counter (
     	.sdram_busy(sdram_busy),
 
     	.sdram_data(sdram_data),
-    	.sdram_clk(sdram_clk),
+    	// .sdram_clk(sdram_clk),
     	.sdram_cke(sdram_cke), 
     	.sdram_cs_n(sdram_cs_n), 
     	.sdram_ras_n(sdram_ras_n), 

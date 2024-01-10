@@ -27,6 +27,7 @@ module sdram_ctrl(
     input sdram_rd_req,
     input [8:0] sdwr_bytes,
     input [8:0] sdrd_bytes,
+
     output sdram_wr_ack,
     output sdram_rd_ack,
     output sdram_init_done,

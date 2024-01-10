@@ -52,10 +52,19 @@ module sdram_test;
 
 	// Bidirs
 	wire [15:0] sdram_data;
+	wire clk_100m;
+	
+	sdram_pll	u_sdram_pll(
+		.CLK_IN1(clk_50m),
+		.RESET(~rst_n),
+		.LOCKED(),
+			
+		.CLK_OUT1(clk_100m)
+	 );
 
 	// Instantiate the Unit Under Test (UUT)
 	sdram_top uut (
-		.clk_50m(clk_50m), 
+		.clk_100m(clk_100m), 
 		.rst_n(rst_n), 
 		.sdram_wr_addr(sdram_wr_addr), 
 		.sdram_wr_data(sdram_wr_data), 
@@ -70,7 +79,7 @@ module sdram_test;
 		.sdram_init_done(sdram_init_done), 
 		.sdram_busy(sdram_busy), 
 		.sdram_data(sdram_data), 
-		.sdram_clk(sdram_clk), 
+		//.sdram_clk(sdram_clk), 
 		.sdram_cke(sdram_cke), 
 		.sdram_cs_n(sdram_cs_n), 
 		.sdram_ras_n(sdram_ras_n), 

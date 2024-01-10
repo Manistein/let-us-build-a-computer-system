@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.01 secs
+Total CPU time to Xst completion: 0.00 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.01 secs
+Total CPU time to Xst completion: 0.00 secs
  
 --> 
 Reading design: counter.prj
@@ -117,16 +117,10 @@ Analyzing Verilog file "/home/ise/hardware/HDL/computer/sdram-on-board-test/coun
 Parsing verilog file "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_top.v" included at line 1.
 Parsing verilog file "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_ctrl.v" included at line 1.
 Parsing module <sdram_ctrl>.
-Parsing verilog file "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_para.v" included at line 40.
+Parsing verilog file "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_para.v" included at line 41.
 Parsing verilog file "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_cmd.v" included at line 2.
 Parsing module <sdram_cmd>.
 Parsing verilog file "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_para.v" included at line 25.
-WARNING:HDLCompiler:327 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_cmd.v" Line 63: Concatenation with unsized literal; will interpret as 32 bits
-WARNING:HDLCompiler:327 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_cmd.v" Line 64: Concatenation with unsized literal; will interpret as 32 bits
-WARNING:HDLCompiler:327 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_cmd.v" Line 65: Concatenation with unsized literal; will interpret as 32 bits
-WARNING:HDLCompiler:327 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_cmd.v" Line 66: Concatenation with unsized literal; will interpret as 32 bits
-WARNING:HDLCompiler:327 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_cmd.v" Line 67: Concatenation with unsized literal; will interpret as 32 bits
-WARNING:HDLCompiler:327 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_cmd.v" Line 68: Concatenation with unsized literal; will interpret as 32 bits
 Parsing verilog file "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_rw_data.v" included at line 3.
 Parsing module <sdram_rw_data>.
 Parsing verilog file "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_para.v" included at line 15.
@@ -146,31 +140,26 @@ Elaborating module <sdram_pll>.
 Elaborating module <IBUFG>.
 
 Elaborating module <DCM_SP(CLKDV_DIVIDE=2.0,CLKFX_DIVIDE=1,CLKFX_MULTIPLY=4,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=20.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="2X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
-WARNING:HDLCompiler:1127 - "/home/ise/hardware/ISEProjects/sdram_on_board/ipcore_dir/sdram_pll.v" Line 132: Assignment to status_int ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/ise/hardware/ISEProjects/sdram_on_board/ipcore_dir/sdram_pll.v" Line 134: Assignment to status_int ignored, since the identifier is never used
 
 Elaborating module <BUFG>.
+
+Elaborating module <ODDR2(DDR_ALIGNMENT="NONE",INIT=1'b0,SRTYPE="SYNC")>.
 
 Elaborating module <sdram_top>.
 
 Elaborating module <sdram_ctrl>.
-WARNING:HDLCompiler:413 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_ctrl.v" Line 64: Result of 17-bit expression is truncated to fit in 16-bit target.
-WARNING:HDLCompiler:91 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_ctrl.v" Line 157: Signal <done_200us> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:327 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_cmd.v" Line 63: Concatenation with unsized literal; will interpret as 32 bits
-WARNING:HDLCompiler:327 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_cmd.v" Line 64: Concatenation with unsized literal; will interpret as 32 bits
-WARNING:HDLCompiler:327 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_cmd.v" Line 65: Concatenation with unsized literal; will interpret as 32 bits
-WARNING:HDLCompiler:327 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_cmd.v" Line 66: Concatenation with unsized literal; will interpret as 32 bits
-WARNING:HDLCompiler:327 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_cmd.v" Line 67: Concatenation with unsized literal; will interpret as 32 bits
-WARNING:HDLCompiler:327 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_cmd.v" Line 68: Concatenation with unsized literal; will interpret as 32 bits
+WARNING:HDLCompiler:413 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_ctrl.v" Line 65: Result of 17-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:91 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_ctrl.v" Line 158: Signal <done_200us> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
 
 Elaborating module <sdram_cmd>.
-WARNING:HDLCompiler:413 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_cmd.v" Line 62: Result of 161-bit expression is truncated to fit in 13-bit target.
 
 Elaborating module <sdram_rw_data>.
-WARNING:HDLCompiler:91 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_rw_data.v" Line 24: Signal <sdram_data> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:1127 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 79: Assignment to sdram_wr_ack ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 85: Assignment to sdram_rd_ack ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 88: Assignment to sdram_busy ignored, since the identifier is never used
-WARNING:HDLCompiler:91 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 102: Signal <reset_n> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_rw_data.v" Line 26: Signal <sdram_data> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:1127 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 98: Assignment to sdram_wr_ack ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 104: Assignment to sdram_rd_ack ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 107: Assignment to sdram_busy ignored, since the identifier is never used
+WARNING:HDLCompiler:91 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 121: Signal <reset_n> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
 
 Elaborating module <segcom>.
 
@@ -180,10 +169,10 @@ Elaborating module <segcom>.
 
 Synthesizing Unit <counter>.
     Related source file is "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v".
-INFO:Xst:3210 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" line 30: Output port <LOCKED> of the instance <u_sdram_pll> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" line 70: Output port <sdram_wr_ack> of the instance <sdram_com> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" line 70: Output port <sdram_rd_ack> of the instance <sdram_com> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" line 70: Output port <sdram_busy> of the instance <sdram_com> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" line 32: Output port <LOCKED> of the instance <u_sdram_pll> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" line 90: Output port <sdram_wr_ack> of the instance <sdram_com> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" line 90: Output port <sdram_rd_ack> of the instance <sdram_com> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" line 90: Output port <sdram_busy> of the instance <sdram_com> is unconnected or connected to loadless signal.
     Found 16-bit register for signal <v_wr_reg>.
     Found 8-bit register for signal <sel>.
     Found 8-bit register for signal <data>.
@@ -191,11 +180,11 @@ INFO:Xst:3210 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" 
     Found 32-bit register for signal <clock_counter>.
     Found 1-bit register for signal <read_req>.
     Found 1-bit register for signal <write_req>.
-    Found 16-bit adder for signal <v_wr_reg[15]_GND_1_o_add_2_OUT> created at line 61.
-    Found 32-bit adder for signal <clock_counter[31]_GND_1_o_add_3_OUT> created at line 64.
-    Found 10-bit adder for signal <segcounter[9]_GND_1_o_add_12_OUT> created at line 126.
+    Found 16-bit adder for signal <v_wr_reg[15]_GND_1_o_add_2_OUT> created at line 81.
+    Found 32-bit adder for signal <clock_counter[31]_GND_1_o_add_3_OUT> created at line 84.
+    Found 10-bit adder for signal <segcounter[9]_GND_1_o_add_12_OUT> created at line 145.
     Found 4x8-bit Read Only RAM for signal <segcounter[9]_PWR_1_o_wide_mux_13_OUT>
-    Found 8-bit 4-to-1 multiplexer for signal <segcounter[9]_segdata3[7]_wide_mux_14_OUT> created at line 127.
+    Found 8-bit 4-to-1 multiplexer for signal <segcounter[9]_segdata3[7]_wide_mux_14_OUT> created at line 146.
     Summary:
 	inferred   1 RAM(s).
 	inferred   3 Adder/Subtractor(s).
@@ -211,7 +200,6 @@ Unit <sdram_pll> synthesized.
 
 Synthesizing Unit <sdram_top>.
     Related source file is "/home/ise/hardware/HDL/computer/sdram/sdram_top.v".
-WARNING:Xst:647 - Input <clk_50m> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
 	no macro.
 Unit <sdram_top> synthesized.
@@ -239,8 +227,8 @@ Synthesizing Unit <sdram_ctrl>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 16-bit adder for signal <cnt_clk_r[15]_GND_7_o_add_1_OUT> created at line 64.
-    Found 16-bit adder for signal <cnt_ref_r[15]_GND_7_o_add_11_OUT> created at line 89.
+    Found 16-bit adder for signal <cnt_clk_r[15]_GND_8_o_add_1_OUT> created at line 65.
+    Found 16-bit adder for signal <cnt_ref_r[15]_GND_8_o_add_11_OUT> created at line 90.
     HDL ADVISOR - Describing an operational reset or an explicit power-up state for register <work_state_r> would allow inference of a finite state machine and as consequence better performance and smaller area.
     HDL ADVISOR - Describing an operational reset or an explicit power-up state for register <init_state_r> would allow inference of a finite state machine and as consequence better performance and smaller area.
     Summary:
@@ -267,42 +255,24 @@ Synthesizing Unit <sdram_rw_data>.
     Related source file is "/home/ise/hardware/HDL/computer/sdram/sdram_rw_data.v".
 WARNING:Xst:647 - Input <clk_100m> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <rst_n> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:737 - Found 1-bit latch for signal <data_out_r<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <data_out_r<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <data_out_r<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <data_out_r<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <data_out_r<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <data_out_r<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <data_out_r<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <data_out_r<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <data_out_r<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <data_out_r<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <data_out_r<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <data_out_r<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <data_out_r<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <data_out_r<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <data_out_r<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <data_out_r<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 1-bit tristate buffer for signal <sdram_data<15>> created at line 31
-    Found 1-bit tristate buffer for signal <sdram_data<14>> created at line 31
-    Found 1-bit tristate buffer for signal <sdram_data<13>> created at line 31
-    Found 1-bit tristate buffer for signal <sdram_data<12>> created at line 31
-    Found 1-bit tristate buffer for signal <sdram_data<11>> created at line 31
-    Found 1-bit tristate buffer for signal <sdram_data<10>> created at line 31
-    Found 1-bit tristate buffer for signal <sdram_data<9>> created at line 31
-    Found 1-bit tristate buffer for signal <sdram_data<8>> created at line 31
-    Found 1-bit tristate buffer for signal <sdram_data<7>> created at line 31
-    Found 1-bit tristate buffer for signal <sdram_data<6>> created at line 31
-    Found 1-bit tristate buffer for signal <sdram_data<5>> created at line 31
-    Found 1-bit tristate buffer for signal <sdram_data<4>> created at line 31
-    Found 1-bit tristate buffer for signal <sdram_data<3>> created at line 31
-    Found 1-bit tristate buffer for signal <sdram_data<2>> created at line 31
-    Found 1-bit tristate buffer for signal <sdram_data<1>> created at line 31
-    Found 1-bit tristate buffer for signal <sdram_data<0>> created at line 31
-WARNING:Xst:737 - Found 1-bit latch for signal <we_r>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 1-bit tristate buffer for signal <sdram_data<15>> created at line 33
+    Found 1-bit tristate buffer for signal <sdram_data<14>> created at line 33
+    Found 1-bit tristate buffer for signal <sdram_data<13>> created at line 33
+    Found 1-bit tristate buffer for signal <sdram_data<12>> created at line 33
+    Found 1-bit tristate buffer for signal <sdram_data<11>> created at line 33
+    Found 1-bit tristate buffer for signal <sdram_data<10>> created at line 33
+    Found 1-bit tristate buffer for signal <sdram_data<9>> created at line 33
+    Found 1-bit tristate buffer for signal <sdram_data<8>> created at line 33
+    Found 1-bit tristate buffer for signal <sdram_data<7>> created at line 33
+    Found 1-bit tristate buffer for signal <sdram_data<6>> created at line 33
+    Found 1-bit tristate buffer for signal <sdram_data<5>> created at line 33
+    Found 1-bit tristate buffer for signal <sdram_data<4>> created at line 33
+    Found 1-bit tristate buffer for signal <sdram_data<3>> created at line 33
+    Found 1-bit tristate buffer for signal <sdram_data<2>> created at line 33
+    Found 1-bit tristate buffer for signal <sdram_data<1>> created at line 33
+    Found 1-bit tristate buffer for signal <sdram_data<0>> created at line 33
     Summary:
-	inferred  17 Latch(s).
-	inferred  16 Multiplexer(s).
+	inferred   2 Multiplexer(s).
 	inferred  16 Tristate(s).
 Unit <sdram_rw_data> synthesized.
 
@@ -334,12 +304,10 @@ Macro Statistics
  4-bit register                                        : 1
  5-bit register                                        : 1
  8-bit register                                        : 2
-# Latches                                              : 17
- 1-bit latch                                           : 17
-# Multiplexers                                         : 54
- 1-bit 2-to-1 multiplexer                              : 38
+# Multiplexers                                         : 40
+ 1-bit 2-to-1 multiplexer                              : 22
  13-bit 2-to-1 multiplexer                             : 1
- 16-bit 2-to-1 multiplexer                             : 4
+ 16-bit 2-to-1 multiplexer                             : 6
  2-bit 2-to-1 multiplexer                              : 1
  32-bit 2-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 1
@@ -406,10 +374,10 @@ Macro Statistics
  32-bit up counter                                     : 1
 # Registers                                            : 61
  Flip-Flops                                            : 61
-# Multiplexers                                         : 52
- 1-bit 2-to-1 multiplexer                              : 38
+# Multiplexers                                         : 38
+ 1-bit 2-to-1 multiplexer                              : 22
  13-bit 2-to-1 multiplexer                             : 1
- 16-bit 2-to-1 multiplexer                             : 3
+ 16-bit 2-to-1 multiplexer                             : 5
  2-bit 2-to-1 multiplexer                              : 1
  4-bit 2-to-1 multiplexer                              : 1
  5-bit 2-to-1 multiplexer                              : 7
@@ -438,34 +406,9 @@ Optimizing FSM <sdram_com/fsm/FSM_3> on signal <work_state_r[1:4]> with user enc
  1000  | 1000
  1010  | 1010
 -------------------
-WARNING:Xst:1710 - FF/Latch <sdram_addr_r_12> (without init value) has a constant value of 0 in block <sdram_cmd>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <sel_reg_4> in Unit <counter> is equivalent to the following 4 FFs/Latches, which will be removed : <sel_reg_5> <sel_reg_6> <sel_reg_7> <seg_data_reg_7> 
-INFO:Xst:2261 - The FF/Latch <sdram_ba_r_0> in Unit <sdram_cmd> is equivalent to the following 12 FFs/Latches, which will be removed : <sdram_ba_r_1> <sdram_addr_r_1> <sdram_addr_r_2> <sdram_addr_r_3> <sdram_addr_r_4> <sdram_addr_r_5> <sdram_addr_r_6> <sdram_addr_r_7> <sdram_addr_r_8> <sdram_addr_r_9> <sdram_addr_r_10> <sdram_addr_r_11> 
-WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
-   incompatible with the Spartan6 architecture. The two primary causes of this is
-   either a register or latch described with both an asynchronous set and
-   asynchronous reset, or a register or latch described with an asynchronous
-   set or reset which however has an initialization value of the opposite 
-   polarity (i.e. asynchronous reset with an initialization value of 1).
-    While this circuit can be built, it creates a sub-optimal implementation
-   in terms of area, power and performance. For a more optimal implementation
-   Xilinx highly recommends one of the following:
-
-          1) Remove either the set or reset from all registers and latches
-             if not needed for required functionality
-          2) Modify the code in order to produce a synchronous set
-             and/or reset (both is preferred)
-          3) Ensure all registers have the same initialization value as the
-             described asynchronous set or reset polarity
-          4) Use the -async_to_sync option to transform the asynchronous
-             set/reset to synchronous operation
-             (timing simulation highly recommended when using this option)
-
-  Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
-
-  List of register instances with asynchronous set and reset:
-    sdram_com/rw_data/we_r in unit <counter>
-
+INFO:Xst:2261 - The FF/Latch <sdram_ba_r_0> in Unit <sdram_cmd> is equivalent to the following 9 FFs/Latches, which will be removed : <sdram_ba_r_1> <sdram_addr_r_3> <sdram_addr_r_6> <sdram_addr_r_7> <sdram_addr_r_8> <sdram_addr_r_9> <sdram_addr_r_10> <sdram_addr_r_11> <sdram_addr_r_12> 
+INFO:Xst:2261 - The FF/Latch <sdram_addr_r_0> in Unit <sdram_cmd> is equivalent to the following 4 FFs/Latches, which will be removed : <sdram_addr_r_1> <sdram_addr_r_2> <sdram_addr_r_4> <sdram_addr_r_5> 
 
 Optimizing unit <counter> ...
 
@@ -477,9 +420,10 @@ Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block counter, actual ratio is 5.
 FlipFlop sdram_com/fsm/init_state_r_0 has been replicated 1 time(s)
-FlipFlop sdram_com/fsm/work_state_r_FSM_FFd1 has been replicated 1 time(s)
+FlipFlop sdram_com/fsm/work_state_r_FSM_FFd1 has been replicated 2 time(s)
 FlipFlop sdram_com/fsm/work_state_r_FSM_FFd2 has been replicated 1 time(s)
-FlipFlop sdram_com/fsm/work_state_r_FSM_FFd4 has been replicated 1 time(s)
+FlipFlop sdram_com/fsm/work_state_r_FSM_FFd3 has been replicated 2 time(s)
+FlipFlop sdram_com/fsm/work_state_r_FSM_FFd4 has been replicated 2 time(s)
 FlipFlop sel_reg_4 has been replicated 4 time(s) to handle iob=true attribute.
 
 Final Macro Processing ...
@@ -488,8 +432,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 130
- Flip-Flops                                            : 130
+# Registers                                            : 134
+ Flip-Flops                                            : 134
 
 =========================================================================
 
@@ -512,35 +456,35 @@ Top Level Output File Name         : counter.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 460
+# BELS                             : 482
 #      GND                         : 1
 #      INV                         : 6
 #      LUT1                        : 70
-#      LUT2                        : 6
+#      LUT2                        : 12
 #      LUT3                        : 10
-#      LUT4                        : 88
-#      LUT5                        : 29
-#      LUT6                        : 71
+#      LUT4                        : 67
+#      LUT5                        : 23
+#      LUT6                        : 104
 #      MUXCY                       : 85
-#      MUXF7                       : 3
+#      MUXF7                       : 13
 #      VCC                         : 1
 #      XORCY                       : 90
-# FlipFlops/Latches                : 147
-#      FD                          : 7
-#      FDC                         : 28
-#      FDCE                        : 49
+# FlipFlops/Latches                : 135
+#      FD                          : 5
+#      FDC                         : 59
+#      FDCE                        : 18
 #      FDP                         : 6
-#      FDR                         : 17
-#      FDRE                        : 23
-#      LD                          : 1
-#      LD_1                        : 16
-# Clock Buffers                    : 3
-#      BUFG                        : 3
-# IO Buffers                       : 55
+#      FDR                         : 18
+#      FDRE                        : 27
+#      FDS                         : 1
+#      ODDR2                       : 1
+# Clock Buffers                    : 4
+#      BUFG                        : 4
+# IO Buffers                       : 56
 #      IBUF                        : 1
 #      IBUFG                       : 1
 #      IOBUF                       : 16
-#      OBUF                        : 37
+#      OBUF                        : 38
 # DCMs                             : 1
 #      DCM_SP                      : 1
 
@@ -551,24 +495,24 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             140  out of  11440     1%  
- Number of Slice LUTs:                  280  out of   5720     4%  
-    Number used as Logic:               280  out of   5720     4%  
+ Number of Slice Registers:             128  out of  11440     1%  
+ Number of Slice LUTs:                  292  out of   5720     5%  
+    Number used as Logic:               292  out of   5720     5%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    283
-   Number with an unused Flip Flop:     143  out of    283    50%  
-   Number with an unused LUT:             3  out of    283     1%  
-   Number of fully used LUT-FF pairs:   137  out of    283    48%  
-   Number of unique control sets:        10
+ Number of LUT Flip Flop pairs used:    300
+   Number with an unused Flip Flop:     172  out of    300    57%  
+   Number with an unused LUT:             8  out of    300     2%  
+   Number of fully used LUT-FF pairs:   120  out of    300    40%  
+   Number of unique control sets:        11
 
 IO Utilization: 
  Number of IOs:                          56
- Number of bonded IOBs:                  55  out of    102    53%  
+ Number of bonded IOBs:                  56  out of    102    54%  
     IOB Flip Flops/Latches:               7
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
+ Number of BUFG/BUFGCTRLs:                4  out of     16    25%  
 
 ---------------------------
 Partition Resource Summary:
@@ -588,18 +532,12 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
-----------------------------------------------------------------------------------+----------------------------------------+-------+
-Clock Signal                                                                      | Clock buffer(FF name)                  | Load  |
-----------------------------------------------------------------------------------+----------------------------------------+-------+
-clock_50m                                                                         | DCM_SP:CLK0                            | 76    |
-sdram_com/rw_data/we_r_D(sdram_com/rw_data/work_state[3]_GND_10_o_equal_1_o<3>1:O)| NONE(*)(sdram_com/rw_data/data_out_r_0)| 16    |
-clock_50m                                                                         | DCM_SP:CLK2X                           | 54    |
-sdram_com/rw_data/we_r_G(sdram_com/rw_data/we_r_G:O)                              | NONE(*)(sdram_com/rw_data/we_r)        | 1     |
-----------------------------------------------------------------------------------+----------------------------------------+-------+
-(*) These 2 clock signal(s) are generated by combinatorial logic,
-and XST is not able to identify which are the primary clock signals.
-Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
-INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clock_50m                          | DCM_SP:CLK0            | 76    |
+clock_50m                          | DCM_SP:CLK2X           | 60    |
+-----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -610,8 +548,8 @@ Timing Summary:
 Speed Grade: -2
 
    Minimum period: 14.066ns (Maximum Frequency: 71.096MHz)
-   Minimum input arrival time before clock: 5.425ns
-   Maximum output required time after clock: 6.044ns
+   Minimum input arrival time before clock: 7.028ns
+   Maximum output required time after clock: 6.969ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -621,7 +559,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clock_50m'
   Clock period: 14.066ns (frequency: 71.096MHz)
-  Total number of paths / destination ports: 24023 / 202
+  Total number of paths / destination ports: 23629 / 185
 -------------------------------------------------------------------------
 Delay:               7.033ns (Levels of Logic = 20)
   Source:            sdram_com/fsm/cnt_clk_r_3 (FF)
@@ -634,9 +572,9 @@ Delay:               7.033ns (Levels of Logic = 20)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDR:C->Q              3   0.525   1.221  sdram_com/fsm/cnt_clk_r_3 (sdram_com/fsm/cnt_clk_r_3)
-     LUT6:I0->O            6   0.254   0.876  sdram_com/fsm/cnt_clk_r[15]_GND_7_o_equal_5_o<15>1_SW1 (N48)
+     LUT6:I0->O            6   0.254   0.876  sdram_com/fsm/cnt_clk_r[15]_GND_8_o_equal_5_o<15>1_SW1 (N55)
      LUT6:I5->O            6   0.254   0.876  sdram_com/fsm/init_state_r[3]_init_state_r[3]_wide_mux_52_OUT<0>21 (sdram_com/fsm/init_state_r[3]_init_state_r[3]_wide_mux_52_OUT<0>2)
-     LUT6:I5->O           17   0.254   1.209  sdram_com/fsm/Mmux_reset_cnt_clk_n34 (sdram_com/fsm/Mmux_reset_cnt_clk_n33)
+     LUT6:I5->O           17   0.254   1.209  sdram_com/fsm/Mmux_reset_cnt_clk_n35 (sdram_com/fsm/Mmux_reset_cnt_clk_n34)
      LUT6:I5->O            1   0.254   0.681  sdram_com/fsm/Mmux_reset_cnt_clk_n37 (sdram_com/fsm/reset_cnt_clk_n)
      MUXCY:CI->O           1   0.023   0.000  sdram_com/fsm/Mcount_cnt_clk_r_cy<0> (sdram_com/fsm/Mcount_cnt_clk_r_cy<0>)
      MUXCY:CI->O           1   0.023   0.000  sdram_com/fsm/Mcount_cnt_clk_r_cy<1> (sdram_com/fsm/Mcount_cnt_clk_r_cy<1>)
@@ -661,83 +599,46 @@ Delay:               7.033ns (Levels of Logic = 20)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_50m'
-  Total number of paths / destination ports: 136 / 136
+  Total number of paths / destination ports: 417 / 140
 -------------------------------------------------------------------------
-Offset:              5.425ns (Levels of Logic = 2)
+Offset:              7.028ns (Levels of Logic = 5)
   Source:            reset_n (PAD)
-  Destination:       write_req (FF)
+  Destination:       seg_data_reg_1 (FF)
   Destination Clock: clock_50m rising
 
-  Data Path: reset_n to write_req
+  Data Path: reset_n to seg_data_reg_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            14   1.328   1.126  reset_n_IBUF (reset_n_IBUF)
-     INV:I->O            116   0.255   2.257  reset_n_inv1_INV_0 (reset_n_inv)
-     FDCE:CLR                  0.459          write_req
+     IBUF:I->O            43   1.328   1.704  reset_n_IBUF (reset_n_IBUF)
+     LUT2:I1->O            1   0.254   1.112  Mmux_segcounter[9]_segdata3[7]_wide_mux_14_OUT23_SW1_SW0 (N111)
+     LUT6:I1->O            1   0.254   1.112  Mmux_segcounter[9]_segdata3[7]_wide_mux_14_OUT23_SW1 (N64)
+     LUT6:I1->O            1   0.254   0.682  Mmux_segcounter[9]_segdata3[7]_wide_mux_14_OUT23 (Mmux_segcounter[9]_segdata3[7]_wide_mux_14_OUT22)
+     LUT6:I5->O            1   0.254   0.000  Mmux_segcounter[9]_segdata3[7]_wide_mux_14_OUT25 (segcounter[9]_segdata3[7]_wide_mux_14_OUT<1>)
+     FDC:D                     0.074          seg_data_reg_1
     ----------------------------------------
-    Total                      5.425ns (2.042ns logic, 3.383ns route)
-                                       (37.6% logic, 62.4% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'sdram_com/rw_data/we_r_D'
-  Total number of paths / destination ports: 16 / 16
--------------------------------------------------------------------------
-Offset:              2.300ns (Levels of Logic = 2)
-  Source:            sdram_data<0> (PAD)
-  Destination:       sdram_com/rw_data/data_out_r_0 (LATCH)
-  Destination Clock: sdram_com/rw_data/we_r_D rising
-
-  Data Path: sdram_data<0> to sdram_com/rw_data/data_out_r_0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IOBUF:IO->O           1   1.328   0.682  sdram_data_0_IOBUF (N27)
-     LUT5:I4->O            1   0.254   0.000  sdram_com/rw_data/Mmux_GND_10_o_sdram_data[15]_mux_2_OUT<0>12 (sdram_com/rw_data/GND_10_o_sdram_data[15]_mux_2_OUT<0>)
-     LD_1:D                    0.036          sdram_com/rw_data/data_out_r_0
-    ----------------------------------------
-    Total                      2.300ns (1.618ns logic, 0.682ns route)
-                                       (70.3% logic, 29.7% route)
+    Total                      7.028ns (2.418ns logic, 4.610ns route)
+                                       (34.4% logic, 65.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clock_50m'
-  Total number of paths / destination ports: 55 / 52
+  Total number of paths / destination ports: 120 / 53
 -------------------------------------------------------------------------
-Offset:              6.044ns (Levels of Logic = 2)
-  Source:            sdram_com/fsm/init_state_r_2 (FF)
-  Destination:       led0 (PAD)
+Offset:              6.969ns (Levels of Logic = 2)
+  Source:            sdram_com/fsm/work_state_r_FSM_FFd1 (FF)
+  Destination:       sdram_data<15> (PAD)
   Source Clock:      clock_50m rising 2.0X
 
-  Data Path: sdram_com/fsm/init_state_r_2 to led0
+  Data Path: sdram_com/fsm/work_state_r_FSM_FFd1 to sdram_data<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              18   0.525   1.463  sdram_com/fsm/init_state_r_2 (sdram_com/fsm/init_state_r_2)
-     LUT4:I1->O            7   0.235   0.909  sdram_com/fsm/_n0185<3>111 (led0_OBUF)
-     OBUF:I->O                 2.912          led0_OBUF (led0)
-    ----------------------------------------
-    Total                      6.044ns (3.672ns logic, 2.372ns route)
-                                       (60.8% logic, 39.2% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'sdram_com/rw_data/we_r_G'
-  Total number of paths / destination ports: 16 / 16
--------------------------------------------------------------------------
-Offset:              5.610ns (Levels of Logic = 2)
-  Source:            sdram_com/rw_data/we_r (LATCH)
-  Destination:       sdram_data<15> (PAD)
-  Source Clock:      sdram_com/rw_data/we_r_G falling
-
-  Data Path: sdram_com/rw_data/we_r to sdram_data<15>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               1   0.581   0.681  sdram_com/rw_data/we_r (sdram_com/rw_data/we_r)
-     INV:I->O             16   0.255   1.181  sdram_com/rw_data/we_r_inv1_INV_0 (sdram_com/rw_data/we_r_inv)
+     FDRE:C->Q            50   0.525   2.097  sdram_com/fsm/work_state_r_FSM_FFd1 (sdram_com/fsm/work_state_r_FSM_FFd1)
+     LUT4:I0->O           16   0.254   1.181  sdram_com/rw_data/we_r_inv1 (sdram_com/rw_data/we_r_inv)
      IOBUF:T->IO               2.912          sdram_data_15_IOBUF (sdram_data<15>)
     ----------------------------------------
-    Total                      5.610ns (3.748ns logic, 1.862ns route)
-                                       (66.8% logic, 33.2% route)
+    Total                      6.969ns (3.691ns logic, 3.278ns route)
+                                       (53.0% logic, 47.0% route)
 
 =========================================================================
 
@@ -745,42 +646,25 @@ Cross Clock Domains Report:
 --------------------------
 
 Clock to Setup on destination clock clock_50m
-------------------------+---------+---------+---------+---------+
-                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------+---------+---------+---------+---------+
-clock_50m               |    7.191|         |         |         |
-sdram_com/rw_data/we_r_D|    3.967|         |         |         |
-------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock sdram_com/rw_data/we_r_D
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clock_50m      |    2.920|         |         |         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock sdram_com/rw_data/we_r_G
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-clock_50m      |         |         |    2.920|         |
+clock_50m      |    7.280|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 2.00 secs
-Total CPU time to Xst completion: 2.23 secs
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 2.02 secs
  
 --> 
 
 
-Total memory usage is 484748 kilobytes
+Total memory usage is 484652 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   46 (   0 filtered)
+Number of warnings :   13 (   0 filtered)
 Number of infos    :    9 (   0 filtered)
 

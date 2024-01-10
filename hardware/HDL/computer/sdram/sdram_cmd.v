@@ -38,34 +38,34 @@ module sdram_cmd(
         if (!rst_n) begin
             sdram_cmd_r <= `CMD_INIT;
             sdram_ba_r <= 2'b11;
-            sdram_addr_r <= 16'hfff;
+            sdram_addr_r <= 16'h1fff;
         end else begin
             case (init_state) 
                 `I_NOP, `I_TRP, `I_TRF1, `I_TRF2, `I_TMRD: begin 
                     sdram_cmd_r <= `CMD_NOP;
                     sdram_ba_r <= 2'b11;
-                    sdram_addr_r <= 16'hfff;
+                    sdram_addr_r <= 16'h1fff;
                 end
                 `I_PRECHARGE: begin
                     sdram_cmd_r <= `CMD_PRECHARGE;
                     sdram_ba_r <= 2'b11;
-                    sdram_addr_r <= 16'hfff;
+                    sdram_addr_r <= 16'h1fff;
                 end
                 `I_AUTO_REFRESH1, `I_AUTO_REFRESH2: begin
                     sdram_cmd_r <= `CMD_AUTO_REFRESH;
                     sdram_ba_r <= 2'b11;
-                    sdram_addr_r <= 16'hfff;
+                    sdram_addr_r <= 16'h1fff;
                 end
                 `I_MRS: begin // read the BASIC FUNCTIONAL DESCRIPTION section in the datasheet
                     sdram_cmd_r <= `CMD_MRS;
                     sdram_ba_r <= 2'b00;
                     sdram_addr_r <= {
-                        0, 0, 0, // A12,A11,A10
-                        0, // A9, burst read and burst write
-                        0, 0, // A8, A7
-                        0, 1, 1, // A4~A6 CAS Latency is 3
-                        0, // A3, burst type is sequential
-                        1, 1, 1 // A0~A2, brust length is full page
+                        1'b0, 1'b0, 1'b0, // A12,A11,A10
+                        1'b0, // A9, burst read and burst write
+                        1'b0, 1'b0, // A8, A7
+                        1'b0, 1'b1, 1'b1, // A4~A6 CAS Latency is 3
+                        1'b0, // A3, burst type is sequential
+                        1'b1, 1'b1, 1'b1 // A0~A2, brust length is full page
                     };
                 end
                 `I_DONE: begin
@@ -73,7 +73,7 @@ module sdram_cmd(
                         `W_IDLE, `W_TRCD, `W_CL, `W_RD, `W_WD, `W_TDAL, `W_TRFC: begin
                             sdram_cmd_r <= `CMD_NOP;
                             sdram_ba_r <= 2'b11;
-                            sdram_addr_r <= 16'hfff;
+                            sdram_addr_r <= 16'h1fff;
                         end
                         `W_ACTIVE: begin
                             sdram_cmd_r <= `CMD_ACTIVE;
@@ -93,19 +93,19 @@ module sdram_cmd(
                         `W_AR: begin
                             sdram_cmd_r <= `CMD_AUTO_REFRESH;
                             sdram_ba_r <= 2'b11;
-                            sdram_addr_r <= 16'hfff;
+                            sdram_addr_r <= 16'h1fff;
                         end
                         default: begin
                             sdram_cmd_r <= `CMD_NOP;
                             sdram_ba_r <= 2'b11;
-                            sdram_addr_r <= 16'hfff;
+                            sdram_addr_r <= 16'h1fff;
                         end
                     endcase
                 end
                 default: begin
                     sdram_cmd_r <= `CMD_NOP;
                     sdram_ba_r <= 2'b11;
-                    sdram_addr_r <= 16'hfff;
+                    sdram_addr_r <= 16'h1fff;
                 end
             endcase
         end

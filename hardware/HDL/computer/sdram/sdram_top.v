@@ -3,7 +3,6 @@
 `include "sdram_rw_data.v"
 
 module sdram_top(
-    input clk_50m,
     input clk_100m,
     input rst_n,
 
@@ -23,7 +22,7 @@ module sdram_top(
     output sdram_busy,
 
     inout [15:0] sdram_data,
-    output sdram_clk,
+    // output sdram_clk,
     output sdram_cke, 
     output sdram_cs_n, 
     output sdram_ras_n, 
@@ -87,5 +86,4 @@ module sdram_top(
 
         .sys_data_out(sdram_rd_data) // read data from the sdram
     );
-
 endmodule

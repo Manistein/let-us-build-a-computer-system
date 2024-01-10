@@ -1,5 +1,5 @@
 NET "clock_50m" LOC = P22;
-NET "reset" LOC = P27;
+NET "reset_n" LOC = P27;
 NET "led0" 	LOC = P29;
 NET "sel[0]"  LOC = P101;
 NET "sel[1]"  LOC = P102;

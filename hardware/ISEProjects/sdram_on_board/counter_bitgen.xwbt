@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/ise/hardware/ISEProjects/sdram_on_board/counter.ncd
+OUTFILE=/home/ise/hardware/ISEProjects/sdram_on_board/counter.bit
+FAMILY=Spartan6
+PART=xc6slx9-2tqg144
+WORKINGDIR=/home/ise/hardware/ISEProjects/sdram_on_board
+LICENSE=ISE
+USER_INFO=8416_11442_1478797146_620

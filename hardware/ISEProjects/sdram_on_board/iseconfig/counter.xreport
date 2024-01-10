@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-01-09T15:14:03</DateModified>
+  <DateModified>2024-01-10T16:21:48</DateModified>
   <ModuleName>counter</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/ise/hardware/ISEProjects/sdram_on_board/iseconfig/counter.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/ise/hardware/ISEProjects/sdram_on_board</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>/home/ise/hardware/ISEProjects/sdram_on_board/</ImplementationReportsDirectory>
   <DateInitialized>2024-01-09T15:05:42</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

@@ -20,7 +20,9 @@ module sdram_rw_data(
     always @(work_state) begin
         if (work_state == `W_WD) begin
             we_r <= 1'b1;
+            data_out_r <= 16'b0;
         end else if (work_state == `W_RD) begin
+            we_r <= 1'b0;
             data_out_r <= sdram_data;
         end else begin
             we_r <= 1'b0;
