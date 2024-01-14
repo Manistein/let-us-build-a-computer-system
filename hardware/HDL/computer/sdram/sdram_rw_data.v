@@ -15,22 +15,30 @@ module sdram_rw_data(
     `include "sdram_para.v";
 
     reg we_r;
-    reg [15:0] data_out_r;
-
-    always @(work_state) begin
-        if (work_state == `W_WD) begin
-            we_r <= 1'b1;
-            data_out_r <= 16'b0;
-        end else if (work_state == `W_RD) begin
+    reg [15:0] data_in_r;
+    always @(posedge clk_100m or negedge rst_n) begin
+        if (!rst_n) begin
             we_r <= 1'b0;
-            data_out_r <= sdram_data;
+            data_in_r <= 16'b0;
+        end else if ((work_state == `W_WRITE) | (work_state == `W_WD)) begin
+            we_r <= 1'b1;
+            data_in_r <= sys_data_in;
         end else begin
             we_r <= 1'b0;
-            data_out_r <= 16'b0;
         end
     end
 
-    assign sdram_data = we_r ? sys_data_in : 16'hzzzz;
+    assign sdram_data = we_r ? data_in_r : 16'hzzzz;
+
+    reg [15:0] data_out_r;
+    always @(posedge clk_100m or negedge rst_n) begin
+        if (!rst_n) begin
+            data_out_r <= 16'b0;
+        end else if (work_state == `W_RD) begin
+            data_out_r <= sdram_data;
+        end
+    end
+
     assign sys_data_out = data_out_r;
 endmodule
 

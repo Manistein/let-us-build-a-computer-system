@@ -14,19 +14,7 @@ Time resolution is 1 ps
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 # run all
-Stopped at time : 12900460 ns : File "/home/ise/hardware/HDL/computer/sdram/sdram_test.v" Line 92
-ISim P.20131013 (signature 0xfbc00daa)
-----------------------------------------------------------------------
-WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
-
-
-----------------------------------------------------------------------
-This is a Full version of ISim.
-# run 1000 us
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-# run all
-Stopped at time : 5469330 ns : File "/home/ise/hardware/HDL/computer/sdram/sdram_ctrl.v" Line 57
+Stopped at time : 11249290 ns : File "/home/ise/hardware/HDL/computer/sdram/sdram_ctrl.v" Line 57
 ISim P.20131013 (signature 0xfbc00daa)
 ----------------------------------------------------------------------
 WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.

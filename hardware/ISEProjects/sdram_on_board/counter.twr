@@ -36,24 +36,24 @@ Setup/Hold to clock clock_50m
               |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source        | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 --------------+------------+------------+------------+------------+------------------+--------+
-reset_n       |   12.547(R)|      SLOW  |   -2.513(R)|      FAST  |clk_50m           |   0.000|
-              |   11.520(R)|      SLOW  |   -3.348(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_data<0> |    9.590(R)|      SLOW  |   -4.075(R)|      FAST  |clk_50m           |   0.000|
-sdram_data<1> |    8.848(R)|      SLOW  |   -3.650(R)|      FAST  |clk_50m           |   0.000|
-sdram_data<2> |    9.204(R)|      SLOW  |   -3.723(R)|      FAST  |clk_50m           |   0.000|
-sdram_data<3> |    9.420(R)|      SLOW  |   -3.581(R)|      FAST  |clk_50m           |   0.000|
-sdram_data<4> |    9.480(R)|      SLOW  |   -3.218(R)|      FAST  |clk_50m           |   0.000|
-sdram_data<5> |    8.688(R)|      SLOW  |   -3.086(R)|      FAST  |clk_50m           |   0.000|
-sdram_data<6> |    8.959(R)|      SLOW  |   -3.384(R)|      FAST  |clk_50m           |   0.000|
-sdram_data<7> |    8.962(R)|      SLOW  |   -3.198(R)|      FAST  |clk_50m           |   0.000|
-sdram_data<8> |   10.549(R)|      SLOW  |   -3.816(R)|      FAST  |clk_50m           |   0.000|
-sdram_data<9> |   10.457(R)|      SLOW  |   -3.633(R)|      FAST  |clk_50m           |   0.000|
-sdram_data<10>|   10.411(R)|      SLOW  |   -3.507(R)|      FAST  |clk_50m           |   0.000|
-sdram_data<11>|   10.310(R)|      SLOW  |   -3.688(R)|      FAST  |clk_50m           |   0.000|
-sdram_data<12>|   10.079(R)|      SLOW  |   -4.372(R)|      FAST  |clk_50m           |   0.000|
-sdram_data<13>|   10.398(R)|      SLOW  |   -3.654(R)|      FAST  |clk_50m           |   0.000|
-sdram_data<14>|   10.130(R)|      SLOW  |   -3.919(R)|      FAST  |clk_50m           |   0.000|
-sdram_data<15>|   10.412(R)|      SLOW  |   -3.697(R)|      FAST  |clk_50m           |   0.000|
+reset_n       |   11.442(R)|      SLOW  |   -2.523(R)|      FAST  |clk_50m           |   0.000|
+              |   12.330(R)|      SLOW  |   -2.934(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<0> |    5.949(R)|      SLOW  |   -2.788(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<1> |    6.279(R)|      SLOW  |   -2.954(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<2> |    4.794(R)|      SLOW  |   -2.051(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<3> |    4.328(R)|      SLOW  |   -1.788(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<4> |    4.642(R)|      SLOW  |   -1.975(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<5> |    4.668(R)|      SLOW  |   -2.020(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<6> |    6.649(R)|      SLOW  |   -3.133(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<7> |    6.174(R)|      SLOW  |   -2.886(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<8> |    7.445(R)|      SLOW  |   -3.648(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<9> |    7.179(R)|      SLOW  |   -3.465(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<10>|    6.324(R)|      SLOW  |   -2.959(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<11>|    6.387(R)|      SLOW  |   -3.053(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<12>|    5.783(R)|      SLOW  |   -2.609(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<13>|    5.933(R)|      SLOW  |   -2.704(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<14>|    5.902(R)|      SLOW  |   -2.664(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<15>|    6.060(R)|      SLOW  |   -2.742(R)|      FAST  |clk_sdram_ref     |   0.000|
 --------------+------------+------------+------------+------------+------------------+--------+
 
 Clock clock_50m to Pad
@@ -61,75 +61,59 @@ Clock clock_50m to Pad
               |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination   |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 --------------+-----------------+------------+-----------------+------------+------------------+--------+
-data<0>       |         5.276(R)|      SLOW  |         1.761(R)|      FAST  |clk_50m           |   0.000|
-data<1>       |         5.465(R)|      SLOW  |         1.864(R)|      FAST  |clk_50m           |   0.000|
-data<2>       |         4.502(R)|      SLOW  |         1.363(R)|      FAST  |clk_50m           |   0.000|
-data<3>       |         4.483(R)|      SLOW  |         1.327(R)|      FAST  |clk_50m           |   0.000|
-data<4>       |         4.617(R)|      SLOW  |         1.427(R)|      FAST  |clk_50m           |   0.000|
-data<5>       |         4.985(R)|      SLOW  |         1.605(R)|      FAST  |clk_50m           |   0.000|
-data<6>       |         4.821(R)|      SLOW  |         1.538(R)|      FAST  |clk_50m           |   0.000|
+data<0>       |         5.404(R)|      SLOW  |         1.833(R)|      FAST  |clk_50m           |   0.000|
+data<1>       |         5.671(R)|      SLOW  |         1.994(R)|      FAST  |clk_50m           |   0.000|
+data<2>       |         4.299(R)|      SLOW  |         1.229(R)|      FAST  |clk_50m           |   0.000|
+data<3>       |         4.508(R)|      SLOW  |         1.337(R)|      FAST  |clk_50m           |   0.000|
+data<4>       |         4.300(R)|      SLOW  |         1.230(R)|      FAST  |clk_50m           |   0.000|
+data<5>       |         4.611(R)|      SLOW  |         1.414(R)|      FAST  |clk_50m           |   0.000|
+data<6>       |         4.840(R)|      SLOW  |         1.566(R)|      FAST  |clk_50m           |   0.000|
 data<7>       |         3.714(R)|      SLOW  |         0.810(R)|      FAST  |clk_50m           |   0.000|
-led0          |         7.846(R)|      SLOW  |         3.258(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_addr<0> |         6.232(R)|      SLOW  |         2.425(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_addr<1> |         6.048(R)|      SLOW  |         2.327(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_addr<2> |         6.225(R)|      SLOW  |         2.413(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_addr<3> |         6.238(R)|      SLOW  |         2.405(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_addr<4> |         8.173(R)|      SLOW  |         3.477(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_addr<5> |         8.357(R)|      SLOW  |         3.575(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_addr<6> |         8.215(R)|      SLOW  |         3.544(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_addr<7> |         7.626(R)|      SLOW  |         3.199(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_addr<8> |         7.667(R)|      SLOW  |         3.193(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_addr<9> |         7.689(R)|      SLOW  |         3.200(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_addr<10>|         5.563(R)|      SLOW  |         1.970(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_addr<11>|         7.426(R)|      SLOW  |         3.038(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_addr<12>|         7.836(R)|      SLOW  |         3.296(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_ba<0>   |         5.633(R)|      SLOW  |         2.050(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_ba<1>   |         5.561(R)|      SLOW  |         1.968(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_cas_n   |         5.291(R)|      SLOW  |         1.867(R)|      FAST  |clk_sdram_ref     |   0.000|
+led0          |         7.809(R)|      SLOW  |         2.829(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_addr<0> |         5.471(R)|      SLOW  |         2.041(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_addr<1> |         5.778(R)|      SLOW  |         2.261(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_addr<2> |         5.545(R)|      SLOW  |         2.114(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_addr<3> |         6.697(R)|      SLOW  |         2.819(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_addr<4> |         8.535(R)|      SLOW  |         3.732(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_addr<5> |         8.740(R)|      SLOW  |         3.861(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_addr<6> |         8.779(R)|      SLOW  |         3.934(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_addr<7> |         8.996(R)|      SLOW  |         4.043(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_addr<8> |         8.804(R)|      SLOW  |         3.933(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_addr<9> |         8.394(R)|      SLOW  |         3.675(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_addr<10>|         5.671(R)|      SLOW  |         2.182(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_addr<11>|         8.356(R)|      SLOW  |         3.636(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_addr<12>|         8.526(R)|      SLOW  |         3.710(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_ba<0>   |         5.711(R)|      SLOW  |         2.212(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_ba<1>   |         5.478(R)|      SLOW  |         2.065(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_cas_n   |         4.948(R)|      SLOW  |         1.642(R)|      FAST  |clk_sdram_ref     |   0.000|
 sdram_cke     |         3.936(R)|      SLOW  |         1.042(R)|      FAST  |clk_sdram_ref     |   0.000|
 sdram_clk     |         4.015(R)|      SLOW  |         1.126(R)|      FAST  |clk_sdram_oddr    |   0.000|
               |         3.953(F)|      SLOW  |         1.060(F)|      FAST  |clk_sdram_oddr    |   0.000|
 sdram_cs_n    |         3.987(R)|      SLOW  |         1.093(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_data<0> |         6.340(R)|      SLOW  |         2.401(R)|      FAST  |clk_50m           |   0.000|
-              |         7.015(R)|      SLOW  |         2.766(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_data<1> |         6.545(R)|      SLOW  |         2.530(R)|      FAST  |clk_50m           |   0.000|
-              |         7.015(R)|      SLOW  |         2.766(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_data<2> |         6.777(R)|      SLOW  |         2.656(R)|      FAST  |clk_50m           |   0.000|
-              |         6.858(R)|      SLOW  |         2.688(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_data<3> |         6.752(R)|      SLOW  |         2.648(R)|      FAST  |clk_50m           |   0.000|
-              |         6.858(R)|      SLOW  |         2.688(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_data<4> |         6.544(R)|      SLOW  |         2.509(R)|      FAST  |clk_50m           |   0.000|
-              |         6.998(R)|      SLOW  |         2.742(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_data<5> |         6.528(R)|      SLOW  |         2.510(R)|      FAST  |clk_50m           |   0.000|
-              |         6.998(R)|      SLOW  |         2.742(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_data<6> |         6.734(R)|      SLOW  |         2.719(R)|      FAST  |clk_50m           |   0.000|
-              |         6.410(R)|      SLOW  |         2.387(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_data<7> |         6.734(R)|      SLOW  |         2.719(R)|      FAST  |clk_50m           |   0.000|
-              |         6.410(R)|      SLOW  |         2.387(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_data<8> |         7.025(R)|      SLOW  |         2.858(R)|      FAST  |clk_50m           |   0.000|
-              |         8.834(R)|      SLOW  |         3.720(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_data<9> |         6.704(R)|      SLOW  |         2.669(R)|      FAST  |clk_50m           |   0.000|
-              |         9.299(R)|      SLOW  |         3.987(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_data<10>|         6.893(R)|      SLOW  |         2.774(R)|      FAST  |clk_50m           |   0.000|
-              |         9.299(R)|      SLOW  |         3.987(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_data<11>|         6.685(R)|      SLOW  |         2.645(R)|      FAST  |clk_50m           |   0.000|
-              |         9.053(R)|      SLOW  |         3.827(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_data<12>|         6.600(R)|      SLOW  |         2.567(R)|      FAST  |clk_50m           |   0.000|
-              |         9.731(R)|      SLOW  |         4.294(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_data<13>|         6.591(R)|      SLOW  |         2.567(R)|      FAST  |clk_50m           |   0.000|
-              |         9.731(R)|      SLOW  |         4.294(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_data<14>|         6.549(R)|      SLOW  |         2.531(R)|      FAST  |clk_50m           |   0.000|
-              |        10.199(R)|      SLOW  |         4.546(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_data<15>|         6.375(R)|      SLOW  |         2.443(R)|      FAST  |clk_50m           |   0.000|
-              |        10.199(R)|      SLOW  |         4.546(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_ras_n   |         5.504(R)|      SLOW  |         2.053(R)|      FAST  |clk_sdram_ref     |   0.000|
-sdram_we_n    |         5.105(R)|      SLOW  |         1.772(R)|      FAST  |clk_sdram_ref     |   0.000|
-sel<0>        |         4.554(R)|      SLOW  |         1.413(R)|      FAST  |clk_50m           |   0.000|
-sel<1>        |         4.574(R)|      SLOW  |         1.421(R)|      FAST  |clk_50m           |   0.000|
-sel<2>        |         4.512(R)|      SLOW  |         1.410(R)|      FAST  |clk_50m           |   0.000|
-sel<3>        |         4.453(R)|      SLOW  |         1.357(R)|      FAST  |clk_50m           |   0.000|
-sel<4>        |         3.714(R)|      SLOW  |         0.810(R)|      FAST  |clk_50m           |   0.000|
-sel<5>        |         3.714(R)|      SLOW  |         0.810(R)|      FAST  |clk_50m           |   0.000|
+sdram_data<0> |         6.849(R)|      SLOW  |         2.360(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<1> |         6.849(R)|      SLOW  |         2.478(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<2> |         6.646(R)|      SLOW  |         2.380(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<3> |         6.646(R)|      SLOW  |         2.277(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<4> |         6.787(R)|      SLOW  |         2.459(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<5> |         6.787(R)|      SLOW  |         2.459(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<6> |         6.346(R)|      SLOW  |         2.377(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<7> |         6.504(R)|      SLOW  |         2.377(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<8> |         7.244(R)|      SLOW  |         2.447(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<9> |         8.001(R)|      SLOW  |         2.660(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<10>|         7.995(R)|      SLOW  |         2.157(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<11>|         7.717(R)|      SLOW  |         2.117(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<12>|         8.427(R)|      SLOW  |         2.381(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<13>|         8.427(R)|      SLOW  |         2.294(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<14>|         8.896(R)|      SLOW  |         2.221(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_data<15>|         8.896(R)|      SLOW  |         2.356(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_ras_n   |         4.949(R)|      SLOW  |         1.643(R)|      FAST  |clk_sdram_ref     |   0.000|
+sdram_we_n    |         4.951(R)|      SLOW  |         1.667(R)|      FAST  |clk_sdram_ref     |   0.000|
+sel<0>        |         4.600(R)|      SLOW  |         1.415(R)|      FAST  |clk_50m           |   0.000|
+sel<1>        |         4.616(R)|      SLOW  |         1.422(R)|      FAST  |clk_50m           |   0.000|
+sel<2>        |         4.558(R)|      SLOW  |         1.412(R)|      FAST  |clk_50m           |   0.000|
+sel<3>        |         4.496(R)|      SLOW  |         1.359(R)|      FAST  |clk_50m           |   0.000|
+sel<4>        |         3.713(R)|      SLOW  |         0.809(R)|      FAST  |clk_50m           |   0.000|
+sel<5>        |         3.713(R)|      SLOW  |         0.809(R)|      FAST  |clk_50m           |   0.000|
 sel<6>        |         3.706(R)|      SLOW  |         0.802(R)|      FAST  |clk_50m           |   0.000|
 sel<7>        |         3.706(R)|      SLOW  |         0.802(R)|      FAST  |clk_50m           |   0.000|
 --------------+-----------------+------------+-----------------+------------+------------------+--------+
@@ -139,18 +123,18 @@ Clock to Setup on destination clock clock_50m
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clock_50m      |    8.351|         |         |         |
+clock_50m      |    7.816|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Wed Jan 10 15:56:52 2024 
+Analysis completed Sun Jan 14 08:14:35 2024 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 386 MB
+Peak Memory Usage: 387 MB
 
 
 

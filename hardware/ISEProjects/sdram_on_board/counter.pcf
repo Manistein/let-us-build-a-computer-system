@@ -1,11 +1,13 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed Jan 10 15:56:44 2024
+// Written by: Map P.20131013 on Sun Jan 14 08:14:28 2024
 //! **************************************************************************
 
 SCHEMATIC START;
 COMP "led0" LOCATE = SITE "P29" LEVEL 1;
 COMP "sdram_cs_n" LOCATE = SITE "P132" LEVEL 1;
+COMP "sdram_ldqm" LOCATE = SITE "P124" LEVEL 1;
 COMP "sdram_we_n" LOCATE = SITE "P123" LEVEL 1;
+COMP "sdram_udqm" LOCATE = SITE "P55" LEVEL 1;
 COMP "clock_50m" LOCATE = SITE "P22" LEVEL 1;
 COMP "data<0>" LOCATE = SITE "P97" LEVEL 1;
 COMP "data<1>" LOCATE = SITE "P98" LEVEL 1;

@@ -150,16 +150,14 @@ Elaborating module <sdram_top>.
 
 Elaborating module <sdram_ctrl>.
 WARNING:HDLCompiler:413 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_ctrl.v" Line 65: Result of 17-bit expression is truncated to fit in 16-bit target.
-WARNING:HDLCompiler:91 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_ctrl.v" Line 158: Signal <done_200us> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_ctrl.v" Line 159: Signal <done_200us> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
 
 Elaborating module <sdram_cmd>.
 
 Elaborating module <sdram_rw_data>.
-WARNING:HDLCompiler:91 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_rw_data.v" Line 26: Signal <sdram_data> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:1127 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 98: Assignment to sdram_wr_ack ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 104: Assignment to sdram_rd_ack ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 107: Assignment to sdram_busy ignored, since the identifier is never used
-WARNING:HDLCompiler:91 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 121: Signal <reset_n> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:1127 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 100: Assignment to sdram_wr_ack ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 106: Assignment to sdram_rd_ack ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 109: Assignment to sdram_busy ignored, since the identifier is never used
 
 Elaborating module <segcom>.
 
@@ -169,10 +167,10 @@ Elaborating module <segcom>.
 
 Synthesizing Unit <counter>.
     Related source file is "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v".
-INFO:Xst:3210 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" line 32: Output port <LOCKED> of the instance <u_sdram_pll> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" line 90: Output port <sdram_wr_ack> of the instance <sdram_com> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" line 90: Output port <sdram_rd_ack> of the instance <sdram_com> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" line 90: Output port <sdram_busy> of the instance <sdram_com> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" line 34: Output port <LOCKED> of the instance <u_sdram_pll> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" line 92: Output port <sdram_wr_ack> of the instance <sdram_com> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" line 92: Output port <sdram_rd_ack> of the instance <sdram_com> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" line 92: Output port <sdram_busy> of the instance <sdram_com> is unconnected or connected to loadless signal.
     Found 16-bit register for signal <v_wr_reg>.
     Found 8-bit register for signal <sel>.
     Found 8-bit register for signal <data>.
@@ -180,16 +178,16 @@ INFO:Xst:3210 - "/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" 
     Found 32-bit register for signal <clock_counter>.
     Found 1-bit register for signal <read_req>.
     Found 1-bit register for signal <write_req>.
-    Found 16-bit adder for signal <v_wr_reg[15]_GND_1_o_add_2_OUT> created at line 81.
-    Found 32-bit adder for signal <clock_counter[31]_GND_1_o_add_3_OUT> created at line 84.
-    Found 10-bit adder for signal <segcounter[9]_GND_1_o_add_12_OUT> created at line 145.
+    Found 16-bit adder for signal <v_wr_reg[15]_GND_1_o_add_2_OUT> created at line 83.
+    Found 32-bit adder for signal <clock_counter[31]_GND_1_o_add_3_OUT> created at line 86.
+    Found 10-bit adder for signal <segcounter[9]_GND_1_o_add_12_OUT> created at line 147.
     Found 4x8-bit Read Only RAM for signal <segcounter[9]_PWR_1_o_wide_mux_13_OUT>
-    Found 8-bit 4-to-1 multiplexer for signal <segcounter[9]_segdata3[7]_wide_mux_14_OUT> created at line 146.
+    Found 8-bit 4-to-1 multiplexer for signal <segcounter[9]_segdata3[7]_wide_mux_14_OUT> created at line 148.
     Summary:
 	inferred   1 RAM(s).
 	inferred   3 Adder/Subtractor(s).
 	inferred  76 D-type flip-flop(s).
-	inferred   3 Multiplexer(s).
+	inferred   2 Multiplexer(s).
 Unit <counter> synthesized.
 
 Synthesizing Unit <sdram_pll>.
@@ -206,36 +204,46 @@ Unit <sdram_top> synthesized.
 
 Synthesizing Unit <sdram_ctrl>.
     Related source file is "/home/ise/hardware/HDL/computer/sdram/sdram_ctrl.v".
-    Found 1-bit register for signal <done_200us>.
     Found 16-bit register for signal <cnt_ref_r>.
-    Found 1-bit register for signal <sdram_ref_req>.
+    Found 16-bit register for signal <cnt_clk_r>.
     Found 4-bit register for signal <work_state_r>.
     Found 4-bit register for signal <init_state_r>.
+    Found 1-bit register for signal <done_200us>.
+    Found 1-bit register for signal <sdram_ref_req>.
     Found 1-bit register for signal <sys_rw_n_r>.
-    Found 16-bit register for signal <cnt_clk_r>.
-    Found finite state machine <FSM_3> for signal <work_state_r>.
+    Found finite state machine <FSM_0> for signal <work_state_r>.
     -----------------------------------------------------------------------
     | States             | 11                                             |
     | Transitions        | 33                                             |
     | Inputs             | 12                                             |
     | Outputs            | 9                                              |
     | Clock              | clk_100m (rising_edge)                         |
-    | Clock enable       | _n0192 (negative)                              |
-    | Reset              | _n0147 (negative)                              |
-    | Reset type         | synchronous                                    |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
     | Reset State        | 0000                                           |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 16-bit adder for signal <cnt_clk_r[15]_GND_8_o_add_1_OUT> created at line 65.
-    Found 16-bit adder for signal <cnt_ref_r[15]_GND_8_o_add_11_OUT> created at line 90.
-    HDL ADVISOR - Describing an operational reset or an explicit power-up state for register <work_state_r> would allow inference of a finite state machine and as consequence better performance and smaller area.
-    HDL ADVISOR - Describing an operational reset or an explicit power-up state for register <init_state_r> would allow inference of a finite state machine and as consequence better performance and smaller area.
+    Found finite state machine <FSM_1> for signal <init_state_r>.
+    -----------------------------------------------------------------------
+    | States             | 10                                             |
+    | Transitions        | 15                                             |
+    | Inputs             | 3                                              |
+    | Outputs            | 5                                              |
+    | Clock              | clk_100m (rising_edge)                         |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 16-bit adder for signal <cnt_clk_r[15]_GND_8_o_add_0_OUT> created at line 65.
+    Found 16-bit adder for signal <cnt_ref_r[15]_GND_8_o_add_8_OUT> created at line 90.
     Summary:
 	inferred   2 Adder/Subtractor(s).
-	inferred  39 D-type flip-flop(s).
-	inferred  26 Multiplexer(s).
-	inferred   1 Finite State Machine(s).
+	inferred  35 D-type flip-flop(s).
+	inferred  25 Multiplexer(s).
+	inferred   2 Finite State Machine(s).
 Unit <sdram_ctrl> synthesized.
 
 Synthesizing Unit <sdram_cmd>.
@@ -253,26 +261,27 @@ Unit <sdram_cmd> synthesized.
 
 Synthesizing Unit <sdram_rw_data>.
     Related source file is "/home/ise/hardware/HDL/computer/sdram/sdram_rw_data.v".
-WARNING:Xst:647 - Input <clk_100m> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <rst_n> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 1-bit tristate buffer for signal <sdram_data<15>> created at line 33
-    Found 1-bit tristate buffer for signal <sdram_data<14>> created at line 33
-    Found 1-bit tristate buffer for signal <sdram_data<13>> created at line 33
-    Found 1-bit tristate buffer for signal <sdram_data<12>> created at line 33
-    Found 1-bit tristate buffer for signal <sdram_data<11>> created at line 33
-    Found 1-bit tristate buffer for signal <sdram_data<10>> created at line 33
-    Found 1-bit tristate buffer for signal <sdram_data<9>> created at line 33
-    Found 1-bit tristate buffer for signal <sdram_data<8>> created at line 33
-    Found 1-bit tristate buffer for signal <sdram_data<7>> created at line 33
-    Found 1-bit tristate buffer for signal <sdram_data<6>> created at line 33
-    Found 1-bit tristate buffer for signal <sdram_data<5>> created at line 33
-    Found 1-bit tristate buffer for signal <sdram_data<4>> created at line 33
-    Found 1-bit tristate buffer for signal <sdram_data<3>> created at line 33
-    Found 1-bit tristate buffer for signal <sdram_data<2>> created at line 33
-    Found 1-bit tristate buffer for signal <sdram_data<1>> created at line 33
-    Found 1-bit tristate buffer for signal <sdram_data<0>> created at line 33
+    Found 16-bit register for signal <data_in_r>.
+    Found 16-bit register for signal <data_out_r>.
+    Found 1-bit register for signal <we_r>.
+    Found 1-bit tristate buffer for signal <sdram_data<15>> created at line 31
+    Found 1-bit tristate buffer for signal <sdram_data<14>> created at line 31
+    Found 1-bit tristate buffer for signal <sdram_data<13>> created at line 31
+    Found 1-bit tristate buffer for signal <sdram_data<12>> created at line 31
+    Found 1-bit tristate buffer for signal <sdram_data<11>> created at line 31
+    Found 1-bit tristate buffer for signal <sdram_data<10>> created at line 31
+    Found 1-bit tristate buffer for signal <sdram_data<9>> created at line 31
+    Found 1-bit tristate buffer for signal <sdram_data<8>> created at line 31
+    Found 1-bit tristate buffer for signal <sdram_data<7>> created at line 31
+    Found 1-bit tristate buffer for signal <sdram_data<6>> created at line 31
+    Found 1-bit tristate buffer for signal <sdram_data<5>> created at line 31
+    Found 1-bit tristate buffer for signal <sdram_data<4>> created at line 31
+    Found 1-bit tristate buffer for signal <sdram_data<3>> created at line 31
+    Found 1-bit tristate buffer for signal <sdram_data<2>> created at line 31
+    Found 1-bit tristate buffer for signal <sdram_data<1>> created at line 31
+    Found 1-bit tristate buffer for signal <sdram_data<0>> created at line 31
     Summary:
-	inferred   2 Multiplexer(s).
+	inferred  33 D-type flip-flop(s).
 	inferred  16 Tristate(s).
 Unit <sdram_rw_data> synthesized.
 
@@ -294,28 +303,26 @@ Macro Statistics
  10-bit adder                                          : 1
  16-bit adder                                          : 3
  32-bit adder                                          : 1
-# Registers                                            : 16
- 1-bit register                                        : 5
+# Registers                                            : 18
+ 1-bit register                                        : 6
  10-bit register                                       : 1
  13-bit register                                       : 1
- 16-bit register                                       : 3
+ 16-bit register                                       : 5
  2-bit register                                        : 1
  32-bit register                                       : 1
- 4-bit register                                        : 1
  5-bit register                                        : 1
  8-bit register                                        : 2
-# Multiplexers                                         : 40
+# Multiplexers                                         : 36
  1-bit 2-to-1 multiplexer                              : 22
  13-bit 2-to-1 multiplexer                             : 1
- 16-bit 2-to-1 multiplexer                             : 6
+ 16-bit 2-to-1 multiplexer                             : 3
  2-bit 2-to-1 multiplexer                              : 1
  32-bit 2-to-1 multiplexer                             : 1
- 4-bit 2-to-1 multiplexer                              : 1
  5-bit 2-to-1 multiplexer                              : 7
  8-bit 4-to-1 multiplexer                              : 1
 # Tristates                                            : 16
  1-bit tristate buffer                                 : 16
-# FSMs                                                 : 1
+# FSMs                                                 : 2
 
 =========================================================================
 
@@ -372,17 +379,16 @@ Macro Statistics
  10-bit up counter                                     : 1
  16-bit up counter                                     : 2
  32-bit up counter                                     : 1
-# Registers                                            : 61
- Flip-Flops                                            : 61
-# Multiplexers                                         : 38
+# Registers                                            : 90
+ Flip-Flops                                            : 90
+# Multiplexers                                         : 34
  1-bit 2-to-1 multiplexer                              : 22
  13-bit 2-to-1 multiplexer                             : 1
- 16-bit 2-to-1 multiplexer                             : 5
+ 16-bit 2-to-1 multiplexer                             : 2
  2-bit 2-to-1 multiplexer                              : 1
- 4-bit 2-to-1 multiplexer                              : 1
  5-bit 2-to-1 multiplexer                              : 7
  8-bit 4-to-1 multiplexer                              : 1
-# FSMs                                                 : 1
+# FSMs                                                 : 2
 
 =========================================================================
 
@@ -390,7 +396,23 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <sdram_com/fsm/FSM_3> on signal <work_state_r[1:4]> with user encoding.
+Optimizing FSM <sdram_com/fsm/FSM_1> on signal <init_state_r[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000
+ 0001  | 0001
+ 0010  | 0010
+ 0011  | 0011
+ 0100  | 0100
+ 0101  | 0101
+ 0110  | 0110
+ 0111  | 0111
+ 1000  | 1000
+ 1001  | 1001
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <sdram_com/fsm/FSM_0> on signal <work_state_r[1:4]> with user encoding.
 -------------------
  State | Encoding
 -------------------
@@ -419,11 +441,9 @@ Optimizing unit <sdram_cmd> ...
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block counter, actual ratio is 5.
-FlipFlop sdram_com/fsm/init_state_r_0 has been replicated 1 time(s)
-FlipFlop sdram_com/fsm/work_state_r_FSM_FFd1 has been replicated 2 time(s)
-FlipFlop sdram_com/fsm/work_state_r_FSM_FFd2 has been replicated 1 time(s)
-FlipFlop sdram_com/fsm/work_state_r_FSM_FFd3 has been replicated 2 time(s)
-FlipFlop sdram_com/fsm/work_state_r_FSM_FFd4 has been replicated 2 time(s)
+FlipFlop sdram_com/fsm/init_state_r_FSM_FFd1 has been replicated 1 time(s)
+FlipFlop sdram_com/fsm/init_state_r_FSM_FFd4 has been replicated 1 time(s)
+FlipFlop sdram_com/fsm/work_state_r_FSM_FFd3 has been replicated 1 time(s)
 FlipFlop sel_reg_4 has been replicated 4 time(s) to handle iob=true attribute.
 
 Final Macro Processing ...
@@ -432,8 +452,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 134
- Flip-Flops                                            : 134
+# Registers                                            : 162
+ Flip-Flops                                            : 162
 
 =========================================================================
 
@@ -456,35 +476,32 @@ Top Level Output File Name         : counter.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 482
+# BELS                             : 486
 #      GND                         : 1
-#      INV                         : 6
+#      INV                         : 7
 #      LUT1                        : 70
-#      LUT2                        : 12
-#      LUT3                        : 10
-#      LUT4                        : 67
-#      LUT5                        : 23
-#      LUT6                        : 104
+#      LUT2                        : 9
+#      LUT3                        : 48
+#      LUT4                        : 45
+#      LUT5                        : 44
+#      LUT6                        : 77
 #      MUXCY                       : 85
-#      MUXF7                       : 13
+#      MUXF7                       : 9
 #      VCC                         : 1
 #      XORCY                       : 90
-# FlipFlops/Latches                : 135
-#      FD                          : 5
-#      FDC                         : 59
-#      FDCE                        : 18
+# FlipFlops/Latches                : 163
+#      FDC                         : 90
+#      FDCE                        : 65
 #      FDP                         : 6
-#      FDR                         : 18
-#      FDRE                        : 27
-#      FDS                         : 1
+#      FDRE                        : 1
 #      ODDR2                       : 1
 # Clock Buffers                    : 4
 #      BUFG                        : 4
-# IO Buffers                       : 56
+# IO Buffers                       : 58
 #      IBUF                        : 1
 #      IBUFG                       : 1
 #      IOBUF                       : 16
-#      OBUF                        : 38
+#      OBUF                        : 40
 # DCMs                             : 1
 #      DCM_SP                      : 1
 
@@ -495,20 +512,20 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             128  out of  11440     1%  
- Number of Slice LUTs:                  292  out of   5720     5%  
-    Number used as Logic:               292  out of   5720     5%  
+ Number of Slice Registers:             156  out of  11440     1%  
+ Number of Slice LUTs:                  300  out of   5720     5%  
+    Number used as Logic:               300  out of   5720     5%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    300
-   Number with an unused Flip Flop:     172  out of    300    57%  
-   Number with an unused LUT:             8  out of    300     2%  
-   Number of fully used LUT-FF pairs:   120  out of    300    40%  
-   Number of unique control sets:        11
+ Number of LUT Flip Flop pairs used:    304
+   Number with an unused Flip Flop:     148  out of    304    48%  
+   Number with an unused LUT:             4  out of    304     1%  
+   Number of fully used LUT-FF pairs:   152  out of    304    50%  
+   Number of unique control sets:         6
 
 IO Utilization: 
- Number of IOs:                          56
- Number of bonded IOBs:                  56  out of    102    54%  
+ Number of IOs:                          58
+ Number of bonded IOBs:                  58  out of    102    56%  
     IOB Flip Flops/Latches:               7
 
 Specific Feature Utilization:
@@ -536,7 +553,7 @@ Clock Information:
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
 clock_50m                          | DCM_SP:CLK0            | 76    |
-clock_50m                          | DCM_SP:CLK2X           | 60    |
+clock_50m                          | DCM_SP:CLK2X           | 88    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -547,9 +564,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 14.066ns (Maximum Frequency: 71.096MHz)
-   Minimum input arrival time before clock: 7.028ns
-   Maximum output required time after clock: 6.969ns
+   Minimum period: 14.260ns (Maximum Frequency: 70.129MHz)
+   Minimum input arrival time before clock: 5.141ns
+   Maximum output required time after clock: 5.554ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -558,10 +575,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clock_50m'
-  Clock period: 14.066ns (frequency: 71.096MHz)
-  Total number of paths / destination ports: 23629 / 185
+  Clock period: 14.260ns (frequency: 70.129MHz)
+  Total number of paths / destination ports: 21687 / 222
 -------------------------------------------------------------------------
-Delay:               7.033ns (Levels of Logic = 20)
+Delay:               7.130ns (Levels of Logic = 20)
   Source:            sdram_com/fsm/cnt_clk_r_3 (FF)
   Destination:       sdram_com/fsm/cnt_clk_r_15 (FF)
   Source Clock:      clock_50m rising 2.0X
@@ -571,10 +588,10 @@ Delay:               7.033ns (Levels of Logic = 20)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              3   0.525   1.221  sdram_com/fsm/cnt_clk_r_3 (sdram_com/fsm/cnt_clk_r_3)
-     LUT6:I0->O            6   0.254   0.876  sdram_com/fsm/cnt_clk_r[15]_GND_8_o_equal_5_o<15>1_SW1 (N55)
-     LUT6:I5->O            6   0.254   0.876  sdram_com/fsm/init_state_r[3]_init_state_r[3]_wide_mux_52_OUT<0>21 (sdram_com/fsm/init_state_r[3]_init_state_r[3]_wide_mux_52_OUT<0>2)
-     LUT6:I5->O           17   0.254   1.209  sdram_com/fsm/Mmux_reset_cnt_clk_n35 (sdram_com/fsm/Mmux_reset_cnt_clk_n34)
+     FDC:C->Q              3   0.525   1.221  sdram_com/fsm/cnt_clk_r_3 (sdram_com/fsm/cnt_clk_r_3)
+     LUT6:I0->O            5   0.254   0.841  sdram_com/fsm/cnt_clk_r[15]_GND_8_o_equal_3_o<15>1_SW1 (N48)
+     LUT6:I5->O           10   0.254   1.008  sdram_com/fsm/GND_8_o_GND_8_o_equal_26_o<15>11 (sdram_com/fsm/GND_8_o_GND_8_o_equal_26_o<15>1)
+     LUT6:I5->O           17   0.254   1.209  sdram_com/fsm/Mmux_reset_cnt_clk_n32 (sdram_com/fsm/Mmux_reset_cnt_clk_n31)
      LUT6:I5->O            1   0.254   0.681  sdram_com/fsm/Mmux_reset_cnt_clk_n37 (sdram_com/fsm/reset_cnt_clk_n)
      MUXCY:CI->O           1   0.023   0.000  sdram_com/fsm/Mcount_cnt_clk_r_cy<0> (sdram_com/fsm/Mcount_cnt_clk_r_cy<0>)
      MUXCY:CI->O           1   0.023   0.000  sdram_com/fsm/Mcount_cnt_clk_r_cy<1> (sdram_com/fsm/Mcount_cnt_clk_r_cy<1>)
@@ -592,53 +609,50 @@ Delay:               7.033ns (Levels of Logic = 20)
      MUXCY:CI->O           1   0.023   0.000  sdram_com/fsm/Mcount_cnt_clk_r_cy<13> (sdram_com/fsm/Mcount_cnt_clk_r_cy<13>)
      MUXCY:CI->O           0   0.023   0.000  sdram_com/fsm/Mcount_cnt_clk_r_cy<14> (sdram_com/fsm/Mcount_cnt_clk_r_cy<14>)
      XORCY:CI->O           1   0.206   0.000  sdram_com/fsm/Mcount_cnt_clk_r_xor<15> (sdram_com/fsm/Mcount_cnt_clk_r15)
-     FDR:D                     0.074          sdram_com/fsm/cnt_clk_r_15
+     FDC:D                     0.074          sdram_com/fsm/cnt_clk_r_15
     ----------------------------------------
-    Total                      7.033ns (2.170ns logic, 4.863ns route)
-                                       (30.9% logic, 69.1% route)
+    Total                      7.130ns (2.170ns logic, 4.960ns route)
+                                       (30.4% logic, 69.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_50m'
-  Total number of paths / destination ports: 417 / 140
+  Total number of paths / destination ports: 179 / 179
 -------------------------------------------------------------------------
-Offset:              7.028ns (Levels of Logic = 5)
+Offset:              5.141ns (Levels of Logic = 2)
   Source:            reset_n (PAD)
-  Destination:       seg_data_reg_1 (FF)
+  Destination:       write_req (FF)
   Destination Clock: clock_50m rising
 
-  Data Path: reset_n to seg_data_reg_1
+  Data Path: reset_n to write_req
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            43   1.328   1.704  reset_n_IBUF (reset_n_IBUF)
-     LUT2:I1->O            1   0.254   1.112  Mmux_segcounter[9]_segdata3[7]_wide_mux_14_OUT23_SW1_SW0 (N111)
-     LUT6:I1->O            1   0.254   1.112  Mmux_segcounter[9]_segdata3[7]_wide_mux_14_OUT23_SW1 (N64)
-     LUT6:I1->O            1   0.254   0.682  Mmux_segcounter[9]_segdata3[7]_wide_mux_14_OUT23 (Mmux_segcounter[9]_segdata3[7]_wide_mux_14_OUT22)
-     LUT6:I5->O            1   0.254   0.000  Mmux_segcounter[9]_segdata3[7]_wide_mux_14_OUT25 (segcounter[9]_segdata3[7]_wide_mux_14_OUT<1>)
-     FDC:D                     0.074          seg_data_reg_1
+     IBUF:I->O             2   1.328   0.725  reset_n_IBUF (reset_n_IBUF)
+     INV:I->O            161   0.255   2.374  reset_n_inv1_INV_0 (reset_n_inv)
+     FDCE:CLR                  0.459          write_req
     ----------------------------------------
-    Total                      7.028ns (2.418ns logic, 4.610ns route)
-                                       (34.4% logic, 65.6% route)
+    Total                      5.141ns (2.042ns logic, 3.099ns route)
+                                       (39.7% logic, 60.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clock_50m'
-  Total number of paths / destination ports: 120 / 53
+  Total number of paths / destination ports: 70 / 53
 -------------------------------------------------------------------------
-Offset:              6.969ns (Levels of Logic = 2)
-  Source:            sdram_com/fsm/work_state_r_FSM_FFd1 (FF)
+Offset:              5.554ns (Levels of Logic = 2)
+  Source:            sdram_com/rw_data/we_r (FF)
   Destination:       sdram_data<15> (PAD)
   Source Clock:      clock_50m rising 2.0X
 
-  Data Path: sdram_com/fsm/work_state_r_FSM_FFd1 to sdram_data<15>
+  Data Path: sdram_com/rw_data/we_r to sdram_data<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            50   0.525   2.097  sdram_com/fsm/work_state_r_FSM_FFd1 (sdram_com/fsm/work_state_r_FSM_FFd1)
-     LUT4:I0->O           16   0.254   1.181  sdram_com/rw_data/we_r_inv1 (sdram_com/rw_data/we_r_inv)
+     FDC:C->Q              1   0.525   0.681  sdram_com/rw_data/we_r (sdram_com/rw_data/we_r)
+     INV:I->O             16   0.255   1.181  sdram_com/rw_data/we_r_inv1_INV_0 (sdram_com/rw_data/we_r_inv)
      IOBUF:T->IO               2.912          sdram_data_15_IOBUF (sdram_data<15>)
     ----------------------------------------
-    Total                      6.969ns (3.691ns logic, 3.278ns route)
-                                       (53.0% logic, 47.0% route)
+    Total                      5.554ns (3.692ns logic, 1.862ns route)
+                                       (66.5% logic, 33.5% route)
 
 =========================================================================
 
@@ -650,21 +664,21 @@ Clock to Setup on destination clock clock_50m
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clock_50m      |    7.280|         |         |         |
+clock_50m      |    7.185|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 3.00 secs
-Total CPU time to Xst completion: 2.02 secs
+Total CPU time to Xst completion: 2.34 secs
  
 --> 
 
 
-Total memory usage is 484652 kilobytes
+Total memory usage is 484536 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   13 (   0 filtered)
+Number of warnings :    9 (   0 filtered)
 Number of infos    :    9 (   0 filtered)
 
