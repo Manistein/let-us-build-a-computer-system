@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pn" timeStamp="Sun Jan 14 08:22:01 2024">
+<application name="pn" timeStamp="Wed Jan 10 15:56:45 2024">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="F7457F2D0D98AB2D6E29BF7454C92884" type="project"/>
-<property name="ProjectIteration" value="10" type="project"/>
+<property name="ProjectIteration" value="3" type="project"/>
 <property name="ProjectFile" value="/home/ise/hardware/ISEProjects/sdram_on_board/sdram_on_board.xise" type="project"/>
 <property name="ProjectCreationTimestamp" value="2024-01-08T15:51:29" type="project"/>
 </section>
@@ -24,7 +24,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PROP_UserConstraintEditorPreference" value="Text Editor" type="process"/>
 <property name="PROP_intProjectCreationTimestamp" value="2024-01-08T15:51:29" type="design"/>
 <property name="PROP_intWbtProjectID" value="F7457F2D0D98AB2D6E29BF7454C92884" type="design"/>
-<property name="PROP_intWbtProjectIteration" value="10" type="process"/>
+<property name="PROP_intWbtProjectIteration" value="3" type="process"/>
 <property name="PROP_intWorkingDirLocWRTProjDir" value="Same" type="design"/>
 <property name="PROP_intWorkingDirUsed" value="No" type="design"/>
 <property name="PROP_xilxBitgStart_IntDone" value="true" type="process"/>

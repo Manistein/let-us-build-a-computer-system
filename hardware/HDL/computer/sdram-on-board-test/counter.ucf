@@ -58,6 +58,3 @@ NET "sdram_addr[9]" LOC = P46;
 NET "sdram_addr[10]" LOC = P133;
 NET "sdram_addr[11]" LOC = P47;
 NET "sdram_addr[12]" LOC = P48;
-
-NET "sdram_ldqm" LOC = P124;
-NET "sdram_udqm" LOC = P55;

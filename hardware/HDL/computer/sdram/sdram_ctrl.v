@@ -54,7 +54,7 @@ module sdram_ctrl(
 	reg reset_cnt_clk_n;
 	
 	// update clock counter
-	always @(posedge clk_100m or negedge rst_n) begin
+	always @(posedge clk_100m) begin
 		if (!rst_n) begin
 			cnt_clk_r <= 0;
 			done_200us <= 0;
@@ -64,17 +64,17 @@ module sdram_ctrl(
 			end else begin 
 				cnt_clk_r <= cnt_clk_r + 1;
 			end
-
-			if (cnt_clk_r == 16'd20000) begin
-				done_200us <= 1;
-			end
+		end
+		
+		if (cnt_clk_r == 16'd20000) begin
+			done_200us <= 1;
 		end
 	end
 	
 	//auto-refresh counter
 	assign sdram_ref_ack = (work_state_r == `W_AR) ? 1'b1 : 1'b0;
 	assign init_done = (init_state_r == `I_DONE) ? 1'b1 : 1'b0;
-	always @(posedge clk_100m or negedge rst_n) begin
+	always @(posedge clk_100m) begin
 		if (!rst_n) begin
 			cnt_ref_r <= 0;
 			sdram_ref_req <= 1'b0;
@@ -93,7 +93,7 @@ module sdram_ctrl(
 	end
 
 	// state fsm
-	always @(posedge clk_100m or negedge rst_n) begin
+	always @(posedge clk_100m) begin
 		if (!rst_n) begin
 			work_state_r <= `W_IDLE;
 			init_state_r <= `I_NOP;

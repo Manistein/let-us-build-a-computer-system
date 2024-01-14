@@ -11,28 +11,34 @@
 <msg type="warning" file="HDLCompiler" num="413" delta="old" >"/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_ctrl.v" Line 65: Result of <arg fmt="%d" index="1">17</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">16</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="91" delta="old" >"/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_ctrl.v" Line 159: Signal &lt;<arg fmt="%s" index="1">done_200us</arg>&gt; missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+<msg type="warning" file="HDLCompiler" num="91" delta="old" >"/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_ctrl.v" Line 158: Signal &lt;<arg fmt="%s" index="1">done_200us</arg>&gt; missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 100: Assignment to <arg fmt="%s" index="1">sdram_wr_ack</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="91" delta="old" >"/home/ise/hardware/HDL/computer/sdram-on-board-test/../sdram/sdram_rw_data.v" Line 26: Signal &lt;<arg fmt="%s" index="1">sdram_data</arg>&gt; missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 106: Assignment to <arg fmt="%s" index="1">sdram_rd_ack</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 98: Assignment to <arg fmt="%s" index="1">sdram_wr_ack</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 109: Assignment to <arg fmt="%s" index="1">sdram_busy</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 104: Assignment to <arg fmt="%s" index="1">sdram_rd_ack</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v</arg>&quot; line <arg fmt="%s" index="2">34</arg>: Output port &lt;<arg fmt="%s" index="3">LOCKED</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u_sdram_pll</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 107: Assignment to <arg fmt="%s" index="1">sdram_busy</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v</arg>&quot; line <arg fmt="%s" index="2">92</arg>: Output port &lt;<arg fmt="%s" index="3">sdram_wr_ack</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">sdram_com</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="warning" file="HDLCompiler" num="91" delta="old" >"/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v" Line 121: Signal &lt;<arg fmt="%s" index="1">reset_n</arg>&gt; missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v</arg>&quot; line <arg fmt="%s" index="2">92</arg>: Output port &lt;<arg fmt="%s" index="3">sdram_rd_ack</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">sdram_com</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v</arg>&quot; line <arg fmt="%s" index="2">32</arg>: Output port &lt;<arg fmt="%s" index="3">LOCKED</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u_sdram_pll</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v</arg>&quot; line <arg fmt="%s" index="2">92</arg>: Output port &lt;<arg fmt="%s" index="3">sdram_busy</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">sdram_com</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v</arg>&quot; line <arg fmt="%s" index="2">90</arg>: Output port &lt;<arg fmt="%s" index="3">sdram_wr_ack</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">sdram_com</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v</arg>&quot; line <arg fmt="%s" index="2">90</arg>: Output port &lt;<arg fmt="%s" index="3">sdram_rd_ack</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">sdram_com</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/hardware/HDL/computer/sdram-on-board-test/counter.v</arg>&quot; line <arg fmt="%s" index="2">90</arg>: Output port &lt;<arg fmt="%s" index="3">sdram_busy</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">sdram_com</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">sdwr_bytes</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -42,6 +48,12 @@
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">cnt_clk</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">clk_100m</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">rst_n</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
 <msg type="info" file="Xst" num="3217" delta="old" >HDL ADVISOR - Register &lt;<arg fmt="%s" index="1">sel_reg</arg>&gt; currently described with an asynchronous reset, could be combined with distributed RAM &lt;<arg fmt="%s" index="2">Mram_segcounter[9]_PWR_1_o_wide_mux_13_OUT</arg>&gt; for implementation on block RAM resources if you made this reset synchronous instead.

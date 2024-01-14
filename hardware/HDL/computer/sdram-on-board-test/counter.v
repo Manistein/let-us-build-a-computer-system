@@ -17,9 +17,7 @@ module counter (
     output sdram_cas_n, 
     output [1:0] sdram_ba,
     output [12:0] sdram_addr,
-    output sdram_we_n,
-	 output sdram_ldqm,
-	 output sdram_udqm
+    output sdram_we_n
 );
 	localparam CLOCK_CYCLE_PER_SEC = 50000000;
 	localparam CLOCK_CYCLE_HALF_SEC = 25000000;
@@ -120,7 +118,7 @@ module counter (
 	);
 
 	always @(rd_from_sdram) begin
-		v_rd_reg <= rd_from_sdram;
+		v_rd_reg <= (!reset_n) ? 16'b0 : rd_from_sdram;
 	end
 
 	// output to seg display
@@ -172,7 +170,4 @@ module counter (
 	assign led0 = sdram_init_done? 1'b1 : 1'b0;
 	assign sel = sel_reg; 
 	assign data = seg_data_reg;
-	
-	assign sdram_ldqm = 1'b0;
-	assign sdram_udqm = 1'b0;
 endmodule

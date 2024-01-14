@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-01-14T08:21:59</DateModified>
+  <DateModified>2024-01-10T16:21:48</DateModified>
   <ModuleName>counter</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/ise/hardware/ISEProjects/sdram_on_board/iseconfig/counter.xreport</SavedFilePath>

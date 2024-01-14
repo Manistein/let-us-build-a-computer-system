@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-localhost.localdomain::  Sun Jan 14 08:14:30 2024
+localhost.localdomain::  Wed Jan 10 15:56:46 2024
 
 par -w -intstyle ise -ol high -mt off counter_map.ncd counter.ncd counter.pcf 
 
@@ -32,16 +32,16 @@ Device speed data version:  "PRODUCTION 1.23 2013-10-13".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                   155 out of  11,440    1%
-    Number used as Flip Flops:                 155
+  Number of Slice Registers:                   127 out of  11,440    1%
+    Number used as Flip Flops:                 127
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        270 out of   5,720    4%
-    Number used as logic:                      266 out of   5,720    4%
-      Number using O6 output only:             166
+  Number of Slice LUTs:                        271 out of   5,720    4%
+    Number used as logic:                      267 out of   5,720    4%
+      Number using O6 output only:             175
       Number using O5 output only:              67
-      Number using O5 and O6:                   33
+      Number using O5 and O6:                   25
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   1,440    0%
     Number used exclusively as route-thrus:      4
@@ -53,9 +53,9 @@ Slice Logic Distribution:
   Number of occupied Slices:                    82 out of   1,430    5%
   Number of MUXCYs used:                        92 out of   2,860    3%
   Number of LUT Flip Flop pairs used:          271
-    Number with an unused Flip Flop:           127 out of     271   46%
-    Number with an unused LUT:                   1 out of     271    1%
-    Number of fully used LUT-FF pairs:         143 out of     271   52%
+    Number with an unused Flip Flop:           154 out of     271   56%
+    Number with an unused LUT:                   0 out of     271    0%
+    Number of fully used LUT-FF pairs:         117 out of     271   43%
     Number of slice register sites lost
       to control set restrictions:               0 out of  11,440    0%
 
@@ -66,8 +66,8 @@ Slice Logic Distribution:
   over-mapped for a non-slice resource or if Placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                        58 out of     102   56%
-    Number of LOCed IOBs:                       58 out of      58  100%
+  Number of bonded IOBs:                        56 out of     102   54%
+    Number of LOCed IOBs:                       56 out of      56  100%
     IOB Flip Flops:                              8
 
 Specific Feature Utilization:
@@ -113,13 +113,13 @@ Finished initial Timing Analysis.  REAL time: 1 secs
 Starting Router
 
 
-Phase  1  : 1388 unrouted;      REAL time: 1 secs 
+Phase  1  : 1426 unrouted;      REAL time: 1 secs 
 
-Phase  2  : 1199 unrouted;      REAL time: 1 secs 
+Phase  2  : 1253 unrouted;      REAL time: 1 secs 
 
-Phase  3  : 458 unrouted;      REAL time: 1 secs 
+Phase  3  : 502 unrouted;      REAL time: 1 secs 
 
-Phase  4  : 458 unrouted; (Par is working to improve performance)     REAL time: 1 secs 
+Phase  4  : 502 unrouted; (Par is working to improve performance)     REAL time: 1 secs 
 
 Updating file: counter.ncd with current fully routed design.
 
@@ -155,11 +155,11 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|     6.349ns|     N/A|           0
-  _sdram_ref                                | HOLD        |     0.440ns|            |       0|           0
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|     6.825ns|     N/A|           0
+  _sdram_ref                                | HOLD        |     0.459ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|     6.030ns|     N/A|           0
-  _50m                                      | HOLD        |     0.440ns|            |       0|           0
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|     6.707ns|     N/A|           0
+  _50m                                      | HOLD        |     0.415ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
