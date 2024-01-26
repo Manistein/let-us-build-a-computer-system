@@ -2,9 +2,27 @@ Command line:
    sdram_test_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  55165
+     -socket  44233
 
-Sun Dec 31 11:39:41 2023
+Wed Jan 10 16:52:23 2024
 
 
  Elaboration Time: 0.02 sec
+
+ Current Memory Usage: 199.246 Meg
+
+ Total Signals          : 151
+ Total Nets             : 258
+ Total Signal Drivers   : 83
+ Total Blocks           : 16
+ Total Primitive Blocks : 12
+ Total Processes        : 180
+ Total Traceable Variables  : 217
+ Total Scalar Nets and Variables : 5413
+
+ Total Simulation Time: 0.84 sec
+
+ Current Memory Usage: 276.845 Meg
+
+Wed Jan 10 16:56:54 2024
+

@@ -3,48 +3,40 @@
 `include "sdram_rw_data.v"
 
 module sdram_top(
-    input clk_50m,
+    input clk_100m,
     input rst_n,
 
-    input [0:23] sdram_wr_addr,
-    input [0:15] sdram_wr_data,
+    input [23:0] sdram_wr_addr,
+    input [15:0] sdram_wr_data,
     input sdram_wr_req,
-    input [0:8] sdwr_bytes, // brust write size
+    input [8:0] sdwr_bytes, // brust write size
     output sdram_wr_ack,
 
-    input [0:23] sdram_rd_addr,
-    output [0:15] sdram_rd_data,
+    input [23:0] sdram_rd_addr,
+    output [15:0] sdram_rd_data,
     input sdram_rd_req,
-    input [0:8] sdrd_bytes, // brust read size
+    input [8:0] sdrd_bytes, // brust read size
     output sdram_rd_ack,
 
     output sdram_init_done,
     output sdram_busy,
 
-    inout [0:15] sdram_data,
-    output sdram_clk,
+    inout [15:0] sdram_data,
+    // output sdram_clk,
     output sdram_cke, 
     output sdram_cs_n, 
     output sdram_ras_n, 
     output sdram_cas_n, 
-    output [0:1] sdram_ba,
-    output [0:12] sdram_addr,
+    output [1:0] sdram_ba,
+    output [12:0] sdram_addr,
     output sdram_we_n
 );
-    wire clk_100m;
-    wire [0:3] init_state;
-    wire [0:3] work_state;
-    wire [0:15] cnt_clk;
+    wire [3:0] init_state;
+    wire [3:0] work_state;
+    wire [15:0] cnt_clk;
     wire sys_rw_n;
 		
-	 sdram_pll	u_sdram_pll(
-		.CLK_IN1(clk_50m),
-		.RESET(~rst_n),
-		.LOCKED(),
-			
-		.CLK_OUT1(clk_100m)
-	 );
-
+	 
     sdram_ctrl fsm(
         .clk_100m(clk_100m),
         .rst_n(rst_n),
@@ -94,5 +86,4 @@ module sdram_top(
 
         .sys_data_out(sdram_rd_data) // read data from the sdram
     );
-
 endmodule

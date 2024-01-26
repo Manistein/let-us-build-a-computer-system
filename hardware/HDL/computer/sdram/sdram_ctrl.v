@@ -25,24 +25,25 @@ module sdram_ctrl(
     input rst_n,
     input sdram_wr_req,
     input sdram_rd_req,
-    input [0:8] sdwr_bytes,
-    input [0:8] sdrd_bytes,
+    input [8:0] sdwr_bytes,
+    input [8:0] sdrd_bytes,
+
     output sdram_wr_ack,
     output sdram_rd_ack,
     output sdram_init_done,
-    output [0:3] init_state,
-    output [0:3] work_state,
-    output [0:15] cnt_clk,
+    output [3:0] init_state,
+    output [3:0] work_state,
+    output [15:0] cnt_clk,
 	output sdram_busy,
     output sys_rw_n  // 0 for read, 1 for write
     );
 
 	`include "sdram_para.v";
 	
-	reg [0:15] cnt_clk_r;
-	reg [0:3] work_state_r;
-	reg [0:3] init_state_r;
-	reg [0:15] cnt_ref_r;  // refresh
+	reg [15:0] cnt_clk_r;
+	reg [3:0] work_state_r;
+	reg [3:0] init_state_r;
+	reg [15:0] cnt_ref_r;  // refresh
 	reg done_200us;
 	reg sys_rw_n_r;
 	
@@ -63,10 +64,10 @@ module sdram_ctrl(
 			end else begin 
 				cnt_clk_r <= cnt_clk_r + 1;
 			end
-		end
-		
-		if (cnt_clk_r == 16'd20000) begin
-			done_200us <= 1;
+
+			if (cnt_clk_r == 16'd20000) begin
+				done_200us <= 1;
+			end
 		end
 	end
 	
