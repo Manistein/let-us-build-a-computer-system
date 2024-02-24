@@ -1,0 +1,4 @@
+verilog work "ipcore_dir/ram_ip.v"
+verilog work "chipscope_ila.v"
+verilog work "chipscope_icon.v"
+verilog work "ram_test.v"

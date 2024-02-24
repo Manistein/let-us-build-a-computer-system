@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "E:/BaiduYunDownload/AX309.190502/06_key_debounce/key_debounce.xst" -ofn "E:/BaiduYunDownload/AX309.190502/06_key_debounce/key_debounce.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc key_debounce.ucf -p xc6slx9-ftg256-2 key_debounce.ngc key_debounce.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o key_debounce_map.ncd key_debounce.ngd key_debounce.pcf 
+par -w -intstyle ise -ol high -mt off key_debounce_map.ncd key_debounce.ncd key_debounce.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml key_debounce.twx key_debounce.ncd -o key_debounce.twr key_debounce.pcf -ucf key_debounce.ucf 
+bitgen -intstyle ise -f key_debounce.ut key_debounce.ncd 

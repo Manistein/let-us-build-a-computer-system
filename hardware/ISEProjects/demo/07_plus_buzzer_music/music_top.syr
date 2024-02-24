@@ -1,0 +1,551 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.15 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Reading design: music_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "music_top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "music_top"
+Output Format                      : NGC
+Target Device                      : xc6slx9-2-ftg256
+
+---- Source Options
+Top Module Name                    : music_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\07_plus_buzzer_music\src\music_hz.v" into library work
+Parsing module <music_hz>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\07_plus_buzzer_music\src\ax_debounce.v" into library work
+Parsing module <ax_debounce>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\07_plus_buzzer_music\ipcore_dir\music_time_rom.v" into library work
+Parsing module <music_time_rom>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\07_plus_buzzer_music\ipcore_dir\music_rom.v" into library work
+Parsing module <music_rom>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\07_plus_buzzer_music\src\music_top.v" into library work
+Parsing module <music_top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <music_top>.
+
+Elaborating module <ax_debounce>.
+
+Elaborating module <music_hz>.
+
+Elaborating module <music_rom>.
+WARNING:HDLCompiler:1499 - "E:\BaiduYunDownload\AX309.190502\07_plus_buzzer_music\ipcore_dir\music_rom.v" Line 39: Empty module <music_rom> remains a black box.
+
+Elaborating module <music_time_rom>.
+WARNING:HDLCompiler:1499 - "E:\BaiduYunDownload\AX309.190502\07_plus_buzzer_music\ipcore_dir\music_time_rom.v" Line 39: Empty module <music_time_rom> remains a black box.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <music_top>.
+    Related source file is "E:\BaiduYunDownload\AX309.190502\07_plus_buzzer_music\src\music_top.v".
+        CLK_FRE = 50
+        music_len = 32'b00000000000000000000000001001110
+        IDLE = 2'b00
+        PLAY = 2'b01
+        PLAY_WAIT = 2'b10
+        PLAY_END = 2'b11
+INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\07_plus_buzzer_music\src\music_top.v" line 64: Output port <button_posedge> of the instance <ax_debounce_a0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\07_plus_buzzer_music\src\music_top.v" line 64: Output port <button_out> of the instance <ax_debounce_a0> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <buzzer>.
+    Found 32-bit register for signal <music_time>.
+    Found 20-bit register for signal <hz_cnt>.
+    Found 32-bit register for signal <play_cnt>.
+    Found 32-bit register for signal <music_cnt>.
+    Found 2-bit register for signal <state>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 21-bit subtractor for signal <GND_1_o_GND_1_o_sub_12_OUT> created at line 91.
+    Found 20-bit adder for signal <hz_cnt[19]_GND_1_o_add_13_OUT> created at line 94.
+    Found 32-bit adder for signal <play_cnt[31]_GND_1_o_add_23_OUT> created at line 121.
+    Found 32-bit adder for signal <music_cnt[31]_GND_1_o_add_27_OUT> created at line 131.
+    Found 8x23-bit multiplier for signal <rom_time_data[7]_PWR_1_o_MuLt_7_OUT> created at line 81.
+    Found 32-bit comparator equal for signal <play_cnt[31]_music_time[31]_equal_3_o> created at line 48
+    Found 32-bit comparator equal for signal <GND_1_o_GND_1_o_equal_13_o> created at line 91
+    Found 20-bit comparator lessequal for signal <hz_cnt[19]_GND_1_o_LessThan_20_o> created at line 106
+    Summary:
+	inferred   1 Multiplier(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred 117 D-type flip-flop(s).
+	inferred   3 Comparator(s).
+	inferred   5 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <music_top> synthesized.
+
+Synthesizing Unit <ax_debounce>.
+    Related source file is "E:\BaiduYunDownload\AX309.190502\07_plus_buzzer_music\src\ax_debounce.v".
+        N = 32
+        FREQ = 50
+        MAX_TIME = 20
+    Found 1-bit register for signal <button_out_d0>.
+    Found 1-bit register for signal <button_out>.
+    Found 32-bit register for signal <q_reg>.
+    Found 1-bit register for signal <DFF2>.
+    Found 1-bit register for signal <button_posedge>.
+    Found 1-bit register for signal <button_negedge>.
+    Found 1-bit register for signal <DFF1>.
+    Found 32-bit adder for signal <q_reg[31]_GND_2_o_add_1_OUT> created at line 65.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  38 D-type flip-flop(s).
+Unit <ax_debounce> synthesized.
+
+Synthesizing Unit <music_hz>.
+    Related source file is "E:\BaiduYunDownload\AX309.190502\07_plus_buzzer_music\src\music_hz.v".
+        CLK_FRE = 50
+    Found 32x20-bit Read Only RAM for signal <_n0148>
+    Summary:
+	inferred   1 RAM(s).
+	inferred   1 Multiplexer(s).
+Unit <music_hz> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 32x20-bit single-port Read Only RAM                   : 1
+# Multipliers                                          : 1
+ 23x8-bit multiplier                                   : 1
+# Adders/Subtractors                                   : 5
+ 20-bit adder                                          : 1
+ 21-bit subtractor                                     : 1
+ 32-bit adder                                          : 3
+# Registers                                            : 12
+ 1-bit register                                        : 7
+ 20-bit register                                       : 1
+ 32-bit register                                       : 4
+# Comparators                                          : 3
+ 20-bit comparator lessequal                           : 1
+ 32-bit comparator equal                               : 2
+# Multiplexers                                         : 6
+ 1-bit 2-to-1 multiplexer                              : 1
+ 20-bit 2-to-1 multiplexer                             : 3
+ 32-bit 2-to-1 multiplexer                             : 2
+# FSMs                                                 : 1
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/music_rom.ngc>.
+Reading core <ipcore_dir/music_time_rom.ngc>.
+Loading core <music_rom> for timing and area information for instance <hz_rom>.
+Loading core <music_time_rom> for timing and area information for instance <time_rom>.
+
+Synthesizing (advanced) Unit <music_hz>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0148> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 20-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <(hz_sel<5:4>,hz_sel<2:0>)> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <music_hz> synthesized (advanced).
+
+Synthesizing (advanced) Unit <music_top>.
+The following registers are absorbed into counter <play_cnt>: 1 register on signal <play_cnt>.
+The following registers are absorbed into counter <music_cnt>: 1 register on signal <music_cnt>.
+Unit <music_top> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 32x20-bit single-port distributed Read Only RAM       : 1
+# Multipliers                                          : 1
+ 23x8-bit multiplier                                   : 1
+# Adders/Subtractors                                   : 3
+ 20-bit adder                                          : 1
+ 21-bit subtractor                                     : 1
+ 32-bit adder                                          : 1
+# Counters                                             : 2
+ 32-bit up counter                                     : 2
+# Registers                                            : 91
+ Flip-Flops                                            : 91
+# Comparators                                          : 3
+ 20-bit comparator lessequal                           : 1
+ 32-bit comparator equal                               : 2
+# Multiplexers                                         : 4
+ 1-bit 2-to-1 multiplexer                              : 1
+ 20-bit 2-to-1 multiplexer                             : 3
+# FSMs                                                 : 1
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+ 11    | 10
+-------------------
+
+Optimizing unit <music_top> ...
+
+Optimizing unit <ax_debounce> ...
+WARNING:Xst:2677 - Node <ax_debounce_a0/button_posedge> of sequential type is unconnected in block <music_top>.
+WARNING:Xst:1710 - FF/Latch <ax_debounce_a0/q_reg_31> (without init value) has a constant value of 0 in block <music_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_a0/q_reg_30> (without init value) has a constant value of 0 in block <music_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_a0/q_reg_29> (without init value) has a constant value of 0 in block <music_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_a0/q_reg_28> (without init value) has a constant value of 0 in block <music_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_a0/q_reg_27> (without init value) has a constant value of 0 in block <music_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_a0/q_reg_26> (without init value) has a constant value of 0 in block <music_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_a0/q_reg_25> (without init value) has a constant value of 0 in block <music_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_a0/q_reg_24> (without init value) has a constant value of 0 in block <music_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_a0/q_reg_23> (without init value) has a constant value of 0 in block <music_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_a0/q_reg_22> (without init value) has a constant value of 0 in block <music_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_a0/q_reg_21> (without init value) has a constant value of 0 in block <music_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_a0/q_reg_20> (without init value) has a constant value of 0 in block <music_top>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block music_top, actual ratio is 4.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 130
+ Flip-Flops                                            : 130
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : music_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 502
+#      GND                         : 3
+#      INV                         : 3
+#      LUT1                        : 38
+#      LUT2                        : 5
+#      LUT3                        : 86
+#      LUT4                        : 16
+#      LUT5                        : 23
+#      LUT6                        : 57
+#      MUXCY                       : 144
+#      VCC                         : 3
+#      XORCY                       : 124
+# FlipFlops/Latches                : 130
+#      FDC                         : 77
+#      FDCE                        : 32
+#      FDP                         : 21
+# RAMS                             : 2
+#      RAMB8BWER                   : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 3
+#      IBUF                        : 2
+#      OBUF                        : 1
+# DSPs                             : 2
+#      DSP48A1                     : 2
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9ftg256-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             130  out of  11440     1%  
+ Number of Slice LUTs:                  228  out of   5720     3%  
+    Number used as Logic:               228  out of   5720     3%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    248
+   Number with an unused Flip Flop:     118  out of    248    47%  
+   Number with an unused LUT:            20  out of    248     8%  
+   Number of fully used LUT-FF pairs:   110  out of    248    44%  
+   Number of unique control sets:         2
+
+IO Utilization: 
+ Number of IOs:                           4
+ Number of bonded IOBs:                   4  out of    186     2%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                1  out of     32     3%  
+    Number using Block RAM only:          1
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+ Number of DSP48A1s:                      2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                                                                                                            | Load  |
+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-------+
+clk                                | BUFGP                                                                                                                            | 133   |
+hz_rom/N1                          | NONE(hz_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram)  | 1     |
+time_rom/N1                        | NONE(time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram)| 1     |
+-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 11.110ns (Maximum Frequency: 90.009MHz)
+   Minimum input arrival time before clock: 5.023ns
+   Maximum output required time after clock: 4.118ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 11.110ns (frequency: 90.009MHz)
+  Total number of paths / destination ports: 38722 / 226
+-------------------------------------------------------------------------
+Delay:               11.110ns (Levels of Logic = 2)
+  Source:            time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram (RAM)
+  Destination:       Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1 (DSP)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram to Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB8BWER:CLKAWRCLK->DOADO11    1   1.800   0.681  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram (douta<7>)
+     end scope: 'time_rom:douta<7>'
+     DSP48A1:B7->P47      18   5.145   1.234  Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT (Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT_P47_to_Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1)
+     DSP48A1:C30               2.250          Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    ----------------------------------------
+    Total                     11.110ns (9.195ns logic, 1.915ns route)
+                                       (82.8% logic, 17.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 131 / 131
+-------------------------------------------------------------------------
+Offset:              5.023ns (Levels of Logic = 2)
+  Source:            rst_n (PAD)
+  Destination:       music_time_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst_n to music_time_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.681  rst_n_IBUF (rst_n_IBUF)
+     INV:I->O            130   0.255   2.300  rst_n_inv1_INV_0 (rst_n_inv)
+     FDP:PRE                   0.459          music_time_0
+    ----------------------------------------
+    Total                      5.023ns (2.042ns logic, 2.981ns route)
+                                       (40.6% logic, 59.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.118ns (Levels of Logic = 1)
+  Source:            buzzer (FF)
+  Destination:       buzzer (PAD)
+  Source Clock:      clk rising
+
+  Data Path: buzzer to buzzer
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              1   0.525   0.681  buzzer (buzzer_OBUF)
+     OBUF:I->O                 2.912          buzzer_OBUF (buzzer)
+    ----------------------------------------
+    Total                      4.118ns (3.437ns logic, 0.681ns route)
+                                       (83.5% logic, 16.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   11.110|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.19 secs
+ 
+--> 
+
+Total memory usage is 264236 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   15 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+

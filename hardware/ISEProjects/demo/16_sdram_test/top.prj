@@ -1,0 +1,6 @@
+verilog work "ipcore_dir/sdram_pll.v"
+verilog work "src/sdram_core.v"
+verilog work "src/mem_test.v"
+verilog work "chipscope_ila.v"
+verilog work "chipscope_icon.v"
+verilog work "src/top.v"

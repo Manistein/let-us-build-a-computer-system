@@ -1,0 +1,71 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Thu Feb 13 10:46:02 2020
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "T8" LEVEL 1;
+COMP "key1" LOCATE = SITE "C3" LEVEL 1;
+COMP "rst_n" LOCATE = SITE "L3" LEVEL 1;
+COMP "buzzer" LOCATE = SITE "J11" LEVEL 1;
+PIN
+        hz_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram_pins<26>
+        = BEL
+        "hz_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram"
+        PINNAME CLKAWRCLK;
+PIN
+        time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram_pins<26>
+        = BEL
+        "time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram"
+        PINNAME CLKAWRCLK;
+PIN Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1_pins<110> = BEL
+        "Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1" PINNAME CLK;
+TIMEGRP sys_clk_pin = BEL "music_time_0" BEL "music_time_1" BEL "music_time_2"
+        BEL "music_time_3" BEL "music_time_4" BEL "music_time_5" BEL
+        "music_time_6" BEL "music_time_7" BEL "music_time_8" BEL
+        "music_time_9" BEL "music_time_10" BEL "music_time_11" BEL
+        "music_time_12" BEL "music_time_13" BEL "music_time_14" BEL
+        "music_time_15" BEL "music_time_16" BEL "music_time_31" BEL "hz_cnt_0"
+        BEL "hz_cnt_1" BEL "hz_cnt_2" BEL "hz_cnt_3" BEL "hz_cnt_4" BEL
+        "hz_cnt_5" BEL "hz_cnt_6" BEL "hz_cnt_7" BEL "hz_cnt_8" BEL "hz_cnt_9"
+        BEL "hz_cnt_10" BEL "hz_cnt_11" BEL "hz_cnt_12" BEL "hz_cnt_13" BEL
+        "hz_cnt_14" BEL "hz_cnt_15" BEL "hz_cnt_16" BEL "hz_cnt_17" BEL
+        "hz_cnt_18" BEL "hz_cnt_19" BEL "play_cnt_0" BEL "play_cnt_1" BEL
+        "play_cnt_2" BEL "play_cnt_3" BEL "play_cnt_4" BEL "play_cnt_5" BEL
+        "play_cnt_6" BEL "play_cnt_7" BEL "play_cnt_8" BEL "play_cnt_9" BEL
+        "play_cnt_10" BEL "play_cnt_11" BEL "play_cnt_12" BEL "play_cnt_13"
+        BEL "play_cnt_14" BEL "play_cnt_15" BEL "play_cnt_16" BEL
+        "play_cnt_17" BEL "play_cnt_18" BEL "play_cnt_19" BEL "play_cnt_20"
+        BEL "play_cnt_21" BEL "play_cnt_22" BEL "play_cnt_23" BEL
+        "play_cnt_24" BEL "play_cnt_25" BEL "play_cnt_26" BEL "play_cnt_27"
+        BEL "play_cnt_28" BEL "play_cnt_29" BEL "play_cnt_30" BEL
+        "play_cnt_31" BEL "state_FSM_FFd2" BEL "state_FSM_FFd1" BEL
+        "music_cnt_0" BEL "music_cnt_1" BEL "music_cnt_2" BEL "music_cnt_3"
+        BEL "music_cnt_4" BEL "music_cnt_5" BEL "music_cnt_6" BEL
+        "music_cnt_7" BEL "music_cnt_8" BEL "music_cnt_9" BEL "music_cnt_10"
+        BEL "music_cnt_11" BEL "music_cnt_12" BEL "music_cnt_13" BEL
+        "music_cnt_14" BEL "music_cnt_15" BEL "music_cnt_16" BEL
+        "music_cnt_17" BEL "music_cnt_18" BEL "music_cnt_19" BEL
+        "music_cnt_20" BEL "music_cnt_21" BEL "music_cnt_22" BEL
+        "music_cnt_23" BEL "music_cnt_24" BEL "music_cnt_25" BEL
+        "music_cnt_26" BEL "music_cnt_27" BEL "music_cnt_28" BEL
+        "music_cnt_29" BEL "music_cnt_30" BEL "music_cnt_31" BEL
+        "ax_debounce_a0/button_out_d0" BEL "ax_debounce_a0/DFF2" BEL
+        "ax_debounce_a0/DFF1" BEL "ax_debounce_a0/button_negedge" BEL
+        "ax_debounce_a0/q_reg_19" BEL "ax_debounce_a0/q_reg_18" BEL
+        "ax_debounce_a0/q_reg_17" BEL "ax_debounce_a0/q_reg_16" BEL
+        "ax_debounce_a0/q_reg_15" BEL "ax_debounce_a0/q_reg_14" BEL
+        "ax_debounce_a0/q_reg_13" BEL "ax_debounce_a0/q_reg_12" BEL
+        "ax_debounce_a0/q_reg_11" BEL "ax_debounce_a0/q_reg_10" BEL
+        "ax_debounce_a0/q_reg_9" BEL "ax_debounce_a0/q_reg_8" BEL
+        "ax_debounce_a0/q_reg_7" BEL "ax_debounce_a0/q_reg_6" BEL
+        "ax_debounce_a0/q_reg_5" BEL "ax_debounce_a0/q_reg_4" BEL
+        "ax_debounce_a0/q_reg_3" BEL "ax_debounce_a0/q_reg_2" BEL
+        "ax_debounce_a0/q_reg_1" BEL "ax_debounce_a0/q_reg_0" BEL "buzzer" BEL
+        "ax_debounce_a0/button_out" BEL "clk_BUFGP/BUFG" PIN
+        "hz_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram_pins<26>"
+        PIN
+        "time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram_pins<26>"
+        PIN "Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1_pins<110>";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+SCHEMATIC END;
+

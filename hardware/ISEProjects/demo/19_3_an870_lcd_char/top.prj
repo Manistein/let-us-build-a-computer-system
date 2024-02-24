@@ -1,0 +1,7 @@
+verilog work "ipcore_dir/video_pll.v"
+verilog work "src/timing_gen_xy.v"
+verilog work "ipcore_dir/osd_rom.v"
+verilog work "src/osd_display.v"
+verilog work "src/color_bar.v"
+verilog work "src/ax_pwm.v"
+verilog work "src/top.v"

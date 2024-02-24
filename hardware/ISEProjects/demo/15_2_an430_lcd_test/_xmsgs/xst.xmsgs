@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"D:\new\AX309\demo\12_2_an430_lcd_test\ipcore_dir\video_pll.v" Line 128: Assignment to <arg fmt="%s" index="1">status_int</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">D:\new\AX309\demo\12_2_an430_lcd_test\src\top.v</arg>&quot; line <arg fmt="%s" index="2">66</arg>: Output port &lt;<arg fmt="%s" index="3">LOCKED</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">video_pll_m0</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">rgb_b_reg_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">color_bar</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">7 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;rgb_b_reg_1&gt; &lt;rgb_b_reg_2&gt; &lt;rgb_b_reg_3&gt; &lt;rgb_b_reg_4&gt; &lt;rgb_b_reg_5&gt; &lt;rgb_b_reg_6&gt; &lt;rgb_b_reg_7&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">rgb_r_reg_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">color_bar</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">7 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;rgb_r_reg_1&gt; &lt;rgb_r_reg_2&gt; &lt;rgb_r_reg_3&gt; &lt;rgb_r_reg_4&gt; &lt;rgb_r_reg_5&gt; &lt;rgb_r_reg_6&gt; &lt;rgb_r_reg_7&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">rgb_g_reg_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">color_bar</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">7 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;rgb_g_reg_1&gt; &lt;rgb_g_reg_2&gt; &lt;rgb_g_reg_3&gt; &lt;rgb_g_reg_4&gt; &lt;rgb_g_reg_5&gt; &lt;rgb_g_reg_6&gt; &lt;rgb_g_reg_7&gt; </arg>
+</msg>
+
+</messages>
+

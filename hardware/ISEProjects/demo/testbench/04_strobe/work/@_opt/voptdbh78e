@@ -1,0 +1,48 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\BaiduYunDownload\AX309.190502\01_学习教程之例程篇\demo\testbench\04_strobe
+T_opt
+V7`>fgK3?bhL4MREcOPUlG2
+04 11 4 work led_test_tb fast 0
+=1-2c534a01a10c-5cca55f8-2c3-2734
+o-quiet -auto_acc_if_foreign -work work +acc
+n@_opt
+OL;O;10.1c;51
+vled_test
+IGBc@6aeOjzaH4K5W0ME<D3
+VQ1eTR5_5BbOzzbJKi0fN]2
+Z1 dE:\BaiduYunDownload\AX309.190502\01_学习教程之例程篇\demo\testbench\04_strobe
+w1522230537
+8led_test.v
+Fled_test.v
+L0 31
+Z2 OL;L;10.1c;51
+r1
+31
+Z3 o-L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!i10b 1
+!s100 ZH^Wo=?N3@;?fzY5B6TXi3
+!s85 0
+!s108 1556764150.500000
+!s107 led_test.v|
+!s90 -reportprogress|300|led_test.v|
+vled_test_tb
+I?GS0biLPf?9nnBeFY?gaQ3
+ViJ]K<XJJjdnLO;MV]A>NX1
+R1
+w1522231079
+8led_test_tb.v
+Fled_test_tb.v
+L0 2
+R2
+r1
+31
+R3
+!s100 :W<ZXolnWkXeN5;]ZLG;d3
+!s108 1556764150.324000
+!s107 led_test_tb.v|
+!s90 -reportprogress|300|led_test_tb.v|
+!i10b 1
+!s85 0

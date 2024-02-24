@@ -1,0 +1,20 @@
+##
+NET clk LOC = T8 | TNM_NET = sys_clk_pin | IOSTANDARD = "LVCMOS33";
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;
+##
+
+
+##
+NET rst_n                           LOC = L3 | IOSTANDARD = "LVCMOS33"; ## 
+##
+
+########SMA Clock out define#####################
+NET clkout1                        	LOC = K16 | IOSTANDARD = "LVCMOS33";  ## J2-PIN3
+NET clkout2                         LOC = J16 | IOSTANDARD = "LVCMOS33";  ## J2-PIN4
+NET clkout3                         LOC = L16 | IOSTANDARD = "LVCMOS33";  ## J2-PIN5
+NET clkout4                         LOC = K15 | IOSTANDARD = "LVCMOS33";  ## J2-PIN6
+
+PIN "pll_inst/clkout4_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN "pll_inst/clkout3_buf.O" CLOCK_DEDICATED_ROUTE = FALSE; 
+PIN "pll_inst/clkout2_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN "pll_inst/clkout1_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;

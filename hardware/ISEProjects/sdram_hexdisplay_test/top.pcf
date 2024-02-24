@@ -1,0 +1,155 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Sat Feb 24 18:56:05 2024
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "P22" LEVEL 1;
+COMP "sdram_cs_n" LOCATE = SITE "P132" LEVEL 1;
+COMP "sdram_we_n" LOCATE = SITE "P123" LEVEL 1;
+COMP "sdram_ba<0>" LOCATE = SITE "P131" LEVEL 1;
+COMP "sdram_ba<1>" LOCATE = SITE "P134" LEVEL 1;
+COMP "sdram_dq<0>" LOCATE = SITE "P114" LEVEL 1;
+COMP "sdram_dq<1>" LOCATE = SITE "P115" LEVEL 1;
+COMP "sdram_dq<2>" LOCATE = SITE "P117" LEVEL 1;
+COMP "sdram_dq<3>" LOCATE = SITE "P116" LEVEL 1;
+COMP "sdram_dq<4>" LOCATE = SITE "P119" LEVEL 1;
+COMP "sdram_dq<5>" LOCATE = SITE "P118" LEVEL 1;
+COMP "sdram_dq<6>" LOCATE = SITE "P121" LEVEL 1;
+COMP "sdram_dq<7>" LOCATE = SITE "P120" LEVEL 1;
+COMP "sdram_dq<8>" LOCATE = SITE "P56" LEVEL 1;
+COMP "sdram_dq<9>" LOCATE = SITE "P57" LEVEL 1;
+COMP "rst_n" LOCATE = SITE "P27" LEVEL 1;
+COMP "sdram_cas_n" LOCATE = SITE "P127" LEVEL 1;
+COMP "sdram_ras_n" LOCATE = SITE "P126" LEVEL 1;
+COMP "sdram_addr<0>" LOCATE = SITE "P138" LEVEL 1;
+COMP "sdram_addr<1>" LOCATE = SITE "P137" LEVEL 1;
+COMP "sdram_addr<2>" LOCATE = SITE "P140" LEVEL 1;
+COMP "sdram_addr<3>" LOCATE = SITE "P139" LEVEL 1;
+COMP "sdram_addr<4>" LOCATE = SITE "P40" LEVEL 1;
+COMP "sdram_addr<5>" LOCATE = SITE "P41" LEVEL 1;
+COMP "sdram_addr<6>" LOCATE = SITE "P43" LEVEL 1;
+COMP "sdram_addr<7>" LOCATE = SITE "P44" LEVEL 1;
+COMP "sdram_addr<8>" LOCATE = SITE "P45" LEVEL 1;
+COMP "sdram_addr<9>" LOCATE = SITE "P46" LEVEL 1;
+COMP "sdram_cke" LOCATE = SITE "P50" LEVEL 1;
+COMP "sdram_clk" LOCATE = SITE "P51" LEVEL 1;
+COMP "sdram_dq<10>" LOCATE = SITE "P58" LEVEL 1;
+COMP "sdram_dq<11>" LOCATE = SITE "P59" LEVEL 1;
+COMP "sdram_dq<12>" LOCATE = SITE "P61" LEVEL 1;
+COMP "sdram_dq<13>" LOCATE = SITE "P62" LEVEL 1;
+COMP "sdram_dq<14>" LOCATE = SITE "P66" LEVEL 1;
+COMP "sdram_dq<15>" LOCATE = SITE "P67" LEVEL 1;
+COMP "sdram_dqm<0>" LOCATE = SITE "P124" LEVEL 1;
+COMP "sdram_dqm<1>" LOCATE = SITE "P55" LEVEL 1;
+COMP "sdram_addr<10>" LOCATE = SITE "P133" LEVEL 1;
+COMP "sdram_addr<11>" LOCATE = SITE "P47" LEVEL 1;
+COMP "sdram_addr<12>" LOCATE = SITE "P48" LEVEL 1;
+COMP "hexdisplay_data<0>" LOCATE = SITE "P97" LEVEL 1;
+COMP "hexdisplay_data<1>" LOCATE = SITE "P98" LEVEL 1;
+COMP "hexdisplay_data<2>" LOCATE = SITE "P94" LEVEL 1;
+COMP "hexdisplay_data<3>" LOCATE = SITE "P95" LEVEL 1;
+COMP "hexdisplay_data<4>" LOCATE = SITE "P92" LEVEL 1;
+COMP "hexdisplay_data<5>" LOCATE = SITE "P93" LEVEL 1;
+COMP "hexdisplay_data<6>" LOCATE = SITE "P87" LEVEL 1;
+COMP "hexdisplay_data<7>" LOCATE = SITE "P88" LEVEL 1;
+COMP "hexdisplay_sel<0>" LOCATE = SITE "P101" LEVEL 1;
+COMP "hexdisplay_sel<1>" LOCATE = SITE "P102" LEVEL 1;
+COMP "hexdisplay_sel<2>" LOCATE = SITE "P99" LEVEL 1;
+COMP "hexdisplay_sel<3>" LOCATE = SITE "P100" LEVEL 1;
+COMP "hexdisplay_sel<4>" LOCATE = SITE "P84" LEVEL 1;
+COMP "hexdisplay_sel<5>" LOCATE = SITE "P85" LEVEL 1;
+COMP "hexdisplay_sel<6>" LOCATE = SITE "P82" LEVEL 1;
+COMP "hexdisplay_sel<7>" LOCATE = SITE "P83" LEVEL 1;
+PIN sdram_pll0/clkout1_buf_pin<1> = BEL "sdram_pll0/clkout1_buf" PINNAME O;
+PIN "sdram_pll0/clkout1_buf_pin<1>" CLOCK_DEDICATED_ROUTE = FALSE;
+TIMEGRP sdram_pll0_clkout1 = BEL "sel_temp_0" BEL "sel_temp_1" BEL
+        "sel_temp_2" BEL "sel_temp_3" BEL "sel_temp_4" BEL "read_buffer_0" BEL
+        "read_buffer_1" BEL "read_buffer_2" BEL "read_buffer_3" BEL
+        "read_buffer_4" BEL "read_buffer_5" BEL "read_buffer_6" BEL
+        "read_buffer_7" BEL "read_buffer_8" BEL "read_buffer_9" BEL
+        "read_buffer_10" BEL "read_buffer_11" BEL "read_buffer_12" BEL
+        "read_buffer_13" BEL "read_buffer_14" BEL "read_buffer_15" BEL
+        "data_temp_0" BEL "data_temp_1" BEL "data_temp_2" BEL "data_temp_3"
+        BEL "data_temp_4" BEL "data_temp_5" BEL "data_temp_6" BEL
+        "tick_counter_0" BEL "tick_counter_1" BEL "tick_counter_2" BEL
+        "tick_counter_3" BEL "tick_counter_4" BEL "tick_counter_5" BEL
+        "tick_counter_6" BEL "tick_counter_7" BEL "tick_counter_8" BEL
+        "tick_counter_9" BEL "tick_counter_10" BEL "tick_counter_11" BEL
+        "tick_counter_12" BEL "tick_counter_13" BEL "tick_counter_14" BEL
+        "tick_counter_15" BEL "tick_counter_16" BEL "tick_counter_17" BEL
+        "tick_counter_18" BEL "tick_counter_19" BEL "tick_counter_20" BEL
+        "tick_counter_21" BEL "tick_counter_22" BEL "tick_counter_23" BEL
+        "tick_counter_24" BEL "tick_counter_25" BEL "tick_counter_26" BEL
+        "tick_counter_31" BEL "segcounter_0" BEL "segcounter_1" BEL
+        "segcounter_2" BEL "segcounter_3" BEL "segcounter_4" BEL
+        "segcounter_5" BEL "segcounter_6" BEL "segcounter_7" BEL
+        "segcounter_8" BEL "segcounter_9" BEL "state_FSM_FFd1" BEL
+        "write_buffer_0" BEL "write_buffer_1" BEL "write_buffer_2" BEL
+        "write_buffer_3" BEL "write_buffer_4" BEL "write_buffer_5" BEL
+        "write_buffer_6" BEL "write_buffer_7" BEL "write_buffer_8" BEL
+        "write_buffer_9" BEL "write_buffer_10" BEL "write_buffer_11" BEL
+        "write_buffer_12" BEL "write_buffer_13" BEL "write_buffer_14" BEL
+        "write_buffer_15" BEL "state_FSM_FFd2" BEL "sdram_pll0/clkout2_buf"
+        BEL "sdram_core0/cnt_200us_14" BEL "sdram_core0/cnt_200us_13" BEL
+        "sdram_core0/cnt_200us_12" BEL "sdram_core0/cnt_200us_11" BEL
+        "sdram_core0/cnt_200us_10" BEL "sdram_core0/cnt_200us_9" BEL
+        "sdram_core0/cnt_200us_8" BEL "sdram_core0/cnt_200us_7" BEL
+        "sdram_core0/cnt_200us_6" BEL "sdram_core0/cnt_200us_5" BEL
+        "sdram_core0/cnt_200us_4" BEL "sdram_core0/cnt_200us_3" BEL
+        "sdram_core0/cnt_200us_2" BEL "sdram_core0/cnt_200us_1" BEL
+        "sdram_core0/cnt_200us_0" BEL "sdram_core0/cnt_clk_r_9" BEL
+        "sdram_core0/cnt_clk_r_8" BEL "sdram_core0/cnt_clk_r_7" BEL
+        "sdram_core0/cnt_clk_r_6" BEL "sdram_core0/cnt_clk_r_5" BEL
+        "sdram_core0/cnt_clk_r_4" BEL "sdram_core0/cnt_clk_r_3" BEL
+        "sdram_core0/cnt_clk_r_2" BEL "sdram_core0/cnt_clk_r_1" BEL
+        "sdram_core0/cnt_clk_r_0" BEL "sdram_core0/state_FSM_FFd1" BEL
+        "sdram_core0/state_FSM_FFd2" BEL "sdram_core0/cnt_7p5us_9" BEL
+        "sdram_core0/cnt_7p5us_8" BEL "sdram_core0/cnt_7p5us_7" BEL
+        "sdram_core0/cnt_7p5us_6" BEL "sdram_core0/cnt_7p5us_5" BEL
+        "sdram_core0/cnt_7p5us_4" BEL "sdram_core0/cnt_7p5us_3" BEL
+        "sdram_core0/cnt_7p5us_2" BEL "sdram_core0/cnt_7p5us_1" BEL
+        "sdram_core0/cnt_7p5us_0" BEL "sdram_core0/state_FSM_FFd4" BEL
+        "sdram_core0/state_FSM_FFd5" BEL "sdram_core0/state_FSM_FFd3" BEL
+        "sdram_core0/sdram_addr_r_12" BEL "sdram_core0/sdram_addr_r_11" BEL
+        "sdram_core0/sdram_addr_r_10" BEL "sdram_core0/sdram_addr_r_9" BEL
+        "sdram_core0/sdram_addr_r_8" BEL "sdram_core0/sdram_addr_r_7" BEL
+        "sdram_core0/sdram_addr_r_6" BEL "sdram_core0/sdram_addr_r_5" BEL
+        "sdram_core0/sdram_addr_r_4" BEL "sdram_core0/sdram_addr_r_2" BEL
+        "sdram_core0/sdram_addr_r_1" BEL "sdram_core0/we_n_r" BEL
+        "sdram_core0/ras_n_r" BEL "sdram_core0/cas_n_r" BEL
+        "sdram_core0/rd_burst_data_valid_d1" BEL
+        "sdram_core0/wr_burst_data_req_d1" BEL "sdram_core0/read_flag" BEL
+        "sdram_core0/wr_burst_data_req_d0" BEL "sdram_core0/sdr_dq_oe" BEL
+        "sdram_core0/rd_burst_data_valid_d0" BEL "read_burst_req_r" BEL
+        "sdram_core0/sdram_ref_req" BEL "sdram_core0/state_FSM_FFd1_1" BEL
+        "sdram_core0/state_FSM_FFd4_1" BEL "sdram_core0/state_FSM_FFd3_1" BEL
+        "sdram_core0/state_FSM_FFd1_2" BEL "sdram_core0/state_FSM_FFd4_2" BEL
+        "sdram_core0/state_FSM_FFd3_2" BEL "sdram_core0/sdr_dq_in_0" BEL
+        "sdram_core0/sdr_dq_in_1" BEL "sdram_core0/sdr_dq_in_2" BEL
+        "sdram_core0/sdr_dq_in_3" BEL "sdram_core0/sdr_dq_in_4" BEL
+        "sdram_core0/sdr_dq_in_5" BEL "sdram_core0/sdr_dq_in_6" BEL
+        "sdram_core0/sdr_dq_in_7" BEL "sdram_core0/sdr_dq_in_8" BEL
+        "sdram_core0/sdr_dq_in_9" BEL "sdram_core0/sdr_dq_in_10" BEL
+        "sdram_core0/sdr_dq_in_11" BEL "sdram_core0/sdr_dq_in_12" BEL
+        "sdram_core0/sdr_dq_in_13" BEL "sdram_core0/sdr_dq_in_14" BEL
+        "sdram_core0/sdr_dq_in_15" BEL "sdram_core0/sdr_dq_out_15" BEL
+        "sdram_core0/sdr_dq_out_14" BEL "sdram_core0/sdr_dq_out_13" BEL
+        "sdram_core0/sdr_dq_out_12" BEL "sdram_core0/sdr_dq_out_11" BEL
+        "sdram_core0/sdr_dq_out_10" BEL "sdram_core0/sdr_dq_out_9" BEL
+        "sdram_core0/sdr_dq_out_8" BEL "sdram_core0/sdr_dq_out_7" BEL
+        "sdram_core0/sdr_dq_out_6" BEL "sdram_core0/sdr_dq_out_5" BEL
+        "sdram_core0/sdr_dq_out_4" BEL "sdram_core0/sdr_dq_out_3" BEL
+        "sdram_core0/sdr_dq_out_2" BEL "sdram_core0/sdr_dq_out_1" BEL
+        "sdram_core0/sdr_dq_out_0" BEL "sel_temp_4_1" BEL "sel_temp_4_2" BEL
+        "sel_temp_4_3" BEL "sel_temp_4_4";
+PIN SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_0_pins<0> = BEL
+        "SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_0" PINNAME DIVCLK;
+PIN sdram_pll0/pll_base_inst/PLL_ADV_pins<2> = BEL
+        "sdram_pll0/pll_base_inst/PLL_ADV" PINNAME CLKIN1;
+TIMEGRP sys_clk_pin = PIN "SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_0_pins<0>" PIN
+        "sdram_pll0/pll_base_inst/PLL_ADV_pins<2>";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+TS_sdram_pll0_clkout1 = PERIOD TIMEGRP "sdram_pll0_clkout1" TS_sys_clk_pin * 2
+        PHASE 2.5 ns HIGH 50%;
+SCHEMATIC END;
+

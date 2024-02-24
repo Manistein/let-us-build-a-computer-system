@@ -1,0 +1,5 @@
+verilog work "src/seg_scan.v"
+verilog work "src/seg_decoder.v"
+verilog work "src/count_m10.v"
+verilog work "src/ax_debounce.v"
+verilog work "src/key_debounce.v"

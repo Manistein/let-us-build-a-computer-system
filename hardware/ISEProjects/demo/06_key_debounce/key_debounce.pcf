@@ -1,0 +1,65 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Tue May 07 11:09:39 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "T8" LEVEL 1;
+COMP "key1" LOCATE = SITE "C3" LEVEL 1;
+COMP "seg_data<0>" LOCATE = SITE "C7" LEVEL 1;
+COMP "seg_data<1>" LOCATE = SITE "E6" LEVEL 1;
+COMP "seg_data<2>" LOCATE = SITE "C5" LEVEL 1;
+COMP "seg_data<3>" LOCATE = SITE "F7" LEVEL 1;
+COMP "seg_data<4>" LOCATE = SITE "D6" LEVEL 1;
+COMP "seg_data<5>" LOCATE = SITE "E7" LEVEL 1;
+COMP "seg_data<6>" LOCATE = SITE "D5" LEVEL 1;
+COMP "seg_sel<0>" LOCATE = SITE "D8" LEVEL 1;
+COMP "seg_data<7>" LOCATE = SITE "C6" LEVEL 1;
+COMP "seg_sel<1>" LOCATE = SITE "E8" LEVEL 1;
+COMP "seg_sel<2>" LOCATE = SITE "F9" LEVEL 1;
+COMP "seg_sel<3>" LOCATE = SITE "F10" LEVEL 1;
+COMP "seg_sel<4>" LOCATE = SITE "D9" LEVEL 1;
+COMP "seg_sel<5>" LOCATE = SITE "E10" LEVEL 1;
+COMP "rst_n" LOCATE = SITE "L3" LEVEL 1;
+TIMEGRP sys_clk_pin = BEL "ax_debounce_m0/button_out_d0" BEL
+        "ax_debounce_m0/DFF2" BEL "ax_debounce_m0/DFF1" BEL
+        "ax_debounce_m0/button_negedge" BEL "ax_debounce_m0/q_reg_31" BEL
+        "ax_debounce_m0/q_reg_30" BEL "ax_debounce_m0/q_reg_29" BEL
+        "ax_debounce_m0/q_reg_28" BEL "ax_debounce_m0/q_reg_27" BEL
+        "ax_debounce_m0/q_reg_26" BEL "ax_debounce_m0/q_reg_25" BEL
+        "ax_debounce_m0/q_reg_24" BEL "ax_debounce_m0/q_reg_23" BEL
+        "ax_debounce_m0/q_reg_22" BEL "ax_debounce_m0/q_reg_21" BEL
+        "ax_debounce_m0/q_reg_20" BEL "ax_debounce_m0/q_reg_19" BEL
+        "ax_debounce_m0/q_reg_18" BEL "ax_debounce_m0/q_reg_17" BEL
+        "ax_debounce_m0/q_reg_16" BEL "ax_debounce_m0/q_reg_15" BEL
+        "ax_debounce_m0/q_reg_14" BEL "ax_debounce_m0/q_reg_13" BEL
+        "ax_debounce_m0/q_reg_12" BEL "ax_debounce_m0/q_reg_11" BEL
+        "ax_debounce_m0/q_reg_10" BEL "ax_debounce_m0/q_reg_9" BEL
+        "ax_debounce_m0/q_reg_8" BEL "ax_debounce_m0/q_reg_7" BEL
+        "ax_debounce_m0/q_reg_6" BEL "ax_debounce_m0/q_reg_5" BEL
+        "ax_debounce_m0/q_reg_4" BEL "ax_debounce_m0/q_reg_3" BEL
+        "ax_debounce_m0/q_reg_2" BEL "ax_debounce_m0/q_reg_1" BEL
+        "ax_debounce_m0/q_reg_0" BEL "count10_m1/data_3" BEL
+        "count10_m1/data_2" BEL "count10_m1/data_1" BEL "count10_m1/data_0"
+        BEL "count10_m0/data_3" BEL "count10_m0/data_2" BEL
+        "count10_m0/data_1" BEL "count10_m0/data_0" BEL "count10_m0/t" BEL
+        "seg_scan_m0/scan_sel_3" BEL "seg_scan_m0/scan_sel_2" BEL
+        "seg_scan_m0/scan_sel_1" BEL "seg_scan_m0/scan_sel_0" BEL
+        "seg_scan_m0/scan_timer_15" BEL "seg_scan_m0/scan_timer_14" BEL
+        "seg_scan_m0/scan_timer_13" BEL "seg_scan_m0/scan_timer_12" BEL
+        "seg_scan_m0/scan_timer_11" BEL "seg_scan_m0/scan_timer_10" BEL
+        "seg_scan_m0/scan_timer_9" BEL "seg_scan_m0/scan_timer_8" BEL
+        "seg_scan_m0/scan_timer_7" BEL "seg_scan_m0/scan_timer_6" BEL
+        "seg_scan_m0/scan_timer_5" BEL "seg_scan_m0/scan_timer_4" BEL
+        "seg_scan_m0/scan_timer_3" BEL "seg_scan_m0/scan_timer_2" BEL
+        "seg_scan_m0/scan_timer_1" BEL "seg_scan_m0/scan_timer_0" BEL
+        "seg_scan_m0/seg_data_6" BEL "seg_scan_m0/seg_data_5" BEL
+        "seg_scan_m0/seg_data_4" BEL "seg_scan_m0/seg_data_3" BEL
+        "seg_scan_m0/seg_data_2" BEL "seg_scan_m0/seg_data_1" BEL
+        "seg_scan_m0/seg_data_0" BEL "seg_scan_m0/seg_sel_5" BEL
+        "seg_scan_m0/seg_sel_4" BEL "seg_scan_m0/seg_sel_3" BEL
+        "seg_scan_m0/seg_sel_2" BEL "seg_scan_m0/seg_sel_1" BEL
+        "seg_scan_m0/seg_sel_0" BEL "ax_debounce_m0/button_out" BEL
+        "clk_BUFGP/BUFG";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+SCHEMATIC END;
+

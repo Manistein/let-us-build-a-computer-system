@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "E:/BaiduYunDownload/AX309.190502/07_plus_buzzer_music/music_top.xst" -ofn "E:/BaiduYunDownload/AX309.190502/07_plus_buzzer_music/music_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc top.ucf -p xc6slx9-ftg256-2 music_top.ngc music_top.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o music_top_map.ncd music_top.ngd music_top.pcf 
+par -w -intstyle ise -ol high -mt off music_top_map.ncd music_top.ncd music_top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml music_top.twx music_top.ncd -o music_top.twr music_top.pcf -ucf top.ucf 
+bitgen -intstyle ise -f music_top.ut music_top.ncd 

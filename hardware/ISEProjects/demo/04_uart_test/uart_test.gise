@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<generated_project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+
+  <!--                                                          -->
+
+  <!--             For tool use only. Do not edit.              -->
+
+  <!--                                                          -->
+
+  <!-- ProjectNavigator created generated project file.         -->
+
+  <!-- For use in tracking generated file and other information -->
+
+  <!-- allowing preservation of process status.                 -->
+
+  <!--                                                          -->
+
+  <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved. -->
+
+  <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
+
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="uart_test.xise"/>
+
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="uart_test_tb.fdo"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="work"/>
+  </files>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1557192158" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1557192158">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1557192289" xil_pn:in_ck="3006701518891570468" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1557192289">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="sim/uart_test_tb.v"/>
+      <outfile xil_pn:name="src/uart_rx.v"/>
+      <outfile xil_pn:name="src/uart_test.v"/>
+      <outfile xil_pn:name="src/uart_tx.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1557192158" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-8532376032612353465" xil_pn:start_ts="1557192158">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1557192158" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-9161163187042566139" xil_pn:start_ts="1557192158">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1557192158" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="8992454610941226744" xil_pn:start_ts="1557192158">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1557192289" xil_pn:in_ck="3006701518891570468" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1557192289">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="sim/uart_test_tb.v"/>
+      <outfile xil_pn:name="src/uart_rx.v"/>
+      <outfile xil_pn:name="src/uart_test.v"/>
+      <outfile xil_pn:name="src/uart_tx.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1557192290" xil_pn:in_ck="3006701518891570468" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="5192862516515190991" xil_pn:start_ts="1557192289">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="uart_test_tb.fdo"/>
+      <outfile xil_pn:name="work"/>
+    </transform>
+  </transforms>
+
+</generated_project>

@@ -1,0 +1,5 @@
+verilog work "src/music_hz.v"
+verilog work "src/ax_debounce.v"
+verilog work "ipcore_dir/music_time_rom.v"
+verilog work "ipcore_dir/music_rom.v"
+verilog work "src/music_top.v"

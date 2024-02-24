@@ -1,0 +1,27 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Mon May 06 19:44:45 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clkout1" LOCATE = SITE "K16" LEVEL 1;
+COMP "clkout2" LOCATE = SITE "J16" LEVEL 1;
+COMP "clk" LOCATE = SITE "T8" LEVEL 1;
+COMP "clkout3" LOCATE = SITE "L16" LEVEL 1;
+COMP "clkout4" LOCATE = SITE "K15" LEVEL 1;
+COMP "rst_n" LOCATE = SITE "L3" LEVEL 1;
+PIN pll_inst/clkout1_buf_pin<1> = BEL "pll_inst/clkout1_buf" PINNAME O;
+PIN "pll_inst/clkout1_buf_pin<1>" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN pll_inst/clkout2_buf_pin<1> = BEL "pll_inst/clkout2_buf" PINNAME O;
+PIN "pll_inst/clkout2_buf_pin<1>" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN pll_inst/clkout3_buf_pin<1> = BEL "pll_inst/clkout3_buf" PINNAME O;
+PIN "pll_inst/clkout3_buf_pin<1>" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN pll_inst/clkout4_buf_pin<1> = BEL "pll_inst/clkout4_buf" PINNAME O;
+PIN "pll_inst/clkout4_buf_pin<1>" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0> = BEL "SP6_BUFIO_INSERT_ML_BUFIO2_0"
+        PINNAME DIVCLK;
+PIN pll_inst/dcm_sp_inst_pins<5> = BEL "pll_inst/dcm_sp_inst" PINNAME CLKIN;
+TIMEGRP sys_clk_pin = PIN "SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0>" PIN
+        "pll_inst/dcm_sp_inst_pins<5>";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+SCHEMATIC END;
+

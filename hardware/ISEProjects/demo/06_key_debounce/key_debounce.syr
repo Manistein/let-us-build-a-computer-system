@@ -1,0 +1,543 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.17 secs
+ 
+--> Reading design: key_debounce.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "key_debounce.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "key_debounce"
+Output Format                      : NGC
+Target Device                      : xc6slx9-2-ftg256
+
+---- Source Options
+Top Module Name                    : key_debounce
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\06_key_debounce\src\seg_scan.v" into library work
+Parsing module <seg_scan>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\06_key_debounce\src\seg_decoder.v" into library work
+Parsing module <seg_decoder>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\06_key_debounce\src\count_m10.v" into library work
+Parsing module <count_m10>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\06_key_debounce\src\ax_debounce.v" into library work
+Parsing module <ax_debounce>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\06_key_debounce\src\key_debounce.v" into library work
+Parsing module <key_debounce>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <key_debounce>.
+
+Elaborating module <ax_debounce>.
+
+Elaborating module <count_m10>.
+WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX309.190502\06_key_debounce\src\key_debounce.v" Line 65: Assignment to t1 ignored, since the identifier is never used
+
+Elaborating module <seg_decoder>.
+
+Elaborating module <seg_scan>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <key_debounce>.
+    Related source file is "E:\BaiduYunDownload\AX309.190502\06_key_debounce\src\key_debounce.v".
+INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\06_key_debounce\src\key_debounce.v" line 37: Output port <button_posedge> of the instance <ax_debounce_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\06_key_debounce\src\key_debounce.v" line 37: Output port <button_out> of the instance <ax_debounce_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\06_key_debounce\src\key_debounce.v" line 59: Output port <t> of the instance <count10_m1> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <key_debounce> synthesized.
+
+Synthesizing Unit <ax_debounce>.
+    Related source file is "E:\BaiduYunDownload\AX309.190502\06_key_debounce\src\ax_debounce.v".
+        N = 32
+        FREQ = 50
+        MAX_TIME = 20
+    Found 1-bit register for signal <button_out_d0>.
+    Found 1-bit register for signal <button_out>.
+    Found 32-bit register for signal <q_reg>.
+    Found 1-bit register for signal <DFF2>.
+    Found 1-bit register for signal <button_posedge>.
+    Found 1-bit register for signal <button_negedge>.
+    Found 1-bit register for signal <DFF1>.
+    Found 32-bit adder for signal <q_reg[31]_GND_2_o_add_1_OUT> created at line 65.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  38 D-type flip-flop(s).
+Unit <ax_debounce> synthesized.
+
+Synthesizing Unit <count_m10>.
+    Related source file is "E:\BaiduYunDownload\AX309.190502\06_key_debounce\src\count_m10.v".
+    Found 1-bit register for signal <t>.
+    Found 4-bit register for signal <data>.
+    Found 4-bit adder for signal <data[3]_GND_4_o_add_2_OUT> created at line 60.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   5 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+Unit <count_m10> synthesized.
+
+Synthesizing Unit <seg_decoder>.
+    Related source file is "E:\BaiduYunDownload\AX309.190502\06_key_debounce\src\seg_decoder.v".
+    Found 16x7-bit Read Only RAM for signal <seg_data>
+    Summary:
+	inferred   1 RAM(s).
+Unit <seg_decoder> synthesized.
+
+Synthesizing Unit <seg_scan>.
+    Related source file is "E:\BaiduYunDownload\AX309.190502\06_key_debounce\src\seg_scan.v".
+        SCAN_FREQ = 200
+        CLK_FREQ = 50000000
+        SCAN_COUNT = 41665
+    Found 6-bit register for signal <seg_sel>.
+    Found 8-bit register for signal <seg_data>.
+    Found 4-bit register for signal <scan_sel>.
+    Found 32-bit register for signal <scan_timer>.
+    Found 4-bit adder for signal <scan_sel[3]_GND_6_o_add_3_OUT> created at line 61.
+    Found 32-bit adder for signal <scan_timer[31]_GND_6_o_add_5_OUT> created at line 65.
+    Found 8x6-bit Read Only RAM for signal <_n0060>
+    Found 32-bit comparator greater for signal <n0000> created at line 55
+    Summary:
+	inferred   1 RAM(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  50 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   7 Multiplexer(s).
+Unit <seg_scan> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 3
+ 16x7-bit single-port Read Only RAM                    : 2
+ 8x6-bit single-port Read Only RAM                     : 1
+# Adders/Subtractors                                   : 5
+ 32-bit adder                                          : 2
+ 4-bit adder                                           : 3
+# Registers                                            : 15
+ 1-bit register                                        : 8
+ 32-bit register                                       : 2
+ 4-bit register                                        : 3
+ 6-bit register                                        : 1
+ 8-bit register                                        : 1
+# Comparators                                          : 1
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 15
+ 1-bit 2-to-1 multiplexer                              : 4
+ 32-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 5
+ 6-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 4
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <seg_decoder>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_seg_data> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 7-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <bin_data>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <seg_data>      |          |
+    -----------------------------------------------------------------------
+Unit <seg_decoder> synthesized (advanced).
+
+Synthesizing (advanced) Unit <seg_scan>.
+The following registers are absorbed into counter <scan_timer>: 1 register on signal <scan_timer>.
+The following registers are absorbed into counter <scan_sel>: 1 register on signal <scan_sel>.
+INFO:Xst:3217 - HDL ADVISOR - Register <seg_sel> currently described with an asynchronous reset, could be combined with distributed RAM <Mram__n0060> for implementation on block RAM resources if you made this reset synchronous instead.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 6-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <scan_sel<2:0>> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <seg_scan> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 3
+ 16x7-bit single-port distributed Read Only RAM        : 2
+ 8x6-bit single-port distributed Read Only RAM         : 1
+# Adders/Subtractors                                   : 3
+ 32-bit adder                                          : 1
+ 4-bit adder                                           : 2
+# Counters                                             : 2
+ 32-bit up counter                                     : 1
+ 4-bit up counter                                      : 1
+# Registers                                            : 62
+ Flip-Flops                                            : 62
+# Comparators                                          : 1
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 13
+ 1-bit 2-to-1 multiplexer                              : 4
+ 4-bit 2-to-1 multiplexer                              : 4
+ 6-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 4
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <seg_data_7> (without init value) has a constant value of 1 in block <seg_scan>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <key_debounce> ...
+
+Optimizing unit <ax_debounce> ...
+
+Optimizing unit <count_m10> ...
+
+Optimizing unit <seg_scan> ...
+WARNING:Xst:2677 - Node <ax_debounce_m0/button_posedge> of sequential type is unconnected in block <key_debounce>.
+WARNING:Xst:2677 - Node <count10_m1/t> of sequential type is unconnected in block <key_debounce>.
+WARNING:Xst:1710 - FF/Latch <seg_scan_m0/scan_timer_31> (without init value) has a constant value of 0 in block <key_debounce>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seg_scan_m0/scan_timer_30> (without init value) has a constant value of 0 in block <key_debounce>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seg_scan_m0/scan_timer_29> (without init value) has a constant value of 0 in block <key_debounce>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seg_scan_m0/scan_timer_28> (without init value) has a constant value of 0 in block <key_debounce>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seg_scan_m0/scan_timer_27> (without init value) has a constant value of 0 in block <key_debounce>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seg_scan_m0/scan_timer_26> (without init value) has a constant value of 0 in block <key_debounce>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seg_scan_m0/scan_timer_25> (without init value) has a constant value of 0 in block <key_debounce>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seg_scan_m0/scan_timer_24> (without init value) has a constant value of 0 in block <key_debounce>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seg_scan_m0/scan_timer_23> (without init value) has a constant value of 0 in block <key_debounce>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seg_scan_m0/scan_timer_22> (without init value) has a constant value of 0 in block <key_debounce>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seg_scan_m0/scan_timer_21> (without init value) has a constant value of 0 in block <key_debounce>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seg_scan_m0/scan_timer_20> (without init value) has a constant value of 0 in block <key_debounce>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seg_scan_m0/scan_timer_19> (without init value) has a constant value of 0 in block <key_debounce>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seg_scan_m0/scan_timer_18> (without init value) has a constant value of 0 in block <key_debounce>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seg_scan_m0/scan_timer_17> (without init value) has a constant value of 0 in block <key_debounce>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seg_scan_m0/scan_timer_16> (without init value) has a constant value of 0 in block <key_debounce>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block key_debounce, actual ratio is 3.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 79
+ Flip-Flops                                            : 79
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : key_debounce.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 243
+#      GND                         : 1
+#      INV                         : 6
+#      LUT1                        : 32
+#      LUT2                        : 18
+#      LUT3                        : 2
+#      LUT4                        : 21
+#      LUT5                        : 15
+#      LUT6                        : 45
+#      MUXCY                       : 54
+#      VCC                         : 1
+#      XORCY                       : 48
+# FlipFlops/Latches                : 79
+#      FDC                         : 52
+#      FDCE                        : 12
+#      FDP                         : 15
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 16
+#      IBUF                        : 2
+#      OBUF                        : 14
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9ftg256-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              79  out of  11440     0%  
+ Number of Slice LUTs:                  139  out of   5720     2%  
+    Number used as Logic:               139  out of   5720     2%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    141
+   Number with an unused Flip Flop:      62  out of    141    43%  
+   Number with an unused LUT:             2  out of    141     1%  
+   Number of fully used LUT-FF pairs:    77  out of    141    54%  
+   Number of unique control sets:         4
+
+IO Utilization: 
+ Number of IOs:                          17
+ Number of bonded IOBs:                  17  out of    186     9%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 79    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 4.924ns (Maximum Frequency: 203.108MHz)
+   Minimum input arrival time before clock: 4.768ns
+   Maximum output required time after clock: 4.118ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.924ns (frequency: 203.108MHz)
+  Total number of paths / destination ports: 6666 / 90
+-------------------------------------------------------------------------
+Delay:               4.924ns (Levels of Logic = 9)
+  Source:            seg_scan_m0/scan_timer_1 (FF)
+  Destination:       seg_scan_m0/scan_sel_3 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: seg_scan_m0/scan_timer_1 to seg_scan_m0/scan_sel_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.525   1.196  seg_scan_m0/scan_timer_1 (seg_scan_m0/scan_timer_1)
+     LUT5:I0->O            1   0.254   0.000  seg_scan_m0/Mcompar_n0000_lut<0> (seg_scan_m0/Mcompar_n0000_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  seg_scan_m0/Mcompar_n0000_cy<0> (seg_scan_m0/Mcompar_n0000_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  seg_scan_m0/Mcompar_n0000_cy<1> (seg_scan_m0/Mcompar_n0000_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  seg_scan_m0/Mcompar_n0000_cy<2> (seg_scan_m0/Mcompar_n0000_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  seg_scan_m0/Mcompar_n0000_cy<3> (seg_scan_m0/Mcompar_n0000_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  seg_scan_m0/Mcompar_n0000_cy<4> (seg_scan_m0/Mcompar_n0000_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  seg_scan_m0/Mcompar_n0000_cy<5> (seg_scan_m0/Mcompar_n0000_cy<5>)
+     MUXCY:CI->O          18   0.023   1.234  seg_scan_m0/Mcompar_n0000_cy<6> (seg_scan_m0/Mcompar_n0000_cy<6>)
+     INV:I->O              4   0.255   0.803  seg_scan_m0/Mcompar_n0000_cy<6>_inv_INV_0 (seg_scan_m0/Mcompar_n0000_cy<6>_inv)
+     FDCE:CE                   0.302          seg_scan_m0/scan_sel_0
+    ----------------------------------------
+    Total                      4.924ns (1.691ns logic, 3.233ns route)
+                                       (34.3% logic, 65.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 80 / 80
+-------------------------------------------------------------------------
+Offset:              4.768ns (Levels of Logic = 2)
+  Source:            rst_n (PAD)
+  Destination:       ax_debounce_m0/button_out_d0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst_n to ax_debounce_m0/button_out_d0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.681  rst_n_IBUF (rst_n_IBUF)
+     INV:I->O             79   0.255   2.045  rst_n_INV_8_o1_INV_0 (count10_m0/rst_n_inv)
+     FDC:CLR                   0.459          count10_m0/t
+    ----------------------------------------
+    Total                      4.768ns (2.042ns logic, 2.726ns route)
+                                       (42.8% logic, 57.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 13 / 13
+-------------------------------------------------------------------------
+Offset:              4.118ns (Levels of Logic = 1)
+  Source:            seg_scan_m0/seg_sel_5 (FF)
+  Destination:       seg_sel<5> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: seg_scan_m0/seg_sel_5 to seg_sel<5>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              1   0.525   0.681  seg_scan_m0/seg_sel_5 (seg_scan_m0/seg_sel_5)
+     OBUF:I->O                 2.912          seg_sel_5_OBUF (seg_sel<5>)
+    ----------------------------------------
+    Total                      4.118ns (3.437ns logic, 0.681ns route)
+                                       (83.5% logic, 16.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    4.924|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 4.97 secs
+ 
+--> 
+
+Total memory usage is 260780 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   20 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
+

@@ -1,0 +1,102 @@
+# Reading C:/modeltech64_10.1c/tcl/vsim/pref.tcl 
+# //  ModelSim SE-64 10.1c Jul 28 2012 
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# do {key_debounce_tb.fdo} 
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module seg_scan
+# 
+# Top level modules:
+# 	seg_scan
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module seg_decoder
+# 
+# Top level modules:
+# 	seg_decoder
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module count_m10
+# 
+# Top level modules:
+# 	count_m10
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module ax_debounce
+# 
+# Top level modules:
+# 	ax_debounce
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module key_debounce
+# 
+# Top level modules:
+# 	key_debounce
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module key_debounce_tb
+# 
+# Top level modules:
+# 	key_debounce_tb
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module glbl
+# 
+# Top level modules:
+# 	glbl
+# vsim -L xilinxcorelib_ver -L unisims_ver -L unimacro_ver -L secureip -lib work -voptargs=\"+acc\" -t 1ps work.key_debounce_tb glbl 
+# ** Note: (vsim-3812) Design is being optimized...
+# 
+# Loading work.key_debounce_tb(fast)
+# Loading work.key_debounce(fast)
+# Loading work.ax_debounce(fast)
+# Loading work.count_m10(fast)
+# Loading work.seg_decoder(fast)
+# Loading work.seg_scan(fast)
+# Loading work.glbl(fast)
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+restart
+# Loading work.key_debounce_tb(fast)
+# Loading work.key_debounce(fast)
+# Loading work.ax_debounce(fast)
+# Loading work.count_m10(fast)
+# Loading work.seg_decoder(fast)
+# Loading work.seg_scan(fast)
+# Loading work.glbl(fast)
+run -all
+restart
+# Loading work.key_debounce_tb(fast)
+# Loading work.key_debounce(fast)
+# Loading work.ax_debounce(fast)
+# Loading work.count_m10(fast)
+# Loading work.seg_decoder(fast)
+# Loading work.seg_scan(fast)
+# Loading work.glbl(fast)
+run -all
+add wave -position insertpoint  \
+sim:/key_debounce_tb/dut/button_negedge
+restart
+# Loading work.key_debounce_tb(fast)
+# Loading work.key_debounce(fast)
+# Loading work.ax_debounce(fast)
+# Loading work.count_m10(fast)
+# Loading work.seg_decoder(fast)
+# Loading work.seg_scan(fast)
+# Loading work.glbl(fast)
+run -all
+run -all
+add wave -position insertpoint  \
+sim:/key_debounce_tb/dut/ax_debounce_m0/button_posedge
+restart
+# Loading work.key_debounce_tb(fast)
+# Loading work.key_debounce(fast)
+# Loading work.ax_debounce(fast)
+# Loading work.count_m10(fast)
+# Loading work.seg_decoder(fast)
+# Loading work.seg_scan(fast)
+# Loading work.glbl(fast)
+run -all
+run -all
+run -all

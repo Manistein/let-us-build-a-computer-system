@@ -1,0 +1,39 @@
+NET "clk" LOC = T8 | TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;
+
+##
+NET rst_n                  LOC = L3 | IOSTANDARD = "LVCMOS33"; ## reset pushbutton
+
+########7 LCD Extended IO(J2)##################### 
+NET lcd_r<0>             LOC = P6 | IOSTANDARD = "LVCMOS33";  ##  Pin33
+NET lcd_r<1>             LOC = N6 | IOSTANDARD = "LVCMOS33";  ##  Pin34
+NET lcd_r<2>             LOC = P2 | IOSTANDARD = "LVCMOS33";  ##  Pin31
+NET lcd_r<3>             LOC = M4 | IOSTANDARD = "LVCMOS33";  ##  Pin32
+NET lcd_r<4>             LOC = R1 | IOSTANDARD = "LVCMOS33";  ##  Pin29
+NET lcd_r<5>             LOC = R2 | IOSTANDARD = "LVCMOS33";  ##  Pin30
+NET lcd_r<6>             LOC = T4 | IOSTANDARD = "LVCMOS33";  ##  Pin27
+NET lcd_r<7>             LOC = R5 | IOSTANDARD = "LVCMOS33";  ##  Pin28 
+NET lcd_g<0>             LOC = T5 | IOSTANDARD = "LVCMOS33";  ##  Pin25
+NET lcd_g<1>             LOC = T6 | IOSTANDARD = "LVCMOS33";  ##  Pin26
+NET lcd_g<2>             LOC = R7 | IOSTANDARD = "LVCMOS33";  ##  Pin23
+NET lcd_g<3>             LOC = T7 | IOSTANDARD = "LVCMOS33";  ##  Pin24
+NET lcd_g<4>             LOC = L8 | IOSTANDARD = "LVCMOS33";  ##  Pin21
+NET lcd_g<5>             LOC = T9 | IOSTANDARD = "LVCMOS33";  ##  Pin22
+NET lcd_g<6>             LOC = R9 | IOSTANDARD = "LVCMOS33";  ##  Pin19
+NET lcd_g<7>             LOC = T12 | IOSTANDARD = "LVCMOS33";  ##  Pin20
+NET lcd_b<0>             LOC = R12 | IOSTANDARD = "LVCMOS33";  ##  Pin17
+NET lcd_b<1>             LOC = T13 | IOSTANDARD = "LVCMOS33";  ##  Pin18
+NET lcd_b<2>             LOC = T14 | IOSTANDARD = "LVCMOS33";  ##  Pin15
+NET lcd_b<3>             LOC = R14 | IOSTANDARD = "LVCMOS33";  ##  Pin16
+NET lcd_b<4>             LOC = T15 | IOSTANDARD = "LVCMOS33";  ##  Pin13
+NET lcd_b<5>             LOC = R15 | IOSTANDARD = "LVCMOS33";  ##  Pin14
+NET lcd_b<6>             LOC = R16 | IOSTANDARD = "LVCMOS33";  ##  Pin11
+NET lcd_b<7>             LOC = P15 | IOSTANDARD = "LVCMOS33";  ##  Pin12
+NET lcd_dclk             LOC = P16 | IOSTANDARD = "LVCMOS33";  ##  Pin9
+NET lcd_de               LOC = N16 | IOSTANDARD = "LVCMOS33";  ##  Pin10
+NET lcd_hs               LOC = M15 | IOSTANDARD = "LVCMOS33";  ##  Pin7
+NET lcd_vs               LOC = M16 | IOSTANDARD = "LVCMOS33";  ##  Pin8
+
+NET lcd_pwm              LOC = J16 | IOSTANDARD = "LVCMOS33";
+
+PIN "video_pll_m0/clkout1_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;

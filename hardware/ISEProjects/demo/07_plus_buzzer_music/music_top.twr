@@ -1,0 +1,499 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
+-n 3 -fastpaths -xml music_top.twx music_top.ncd -o music_top.twr music_top.pcf
+-ucf top.ucf
+
+Design file:              music_top.ncd
+Physical constraint file: music_top.pcf
+Device,package,speed:     xc6slx9,ftg256,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 
+50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 38866 paths analyzed, 858 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  11.587ns.
+--------------------------------------------------------------------------------
+
+Paths for end point Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1 (DSP48_X0Y5.C23), 8 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     8.413ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram (RAM)
+  Destination:          Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1 (DSP)
+  Requirement:          20.000ns
+  Data Path Delay:      11.553ns (Levels of Logic = 1)
+  Clock Path Skew:      0.001ns (0.626 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram to Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X1Y8.DOADO1    Trcko_DOA             1.800   time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram
+                                                       time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram
+    DSP48_X0Y4.B1        net (fanout=1)        1.767   rom_time_data<1>
+    DSP48_X0Y4.P40       Tdspdo_B_P            4.384   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT
+                                                       Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT
+    DSP48_X0Y5.C23       net (fanout=1)        1.352   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT_P40_to_Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    DSP48_X0Y5.CLK       Tdspdck_C_PREG        2.250   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+                                                       Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    -------------------------------------------------  ---------------------------
+    Total                                     11.553ns (8.434ns logic, 3.119ns route)
+                                                       (73.0% logic, 27.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.547ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram (RAM)
+  Destination:          Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1 (DSP)
+  Requirement:          20.000ns
+  Data Path Delay:      11.419ns (Levels of Logic = 1)
+  Clock Path Skew:      0.001ns (0.626 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram to Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X1Y8.DOADO2    Trcko_DOA             1.800   time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram
+                                                       time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram
+    DSP48_X0Y4.B2        net (fanout=1)        1.633   rom_time_data<2>
+    DSP48_X0Y4.P40       Tdspdo_B_P            4.384   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT
+                                                       Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT
+    DSP48_X0Y5.C23       net (fanout=1)        1.352   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT_P40_to_Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    DSP48_X0Y5.CLK       Tdspdck_C_PREG        2.250   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+                                                       Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    -------------------------------------------------  ---------------------------
+    Total                                     11.419ns (8.434ns logic, 2.985ns route)
+                                                       (73.9% logic, 26.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.606ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram (RAM)
+  Destination:          Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1 (DSP)
+  Requirement:          20.000ns
+  Data Path Delay:      11.360ns (Levels of Logic = 1)
+  Clock Path Skew:      0.001ns (0.626 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram to Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X1Y8.DOADO8    Trcko_DOA             1.800   time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram
+                                                       time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram
+    DSP48_X0Y4.B4        net (fanout=1)        1.574   rom_time_data<4>
+    DSP48_X0Y4.P40       Tdspdo_B_P            4.384   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT
+                                                       Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT
+    DSP48_X0Y5.C23       net (fanout=1)        1.352   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT_P40_to_Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    DSP48_X0Y5.CLK       Tdspdck_C_PREG        2.250   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+                                                       Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    -------------------------------------------------  ---------------------------
+    Total                                     11.360ns (8.434ns logic, 2.926ns route)
+                                                       (74.2% logic, 25.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1 (DSP48_X0Y5.C36), 8 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     8.503ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram (RAM)
+  Destination:          Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1 (DSP)
+  Requirement:          20.000ns
+  Data Path Delay:      11.463ns (Levels of Logic = 1)
+  Clock Path Skew:      0.001ns (0.626 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram to Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X1Y8.DOADO1    Trcko_DOA             1.800   time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram
+                                                       time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram
+    DSP48_X0Y4.B1        net (fanout=1)        1.767   rom_time_data<1>
+    DSP48_X0Y4.P47       Tdspdo_B_P            4.384   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT
+                                                       Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT
+    DSP48_X0Y5.C36       net (fanout=18)       1.262   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT_P47_to_Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    DSP48_X0Y5.CLK       Tdspdck_C_PREG        2.250   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+                                                       Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    -------------------------------------------------  ---------------------------
+    Total                                     11.463ns (8.434ns logic, 3.029ns route)
+                                                       (73.6% logic, 26.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.637ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram (RAM)
+  Destination:          Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1 (DSP)
+  Requirement:          20.000ns
+  Data Path Delay:      11.329ns (Levels of Logic = 1)
+  Clock Path Skew:      0.001ns (0.626 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram to Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X1Y8.DOADO2    Trcko_DOA             1.800   time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram
+                                                       time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram
+    DSP48_X0Y4.B2        net (fanout=1)        1.633   rom_time_data<2>
+    DSP48_X0Y4.P47       Tdspdo_B_P            4.384   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT
+                                                       Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT
+    DSP48_X0Y5.C36       net (fanout=18)       1.262   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT_P47_to_Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    DSP48_X0Y5.CLK       Tdspdck_C_PREG        2.250   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+                                                       Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    -------------------------------------------------  ---------------------------
+    Total                                     11.329ns (8.434ns logic, 2.895ns route)
+                                                       (74.4% logic, 25.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.696ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram (RAM)
+  Destination:          Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1 (DSP)
+  Requirement:          20.000ns
+  Data Path Delay:      11.270ns (Levels of Logic = 1)
+  Clock Path Skew:      0.001ns (0.626 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram to Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X1Y8.DOADO8    Trcko_DOA             1.800   time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram
+                                                       time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram
+    DSP48_X0Y4.B4        net (fanout=1)        1.574   rom_time_data<4>
+    DSP48_X0Y4.P47       Tdspdo_B_P            4.384   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT
+                                                       Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT
+    DSP48_X0Y5.C36       net (fanout=18)       1.262   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT_P47_to_Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    DSP48_X0Y5.CLK       Tdspdck_C_PREG        2.250   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+                                                       Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    -------------------------------------------------  ---------------------------
+    Total                                     11.270ns (8.434ns logic, 2.836ns route)
+                                                       (74.8% logic, 25.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1 (DSP48_X0Y5.C12), 8 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     8.560ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram (RAM)
+  Destination:          Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1 (DSP)
+  Requirement:          20.000ns
+  Data Path Delay:      11.406ns (Levels of Logic = 1)
+  Clock Path Skew:      0.001ns (0.626 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram to Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X1Y8.DOADO1    Trcko_DOA             1.800   time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram
+                                                       time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram
+    DSP48_X0Y4.B1        net (fanout=1)        1.767   rom_time_data<1>
+    DSP48_X0Y4.P29       Tdspdo_B_P            4.384   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT
+                                                       Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT
+    DSP48_X0Y5.C12       net (fanout=1)        1.205   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT_P29_to_Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    DSP48_X0Y5.CLK       Tdspdck_C_PREG        2.250   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+                                                       Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    -------------------------------------------------  ---------------------------
+    Total                                     11.406ns (8.434ns logic, 2.972ns route)
+                                                       (73.9% logic, 26.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.694ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram (RAM)
+  Destination:          Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1 (DSP)
+  Requirement:          20.000ns
+  Data Path Delay:      11.272ns (Levels of Logic = 1)
+  Clock Path Skew:      0.001ns (0.626 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram to Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X1Y8.DOADO2    Trcko_DOA             1.800   time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram
+                                                       time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram
+    DSP48_X0Y4.B2        net (fanout=1)        1.633   rom_time_data<2>
+    DSP48_X0Y4.P29       Tdspdo_B_P            4.384   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT
+                                                       Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT
+    DSP48_X0Y5.C12       net (fanout=1)        1.205   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT_P29_to_Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    DSP48_X0Y5.CLK       Tdspdck_C_PREG        2.250   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+                                                       Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    -------------------------------------------------  ---------------------------
+    Total                                     11.272ns (8.434ns logic, 2.838ns route)
+                                                       (74.8% logic, 25.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.753ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram (RAM)
+  Destination:          Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1 (DSP)
+  Requirement:          20.000ns
+  Data Path Delay:      11.213ns (Levels of Logic = 1)
+  Clock Path Skew:      0.001ns (0.626 - 0.625)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram to Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X1Y8.DOADO8    Trcko_DOA             1.800   time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram
+                                                       time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram
+    DSP48_X0Y4.B4        net (fanout=1)        1.574   rom_time_data<4>
+    DSP48_X0Y4.P29       Tdspdo_B_P            4.384   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT
+                                                       Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT
+    DSP48_X0Y5.C12       net (fanout=1)        1.205   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT_P29_to_Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    DSP48_X0Y5.CLK       Tdspdck_C_PREG        2.250   Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+                                                       Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1
+    -------------------------------------------------  ---------------------------
+    Total                                     11.213ns (8.434ns logic, 2.779ns route)
+                                                       (75.2% logic, 24.8% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point ax_debounce_a0/button_out (SLICE_X5Y35.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.441ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               ax_debounce_a0/button_out (FF)
+  Destination:          ax_debounce_a0/button_out (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.441ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: ax_debounce_a0/button_out to ax_debounce_a0/button_out
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X5Y35.AQ       Tcko                  0.198   ax_debounce_a0/button_out
+                                                       ax_debounce_a0/button_out
+    SLICE_X5Y35.A6       net (fanout=2)        0.028   ax_debounce_a0/button_out
+    SLICE_X5Y35.CLK      Tah         (-Th)    -0.215   ax_debounce_a0/button_out
+                                                       ax_debounce_a0/button_out_rstpot
+                                                       ax_debounce_a0/button_out
+    -------------------------------------------------  ---------------------------
+    Total                                      0.441ns (0.413ns logic, 0.028ns route)
+                                                       (93.7% logic, 6.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point ax_debounce_a0/q_reg_0 (SLICE_X5Y33.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.446ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               ax_debounce_a0/q_reg_0 (FF)
+  Destination:          ax_debounce_a0/q_reg_0 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.446ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: ax_debounce_a0/q_reg_0 to ax_debounce_a0/q_reg_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X5Y33.AQ       Tcko                  0.198   ax_debounce_a0/q_reg<3>
+                                                       ax_debounce_a0/q_reg_0
+    SLICE_X5Y33.A6       net (fanout=3)        0.033   ax_debounce_a0/q_reg<0>
+    SLICE_X5Y33.CLK      Tah         (-Th)    -0.215   ax_debounce_a0/q_reg<3>
+                                                       ax_debounce_a0/q_next<0>1
+                                                       ax_debounce_a0/q_reg_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.446ns (0.413ns logic, 0.033ns route)
+                                                       (92.6% logic, 7.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point ax_debounce_a0/q_reg_4 (SLICE_X5Y34.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.446ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               ax_debounce_a0/q_reg_4 (FF)
+  Destination:          ax_debounce_a0/q_reg_4 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.446ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: ax_debounce_a0/q_reg_4 to ax_debounce_a0/q_reg_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X5Y34.AQ       Tcko                  0.198   ax_debounce_a0/q_reg<7>
+                                                       ax_debounce_a0/q_reg_4
+    SLICE_X5Y34.A6       net (fanout=3)        0.033   ax_debounce_a0/q_reg<4>
+    SLICE_X5Y34.CLK      Tah         (-Th)    -0.215   ax_debounce_a0/q_reg<7>
+                                                       ax_debounce_a0/q_next<4>1
+                                                       ax_debounce_a0/q_reg_4
+    -------------------------------------------------  ---------------------------
+    Total                                      0.446ns (0.413ns logic, 0.033ns route)
+                                                       (92.6% logic, 7.4% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 16.430ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKA(Fmax))
+  Physical resource: time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram/CLKAWRCLK
+  Logical resource: time_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram/CLKAWRCLK
+  Location pin: RAMB8_X1Y8.CLKAWRCLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 16.430ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKA(Fmax))
+  Physical resource: hz_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram/CLKAWRCLK
+  Logical resource: hz_rom/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram/CLKAWRCLK
+  Location pin: RAMB8_X1Y9.CLKAWRCLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 17.041ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.959ns (337.952MHz) (Tdspper_PREG)
+  Physical resource: Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1/CLK
+  Logical resource: Mmult_rom_time_data[7]_PWR_1_o_MuLt_7_OUT1/CLK
+  Location pin: DSP48_X0Y5.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   11.587|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 38866 paths, 0 nets, and 962 connections
+
+Design statistics:
+   Minimum period:  11.587ns{1}   (Maximum frequency:  86.304MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Thu Feb 13 10:46:14 2020 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 217 MB
+
+
+

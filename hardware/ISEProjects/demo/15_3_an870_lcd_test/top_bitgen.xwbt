@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=E:\BaiduYunDownload\AX309.190502\demo\12_3_an070_lcd_test\top.ncd
+OUTFILE=E:\BaiduYunDownload\AX309.190502\demo\12_3_an070_lcd_test\top.bit
+FAMILY=Spartan6
+PART=xc6slx9-2ftg256
+WORKINGDIR=E:\BaiduYunDownload\AX309.190502\demo\12_3_an070_lcd_test
+LICENSE=WebPack
+USER_INFO=__0_0_0

@@ -1,4 +1,0 @@
-verilog work "ipcore_dir/sdram_pll.v"
-verilog work "../../HDL/computer/sdram/sdram_top.v"
-verilog work "../../HDL/computer/sdram/sdram_test.v"
-verilog work "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

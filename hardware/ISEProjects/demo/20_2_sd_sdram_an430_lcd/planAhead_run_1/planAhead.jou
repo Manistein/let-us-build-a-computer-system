@@ -1,0 +1,11 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Wed Aug 02 12:01:03 2017
+# Process ID: 5608
+# Log file: C:/Xilinx/14.7/ISE_DS/SysGen/project/sd_sdram_an430_lcd/planAhead_run_1/planAhead.log
+# Journal file: C:/Xilinx/14.7/ISE_DS/SysGen/project/sd_sdram_an430_lcd/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source C:/Xilinx/14.7/ISE_DS/SysGen/project/sd_sdram_an430_lcd/pa.fromHdl.tcl
+update_compile_order -fileset sim_1

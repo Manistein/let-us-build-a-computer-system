@@ -1,0 +1,62 @@
+NET "clk" LOC = T8 | TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;
+
+##
+NET rst_n                  LOC = L3 | IOSTANDARD = "LVCMOS33"; ## reset pushbutton
+
+#VGA pin define
+##################################################################################
+
+NET vga_out_r<4>              LOC = M13 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        ## VGA R4
+NET vga_out_r<3>              LOC = N14 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        ## VGA R3
+NET vga_out_r<2>              LOC = L12 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        ## VGA R2
+NET vga_out_r<1>              LOC = M12 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        ## VGA R1
+NET vga_out_r<0>              LOC = M11 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        ## VGA R0
+NET vga_out_g<5>              LOC = P11 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        ## VGA G4
+NET vga_out_g<4>              LOC = M10 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        ## VGA G4
+NET vga_out_g<3>              LOC = L10 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        ## VGA G3
+NET vga_out_g<2>              LOC = P9 | IOSTANDARD = "LVCMOS33"  |SLEW=FAST ;         ## VGA G2
+NET vga_out_g<1>              LOC = N9 | IOSTANDARD = "LVCMOS33"  |SLEW=FAST ;         ## VGA G1
+NET vga_out_g<0>              LOC = M9 | IOSTANDARD = "LVCMOS33"  |SLEW=FAST ;         ## VGA G0
+NET vga_out_b<4>              LOC = L7 | IOSTANDARD = "LVCMOS33"  |SLEW=FAST ;         ## VGA B4
+NET vga_out_b<3>              LOC = N8 | IOSTANDARD = "LVCMOS33"  |SLEW=FAST ;         ## VGA B3
+NET vga_out_b<2>              LOC = P8 | IOSTANDARD = "LVCMOS33"  |SLEW=FAST ;         ## VGA B2
+NET vga_out_b<1>              LOC = M7 | IOSTANDARD = "LVCMOS33"  |SLEW=FAST ;         ## VGA B1
+NET vga_out_b<0>              LOC = P7 | IOSTANDARD = "LVCMOS33"  |SLEW=FAST ;         ## VGA B0
+
+NET vga_out_vs                LOC = L13 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        ## VGA VS
+NET vga_out_hs                LOC = M14 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        ## VGA HS  
+
+
+
+#ad9238Ïà¹ØÒý½Å(J3)
+NET ad9238_data_ch0<0>                  LOC = B14 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        
+NET ad9238_data_ch0<1>                  LOC = A14 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        
+NET ad9238_data_ch0<2>                  LOC = B16 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        
+NET ad9238_data_ch0<3>                  LOC = B15 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        
+NET ad9238_data_ch0<4>                  LOC = C16 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;       
+NET ad9238_data_ch0<5>                  LOC = C15 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;         
+NET ad9238_data_ch0<6>                  LOC = E15 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        
+NET ad9238_data_ch0<7>                  LOC = D16 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        
+NET ad9238_data_ch0<8>                  LOC = E11 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        
+NET ad9238_data_ch0<9>                  LOC = C9 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;         
+NET ad9238_data_ch0<10>                 LOC = D11 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        
+NET ad9238_data_ch0<11>                 LOC = C10 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        
+
+NET ad9238_clk_ch0                      LOC = E16 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;         
+
+NET ad9238_data_ch1<0>                  LOC = B5 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        
+NET ad9238_data_ch1<1>                  LOC = A5 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;         
+NET ad9238_data_ch1<2>                  LOC = B6 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        
+NET ad9238_data_ch1<3>                  LOC = A6 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;       
+NET ad9238_data_ch1<4>                  LOC = A7 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;       
+NET ad9238_data_ch1<5>                  LOC = B8 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;     
+NET ad9238_data_ch1<6>                  LOC = A8 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;       
+NET ad9238_data_ch1<7>                  LOC = C8 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;      
+NET ad9238_data_ch1<8>                  LOC = A9 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;       
+NET ad9238_data_ch1<9>                  LOC = A10 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        
+NET ad9238_data_ch1<10>                 LOC = B10 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        
+NET ad9238_data_ch1<11>                 LOC = A11 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;       
+
+NET ad9238_clk_ch1                      LOC = A4 | IOSTANDARD = "LVCMOS33" |SLEW=FAST ;        
+PIN "adc_pll_m0/clkout1_buf.O" CLOCK_DEDICATED_ROUTE = FALSE; 

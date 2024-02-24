@@ -1,0 +1,1110 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.18 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.18 secs
+ 
+--> Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc6slx9-2-ftg256
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\ipcore_dir\video_pll.v" into library work
+Parsing module <video_pll>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\timing_gen_xy.v" into library work
+Parsing module <timing_gen_xy>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\ipcore_dir\dpram1024x8.v" into library work
+Parsing module <dpram1024x8>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\wav_display.v" into library work
+Parsing module <wav_display>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\grid_display.v" into library work
+Parsing module <grid_display>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\color_bar.v" into library work
+Parsing verilog file "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\/video_define.v" included at line 32.
+Parsing module <color_bar>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\ad7606_sample.v" into library work
+Parsing module <ad7606_sample>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\ad7606_if.v" into library work
+Parsing module <ad7606_if>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\top.v" into library work
+Parsing module <top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <top>.
+
+Elaborating module <IBUFG>.
+
+Elaborating module <video_pll>.
+
+Elaborating module <DCM_SP(CLKDV_DIVIDE=2.0,CLKFX_DIVIDE=10,CLKFX_MULTIPLY=13,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=20.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
+WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\ipcore_dir\video_pll.v" Line 128: Assignment to status_int ignored, since the identifier is never used
+
+Elaborating module <BUFG>.
+
+Elaborating module <color_bar>.
+
+Elaborating module <ad7606_if>.
+WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\top.v" Line 139: Assignment to ad_ch3 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\top.v" Line 140: Assignment to ad_ch4 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\top.v" Line 141: Assignment to ad_ch5 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\top.v" Line 142: Assignment to ad_ch6 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\top.v" Line 143: Assignment to ad_ch7 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\top.v" Line 144: Assignment to ad_ch8 ignored, since the identifier is never used
+
+Elaborating module <grid_display>.
+
+Elaborating module <timing_gen_xy>.
+
+Elaborating module <ad7606_sample>.
+WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\ad7606_sample.v" Line 70: Assignment to adc_data_narrow_d0 ignored, since the identifier is never used
+WARNING:HDLCompiler:189 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\top.v" Line 166: Size mismatch in connection of port <adc_buf_addr>. Formal port size is 12-bit while actual signal size is 11-bit.
+WARNING:HDLCompiler:189 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\top.v" Line 175: Size mismatch in connection of port <adc_buf_addr>. Formal port size is 12-bit while actual signal size is 11-bit.
+
+Elaborating module <wav_display>.
+
+Elaborating module <dpram1024x8>.
+WARNING:HDLCompiler:1499 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\ipcore_dir\dpram1024x8.v" Line 39: Empty module <dpram1024x8> remains a black box.
+WARNING:HDLCompiler:189 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\top.v" Line 185: Size mismatch in connection of port <adc_buf_addr>. Formal port size is 12-bit while actual signal size is 11-bit.
+WARNING:HDLCompiler:189 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\top.v" Line 202: Size mismatch in connection of port <adc_buf_addr>. Formal port size is 12-bit while actual signal size is 11-bit.
+WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\top.v" Line 210: Assignment to wave1_de ignored, since the identifier is never used
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <top>.
+    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\top.v".
+INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\top.v" line 107: Output port <locked> of the instance <video_pll_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\top.v" line 125: Output port <ad_ch3> of the instance <ad7606_if_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\top.v" line 125: Output port <ad_ch4> of the instance <ad7606_if_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\top.v" line 125: Output port <ad_ch5> of the instance <ad7606_if_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\top.v" line 125: Output port <ad_ch6> of the instance <ad7606_if_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\top.v" line 125: Output port <ad_ch7> of the instance <ad7606_if_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\top.v" line 125: Output port <ad_ch8> of the instance <ad7606_if_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\top.v" line 196: Output port <o_de> of the instance <wav_display_m1> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <top> synthesized.
+
+Synthesizing Unit <video_pll>.
+    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\ipcore_dir\video_pll.v".
+    Summary:
+	no macro.
+Unit <video_pll> synthesized.
+
+Synthesizing Unit <color_bar>.
+    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\color_bar.v".
+        H_ACTIVE = 16'b0000010000000000
+        H_FP = 16'b0000000000011000
+        H_SYNC = 16'b0000000010001000
+        H_BP = 16'b0000000010100000
+        V_ACTIVE = 16'b0000001100000000
+        V_FP = 16'b0000000000000011
+        V_SYNC = 16'b0000000000000110
+        V_BP = 16'b0000000000011101
+        HS_POL = 1'b0
+        VS_POL = 1'b0
+        H_TOTAL = 16'b0000010101000000
+        V_TOTAL = 16'b0000001100100110
+        WHITE_R = 8'b11111111
+        WHITE_G = 8'b11111111
+        WHITE_B = 8'b11111111
+        YELLOW_R = 8'b11111111
+        YELLOW_G = 8'b11111111
+        YELLOW_B = 8'b00000000
+        CYAN_R = 8'b00000000
+        CYAN_G = 8'b11111111
+        CYAN_B = 8'b11111111
+        GREEN_R = 8'b00000000
+        GREEN_G = 8'b11111111
+        GREEN_B = 8'b00000000
+        MAGENTA_R = 8'b11111111
+        MAGENTA_G = 8'b00000000
+        MAGENTA_B = 8'b11111111
+        RED_R = 8'b11111111
+        RED_G = 8'b00000000
+        RED_B = 8'b00000000
+        BLUE_R = 8'b00000000
+        BLUE_G = 8'b00000000
+        BLUE_B = 8'b11111111
+        BLACK_R = 8'b00000000
+        BLACK_G = 8'b00000000
+        BLACK_B = 8'b00000000
+    Found 12-bit register for signal <h_cnt>.
+    Found 12-bit register for signal <active_x>.
+    Found 12-bit register for signal <v_cnt>.
+    Found 8-bit register for signal <rgb_r_reg>.
+    Found 8-bit register for signal <rgb_g_reg>.
+    Found 8-bit register for signal <rgb_b_reg>.
+    Found 1-bit register for signal <vs_reg_d0>.
+    Found 1-bit register for signal <video_active_d0>.
+    Found 1-bit register for signal <hs_reg>.
+    Found 1-bit register for signal <h_active>.
+    Found 1-bit register for signal <vs_reg>.
+    Found 1-bit register for signal <v_active>.
+    Found 1-bit register for signal <hs_reg_d0>.
+    Found 12-bit subtractor for signal <h_cnt[11]_GND_6_o_sub_12_OUT> created at line 220.
+    Found 12-bit adder for signal <h_cnt[11]_GND_6_o_add_6_OUT> created at line 212.
+    Found 12-bit adder for signal <v_cnt[11]_GND_6_o_add_17_OUT> created at line 233.
+    Found 12-bit comparator greater for signal <n0015> created at line 219
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  67 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  21 Multiplexer(s).
+Unit <color_bar> synthesized.
+
+Synthesizing Unit <ad7606_if>.
+    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\ad7606_if.v".
+        IDLE = 4'b0000
+        AD_CONV = 4'b0001
+        Wait_1 = 4'b0010
+        Wait_busy = 4'b0011
+        READ_CH1 = 4'b0100
+        READ_CH2 = 4'b0101
+        READ_CH3 = 4'b0110
+        READ_CH4 = 4'b0111
+        READ_CH5 = 4'b1000
+        READ_CH6 = 4'b1001
+        READ_CH7 = 4'b1010
+        READ_CH8 = 4'b1011
+        READ_DONE = 4'b1100
+WARNING:Xst:647 - Input <first_data> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 16-bit register for signal <rst_cnt>.
+    Found 1-bit register for signal <ad_reset>.
+    Found 4-bit register for signal <state>.
+    Found 16-bit register for signal <ad_ch1>.
+    Found 16-bit register for signal <ad_ch2>.
+    Found 16-bit register for signal <ad_ch3>.
+    Found 16-bit register for signal <ad_ch4>.
+    Found 16-bit register for signal <ad_ch5>.
+    Found 16-bit register for signal <ad_ch6>.
+    Found 16-bit register for signal <ad_ch7>.
+    Found 16-bit register for signal <ad_ch8>.
+    Found 1-bit register for signal <ad_cs>.
+    Found 1-bit register for signal <ad_rd>.
+    Found 1-bit register for signal <ad_convstab>.
+    Found 6-bit register for signal <i>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 13                                             |
+    | Transitions        | 25                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 6                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | ad_reset (positive)                            |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 16-bit adder for signal <rst_cnt[15]_GND_7_o_add_4_OUT> created at line 84.
+    Found 6-bit adder for signal <i[5]_GND_7_o_add_60_OUT> created at line 275.
+    Found 16-bit comparator greater for signal <rst_cnt[15]_PWR_8_o_LessThan_4_o> created at line 82
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred 154 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  13 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <ad7606_if> synthesized.
+
+Synthesizing Unit <grid_display>.
+    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\grid_display.v".
+    Found 9-bit register for signal <grid_x>.
+    Found 24-bit register for signal <v_data>.
+    Found 1-bit register for signal <region_active>.
+    Found 9-bit adder for signal <grid_x[8]_GND_8_o_add_10_OUT> created at line 66.
+    Found 12-bit comparator lessequal for signal <n0004> created at line 57
+    Found 12-bit comparator lessequal for signal <n0006> created at line 57
+    Found 12-bit comparator lessequal for signal <n0009> created at line 57
+    Found 12-bit comparator lessequal for signal <n0012> created at line 57
+    Found 12-bit comparator greater for signal <pos_y[11]_GND_8_o_LessThan_20_o> created at line 74
+    Found 12-bit comparator greater for signal <GND_8_o_pos_y[11]_LessThan_21_o> created at line 74
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  34 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <grid_display> synthesized.
+
+Synthesizing Unit <timing_gen_xy>.
+    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\timing_gen_xy.v".
+    Found 12-bit register for signal <x_cnt>.
+    Found 12-bit register for signal <y_cnt>.
+    Found 1-bit register for signal <de_d1>.
+    Found 1-bit register for signal <vs_d0>.
+    Found 1-bit register for signal <vs_d1>.
+    Found 1-bit register for signal <hs_d0>.
+    Found 1-bit register for signal <hs_d1>.
+    Found 24-bit register for signal <i_data_d0>.
+    Found 24-bit register for signal <i_data_d1>.
+    Found 1-bit register for signal <de_d0>.
+    Found 12-bit adder for signal <x_cnt[11]_GND_9_o_add_6_OUT> created at line 78.
+    Found 12-bit adder for signal <y_cnt[11]_GND_9_o_add_12_OUT> created at line 89.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  78 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <timing_gen_xy> synthesized.
+
+Synthesizing Unit <ad7606_sample>.
+    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\ad7606_sample.v".
+    Found 8-bit register for signal <adc_data_narrow>.
+    Found 3-bit register for signal <state>.
+    Found 32-bit register for signal <wait_cnt>.
+    Found 11-bit register for signal <sample_cnt>.
+    Found 17-bit register for signal <adc_data_offset>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 2                                              |
+    | Clock              | adc_clk (rising_edge)                          |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 17-bit adder for signal <adc_data[15]_GND_10_o_add_6_OUT> created at line 59.
+    Found 11-bit adder for signal <sample_cnt[10]_GND_10_o_add_20_OUT> created at line 102.
+    Found 32-bit adder for signal <wait_cnt[31]_GND_10_o_add_26_OUT> created at line 119.
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  68 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <ad7606_sample> synthesized.
+
+Synthesizing Unit <wav_display>.
+    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\22_ad7606_vga_test\src\wav_display.v".
+WARNING:Xst:647 - Input <adc_buf_addr<11:10>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 10-bit register for signal <rdaddress>.
+    Found 24-bit register for signal <v_data>.
+    Found 1-bit register for signal <region_active>.
+    Found 12-bit subtractor for signal <GND_11_o_pos_y[11]_sub_15_OUT> created at line 80.
+    Found 10-bit adder for signal <rdaddress[9]_GND_11_o_add_9_OUT> created at line 72.
+    Found 12-bit comparator lessequal for signal <n0004> created at line 63
+    Found 12-bit comparator lessequal for signal <n0006> created at line 63
+    Found 12-bit comparator lessequal for signal <n0009> created at line 63
+    Found 12-bit comparator lessequal for signal <n0012> created at line 63
+    Found 12-bit comparator equal for signal <GND_11_o_GND_11_o_equal_16_o> created at line 80
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  35 D-type flip-flop(s).
+	inferred   5 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <wav_display> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 22
+ 10-bit adder                                          : 2
+ 11-bit adder                                          : 2
+ 12-bit adder                                          : 8
+ 12-bit subtractor                                     : 3
+ 16-bit adder                                          : 1
+ 17-bit adder                                          : 2
+ 32-bit adder                                          : 2
+ 6-bit adder                                           : 1
+ 9-bit adder                                           : 1
+# Registers                                            : 74
+ 1-bit register                                        : 32
+ 10-bit register                                       : 2
+ 11-bit register                                       : 2
+ 12-bit register                                       : 9
+ 16-bit register                                       : 9
+ 17-bit register                                       : 2
+ 24-bit register                                       : 9
+ 32-bit register                                       : 2
+ 6-bit register                                        : 1
+ 8-bit register                                        : 5
+ 9-bit register                                        : 1
+# Comparators                                          : 18
+ 12-bit comparator equal                               : 2
+ 12-bit comparator greater                             : 3
+ 12-bit comparator lessequal                           : 12
+ 16-bit comparator greater                             : 1
+# Multiplexers                                         : 49
+ 1-bit 2-to-1 multiplexer                              : 6
+ 11-bit 2-to-1 multiplexer                             : 2
+ 12-bit 2-to-1 multiplexer                             : 8
+ 24-bit 2-to-1 multiplexer                             : 4
+ 32-bit 2-to-1 multiplexer                             : 2
+ 6-bit 2-to-1 multiplexer                              : 9
+ 8-bit 2-to-1 multiplexer                              : 17
+ 9-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/dpram1024x8.ngc>.
+Loading core <dpram1024x8> for timing and area information for instance <buffer>.
+WARNING:Xst:2677 - Node <v_data_0> of sequential type is unconnected in block <wav_display_m1>.
+WARNING:Xst:2677 - Node <v_data_1> of sequential type is unconnected in block <wav_display_m1>.
+WARNING:Xst:2677 - Node <v_data_2> of sequential type is unconnected in block <wav_display_m1>.
+WARNING:Xst:2677 - Node <v_data_8> of sequential type is unconnected in block <wav_display_m1>.
+WARNING:Xst:2677 - Node <v_data_9> of sequential type is unconnected in block <wav_display_m1>.
+WARNING:Xst:2677 - Node <v_data_16> of sequential type is unconnected in block <wav_display_m1>.
+WARNING:Xst:2677 - Node <v_data_17> of sequential type is unconnected in block <wav_display_m1>.
+WARNING:Xst:2677 - Node <v_data_18> of sequential type is unconnected in block <wav_display_m1>.
+WARNING:Xst:2677 - Node <adc_data_offset_0> of sequential type is unconnected in block <ad7606_sample_m0>.
+WARNING:Xst:2677 - Node <adc_data_offset_1> of sequential type is unconnected in block <ad7606_sample_m0>.
+WARNING:Xst:2677 - Node <adc_data_offset_2> of sequential type is unconnected in block <ad7606_sample_m0>.
+WARNING:Xst:2677 - Node <adc_data_offset_3> of sequential type is unconnected in block <ad7606_sample_m0>.
+WARNING:Xst:2677 - Node <adc_data_offset_4> of sequential type is unconnected in block <ad7606_sample_m0>.
+WARNING:Xst:2677 - Node <adc_data_offset_5> of sequential type is unconnected in block <ad7606_sample_m0>.
+WARNING:Xst:2677 - Node <adc_data_offset_6> of sequential type is unconnected in block <ad7606_sample_m0>.
+WARNING:Xst:2677 - Node <adc_data_offset_7> of sequential type is unconnected in block <ad7606_sample_m0>.
+WARNING:Xst:2677 - Node <adc_data_offset_16> of sequential type is unconnected in block <ad7606_sample_m0>.
+WARNING:Xst:2677 - Node <adc_data_offset_0> of sequential type is unconnected in block <ad7606_sample_m1>.
+WARNING:Xst:2677 - Node <adc_data_offset_1> of sequential type is unconnected in block <ad7606_sample_m1>.
+WARNING:Xst:2677 - Node <adc_data_offset_2> of sequential type is unconnected in block <ad7606_sample_m1>.
+WARNING:Xst:2677 - Node <adc_data_offset_3> of sequential type is unconnected in block <ad7606_sample_m1>.
+WARNING:Xst:2677 - Node <adc_data_offset_4> of sequential type is unconnected in block <ad7606_sample_m1>.
+WARNING:Xst:2677 - Node <adc_data_offset_5> of sequential type is unconnected in block <ad7606_sample_m1>.
+WARNING:Xst:2677 - Node <adc_data_offset_6> of sequential type is unconnected in block <ad7606_sample_m1>.
+WARNING:Xst:2677 - Node <adc_data_offset_7> of sequential type is unconnected in block <ad7606_sample_m1>.
+WARNING:Xst:2677 - Node <adc_data_offset_16> of sequential type is unconnected in block <ad7606_sample_m1>.
+
+Synthesizing (advanced) Unit <ad7606_if>.
+The following registers are absorbed into counter <rst_cnt>: 1 register on signal <rst_cnt>.
+Unit <ad7606_if> synthesized (advanced).
+
+Synthesizing (advanced) Unit <ad7606_sample>.
+The following registers are absorbed into counter <wait_cnt>: 1 register on signal <wait_cnt>.
+The following registers are absorbed into counter <sample_cnt>: 1 register on signal <sample_cnt>.
+Unit <ad7606_sample> synthesized (advanced).
+
+Synthesizing (advanced) Unit <color_bar>.
+The following registers are absorbed into counter <h_cnt>: 1 register on signal <h_cnt>.
+The following registers are absorbed into counter <v_cnt>: 1 register on signal <v_cnt>.
+Unit <color_bar> synthesized (advanced).
+
+Synthesizing (advanced) Unit <grid_display>.
+The following registers are absorbed into counter <grid_x>: 1 register on signal <grid_x>.
+Unit <grid_display> synthesized (advanced).
+
+Synthesizing (advanced) Unit <timing_gen_xy>.
+The following registers are absorbed into counter <x_cnt>: 1 register on signal <x_cnt>.
+The following registers are absorbed into counter <y_cnt>: 1 register on signal <y_cnt>.
+Unit <timing_gen_xy> synthesized (advanced).
+
+Synthesizing (advanced) Unit <wav_display>.
+The following registers are absorbed into counter <rdaddress>: 1 register on signal <rdaddress>.
+Unit <wav_display> synthesized (advanced).
+WARNING:Xst:2677 - Node <adc_data_offset_0> of sequential type is unconnected in block <ad7606_sample>.
+WARNING:Xst:2677 - Node <adc_data_offset_1> of sequential type is unconnected in block <ad7606_sample>.
+WARNING:Xst:2677 - Node <adc_data_offset_2> of sequential type is unconnected in block <ad7606_sample>.
+WARNING:Xst:2677 - Node <adc_data_offset_3> of sequential type is unconnected in block <ad7606_sample>.
+WARNING:Xst:2677 - Node <adc_data_offset_4> of sequential type is unconnected in block <ad7606_sample>.
+WARNING:Xst:2677 - Node <adc_data_offset_5> of sequential type is unconnected in block <ad7606_sample>.
+WARNING:Xst:2677 - Node <adc_data_offset_6> of sequential type is unconnected in block <ad7606_sample>.
+WARNING:Xst:2677 - Node <adc_data_offset_7> of sequential type is unconnected in block <ad7606_sample>.
+WARNING:Xst:2677 - Node <adc_data_offset_16> of sequential type is unconnected in block <ad7606_sample>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 6
+ 12-bit subtractor                                     : 3
+ 17-bit adder                                          : 2
+ 6-bit adder                                           : 1
+# Counters                                             : 16
+ 10-bit up counter                                     : 2
+ 11-bit up counter                                     : 2
+ 12-bit up counter                                     : 8
+ 16-bit up counter                                     : 1
+ 32-bit up counter                                     : 2
+ 9-bit up counter                                      : 1
+# Registers                                            : 450
+ Flip-Flops                                            : 450
+# Comparators                                          : 18
+ 12-bit comparator equal                               : 2
+ 12-bit comparator greater                             : 3
+ 12-bit comparator lessequal                           : 12
+ 16-bit comparator greater                             : 1
+# Multiplexers                                         : 36
+ 1-bit 2-to-1 multiplexer                              : 6
+ 24-bit 2-to-1 multiplexer                             : 4
+ 6-bit 2-to-1 multiplexer                              : 9
+ 8-bit 2-to-1 multiplexer                              : 17
+# FSMs                                                 : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <ad7606_if_m0/FSM_0> on signal <state[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000
+ 0001  | 0001
+ 0010  | 0010
+ 0011  | 0011
+ 0100  | 0100
+ 0101  | 0101
+ 0110  | 0110
+ 0111  | 0111
+ 1000  | 1000
+ 1001  | 1001
+ 1010  | 1010
+ 1011  | 1011
+ 1100  | 1100
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <ad7606_sample_m0/FSM_1> on signal <state[1:2]> with gray encoding.
+Optimizing FSM <ad7606_sample_m1/FSM_1> on signal <state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 00
+ 001   | 01
+ 010   | 11
+-------------------
+INFO:Xst:2261 - The FF/Latch <rgb_b_reg_0> in Unit <color_bar> is equivalent to the following 7 FFs/Latches, which will be removed : <rgb_b_reg_1> <rgb_b_reg_2> <rgb_b_reg_3> <rgb_b_reg_4> <rgb_b_reg_5> <rgb_b_reg_6> <rgb_b_reg_7> 
+INFO:Xst:2261 - The FF/Latch <rgb_r_reg_0> in Unit <color_bar> is equivalent to the following 7 FFs/Latches, which will be removed : <rgb_r_reg_1> <rgb_r_reg_2> <rgb_r_reg_3> <rgb_r_reg_4> <rgb_r_reg_5> <rgb_r_reg_6> <rgb_r_reg_7> 
+INFO:Xst:2261 - The FF/Latch <rgb_g_reg_0> in Unit <color_bar> is equivalent to the following 7 FFs/Latches, which will be removed : <rgb_g_reg_1> <rgb_g_reg_2> <rgb_g_reg_3> <rgb_g_reg_4> <rgb_g_reg_5> <rgb_g_reg_6> <rgb_g_reg_7> 
+
+Optimizing unit <top> ...
+
+Optimizing unit <ad7606_if> ...
+
+Optimizing unit <grid_display> ...
+
+Optimizing unit <wav_display> ...
+
+Optimizing unit <ad7606_sample> ...
+
+Optimizing unit <color_bar> ...
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch8_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch8_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch8_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch8_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch8_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch8_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch8_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch8_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch8_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch8_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch8_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch8_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch8_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch8_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch8_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch8_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch7_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch7_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch7_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch7_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch7_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch7_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch7_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch7_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch7_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch7_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch7_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch7_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch7_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch7_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch7_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch7_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch6_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch6_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch6_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch6_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch6_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch6_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch6_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch6_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch6_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch6_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch6_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch6_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch6_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch6_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch6_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch6_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch5_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch5_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch5_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch5_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch5_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch5_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch5_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch5_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch5_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch5_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch5_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch5_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch5_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch5_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch5_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch5_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch4_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch4_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch4_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch4_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch4_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch4_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch4_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch4_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch4_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch4_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch4_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch4_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch4_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch4_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch4_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch4_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch3_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch3_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch3_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch3_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch3_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch3_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch3_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch3_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch3_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch3_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch3_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch3_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch3_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch3_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch3_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch3_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch2_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch2_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch2_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch2_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch2_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch2_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch2_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch2_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch1_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch1_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch1_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch1_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch1_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch1_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch1_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ad7606_if_m0/ad_ch1_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d0_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d0_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d0_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d0_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d0_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d0_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d0_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d0_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d1_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d1_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d1_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d1_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d1_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d1_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d1_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d1_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/v_data_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/v_data_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/v_data_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/v_data_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/v_data_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/v_data_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/v_data_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/v_data_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/timing_gen_xy_m0/i_data_d0_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/timing_gen_xy_m0/i_data_d0_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/timing_gen_xy_m0/i_data_d0_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/timing_gen_xy_m0/i_data_d0_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/timing_gen_xy_m0/i_data_d0_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/timing_gen_xy_m0/i_data_d0_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/timing_gen_xy_m0/i_data_d0_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/timing_gen_xy_m0/i_data_d0_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/timing_gen_xy_m0/i_data_d1_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/timing_gen_xy_m0/i_data_d1_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/timing_gen_xy_m0/i_data_d1_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/timing_gen_xy_m0/i_data_d1_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/timing_gen_xy_m0/i_data_d1_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/timing_gen_xy_m0/i_data_d1_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/timing_gen_xy_m0/i_data_d1_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/timing_gen_xy_m0/i_data_d1_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/v_data_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/v_data_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/v_data_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/v_data_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/v_data_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/v_data_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/v_data_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m1/v_data_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d0_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d0_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d0_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d0_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d0_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d0_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d0_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d0_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d1_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d1_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d1_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d1_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d1_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d1_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d1_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d1_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/v_data_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/v_data_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/v_data_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/v_data_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/v_data_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/v_data_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/v_data_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/v_data_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:1710 - FF/Latch <color_bar_m0/active_x_11> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <color_bar_m0/h_cnt_11> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad7606_sample_m0/sample_cnt_10> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad7606_sample_m0/wait_cnt_25> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad7606_sample_m0/wait_cnt_26> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad7606_sample_m0/wait_cnt_27> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad7606_sample_m0/wait_cnt_28> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad7606_sample_m0/wait_cnt_29> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad7606_sample_m0/wait_cnt_30> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad7606_sample_m0/wait_cnt_31> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad7606_sample_m1/sample_cnt_10> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad7606_sample_m1/wait_cnt_25> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad7606_sample_m1/wait_cnt_26> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad7606_sample_m1/wait_cnt_27> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad7606_sample_m1/wait_cnt_28> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad7606_sample_m1/wait_cnt_29> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad7606_sample_m1/wait_cnt_30> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad7606_sample_m1/wait_cnt_31> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <grid_display_m0/grid_x_4> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <grid_display_m0/grid_x_5> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <grid_display_m0/grid_x_6> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <grid_display_m0/grid_x_7> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <grid_display_m0/grid_x_8> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/sample_cnt_8> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/sample_cnt_8> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/v_data_23> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <wav_display_m0/v_data_22> <wav_display_m0/v_data_21> <wav_display_m0/v_data_20> <wav_display_m0/v_data_19> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/sample_cnt_9> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/sample_cnt_9> 
+INFO:Xst:2261 - The FF/Latch <grid_display_m0/timing_gen_xy_m0/i_data_d1_10> in Unit <top> is equivalent to the following 5 FFs/Latches, which will be removed : <grid_display_m0/timing_gen_xy_m0/i_data_d1_11> <grid_display_m0/timing_gen_xy_m0/i_data_d1_12> <grid_display_m0/timing_gen_xy_m0/i_data_d1_13> <grid_display_m0/timing_gen_xy_m0/i_data_d1_14> <grid_display_m0/timing_gen_xy_m0/i_data_d1_15> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m1/v_data_15> in Unit <top> is equivalent to the following 5 FFs/Latches, which will be removed : <wav_display_m1/v_data_14> <wav_display_m1/v_data_13> <wav_display_m1/v_data_12> <wav_display_m1/v_data_11> <wav_display_m1/v_data_10> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m1/v_data_23> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <wav_display_m1/v_data_22> <wav_display_m1/v_data_21> <wav_display_m1/v_data_20> <wav_display_m1/v_data_19> 
+INFO:Xst:2261 - The FF/Latch <grid_display_m0/timing_gen_xy_m0/i_data_d1_19> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <grid_display_m0/timing_gen_xy_m0/i_data_d1_20> <grid_display_m0/timing_gen_xy_m0/i_data_d1_21> <grid_display_m0/timing_gen_xy_m0/i_data_d1_22> <grid_display_m0/timing_gen_xy_m0/i_data_d1_23> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m1/timing_gen_xy_m0/i_data_d0_3> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <wav_display_m1/timing_gen_xy_m0/i_data_d0_4> <wav_display_m1/timing_gen_xy_m0/i_data_d0_5> <wav_display_m1/timing_gen_xy_m0/i_data_d0_6> <wav_display_m1/timing_gen_xy_m0/i_data_d0_7> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/timing_gen_xy_m0/i_data_d1_10> in Unit <top> is equivalent to the following 5 FFs/Latches, which will be removed : <wav_display_m0/timing_gen_xy_m0/i_data_d1_11> <wav_display_m0/timing_gen_xy_m0/i_data_d1_12> <wav_display_m0/timing_gen_xy_m0/i_data_d1_13> <wav_display_m0/timing_gen_xy_m0/i_data_d1_14> <wav_display_m0/timing_gen_xy_m0/i_data_d1_15> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/timing_gen_xy_m0/i_data_d0_3> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <wav_display_m0/timing_gen_xy_m0/i_data_d0_4> <wav_display_m0/timing_gen_xy_m0/i_data_d0_5> <wav_display_m0/timing_gen_xy_m0/i_data_d0_6> <wav_display_m0/timing_gen_xy_m0/i_data_d0_7> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m1/timing_gen_xy_m0/i_data_d1_3> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <wav_display_m1/timing_gen_xy_m0/i_data_d1_4> <wav_display_m1/timing_gen_xy_m0/i_data_d1_5> <wav_display_m1/timing_gen_xy_m0/i_data_d1_6> <wav_display_m1/timing_gen_xy_m0/i_data_d1_7> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/timing_gen_xy_m0/i_data_d1_19> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <wav_display_m0/timing_gen_xy_m0/i_data_d1_20> <wav_display_m0/timing_gen_xy_m0/i_data_d1_21> <wav_display_m0/timing_gen_xy_m0/i_data_d1_22> <wav_display_m0/timing_gen_xy_m0/i_data_d1_23> 
+INFO:Xst:2261 - The FF/Latch <grid_display_m0/timing_gen_xy_m0/i_data_d0_3> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <grid_display_m0/timing_gen_xy_m0/i_data_d0_4> <grid_display_m0/timing_gen_xy_m0/i_data_d0_5> <grid_display_m0/timing_gen_xy_m0/i_data_d0_6> <grid_display_m0/timing_gen_xy_m0/i_data_d0_7> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/state_FSM_FFd1> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/state_FSM_FFd1> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/state_FSM_FFd2> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/state_FSM_FFd2> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/timing_gen_xy_m0/i_data_d1_3> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <wav_display_m0/timing_gen_xy_m0/i_data_d1_4> <wav_display_m0/timing_gen_xy_m0/i_data_d1_5> <wav_display_m0/timing_gen_xy_m0/i_data_d1_6> <wav_display_m0/timing_gen_xy_m0/i_data_d1_7> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_0> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_0> 
+INFO:Xst:2261 - The FF/Latch <grid_display_m0/timing_gen_xy_m0/i_data_d0_10> in Unit <top> is equivalent to the following 5 FFs/Latches, which will be removed : <grid_display_m0/timing_gen_xy_m0/i_data_d0_11> <grid_display_m0/timing_gen_xy_m0/i_data_d0_12> <grid_display_m0/timing_gen_xy_m0/i_data_d0_13> <grid_display_m0/timing_gen_xy_m0/i_data_d0_14> <grid_display_m0/timing_gen_xy_m0/i_data_d0_15> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_1> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_1> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_2> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_2> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_3> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_3> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_4> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_4> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_5> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_5> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_6> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_6> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_7> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_7> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_8> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_8> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_9> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_9> 
+INFO:Xst:2261 - The FF/Latch <grid_display_m0/timing_gen_xy_m0/i_data_d0_19> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <grid_display_m0/timing_gen_xy_m0/i_data_d0_20> <grid_display_m0/timing_gen_xy_m0/i_data_d0_21> <grid_display_m0/timing_gen_xy_m0/i_data_d0_22> <grid_display_m0/timing_gen_xy_m0/i_data_d0_23> 
+INFO:Xst:2261 - The FF/Latch <grid_display_m0/timing_gen_xy_m0/i_data_d1_3> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <grid_display_m0/timing_gen_xy_m0/i_data_d1_4> <grid_display_m0/timing_gen_xy_m0/i_data_d1_5> <grid_display_m0/timing_gen_xy_m0/i_data_d1_6> <grid_display_m0/timing_gen_xy_m0/i_data_d1_7> 
+INFO:Xst:2261 - The FF/Latch <grid_display_m0/v_data_15> in Unit <top> is equivalent to the following 5 FFs/Latches, which will be removed : <grid_display_m0/v_data_14> <grid_display_m0/v_data_13> <grid_display_m0/v_data_12> <grid_display_m0/v_data_11> <grid_display_m0/v_data_10> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m1/timing_gen_xy_m0/i_data_d1_10> in Unit <top> is equivalent to the following 5 FFs/Latches, which will be removed : <wav_display_m1/timing_gen_xy_m0/i_data_d1_11> <wav_display_m1/timing_gen_xy_m0/i_data_d1_12> <wav_display_m1/timing_gen_xy_m0/i_data_d1_13> <wav_display_m1/timing_gen_xy_m0/i_data_d1_14> <wav_display_m1/timing_gen_xy_m0/i_data_d1_15> 
+INFO:Xst:2261 - The FF/Latch <grid_display_m0/v_data_23> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <grid_display_m0/v_data_22> <grid_display_m0/v_data_21> <grid_display_m0/v_data_20> <grid_display_m0/v_data_19> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m1/timing_gen_xy_m0/i_data_d1_19> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <wav_display_m1/timing_gen_xy_m0/i_data_d1_20> <wav_display_m1/timing_gen_xy_m0/i_data_d1_21> <wav_display_m1/timing_gen_xy_m0/i_data_d1_22> <wav_display_m1/timing_gen_xy_m0/i_data_d1_23> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/timing_gen_xy_m0/i_data_d0_10> in Unit <top> is equivalent to the following 5 FFs/Latches, which will be removed : <wav_display_m0/timing_gen_xy_m0/i_data_d0_11> <wav_display_m0/timing_gen_xy_m0/i_data_d0_12> <wav_display_m0/timing_gen_xy_m0/i_data_d0_13> <wav_display_m0/timing_gen_xy_m0/i_data_d0_14> <wav_display_m0/timing_gen_xy_m0/i_data_d0_15> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/timing_gen_xy_m0/i_data_d0_19> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <wav_display_m0/timing_gen_xy_m0/i_data_d0_20> <wav_display_m0/timing_gen_xy_m0/i_data_d0_21> <wav_display_m0/timing_gen_xy_m0/i_data_d0_22> <wav_display_m0/timing_gen_xy_m0/i_data_d0_23> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_10> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_10> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_11> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_11> 
+INFO:Xst:2261 - The FF/Latch <grid_display_m0/v_data_7> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <grid_display_m0/v_data_6> <grid_display_m0/v_data_5> <grid_display_m0/v_data_4> <grid_display_m0/v_data_3> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_12> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_12> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_13> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_13> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_14> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_14> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_20> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_20> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_15> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_15> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_21> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_21> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_16> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_16> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_22> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_22> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_17> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_17> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_23> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_23> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_18> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_18> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_24> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_24> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/wait_cnt_19> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/wait_cnt_19> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m1/v_data_7> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <wav_display_m1/v_data_6> <wav_display_m1/v_data_5> <wav_display_m1/v_data_4> <wav_display_m1/v_data_3> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m1/timing_gen_xy_m0/i_data_d0_10> in Unit <top> is equivalent to the following 5 FFs/Latches, which will be removed : <wav_display_m1/timing_gen_xy_m0/i_data_d0_11> <wav_display_m1/timing_gen_xy_m0/i_data_d0_12> <wav_display_m1/timing_gen_xy_m0/i_data_d0_13> <wav_display_m1/timing_gen_xy_m0/i_data_d0_14> <wav_display_m1/timing_gen_xy_m0/i_data_d0_15> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m1/timing_gen_xy_m0/i_data_d0_19> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <wav_display_m1/timing_gen_xy_m0/i_data_d0_20> <wav_display_m1/timing_gen_xy_m0/i_data_d0_21> <wav_display_m1/timing_gen_xy_m0/i_data_d0_22> <wav_display_m1/timing_gen_xy_m0/i_data_d0_23> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/sample_cnt_0> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/sample_cnt_0> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/sample_cnt_1> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/sample_cnt_1> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/sample_cnt_2> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/sample_cnt_2> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/v_data_7> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <wav_display_m0/v_data_6> <wav_display_m0/v_data_5> <wav_display_m0/v_data_4> <wav_display_m0/v_data_3> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/sample_cnt_3> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/sample_cnt_3> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/sample_cnt_4> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/sample_cnt_4> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/sample_cnt_5> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/sample_cnt_5> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/v_data_15> in Unit <top> is equivalent to the following 5 FFs/Latches, which will be removed : <wav_display_m0/v_data_14> <wav_display_m0/v_data_13> <wav_display_m0/v_data_12> <wav_display_m0/v_data_11> <wav_display_m0/v_data_10> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/sample_cnt_6> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/sample_cnt_6> 
+INFO:Xst:2261 - The FF/Latch <ad7606_sample_m1/sample_cnt_7> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <ad7606_sample_m0/sample_cnt_7> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 8.
+
+Final Macro Processing ...
+
+Processing Unit <top> :
+	Found 2-bit shift register for signal <grid_display_m0/timing_gen_xy_m0/i_data_d1_3>.
+	Found 2-bit shift register for signal <grid_display_m0/timing_gen_xy_m0/i_data_d1_10>.
+	Found 2-bit shift register for signal <grid_display_m0/timing_gen_xy_m0/i_data_d1_19>.
+	Found 6-bit shift register for signal <wav_display_m1/timing_gen_xy_m0/hs_d1>.
+	Found 2-bit shift register for signal <wav_display_m1/timing_gen_xy_m0/i_data_d1_3>.
+	Found 2-bit shift register for signal <wav_display_m1/timing_gen_xy_m0/i_data_d1_10>.
+	Found 2-bit shift register for signal <wav_display_m1/timing_gen_xy_m0/i_data_d1_19>.
+	Found 2-bit shift register for signal <wav_display_m0/timing_gen_xy_m0/i_data_d1_3>.
+	Found 2-bit shift register for signal <wav_display_m0/timing_gen_xy_m0/i_data_d1_10>.
+	Found 2-bit shift register for signal <wav_display_m0/timing_gen_xy_m0/i_data_d1_19>.
+Unit <top> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 279
+ Flip-Flops                                            : 279
+# Shift Registers                                      : 10
+ 2-bit shift register                                  : 9
+ 6-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 724
+#      GND                         : 3
+#      INV                         : 13
+#      LUT1                        : 85
+#      LUT2                        : 49
+#      LUT3                        : 71
+#      LUT4                        : 36
+#      LUT5                        : 24
+#      LUT6                        : 91
+#      MUXCY                       : 166
+#      MUXF7                       : 2
+#      VCC                         : 3
+#      XORCY                       : 181
+# FlipFlops/Latches                : 289
+#      FD                          : 24
+#      FDC                         : 57
+#      FDCE                        : 145
+#      FDE                         : 10
+#      FDR                         : 28
+#      FDRE                        : 22
+#      FDS                         : 3
+# RAMS                             : 2
+#      RAMB8BWER                   : 2
+# Shift Registers                  : 10
+#      SRLC16E                     : 10
+# Clock Buffers                    : 3
+#      BUFG                        : 3
+# IO Buffers                       : 36
+#      IBUF                        : 10
+#      IBUFG                       : 1
+#      OBUF                        : 25
+# DCMs                             : 1
+#      DCM_SP                      : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9ftg256-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             289  out of  11440     2%  
+ Number of Slice LUTs:                  379  out of   5720     6%  
+    Number used as Logic:               369  out of   5720     6%  
+    Number used as Memory:               10  out of   1440     0%  
+       Number used as SRL:               10
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    433
+   Number with an unused Flip Flop:     144  out of    433    33%  
+   Number with an unused LUT:            54  out of    433    12%  
+   Number of fully used LUT-FF pairs:   235  out of    433    54%  
+   Number of unique control sets:        21
+
+IO Utilization: 
+ Number of IOs:                          45
+ Number of bonded IOBs:                  36  out of    186    19%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                1  out of     32     3%  
+    Number using Block RAM only:          1
+ Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | IBUFG+BUFG             | 117   |
+clk                                | DCM_SP:CLKFX           | 186   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 6.592ns (Maximum Frequency: 151.692MHz)
+   Minimum input arrival time before clock: 5.139ns
+   Maximum output required time after clock: 4.923ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 6.592ns (frequency: 151.692MHz)
+  Total number of paths / destination ports: 5676 / 562
+-------------------------------------------------------------------------
+Delay:               5.071ns (Levels of Logic = 3)
+  Source:            color_bar_m0/h_cnt_4 (FF)
+  Destination:       color_bar_m0/active_x_10 (FF)
+  Source Clock:      clk rising 1.3X
+  Destination Clock: clk rising 1.3X
+
+  Data Path: color_bar_m0/h_cnt_4 to color_bar_m0/active_x_10
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              4   0.525   1.080  color_bar_m0/h_cnt_4 (color_bar_m0/h_cnt_4)
+     LUT4:I0->O            1   0.254   0.682  color_bar_m0/n0015_inv111 (color_bar_m0/n0015_inv11)
+     LUT6:I5->O            1   0.254   0.682  color_bar_m0/n0015_inv1 (color_bar_m0/n0015_inv1)
+     LUT3:I2->O           11   0.254   1.038  color_bar_m0/n0015_inv2 (color_bar_m0/n0015_inv)
+     FDCE:CE                   0.302          color_bar_m0/active_x_0
+    ----------------------------------------
+    Total                      5.071ns (1.589ns logic, 3.482ns route)
+                                       (31.3% logic, 68.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 227 / 227
+-------------------------------------------------------------------------
+Offset:              5.139ns (Levels of Logic = 2)
+  Source:            rst_n (PAD)
+  Destination:       ad7606_if_m0/rst_cnt_15 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst_n to ad7606_if_m0/rst_cnt_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.681  rst_n_IBUF (rst_n_IBUF)
+     INV:I->O            202   0.255   2.416  rst_n_INV_1_o1_INV_0 (ad7606_if_m0/rst_n_inv)
+     FDC:CLR                   0.459          ad7606_if_m0/ad_reset
+    ----------------------------------------
+    Total                      5.139ns (2.042ns logic, 3.097ns route)
+                                       (39.7% logic, 60.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 22 / 22
+-------------------------------------------------------------------------
+Offset:              4.923ns (Levels of Logic = 1)
+  Source:            ad7606_if_m0/ad_reset (FF)
+  Destination:       ad7606_reset (PAD)
+  Source Clock:      clk rising
+
+  Data Path: ad7606_if_m0/ad_reset to ad7606_reset
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             30   0.525   1.486  ad7606_if_m0/ad_reset (ad7606_if_m0/ad_reset)
+     OBUF:I->O                 2.912          ad7606_reset_OBUF (ad7606_reset)
+    ----------------------------------------
+    Total                      4.923ns (3.437ns logic, 1.486ns route)
+                                       (69.8% logic, 30.2% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    5.197|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.80 secs
+ 
+--> 
+
+Total memory usage is 265068 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  258 (   0 filtered)
+Number of infos    :   75 (   0 filtered)
+

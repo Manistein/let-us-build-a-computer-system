@@ -1,0 +1,2 @@
+verilog work ../../video_pll.v
+verilog work ../example_design/video_pll_exdes.v

@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=E:\BaiduYunDownload\AX309.190502\demo\18_3_sdram_ov5640_an870_lcd\top.ncd
+OUTFILE=E:\BaiduYunDownload\AX309.190502\demo\18_3_sdram_ov5640_an870_lcd\top.bit
+FAMILY=Spartan6
+PART=xc6slx9-2ftg256
+WORKINGDIR=E:\BaiduYunDownload\AX309.190502\demo\18_3_sdram_ov5640_an870_lcd
+LICENSE=WebPack
+USER_INFO=__0_0_0

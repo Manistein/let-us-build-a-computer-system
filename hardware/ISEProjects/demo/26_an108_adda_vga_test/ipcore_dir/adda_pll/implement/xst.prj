@@ -1,0 +1,2 @@
+verilog work ../../adda_pll.v
+verilog work ../example_design/adda_pll_exdes.v

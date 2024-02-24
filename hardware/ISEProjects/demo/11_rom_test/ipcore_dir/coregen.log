@@ -1,0 +1,14 @@
+INFO:sim:172 - Generating IP...
+Applying current project options...
+Finished applying current project options.
+ERROR:sim - Unable to find E:\Project\AX545\CD\09_VERILOG\rom_test\rom_init.coe
+ERROR:sim -    Coregen is looking for
+   E:\Project\AX545\CD\09_VERILOG\rom_test\rom_init.coe
+ERROR:sim - Unable to find E:\Project\AX545\CD\09_VERILOG\rom_test\rom_init.coe
+ERROR:sim -    Coregen is looking for
+   E:\Project\AX545\CD\09_VERILOG\rom_test\rom_init.coe
+ERROR:sim - An invalid core configuration has been detected during
+ERROR:sim -    Customization. Core parameters will be reset to their default
+   values.
+Cancelled executing Tcl generator.
+Wrote CGP file for project 'rom_ip'.

@@ -1,2 +1,0 @@
-verilog work "ipcore_dir/sdram_pll.v"
-verilog work "../../HDL/computer/sdram-on-board-test/counter.v"

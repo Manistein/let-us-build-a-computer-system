@@ -1,0 +1,103 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\BaiduYunDownload\AX309.190502\04_uart_test
+T_opt
+VNU02_7He;_5]EPX5B10Qa3
+04 12 4 work uart_test_tb fast 0
+04 4 4 work glbl fast 0
+=1-2c534a01a10c-5cd0de6c-76-2104
+o-quiet -auto_acc_if_foreign -work work -L xilinxcorelib_ver -L unisims_ver -L unimacro_ver -L secureip +acc
+n@_opt
+OL;O;10.1c;51
+vglbl
+!s100 4BUMBVf6Tzc2Z4KLdBM[:3
+ID_fMj]QBM>Ecj5LGgB3e62
+VM[9mS]S:KA1i4VeCMX35[3
+Z1 dE:\BaiduYunDownload\AX309.190502\04_uart_test
+w1381681120
+8C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v
+FC:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v
+L0 5
+Z2 OL;L;10.1c;51
+r1
+31
+!s90 -reportprogress|300|C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v|
+Z3 o-L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!i10b 1
+!s85 0
+!s108 1557192299.841000
+!s107 C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v|
+vuart_rx
+!s100 a3NQHKN9Q8SK8WeohYG@Y1
+I;3n91nKP<IiRCES8eo2f_0
+V;8=_JedmLNPTWN>i=UL`22
+R1
+Z4 w1512467050
+8src/uart_rx.v
+Fsrc/uart_rx.v
+L0 30
+R2
+r1
+31
+!s90 -reportprogress|300|src/uart_rx.v|
+R3
+!s108 1557192299.462000
+!s107 src/uart_rx.v|
+!i10b 1
+!s85 0
+vuart_test
+!s100 l0G9b4DFRG_UL56jUY<l=0
+IAJSFa@S]R8AfKo?PYXikb3
+Vkm@oH=F`mLjK:0F3d_Kdz1
+R1
+R4
+8src/uart_test.v
+Fsrc/uart_test.v
+L0 31
+R2
+r1
+31
+!s90 -reportprogress|300|src/uart_test.v|
+R3
+!s108 1557192299.582000
+!s107 src/uart_test.v|
+!i10b 1
+!s85 0
+vuart_test_tb
+IPo=doeiE6P0lX=f=:BW=Q2
+VVF5dNH<J336mlD`L?ZGUO2
+R1
+w1557192223
+8sim/uart_test_tb.v
+Fsim/uart_test_tb.v
+L0 6
+R2
+r1
+31
+!s90 -reportprogress|300|sim/uart_test_tb.v|
+R3
+!s100 @6>XejgJ2`aA[ILUUeX>G1
+!s108 1557192299.703000
+!s107 sim/uart_test_tb.v|
+!i10b 1
+!s85 0
+vuart_tx
+!s100 PXczNImPGT>I9:[n0JZzn2
+Ih>X_J0FS34@9OdY_]X?LE2
+V@Kno7jon7`Kc7S?@Mz<j12
+R1
+R4
+8src/uart_tx.v
+Fsrc/uart_tx.v
+L0 30
+R2
+r1
+31
+!s90 -reportprogress|300|src/uart_tx.v|
+R3
+!s108 1557192299.348000
+!s107 src/uart_tx.v|
+!i10b 1
+!s85 0

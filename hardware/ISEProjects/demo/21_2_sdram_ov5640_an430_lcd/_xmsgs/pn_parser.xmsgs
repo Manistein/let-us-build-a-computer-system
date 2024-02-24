@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated   -->
+<!--     by the Xilinx ISE software.  Any direct editing or        -->
+<!--     changes made to this file may result in unpredictable     -->
+<!--     behavior or data corruption.  It is strongly advised that -->
+<!--     users do not edit the contents of this file.              -->
+<!--                                                               -->
+<!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
+
+<messages>
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/cmos_8_16bit.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/cmos_write_req_gen.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/color_bar.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/color_bar.v</arg>&quot; Line <arg fmt="%d" index="2">32</arg>. <arg fmt="%s" index="3">Include file found: &apos;E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/video_define.v&apos; in file &quot;E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/color_bar.v&quot; line 32
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/frame_fifo_read.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/frame_fifo_write.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/frame_read_write.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/i2c_config.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/i2c_master_bit_ctrl.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/i2c_master_bit_ctrl.v</arg>&quot; Line <arg fmt="%d" index="2">141</arg>. <arg fmt="%s" index="3">Include file found: &apos;E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/i2c_master_defines.v&apos; in file &quot;E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/i2c_master_bit_ctrl.v&quot; line 141
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/i2c_master_byte_ctrl.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/i2c_master_byte_ctrl.v</arg>&quot; Line <arg fmt="%d" index="2">73</arg>. <arg fmt="%s" index="3">Include file found: &apos;E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/i2c_master_defines.v&apos; in file &quot;E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/i2c_master_byte_ctrl.v&quot; line 73
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/i2c_master_top.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/lut_ov5640_rgb565_480_272.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/sdram_core.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/timescale.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/top.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX309.190502/demo/18_2_sdram_ov5640_an430_lcd/src/video_timing_data.v&quot; into library work</arg>
+</msg>
+
+</messages>
+

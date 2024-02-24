@@ -1,0 +1,2 @@
+verilog work "ipcore_dir/sdram_pll.v"
+verilog work "top.v"

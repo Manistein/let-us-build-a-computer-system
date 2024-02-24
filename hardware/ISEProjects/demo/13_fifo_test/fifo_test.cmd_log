@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "E:/Project/AX309/CD/09_VERILOG/13_fifo_test/fifo_test.xst" -ofn "E:/Project/AX309/CD/09_VERILOG/13_fifo_test/fifo_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fifo_test.ucf -p xc6slx9-ftg256-2 fifo_test.ngc fifo_test.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o fifo_test_map.ncd fifo_test.ngd fifo_test.pcf 
+par -w -intstyle ise -ol high -mt off fifo_test_map.ncd fifo_test.ncd fifo_test.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml fifo_test.twx fifo_test.ncd -o fifo_test.twr fifo_test.pcf -ucf fifo_test.ucf 
+bitgen -intstyle ise -f fifo_test.ut fifo_test.ncd 

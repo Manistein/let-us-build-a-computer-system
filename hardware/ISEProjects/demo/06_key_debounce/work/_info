@@ -1,0 +1,139 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\BaiduYunDownload\AX309.190502\06_key_debounce
+T_opt
+VIcHD>3n@lCd7Of;ckhG2:0
+04 15 4 work key_debounce_tb fast 0
+04 4 4 work glbl fast 0
+=1-2c534a01a10c-5cd0ebde-369-2ac0
+o-quiet -auto_acc_if_foreign -work work -L xilinxcorelib_ver -L unisims_ver -L unimacro_ver -L secureip +acc
+n@_opt
+OL;O;10.1c;51
+vax_debounce
+IhHIId5P]Zl4Dm^OeOoaY92
+V4@R`obMo:4X2e82_YSOD<1
+Z1 dE:\BaiduYunDownload\AX309.190502\06_key_debounce
+Z2 w1512467016
+8src/ax_debounce.v
+Fsrc/ax_debounce.v
+L0 31
+Z3 OL;L;10.1c;51
+r1
+31
+Z4 o-L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!s100 SNjIfPj3T`mR8iC9@F7Od1
+!s108 1557195742.149000
+!s107 src/ax_debounce.v|
+!s90 -reportprogress|300|src/ax_debounce.v|
+!i10b 1
+!s85 0
+vcount_m10
+Ie3GY_M4R_`4=AeECM[LZO3
+V]U;hj8:jEAdA1zbaX2H5a0
+R1
+R2
+8src/count_m10.v
+Fsrc/count_m10.v
+L0 30
+R3
+r1
+31
+R4
+!s100 E4<OCGCP3K<6L8l1E^iQ]1
+!s108 1557195742.002000
+!s107 src/count_m10.v|
+!s90 -reportprogress|300|src/count_m10.v|
+!i10b 1
+!s85 0
+vglbl
+ID_fMj]QBM>Ecj5LGgB3e62
+VM[9mS]S:KA1i4VeCMX35[3
+R1
+w1381681120
+8C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v
+FC:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v
+L0 5
+R3
+r1
+31
+R4
+!i10b 1
+!s100 4BUMBVf6Tzc2Z4KLdBM[:3
+!s85 0
+!s108 1557195742.578000
+!s107 C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v|
+!s90 -reportprogress|300|C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v|
+vkey_debounce
+I`:iUiCMg<RSJQ_zGjC2HE2
+VHiLhSNo32?P;Y;RN=;DlK1
+R1
+R2
+8src/key_debounce.v
+Fsrc/key_debounce.v
+L0 29
+R3
+r1
+31
+R4
+!s100 >k96jA`an>7b]`KNiE5A_1
+!s108 1557195742.311000
+!s107 src/key_debounce.v|
+!s90 -reportprogress|300|src/key_debounce.v|
+!i10b 1
+!s85 0
+vkey_debounce_tb
+IBLWIbRHmRW@?m3gafMeOo1
+VSKLeg2NH=f[mzNHBbU41J1
+R1
+R2
+8sim/key_debounce_tb.v
+Fsim/key_debounce_tb.v
+L0 2
+R3
+r1
+31
+R4
+!s100 0DknGWUVN3f2n^C?;A^YT3
+!s108 1557195742.444000
+!s107 sim/key_debounce_tb.v|
+!s90 -reportprogress|300|sim/key_debounce_tb.v|
+!i10b 1
+!s85 0
+vseg_decoder
+Ia3b^`3BC9ZQ8E8?9^JjAH1
+V`0LRTQz@X?MJ3ETOCbT=z3
+R1
+R2
+8src/seg_decoder.v
+Fsrc/seg_decoder.v
+L0 29
+R3
+r1
+31
+R4
+!s100 YJTQ_8F1d^[_W_4eg^<O:3
+!s108 1557195741.862000
+!s107 src/seg_decoder.v|
+!s90 -reportprogress|300|src/seg_decoder.v|
+!i10b 1
+!s85 0
+vseg_scan
+IkMEcKL^Uc>F[=]EY=<l9Q1
+VXTGHlCT8SInR2T3Vn3F9W3
+R1
+R2
+8src/seg_scan.v
+Fsrc/seg_scan.v
+L0 29
+R3
+r1
+31
+R4
+!s100 HBAdU[[R4B:a^3:HzM8FI3
+!s108 1557195741.733000
+!s107 src/seg_scan.v|
+!s90 -reportprogress|300|src/seg_scan.v|
+!i10b 1
+!s85 0

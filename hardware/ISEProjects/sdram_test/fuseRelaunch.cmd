@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/ise/hardware/ISEProjects/sdram_test/sdram_test_isim_beh.exe" -prj "/home/ise/hardware/ISEProjects/sdram_test/sdram_test_beh.prj" "work.sdram_test" "work.glbl" 

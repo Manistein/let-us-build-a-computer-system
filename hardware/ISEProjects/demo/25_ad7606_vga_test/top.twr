@@ -1,0 +1,913 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
+-n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf -ucf top.ucf
+
+Design file:              top.ncd
+Physical constraint file: top.pcf
+Device,package,speed:     xc6slx9,ftg256,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 
+50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 2718 paths analyzed, 585 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   8.000ns.
+--------------------------------------------------------------------------------
+
+Paths for end point wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAMB8_X1Y19.WEAWEL1), 4 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     14.498ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ad7606_if_m0/state_FSM_FFd2 (FF)
+  Destination:          wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      5.353ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.114ns (0.591 - 0.705)
+  Source Clock:         clk_bufg_BUFG rising at 0.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ad7606_if_m0/state_FSM_FFd2 to wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y54.CQ       Tcko                  0.430   ad7606_if_m0/state_FSM_FFd3
+                                                       ad7606_if_m0/state_FSM_FFd2
+    SLICE_X11Y35.A3      net (fanout=12)       2.160   ad7606_if_m0/state_FSM_FFd2
+    SLICE_X11Y35.AMUX    Tilo                  0.337   ad_data_valid
+                                                       ad7606_sample_m1/state_FSM_FFd1-In11
+    RAMB8_X1Y19.WEAWEL1  net (fanout=7)        2.096   adc0_buf_wr
+    RAMB8_X1Y19.CLKAWRCLKTrcck_WEA             0.330   wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+                                                       wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    -------------------------------------------------  ---------------------------
+    Total                                      5.353ns (1.097ns logic, 4.256ns route)
+                                                       (20.5% logic, 79.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     14.617ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ad7606_if_m0/state_FSM_FFd1 (FF)
+  Destination:          wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      5.234ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.114ns (0.591 - 0.705)
+  Source Clock:         clk_bufg_BUFG rising at 0.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ad7606_if_m0/state_FSM_FFd1 to wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y54.AQ       Tcko                  0.430   ad7606_if_m0/state_FSM_FFd3
+                                                       ad7606_if_m0/state_FSM_FFd1
+    SLICE_X11Y35.A5      net (fanout=12)       2.041   ad7606_if_m0/state_FSM_FFd1
+    SLICE_X11Y35.AMUX    Tilo                  0.337   ad_data_valid
+                                                       ad7606_sample_m1/state_FSM_FFd1-In11
+    RAMB8_X1Y19.WEAWEL1  net (fanout=7)        2.096   adc0_buf_wr
+    RAMB8_X1Y19.CLKAWRCLKTrcck_WEA             0.330   wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+                                                       wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    -------------------------------------------------  ---------------------------
+    Total                                      5.234ns (1.097ns logic, 4.137ns route)
+                                                       (21.0% logic, 79.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     15.569ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ad7606_sample_m1/state_FSM_FFd1 (FF)
+  Destination:          wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      4.329ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.067ns (0.591 - 0.658)
+  Source Clock:         clk_bufg_BUFG rising at 0.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ad7606_sample_m1/state_FSM_FFd1 to wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y35.AQ       Tcko                  0.476   ad7606_sample_m1/state_FSM_FFd2
+                                                       ad7606_sample_m1/state_FSM_FFd1
+    SLICE_X11Y35.A1      net (fanout=9)        1.090   ad7606_sample_m1/state_FSM_FFd1
+    SLICE_X11Y35.AMUX    Tilo                  0.337   ad_data_valid
+                                                       ad7606_sample_m1/state_FSM_FFd1-In11
+    RAMB8_X1Y19.WEAWEL1  net (fanout=7)        2.096   adc0_buf_wr
+    RAMB8_X1Y19.CLKAWRCLKTrcck_WEA             0.330   wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+                                                       wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    -------------------------------------------------  ---------------------------
+    Total                                      4.329ns (1.143ns logic, 3.186ns route)
+                                                       (26.4% logic, 73.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAMB8_X1Y14.WEAWEL1), 4 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     14.526ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ad7606_if_m0/state_FSM_FFd2 (FF)
+  Destination:          wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      5.328ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.111ns (0.687 - 0.798)
+  Source Clock:         clk_bufg_BUFG rising at 0.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ad7606_if_m0/state_FSM_FFd2 to wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y54.CQ       Tcko                  0.430   ad7606_if_m0/state_FSM_FFd3
+                                                       ad7606_if_m0/state_FSM_FFd2
+    SLICE_X11Y35.A3      net (fanout=12)       2.160   ad7606_if_m0/state_FSM_FFd2
+    SLICE_X11Y35.AMUX    Tilo                  0.337   ad_data_valid
+                                                       ad7606_sample_m1/state_FSM_FFd1-In11
+    RAMB8_X1Y14.WEAWEL1  net (fanout=7)        2.071   adc0_buf_wr
+    RAMB8_X1Y14.CLKAWRCLKTrcck_WEA             0.330   wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+                                                       wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    -------------------------------------------------  ---------------------------
+    Total                                      5.328ns (1.097ns logic, 4.231ns route)
+                                                       (20.6% logic, 79.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     14.645ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ad7606_if_m0/state_FSM_FFd1 (FF)
+  Destination:          wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      5.209ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.111ns (0.687 - 0.798)
+  Source Clock:         clk_bufg_BUFG rising at 0.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ad7606_if_m0/state_FSM_FFd1 to wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y54.AQ       Tcko                  0.430   ad7606_if_m0/state_FSM_FFd3
+                                                       ad7606_if_m0/state_FSM_FFd1
+    SLICE_X11Y35.A5      net (fanout=12)       2.041   ad7606_if_m0/state_FSM_FFd1
+    SLICE_X11Y35.AMUX    Tilo                  0.337   ad_data_valid
+                                                       ad7606_sample_m1/state_FSM_FFd1-In11
+    RAMB8_X1Y14.WEAWEL1  net (fanout=7)        2.071   adc0_buf_wr
+    RAMB8_X1Y14.CLKAWRCLKTrcck_WEA             0.330   wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+                                                       wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    -------------------------------------------------  ---------------------------
+    Total                                      5.209ns (1.097ns logic, 4.112ns route)
+                                                       (21.1% logic, 78.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     15.597ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ad7606_sample_m1/state_FSM_FFd1 (FF)
+  Destination:          wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      4.304ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.064ns (0.687 - 0.751)
+  Source Clock:         clk_bufg_BUFG rising at 0.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ad7606_sample_m1/state_FSM_FFd1 to wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y35.AQ       Tcko                  0.476   ad7606_sample_m1/state_FSM_FFd2
+                                                       ad7606_sample_m1/state_FSM_FFd1
+    SLICE_X11Y35.A1      net (fanout=9)        1.090   ad7606_sample_m1/state_FSM_FFd1
+    SLICE_X11Y35.AMUX    Tilo                  0.337   ad_data_valid
+                                                       ad7606_sample_m1/state_FSM_FFd1-In11
+    RAMB8_X1Y14.WEAWEL1  net (fanout=7)        2.071   adc0_buf_wr
+    RAMB8_X1Y14.CLKAWRCLKTrcck_WEA             0.330   wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+                                                       wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    -------------------------------------------------  ---------------------------
+    Total                                      4.304ns (1.143ns logic, 3.161ns route)
+                                                       (26.6% logic, 73.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point ad7606_sample_m1/adc_data_offset_12 (SLICE_X16Y43.CE), 2 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     14.526ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ad7606_if_m0/state_FSM_FFd2 (FF)
+  Destination:          ad7606_sample_m1/adc_data_offset_12 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.330ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.109ns (0.596 - 0.705)
+  Source Clock:         clk_bufg_BUFG rising at 0.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ad7606_if_m0/state_FSM_FFd2 to ad7606_sample_m1/adc_data_offset_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y54.CQ       Tcko                  0.430   ad7606_if_m0/state_FSM_FFd3
+                                                       ad7606_if_m0/state_FSM_FFd2
+    SLICE_X11Y35.A3      net (fanout=12)       2.160   ad7606_if_m0/state_FSM_FFd2
+    SLICE_X11Y35.A       Tilo                  0.259   ad_data_valid
+                                                       ad7606_if_m0/state_ad_data_valid1
+    SLICE_X16Y43.CE      net (fanout=6)        2.168   ad_data_valid
+    SLICE_X16Y43.CLK     Tceck                 0.313   ad7606_sample_m1/adc_data_offset<15>
+                                                       ad7606_sample_m1/adc_data_offset_12
+    -------------------------------------------------  ---------------------------
+    Total                                      5.330ns (1.002ns logic, 4.328ns route)
+                                                       (18.8% logic, 81.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     14.645ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ad7606_if_m0/state_FSM_FFd1 (FF)
+  Destination:          ad7606_sample_m1/adc_data_offset_12 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.211ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.109ns (0.596 - 0.705)
+  Source Clock:         clk_bufg_BUFG rising at 0.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ad7606_if_m0/state_FSM_FFd1 to ad7606_sample_m1/adc_data_offset_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y54.AQ       Tcko                  0.430   ad7606_if_m0/state_FSM_FFd3
+                                                       ad7606_if_m0/state_FSM_FFd1
+    SLICE_X11Y35.A5      net (fanout=12)       2.041   ad7606_if_m0/state_FSM_FFd1
+    SLICE_X11Y35.A       Tilo                  0.259   ad_data_valid
+                                                       ad7606_if_m0/state_ad_data_valid1
+    SLICE_X16Y43.CE      net (fanout=6)        2.168   ad_data_valid
+    SLICE_X16Y43.CLK     Tceck                 0.313   ad7606_sample_m1/adc_data_offset<15>
+                                                       ad7606_sample_m1/adc_data_offset_12
+    -------------------------------------------------  ---------------------------
+    Total                                      5.211ns (1.002ns logic, 4.209ns route)
+                                                       (19.2% logic, 80.8% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAMB8_X1Y19.ADDRAWRADDR11), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.387ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               ad7606_sample_m1/sample_cnt_8 (FF)
+  Destination:          wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.383ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.004ns (0.067 - 0.071)
+  Source Clock:         clk_bufg_BUFG rising at 20.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: ad7606_sample_m1/sample_cnt_8 to wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    Location                  Delay type         Delay(ns)  Physical Resource
+                                                            Logical Resource(s)
+    ------------------------------------------------------  -------------------
+    SLICE_X18Y35.AQ           Tcko                  0.200   ad7606_sample_m1/sample_cnt<9>
+                                                            ad7606_sample_m1/sample_cnt_8
+    RAMB8_X1Y19.ADDRAWRADDR11 net (fanout=9)        0.249   ad7606_sample_m1/sample_cnt<8>
+    RAMB8_X1Y19.CLKAWRCLK     Trckc_ADDRA (-Th)     0.066   wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+                                                            wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    ------------------------------------------------------  ---------------------------
+    Total                                           0.383ns (0.134ns logic, 0.249ns route)
+                                                            (35.0% logic, 65.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAMB8_X1Y19.ADDRAWRADDR12), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.398ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               ad7606_sample_m1/sample_cnt_9 (FF)
+  Destination:          wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.394ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.004ns (0.067 - 0.071)
+  Source Clock:         clk_bufg_BUFG rising at 20.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: ad7606_sample_m1/sample_cnt_9 to wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    Location                  Delay type         Delay(ns)  Physical Resource
+                                                            Logical Resource(s)
+    ------------------------------------------------------  -------------------
+    SLICE_X18Y35.BQ           Tcko                  0.200   ad7606_sample_m1/sample_cnt<9>
+                                                            ad7606_sample_m1/sample_cnt_9
+    RAMB8_X1Y19.ADDRAWRADDR12 net (fanout=9)        0.260   ad7606_sample_m1/sample_cnt<9>
+    RAMB8_X1Y19.CLKAWRCLK     Trckc_ADDRA (-Th)     0.066   wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+                                                            wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    ------------------------------------------------------  ---------------------------
+    Total                                           0.394ns (0.134ns logic, 0.260ns route)
+                                                            (34.0% logic, 66.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAMB8_X1Y19.ADDRAWRADDR7), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.401ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               ad7606_sample_m1/sample_cnt_4 (FF)
+  Destination:          wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.005ns (0.067 - 0.072)
+  Source Clock:         clk_bufg_BUFG rising at 20.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: ad7606_sample_m1/sample_cnt_4 to wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    SLICE_X18Y34.AQ          Tcko                  0.200   ad7606_sample_m1/sample_cnt<7>
+                                                           ad7606_sample_m1/sample_cnt_4
+    RAMB8_X1Y19.ADDRAWRADDR7 net (fanout=4)        0.262   ad7606_sample_m1/sample_cnt<4>
+    RAMB8_X1Y19.CLKAWRCLK    Trckc_ADDRA (-Th)     0.066   wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+                                                           wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    -----------------------------------------------------  ---------------------------
+    Total                                          0.396ns (0.134ns logic, 0.262ns route)
+                                                           (33.8% logic, 66.2% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 12.000ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 4.000ns (Tdcmpw_CLKIN_50_100)
+  Physical resource: video_pll_m0/dcm_sp_inst/CLKIN
+  Logical resource: video_pll_m0/dcm_sp_inst/CLKIN
+  Location pin: DCM_X0Y1.CLKIN
+  Clock network: video_pll_m0/dcm_sp_inst_ML_NEW_DIVCLK
+--------------------------------------------------------------------------------
+Slack: 12.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 4.000ns (Tdcmpw_CLKIN_50_100)
+  Physical resource: video_pll_m0/dcm_sp_inst/CLKIN
+  Logical resource: video_pll_m0/dcm_sp_inst/CLKIN
+  Location pin: DCM_X0Y1.CLKIN
+  Clock network: video_pll_m0/dcm_sp_inst_ML_NEW_DIVCLK
+--------------------------------------------------------------------------------
+Slack: 12.385ns (period - min period limit)
+  Period: 15.385ns
+  Min period limit: 3.000ns (333.333MHz) (Tdcmper_CLKFX)
+  Physical resource: video_pll_m0/dcm_sp_inst/CLKFX
+  Logical resource: video_pll_m0/dcm_sp_inst/CLKFX
+  Location pin: DCM_X0Y1.CLKFX
+  Clock network: video_pll_m0/clkfx
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_video_pll_m0_clkfx = PERIOD TIMEGRP "video_pll_m0_clkfx" 
+TS_sys_clk_pin *         1.3 HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 2948 paths analyzed, 944 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   5.492ns.
+--------------------------------------------------------------------------------
+
+Paths for end point wav_display_m1/v_data_7 (SLICE_X16Y25.A2), 5 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     9.892ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAM)
+  Destination:          wav_display_m1/v_data_7 (FF)
+  Requirement:          15.384ns
+  Data Path Delay:      5.178ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.025ns (0.286 - 0.311)
+  Source Clock:         video_clk rising at 0.000ns
+  Destination Clock:    video_clk rising at 15.384ns
+  Clock Uncertainty:    0.289ns
+
+  Clock Uncertainty:          0.289ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.507ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram to wav_display_m1/v_data_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X1Y14.DOBDO7   Trcko_DOB             2.100   wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+                                                       wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    SLICE_X15Y23.A3      net (fanout=1)        1.306   wav_display_m1/q<7>
+    SLICE_X15Y23.A       Tilo                  0.259   wav_display_m1/GND_11_o_GND_11_o_equal_16_o122
+                                                       wav_display_m1/GND_11_o_GND_11_o_equal_16_o123
+    SLICE_X16Y25.A2      net (fanout=3)        1.174   wav_display_m1/GND_11_o_GND_11_o_equal_16_o122
+    SLICE_X16Y25.CLK     Tas                   0.339   wav_display_m1/v_data<23>
+                                                       wav_display_m1/Mmux_pos_data[23]_pos_data[23]_mux_17_OUT221
+                                                       wav_display_m1/v_data_7
+    -------------------------------------------------  ---------------------------
+    Total                                      5.178ns (2.698ns logic, 2.480ns route)
+                                                       (52.1% logic, 47.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     11.527ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               wav_display_m1/timing_gen_xy_m0/y_cnt_8 (FF)
+  Destination:          wav_display_m1/v_data_7 (FF)
+  Requirement:          15.384ns
+  Data Path Delay:      3.548ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.020ns (0.286 - 0.306)
+  Source Clock:         video_clk rising at 0.000ns
+  Destination Clock:    video_clk rising at 15.384ns
+  Clock Uncertainty:    0.289ns
+
+  Clock Uncertainty:          0.289ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.507ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: wav_display_m1/timing_gen_xy_m0/y_cnt_8 to wav_display_m1/v_data_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X18Y21.AQ      Tcko                  0.476   wav_display_m1/timing_gen_xy_m0/y_cnt<11>
+                                                       wav_display_m1/timing_gen_xy_m0/y_cnt_8
+    SLICE_X15Y23.A2      net (fanout=4)        1.300   wav_display_m1/timing_gen_xy_m0/y_cnt<8>
+    SLICE_X15Y23.A       Tilo                  0.259   wav_display_m1/GND_11_o_GND_11_o_equal_16_o122
+                                                       wav_display_m1/GND_11_o_GND_11_o_equal_16_o123
+    SLICE_X16Y25.A2      net (fanout=3)        1.174   wav_display_m1/GND_11_o_GND_11_o_equal_16_o122
+    SLICE_X16Y25.CLK     Tas                   0.339   wav_display_m1/v_data<23>
+                                                       wav_display_m1/Mmux_pos_data[23]_pos_data[23]_mux_17_OUT221
+                                                       wav_display_m1/v_data_7
+    -------------------------------------------------  ---------------------------
+    Total                                      3.548ns (1.074ns logic, 2.474ns route)
+                                                       (30.3% logic, 69.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     11.825ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               wav_display_m1/timing_gen_xy_m0/y_cnt_5 (FF)
+  Destination:          wav_display_m1/v_data_7 (FF)
+  Requirement:          15.384ns
+  Data Path Delay:      3.247ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.023ns (0.286 - 0.309)
+  Source Clock:         video_clk rising at 0.000ns
+  Destination Clock:    video_clk rising at 15.384ns
+  Clock Uncertainty:    0.289ns
+
+  Clock Uncertainty:          0.289ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.507ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: wav_display_m1/timing_gen_xy_m0/y_cnt_5 to wav_display_m1/v_data_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X18Y20.BQ      Tcko                  0.476   wav_display_m1/timing_gen_xy_m0/y_cnt<7>
+                                                       wav_display_m1/timing_gen_xy_m0/y_cnt_5
+    SLICE_X15Y23.A4      net (fanout=5)        0.999   wav_display_m1/timing_gen_xy_m0/y_cnt<5>
+    SLICE_X15Y23.A       Tilo                  0.259   wav_display_m1/GND_11_o_GND_11_o_equal_16_o122
+                                                       wav_display_m1/GND_11_o_GND_11_o_equal_16_o123
+    SLICE_X16Y25.A2      net (fanout=3)        1.174   wav_display_m1/GND_11_o_GND_11_o_equal_16_o122
+    SLICE_X16Y25.CLK     Tas                   0.339   wav_display_m1/v_data<23>
+                                                       wav_display_m1/Mmux_pos_data[23]_pos_data[23]_mux_17_OUT221
+                                                       wav_display_m1/v_data_7
+    -------------------------------------------------  ---------------------------
+    Total                                      3.247ns (1.074ns logic, 2.173ns route)
+                                                       (33.1% logic, 66.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point wav_display_m1/v_data_15 (SLICE_X16Y25.C2), 5 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     10.098ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAM)
+  Destination:          wav_display_m1/v_data_15 (FF)
+  Requirement:          15.384ns
+  Data Path Delay:      4.972ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.025ns (0.286 - 0.311)
+  Source Clock:         video_clk rising at 0.000ns
+  Destination Clock:    video_clk rising at 15.384ns
+  Clock Uncertainty:    0.289ns
+
+  Clock Uncertainty:          0.289ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.507ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram to wav_display_m1/v_data_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X1Y14.DOBDO7   Trcko_DOB             2.100   wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+                                                       wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    SLICE_X15Y23.A3      net (fanout=1)        1.306   wav_display_m1/q<7>
+    SLICE_X15Y23.A       Tilo                  0.259   wav_display_m1/GND_11_o_GND_11_o_equal_16_o122
+                                                       wav_display_m1/GND_11_o_GND_11_o_equal_16_o123
+    SLICE_X16Y25.C2      net (fanout=3)        0.968   wav_display_m1/GND_11_o_GND_11_o_equal_16_o122
+    SLICE_X16Y25.CLK     Tas                   0.339   wav_display_m1/v_data<23>
+                                                       wav_display_m1/Mmux_pos_data[23]_pos_data[23]_mux_17_OUT71
+                                                       wav_display_m1/v_data_15
+    -------------------------------------------------  ---------------------------
+    Total                                      4.972ns (2.698ns logic, 2.274ns route)
+                                                       (54.3% logic, 45.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     11.733ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               wav_display_m1/timing_gen_xy_m0/y_cnt_8 (FF)
+  Destination:          wav_display_m1/v_data_15 (FF)
+  Requirement:          15.384ns
+  Data Path Delay:      3.342ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.020ns (0.286 - 0.306)
+  Source Clock:         video_clk rising at 0.000ns
+  Destination Clock:    video_clk rising at 15.384ns
+  Clock Uncertainty:    0.289ns
+
+  Clock Uncertainty:          0.289ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.507ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: wav_display_m1/timing_gen_xy_m0/y_cnt_8 to wav_display_m1/v_data_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X18Y21.AQ      Tcko                  0.476   wav_display_m1/timing_gen_xy_m0/y_cnt<11>
+                                                       wav_display_m1/timing_gen_xy_m0/y_cnt_8
+    SLICE_X15Y23.A2      net (fanout=4)        1.300   wav_display_m1/timing_gen_xy_m0/y_cnt<8>
+    SLICE_X15Y23.A       Tilo                  0.259   wav_display_m1/GND_11_o_GND_11_o_equal_16_o122
+                                                       wav_display_m1/GND_11_o_GND_11_o_equal_16_o123
+    SLICE_X16Y25.C2      net (fanout=3)        0.968   wav_display_m1/GND_11_o_GND_11_o_equal_16_o122
+    SLICE_X16Y25.CLK     Tas                   0.339   wav_display_m1/v_data<23>
+                                                       wav_display_m1/Mmux_pos_data[23]_pos_data[23]_mux_17_OUT71
+                                                       wav_display_m1/v_data_15
+    -------------------------------------------------  ---------------------------
+    Total                                      3.342ns (1.074ns logic, 2.268ns route)
+                                                       (32.1% logic, 67.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     12.031ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               wav_display_m1/timing_gen_xy_m0/y_cnt_5 (FF)
+  Destination:          wav_display_m1/v_data_15 (FF)
+  Requirement:          15.384ns
+  Data Path Delay:      3.041ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.023ns (0.286 - 0.309)
+  Source Clock:         video_clk rising at 0.000ns
+  Destination Clock:    video_clk rising at 15.384ns
+  Clock Uncertainty:    0.289ns
+
+  Clock Uncertainty:          0.289ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.507ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: wav_display_m1/timing_gen_xy_m0/y_cnt_5 to wav_display_m1/v_data_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X18Y20.BQ      Tcko                  0.476   wav_display_m1/timing_gen_xy_m0/y_cnt<7>
+                                                       wav_display_m1/timing_gen_xy_m0/y_cnt_5
+    SLICE_X15Y23.A4      net (fanout=5)        0.999   wav_display_m1/timing_gen_xy_m0/y_cnt<5>
+    SLICE_X15Y23.A       Tilo                  0.259   wav_display_m1/GND_11_o_GND_11_o_equal_16_o122
+                                                       wav_display_m1/GND_11_o_GND_11_o_equal_16_o123
+    SLICE_X16Y25.C2      net (fanout=3)        0.968   wav_display_m1/GND_11_o_GND_11_o_equal_16_o122
+    SLICE_X16Y25.CLK     Tas                   0.339   wav_display_m1/v_data<23>
+                                                       wav_display_m1/Mmux_pos_data[23]_pos_data[23]_mux_17_OUT71
+                                                       wav_display_m1/v_data_15
+    -------------------------------------------------  ---------------------------
+    Total                                      3.041ns (1.074ns logic, 1.967ns route)
+                                                       (35.3% logic, 64.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point wav_display_m0/v_data_7 (SLICE_X12Y32.A1), 4 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     10.139ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAM)
+  Destination:          wav_display_m0/v_data_7 (FF)
+  Requirement:          15.384ns
+  Data Path Delay:      4.948ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.008ns (0.296 - 0.304)
+  Source Clock:         video_clk rising at 0.000ns
+  Destination Clock:    video_clk rising at 15.384ns
+  Clock Uncertainty:    0.289ns
+
+  Clock Uncertainty:          0.289ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.507ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram to wav_display_m0/v_data_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X1Y19.DOBDO2   Trcko_DOB             2.100   wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+                                                       wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    SLICE_X16Y33.A4      net (fanout=1)        1.192   wav_display_m0/q<2>
+    SLICE_X16Y33.A       Tilo                  0.254   wav_display_m0/GND_11_o_GND_11_o_equal_16_o121
+                                                       wav_display_m0/GND_11_o_GND_11_o_equal_16_o122
+    SLICE_X12Y32.A1      net (fanout=3)        1.063   wav_display_m0/GND_11_o_GND_11_o_equal_16_o121
+    SLICE_X12Y32.CLK     Tas                   0.339   wav_display_m0/v_data<23>
+                                                       wav_display_m0/Mmux_pos_data[23]_pos_data[23]_mux_17_OUT221
+                                                       wav_display_m0/v_data_7
+    -------------------------------------------------  ---------------------------
+    Total                                      4.948ns (2.693ns logic, 2.255ns route)
+                                                       (54.4% logic, 45.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     10.201ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAM)
+  Destination:          wav_display_m0/v_data_7 (FF)
+  Requirement:          15.384ns
+  Data Path Delay:      4.886ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.008ns (0.296 - 0.304)
+  Source Clock:         video_clk rising at 0.000ns
+  Destination Clock:    video_clk rising at 15.384ns
+  Clock Uncertainty:    0.289ns
+
+  Clock Uncertainty:          0.289ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.507ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram to wav_display_m0/v_data_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB8_X1Y19.DOBDO0   Trcko_DOB             2.100   wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+                                                       wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    SLICE_X16Y33.A5      net (fanout=1)        1.130   wav_display_m0/q<0>
+    SLICE_X16Y33.A       Tilo                  0.254   wav_display_m0/GND_11_o_GND_11_o_equal_16_o121
+                                                       wav_display_m0/GND_11_o_GND_11_o_equal_16_o122
+    SLICE_X12Y32.A1      net (fanout=3)        1.063   wav_display_m0/GND_11_o_GND_11_o_equal_16_o121
+    SLICE_X12Y32.CLK     Tas                   0.339   wav_display_m0/v_data<23>
+                                                       wav_display_m0/Mmux_pos_data[23]_pos_data[23]_mux_17_OUT221
+                                                       wav_display_m0/v_data_7
+    -------------------------------------------------  ---------------------------
+    Total                                      4.886ns (2.693ns logic, 2.193ns route)
+                                                       (55.1% logic, 44.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     12.333ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               wav_display_m0/timing_gen_xy_m0/y_cnt_0 (FF)
+  Destination:          wav_display_m0/v_data_7 (FF)
+  Requirement:          15.384ns
+  Data Path Delay:      2.744ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.018ns (0.296 - 0.314)
+  Source Clock:         video_clk rising at 0.000ns
+  Destination Clock:    video_clk rising at 15.384ns
+  Clock Uncertainty:    0.289ns
+
+  Clock Uncertainty:          0.289ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.507ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: wav_display_m0/timing_gen_xy_m0/y_cnt_0 to wav_display_m0/v_data_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y33.AQ      Tcko                  0.476   wav_display_m0/timing_gen_xy_m0/y_cnt<3>
+                                                       wav_display_m0/timing_gen_xy_m0/y_cnt_0
+    SLICE_X16Y33.A3      net (fanout=4)        0.612   wav_display_m0/timing_gen_xy_m0/y_cnt<0>
+    SLICE_X16Y33.A       Tilo                  0.254   wav_display_m0/GND_11_o_GND_11_o_equal_16_o121
+                                                       wav_display_m0/GND_11_o_GND_11_o_equal_16_o122
+    SLICE_X12Y32.A1      net (fanout=3)        1.063   wav_display_m0/GND_11_o_GND_11_o_equal_16_o121
+    SLICE_X12Y32.CLK     Tas                   0.339   wav_display_m0/v_data<23>
+                                                       wav_display_m0/Mmux_pos_data[23]_pos_data[23]_mux_17_OUT221
+                                                       wav_display_m0/v_data_7
+    -------------------------------------------------  ---------------------------
+    Total                                      2.744ns (1.069ns logic, 1.675ns route)
+                                                       (39.0% logic, 61.0% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_video_pll_m0_clkfx = PERIOD TIMEGRP "video_pll_m0_clkfx" TS_sys_clk_pin *
+        1.3 HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAMB8_X1Y19.ADDRBRDADDR11), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.311ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               wav_display_m0/rdaddress_8 (FF)
+  Destination:          wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.317ns (Levels of Logic = 0)
+  Clock Path Skew:      0.006ns (0.068 - 0.062)
+  Source Clock:         video_clk rising at 0.000ns
+  Destination Clock:    video_clk rising at 0.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: wav_display_m0/rdaddress_8 to wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    Location                  Delay type         Delay(ns)  Physical Resource
+                                                            Logical Resource(s)
+    ------------------------------------------------------  -------------------
+    SLICE_X18Y40.AQ           Tcko                  0.200   wav_display_m0/rdaddress<9>
+                                                            wav_display_m0/rdaddress_8
+    RAMB8_X1Y19.ADDRBRDADDR11 net (fanout=2)        0.183   wav_display_m0/rdaddress<8>
+    RAMB8_X1Y19.CLKBRDCLK     Trckc_ADDRB (-Th)     0.066   wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+                                                            wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    ------------------------------------------------------  ---------------------------
+    Total                                           0.317ns (0.134ns logic, 0.183ns route)
+                                                            (42.3% logic, 57.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAMB8_X1Y19.ADDRBRDADDR12), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.311ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               wav_display_m0/rdaddress_9 (FF)
+  Destination:          wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.317ns (Levels of Logic = 0)
+  Clock Path Skew:      0.006ns (0.068 - 0.062)
+  Source Clock:         video_clk rising at 0.000ns
+  Destination Clock:    video_clk rising at 0.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: wav_display_m0/rdaddress_9 to wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    Location                  Delay type         Delay(ns)  Physical Resource
+                                                            Logical Resource(s)
+    ------------------------------------------------------  -------------------
+    SLICE_X18Y40.BQ           Tcko                  0.200   wav_display_m0/rdaddress<9>
+                                                            wav_display_m0/rdaddress_9
+    RAMB8_X1Y19.ADDRBRDADDR12 net (fanout=2)        0.183   wav_display_m0/rdaddress<9>
+    RAMB8_X1Y19.CLKBRDCLK     Trckc_ADDRB (-Th)     0.066   wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+                                                            wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    ------------------------------------------------------  ---------------------------
+    Total                                           0.317ns (0.134ns logic, 0.183ns route)
+                                                            (42.3% logic, 57.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAMB8_X1Y19.ADDRBRDADDR4), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.359ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               wav_display_m0/rdaddress_1 (FF)
+  Destination:          wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.363ns (Levels of Logic = 0)
+  Clock Path Skew:      0.004ns (0.068 - 0.064)
+  Source Clock:         video_clk rising at 0.000ns
+  Destination Clock:    video_clk rising at 0.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: wav_display_m0/rdaddress_1 to wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    SLICE_X18Y38.BQ          Tcko                  0.200   wav_display_m0/rdaddress<3>
+                                                           wav_display_m0/rdaddress_1
+    RAMB8_X1Y19.ADDRBRDADDR4 net (fanout=2)        0.229   wav_display_m0/rdaddress<1>
+    RAMB8_X1Y19.CLKBRDCLK    Trckc_ADDRB (-Th)     0.066   wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+                                                           wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram
+    -----------------------------------------------------  ---------------------------
+    Total                                          0.363ns (0.134ns logic, 0.229ns route)
+                                                           (36.9% logic, 63.1% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_video_pll_m0_clkfx = PERIOD TIMEGRP "video_pll_m0_clkfx" TS_sys_clk_pin *
+        1.3 HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 11.814ns (period - min period limit)
+  Period: 15.384ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram/CLKBRDCLK
+  Logical resource: wav_display_m1/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram/CLKBRDCLK
+  Location pin: RAMB8_X1Y14.CLKBRDCLK
+  Clock network: video_clk
+--------------------------------------------------------------------------------
+Slack: 11.814ns (period - min period limit)
+  Period: 15.384ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram/CLKBRDCLK
+  Logical resource: wav_display_m0/buffer/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM9.ram/CLKBRDCLK
+  Location pin: RAMB8_X1Y19.CLKBRDCLK
+  Clock network: video_clk
+--------------------------------------------------------------------------------
+Slack: 12.718ns (period - min period limit)
+  Period: 15.384ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: video_pll_m0/clkout1_buf/I0
+  Logical resource: video_pll_m0/clkout1_buf/I0
+  Location pin: BUFGMUX_X2Y2.I0
+  Clock network: video_pll_m0/clkfx
+--------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Derived Constraints for TS_sys_clk_pin
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_sys_clk_pin                 |     20.000ns|      8.000ns|      7.140ns|            0|            0|         2718|         2948|
+| TS_video_pll_m0_clkfx         |     15.385ns|      5.492ns|          N/A|            0|            0|         2948|            0|
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    5.502|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 5666 paths, 0 nets, and 1478 connections
+
+Design statistics:
+   Minimum period:   8.000ns{1}   (Maximum frequency: 125.000MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Thu May 02 16:13:34 2019 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 219 MB
+
+
+

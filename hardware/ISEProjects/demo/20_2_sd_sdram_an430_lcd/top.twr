@@ -1,0 +1,1319 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
+-n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf -ucf
+sd_sdram_an430_lcd.ucf
+
+Design file:              top.ncd
+Physical constraint file: top.pcf
+Device,package,speed:     xc6slx9,ftg256,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 
+50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 35561 paths analyzed, 257 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   7.410ns.
+--------------------------------------------------------------------------------
+
+Paths for end point seg_scan_m0/seg_data_6 (SLICE_X9Y60.AX), 5 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     6.403ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_card_bmp_m0/bmp_read_m0/state_code_1 (FF)
+  Destination:          seg_scan_m0/seg_data_6 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      2.673ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.554ns (0.907 - 1.461)
+  Source Clock:         sd_card_clk rising at 10.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.370ns
+
+  Clock Uncertainty:          0.370ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.226ns
+    Phase Error (PE):           0.251ns
+
+  Maximum Data Path at Slow Process Corner: sd_card_bmp_m0/bmp_read_m0/state_code_1 to seg_scan_m0/seg_data_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y59.BQ      Tcko                  0.525   sd_card_bmp_m0/bmp_read_m0/state_code<1>
+                                                       sd_card_bmp_m0/bmp_read_m0/state_code_1
+    SLICE_X12Y60.C4      net (fanout=4)        0.526   sd_card_bmp_m0/bmp_read_m0/state_code<1>
+    SLICE_X12Y60.CMUX    Tilo                  0.326   seg_scan_m0/scan_sel<2>
+                                                       seg_scan_m0/Mmux__n006271
+    SLICE_X9Y60.AX       net (fanout=1)        1.182   seg_scan_m0/_n0062<6>
+    SLICE_X9Y60.CLK      Tdick                 0.114   seg_scan_m0/seg_data<6>
+                                                       seg_scan_m0/seg_data_6
+    -------------------------------------------------  ---------------------------
+    Total                                      2.673ns (0.965ns logic, 1.708ns route)
+                                                       (36.1% logic, 63.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     17.076ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               seg_scan_m0/scan_sel_2 (FF)
+  Destination:          seg_scan_m0/seg_data_6 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.894ns (Levels of Logic = 1)
+  Clock Path Skew:      0.005ns (0.688 - 0.683)
+  Source Clock:         clk_bufg_BUFG rising at 0.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: seg_scan_m0/scan_sel_2 to seg_scan_m0/seg_data_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y60.CQ      Tcko                  0.525   seg_scan_m0/scan_sel<2>
+                                                       seg_scan_m0/scan_sel_2
+    SLICE_X12Y60.C1      net (fanout=9)        0.747   seg_scan_m0/scan_sel<2>
+    SLICE_X12Y60.CMUX    Tilo                  0.326   seg_scan_m0/scan_sel<2>
+                                                       seg_scan_m0/Mmux__n006271
+    SLICE_X9Y60.AX       net (fanout=1)        1.182   seg_scan_m0/_n0062<6>
+    SLICE_X9Y60.CLK      Tdick                 0.114   seg_scan_m0/seg_data<6>
+                                                       seg_scan_m0/seg_data_6
+    -------------------------------------------------  ---------------------------
+    Total                                      2.894ns (0.965ns logic, 1.929ns route)
+                                                       (33.3% logic, 66.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     17.090ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               seg_scan_m0/scan_sel_1 (FF)
+  Destination:          seg_scan_m0/seg_data_6 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.880ns (Levels of Logic = 1)
+  Clock Path Skew:      0.005ns (0.688 - 0.683)
+  Source Clock:         clk_bufg_BUFG rising at 0.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: seg_scan_m0/scan_sel_1 to seg_scan_m0/seg_data_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y60.BQ      Tcko                  0.525   seg_scan_m0/scan_sel<2>
+                                                       seg_scan_m0/scan_sel_1
+    SLICE_X12Y60.C2      net (fanout=9)        0.733   seg_scan_m0/scan_sel<1>
+    SLICE_X12Y60.CMUX    Tilo                  0.326   seg_scan_m0/scan_sel<2>
+                                                       seg_scan_m0/Mmux__n006271
+    SLICE_X9Y60.AX       net (fanout=1)        1.182   seg_scan_m0/_n0062<6>
+    SLICE_X9Y60.CLK      Tdick                 0.114   seg_scan_m0/seg_data<6>
+                                                       seg_scan_m0/seg_data_6
+    -------------------------------------------------  ---------------------------
+    Total                                      2.880ns (0.965ns logic, 1.915ns route)
+                                                       (33.5% logic, 66.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point seg_scan_m0/seg_data_5 (SLICE_X12Y61.D6), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     6.485ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_card_bmp_m0/bmp_read_m0/state_code_0 (FF)
+  Destination:          seg_scan_m0/seg_data_5 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      2.564ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.581ns (0.880 - 1.461)
+  Source Clock:         sd_card_clk rising at 10.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.370ns
+
+  Clock Uncertainty:          0.370ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.226ns
+    Phase Error (PE):           0.251ns
+
+  Maximum Data Path at Slow Process Corner: sd_card_bmp_m0/bmp_read_m0/state_code_0 to seg_scan_m0/seg_data_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y59.AQ      Tcko                  0.525   sd_card_bmp_m0/bmp_read_m0/state_code<1>
+                                                       sd_card_bmp_m0/bmp_read_m0/state_code_0
+    SLICE_X12Y61.D6      net (fanout=4)        1.700   sd_card_bmp_m0/bmp_read_m0/state_code<0>
+    SLICE_X12Y61.CLK     Tas                   0.339   seg_scan_m0/seg_data<5>
+                                                       seg_scan_m0/Mmux__n006261
+                                                       seg_scan_m0/seg_data_5
+    -------------------------------------------------  ---------------------------
+    Total                                      2.564ns (0.864ns logic, 1.700ns route)
+                                                       (33.7% logic, 66.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point seg_scan_m0/seg_data_5 (SLICE_X12Y61.D4), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     7.199ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_card_bmp_m0/bmp_read_m0/state_code_1 (FF)
+  Destination:          seg_scan_m0/seg_data_5 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      1.850ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.581ns (0.880 - 1.461)
+  Source Clock:         sd_card_clk rising at 10.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.370ns
+
+  Clock Uncertainty:          0.370ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.226ns
+    Phase Error (PE):           0.251ns
+
+  Maximum Data Path at Slow Process Corner: sd_card_bmp_m0/bmp_read_m0/state_code_1 to seg_scan_m0/seg_data_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y59.BQ      Tcko                  0.525   sd_card_bmp_m0/bmp_read_m0/state_code<1>
+                                                       sd_card_bmp_m0/bmp_read_m0/state_code_1
+    SLICE_X12Y61.D4      net (fanout=4)        0.986   sd_card_bmp_m0/bmp_read_m0/state_code<1>
+    SLICE_X12Y61.CLK     Tas                   0.339   seg_scan_m0/seg_data<5>
+                                                       seg_scan_m0/Mmux__n006261
+                                                       seg_scan_m0/seg_data_5
+    -------------------------------------------------  ---------------------------
+    Total                                      1.850ns (0.864ns logic, 0.986ns route)
+                                                       (46.7% logic, 53.3% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point seg_scan_m0/seg_data_4 (SLICE_X12Y61.C5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.032ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               sd_card_bmp_m0/bmp_read_m0/state_code_0 (FF)
+  Destination:          seg_scan_m0/seg_data_4 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.706ns (Levels of Logic = 1)
+  Clock Path Skew:      0.304ns (0.822 - 0.518)
+  Source Clock:         sd_card_clk rising at 20.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.370ns
+
+  Clock Uncertainty:          0.370ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.226ns
+    Phase Error (PE):           0.251ns
+
+  Minimum Data Path at Fast Process Corner: sd_card_bmp_m0/bmp_read_m0/state_code_0 to seg_scan_m0/seg_data_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y59.AQ      Tcko                  0.234   sd_card_bmp_m0/bmp_read_m0/state_code<1>
+                                                       sd_card_bmp_m0/bmp_read_m0/state_code_0
+    SLICE_X12Y61.C5      net (fanout=4)        0.275   sd_card_bmp_m0/bmp_read_m0/state_code<0>
+    SLICE_X12Y61.CLK     Tah         (-Th)    -0.197   seg_scan_m0/seg_data<5>
+                                                       seg_scan_m0/Mmux__n006251
+                                                       seg_scan_m0/seg_data_4
+    -------------------------------------------------  ---------------------------
+    Total                                      0.706ns (0.431ns logic, 0.275ns route)
+                                                       (61.0% logic, 39.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point seg_scan_m0/seg_data_2 (SLICE_X12Y61.A4), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.080ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               sd_card_bmp_m0/bmp_read_m0/state_code_0 (FF)
+  Destination:          seg_scan_m0/seg_data_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.754ns (Levels of Logic = 1)
+  Clock Path Skew:      0.304ns (0.822 - 0.518)
+  Source Clock:         sd_card_clk rising at 20.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.370ns
+
+  Clock Uncertainty:          0.370ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.226ns
+    Phase Error (PE):           0.251ns
+
+  Minimum Data Path at Fast Process Corner: sd_card_bmp_m0/bmp_read_m0/state_code_0 to seg_scan_m0/seg_data_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y59.AQ      Tcko                  0.234   sd_card_bmp_m0/bmp_read_m0/state_code<1>
+                                                       sd_card_bmp_m0/bmp_read_m0/state_code_0
+    SLICE_X12Y61.A4      net (fanout=4)        0.323   sd_card_bmp_m0/bmp_read_m0/state_code<0>
+    SLICE_X12Y61.CLK     Tah         (-Th)    -0.197   seg_scan_m0/seg_data<5>
+                                                       seg_scan_m0/Mmux__n006231
+                                                       seg_scan_m0/seg_data_2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.754ns (0.431ns logic, 0.323ns route)
+                                                       (57.2% logic, 42.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point seg_scan_m0/seg_data_2 (SLICE_X12Y61.A2), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.128ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               sd_card_bmp_m0/bmp_read_m0/state_code_1 (FF)
+  Destination:          seg_scan_m0/seg_data_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.802ns (Levels of Logic = 1)
+  Clock Path Skew:      0.304ns (0.822 - 0.518)
+  Source Clock:         sd_card_clk rising at 20.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.370ns
+
+  Clock Uncertainty:          0.370ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.226ns
+    Phase Error (PE):           0.251ns
+
+  Minimum Data Path at Fast Process Corner: sd_card_bmp_m0/bmp_read_m0/state_code_1 to seg_scan_m0/seg_data_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y59.BQ      Tcko                  0.234   sd_card_bmp_m0/bmp_read_m0/state_code<1>
+                                                       sd_card_bmp_m0/bmp_read_m0/state_code_1
+    SLICE_X12Y61.A2      net (fanout=4)        0.371   sd_card_bmp_m0/bmp_read_m0/state_code<1>
+    SLICE_X12Y61.CLK     Tah         (-Th)    -0.197   seg_scan_m0/seg_data<5>
+                                                       seg_scan_m0/Mmux__n006231
+                                                       seg_scan_m0/seg_data_2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.802ns (0.431ns logic, 0.371ns route)
+                                                       (53.7% logic, 46.3% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 8.948ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 1.052ns (950.570MHz) (Tpllper_CLKOUT(Foutmax))
+  Physical resource: sys_pll_m0/pll_base_inst/PLL_ADV/CLKOUT0
+  Logical resource: sys_pll_m0/pll_base_inst/PLL_ADV/CLKOUT0
+  Location pin: PLL_ADV_X0Y0.CLKOUT0
+  Clock network: sys_pll_m0/clkout0
+--------------------------------------------------------------------------------
+Slack: 8.948ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 1.052ns (950.570MHz) (Tpllper_CLKOUT(Foutmax))
+  Physical resource: sys_pll_m0/pll_base_inst/PLL_ADV/CLKOUT1
+  Logical resource: sys_pll_m0/pll_base_inst/PLL_ADV/CLKOUT1
+  Location pin: PLL_ADV_X0Y0.CLKOUT1
+  Clock network: sys_pll_m0/clkout1
+--------------------------------------------------------------------------------
+Slack: 15.000ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 2.500ns (Tdcmpw_CLKIN_50_100)
+  Physical resource: sys_pll_m0/pll_base_inst/PLL_ADV/CLKIN1
+  Logical resource: sys_pll_m0/pll_base_inst/PLL_ADV/CLKIN1
+  Location pin: PLL_ADV_X0Y0.CLKIN2
+  Clock network: clk_bufg_BUFG
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_video_pll_m0_clkfx = PERIOD TIMEGRP "video_pll_m0_clkfx" 
+TS_sys_clk_pin *         0.18 HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 996 paths analyzed, 400 endpoints analyzed, 10 failing endpoints
+ 10 timing errors detected. (10 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is 431.238ns.
+--------------------------------------------------------------------------------
+
+Paths for end point video_timing_data_m0/read_req (SLICE_X10Y26.D3), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     -2.400ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               frame_read_write_m0/frame_fifo_read_m0/read_req_ack (FF)
+  Destination:          video_timing_data_m0/read_req (FF)
+  Requirement:          0.833ns
+  Data Path Delay:      1.653ns (Levels of Logic = 1)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.596ns (1.891 - 2.487)
+  Source Clock:         mem_ref_clk rising at 332.500ns
+  Destination Clock:    video_clk rising at 333.333ns
+  Clock Uncertainty:    0.984ns
+
+  Clock Uncertainty:          0.984ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       1.311ns
+    Phase Error (PE):           0.293ns
+
+  Maximum Data Path at Slow Process Corner: frame_read_write_m0/frame_fifo_read_m0/read_req_ack to video_timing_data_m0/read_req
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y25.AQ      Tcko                  0.525   frame_read_write_m0/frame_fifo_read_m0/read_req_ack
+                                                       frame_read_write_m0/frame_fifo_read_m0/read_req_ack
+    SLICE_X10Y26.D3      net (fanout=5)        0.779   frame_read_write_m0/frame_fifo_read_m0/read_req_ack
+    SLICE_X10Y26.CLK     Tas                   0.349   video_timing_data_m0/read_req
+                                                       video_timing_data_m0/read_req_rstpot
+                                                       video_timing_data_m0/read_req
+    -------------------------------------------------  ---------------------------
+    Total                                      1.653ns (0.874ns logic, 0.779ns route)
+                                                       (52.9% logic, 47.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg (SLICE_X14Y24.SR), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     -2.146ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               frame_read_write_m0/frame_fifo_read_m0/read_req_ack (FF)
+  Destination:          frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg (FF)
+  Requirement:          0.833ns
+  Data Path Delay:      1.367ns (Levels of Logic = 0)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.628ns (1.859 - 2.487)
+  Source Clock:         mem_ref_clk rising at 332.500ns
+  Destination Clock:    video_clk rising at 333.333ns
+  Clock Uncertainty:    0.984ns
+
+  Clock Uncertainty:          0.984ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       1.311ns
+    Phase Error (PE):           0.293ns
+
+  Maximum Data Path at Slow Process Corner: frame_read_write_m0/frame_fifo_read_m0/read_req_ack to frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y25.AQ      Tcko                  0.525   frame_read_write_m0/frame_fifo_read_m0/read_req_ack
+                                                       frame_read_write_m0/frame_fifo_read_m0/read_req_ack
+    SLICE_X14Y24.SR      net (fanout=5)        0.559   frame_read_write_m0/frame_fifo_read_m0/read_req_ack
+    SLICE_X14Y24.CLK     Trck                  0.283   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg
+                                                       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg
+    -------------------------------------------------  ---------------------------
+    Total                                      1.367ns (0.808ns logic, 0.559ns route)
+                                                       (59.1% logic, 40.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_6 (SLICE_X21Y20.B5), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     -1.982ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_gc_6 (FF)
+  Destination:          frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_6 (FF)
+  Requirement:          0.833ns
+  Data Path Delay:      1.204ns (Levels of Logic = 1)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.627ns (1.873 - 2.500)
+  Source Clock:         mem_ref_clk rising at 332.500ns
+  Destination Clock:    video_clk rising at 333.333ns
+  Clock Uncertainty:    0.984ns
+
+  Clock Uncertainty:          0.984ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       1.311ns
+    Phase Error (PE):           0.293ns
+
+  Maximum Data Path at Slow Process Corner: frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_gc_6 to frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X21Y19.DQ      Tcko                  0.430   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/D<6>
+                                                       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_gc_6
+    SLICE_X21Y20.B5      net (fanout=1)        0.510   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/D<6>
+    SLICE_X21Y20.CLK     Tas                   0.264   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/D<3>
+                                                       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/D<6>_rt
+                                                       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_6
+    -------------------------------------------------  ---------------------------
+    Total                                      1.204ns (0.694ns logic, 0.510ns route)
+                                                       (57.6% logic, 42.4% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_video_pll_m0_clkfx = PERIOD TIMEGRP "video_pll_m0_clkfx" TS_sys_clk_pin *
+        0.18 HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg_d1 (SLICE_X15Y24.AX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.398ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg (FF)
+  Destination:          frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg_d1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.400ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.031 - 0.029)
+  Source Clock:         video_clk rising at 111.111ns
+  Destination Clock:    video_clk rising at 111.111ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg to frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg_d1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y24.AQ      Tcko                  0.200   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg
+                                                       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg
+    SLICE_X15Y24.AX      net (fanout=2)        0.141   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg
+    SLICE_X15Y24.CLK     Tckdi       (-Th)    -0.059   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg_d2
+                                                       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg_d1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.400ns (0.259ns logic, 0.141ns route)
+                                                       (64.8% logic, 35.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/Q_reg_2 (SLICE_X21Y20.C5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.405ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_2 (FF)
+  Destination:          frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/Q_reg_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.405ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         video_clk rising at 111.111ns
+  Destination Clock:    video_clk rising at 111.111ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_2 to frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/Q_reg_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X21Y20.CQ      Tcko                  0.198   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/D<3>
+                                                       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_2
+    SLICE_X21Y20.C5      net (fanout=1)        0.052   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/D<2>
+    SLICE_X21Y20.CLK     Tah         (-Th)    -0.155   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/D<3>
+                                                       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/D<2>_rt
+                                                       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/Q_reg_2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.405ns (0.353ns logic, 0.052ns route)
+                                                       (87.2% logic, 12.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point video_timing_data_m0/read_req (SLICE_X10Y26.D6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.415ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               video_timing_data_m0/read_req (FF)
+  Destination:          video_timing_data_m0/read_req (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.415ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         video_clk rising at 111.111ns
+  Destination Clock:    video_clk rising at 111.111ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: video_timing_data_m0/read_req to video_timing_data_m0/read_req
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y26.DQ      Tcko                  0.200   video_timing_data_m0/read_req
+                                                       video_timing_data_m0/read_req
+    SLICE_X10Y26.D6      net (fanout=2)        0.025   video_timing_data_m0/read_req
+    SLICE_X10Y26.CLK     Tah         (-Th)    -0.190   video_timing_data_m0/read_req
+                                                       video_timing_data_m0/read_req_rstpot
+                                                       video_timing_data_m0/read_req
+    -------------------------------------------------  ---------------------------
+    Total                                      0.415ns (0.390ns logic, 0.025ns route)
+                                                       (94.0% logic, 6.0% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_video_pll_m0_clkfx = PERIOD TIMEGRP "video_pll_m0_clkfx" TS_sys_clk_pin *
+        0.18 HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 107.541ns (period - min period limit)
+  Period: 111.111ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram/CLKBRDCLK
+  Logical resource: frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram/CLKBRDCLK
+  Location pin: RAMB8_X1Y11.CLKBRDCLK
+  Clock network: video_clk
+--------------------------------------------------------------------------------
+Slack: 108.445ns (period - min period limit)
+  Period: 111.111ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: video_pll_m0/clkout1_buf/I0
+  Logical resource: video_pll_m0/clkout1_buf/I0
+  Location pin: BUFGMUX_X3Y8.I0
+  Clock network: video_pll_m0/clkfx
+--------------------------------------------------------------------------------
+Slack: 110.631ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 111.111ns
+  High pulse: 55.555ns
+  High pulse limit: 0.240ns (Trpw)
+  Physical resource: video_timing_data_m0/color_bar_m0/hs_reg/SR
+  Logical resource: video_timing_data_m0/color_bar_m0/hs_reg/SR
+  Location pin: SLICE_X8Y11.SR
+  Clock network: rst_n_INV_61_o
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_sys_pll_m0_clkout0 = PERIOD TIMEGRP "sys_pll_m0_clkout0" 
+TS_sys_clk_pin * 2         HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 14789 paths analyzed, 2159 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   6.470ns.
+--------------------------------------------------------------------------------
+
+Paths for end point sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3 (SLICE_X16Y58.B5), 4 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     2.998ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               frame_read_write_m0/frame_fifo_write_m0/write_req_ack (FF)
+  Destination:          sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3 (FF)
+  Requirement:          7.500ns
+  Data Path Delay:      3.577ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.687ns (1.379 - 2.066)
+  Source Clock:         mem_ref_clk rising at 2.500ns
+  Destination Clock:    sd_card_clk rising at 10.000ns
+  Clock Uncertainty:    0.238ns
+
+  Clock Uncertainty:          0.238ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.226ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: frame_read_write_m0/frame_fifo_write_m0/write_req_ack to sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y48.AQ       Tcko                  0.476   frame_read_write_m0/frame_fifo_write_m0/write_req_ack
+                                                       frame_read_write_m0/frame_fifo_write_m0/write_req_ack
+    SLICE_X6Y48.B2       net (fanout=6)        0.583   frame_read_write_m0/frame_fifo_write_m0/write_req_ack
+    SLICE_X6Y48.B        Tilo                  0.235   frame_read_write_m0/frame_fifo_write_m0/write_req_ack
+                                                       sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3-In1
+    SLICE_X16Y58.B5      net (fanout=1)        1.650   sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3-In1
+    SLICE_X16Y58.CLK     Tas                   0.633   sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3
+                                                       sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3-In2_lut1
+                                                       sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3-In3_cy
+                                                       sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3
+    -------------------------------------------------  ---------------------------
+    Total                                      3.577ns (1.344ns logic, 2.233ns route)
+                                                       (37.6% logic, 62.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     5.129ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd1 (FF)
+  Destination:          sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      4.737ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.016ns (0.289 - 0.305)
+  Source Clock:         sd_card_clk rising at 0.000ns
+  Destination Clock:    sd_card_clk rising at 10.000ns
+  Clock Uncertainty:    0.118ns
+
+  Clock Uncertainty:          0.118ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.226ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd1 to sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y53.AQ      Tcko                  0.476   sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd2
+                                                       sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd1
+    SLICE_X6Y48.B1       net (fanout=46)       1.743   sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd1
+    SLICE_X6Y48.B        Tilo                  0.235   frame_read_write_m0/frame_fifo_write_m0/write_req_ack
+                                                       sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3-In1
+    SLICE_X16Y58.B5      net (fanout=1)        1.650   sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3-In1
+    SLICE_X16Y58.CLK     Tas                   0.633   sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3
+                                                       sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3-In2_lut1
+                                                       sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3-In3_cy
+                                                       sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3
+    -------------------------------------------------  ---------------------------
+    Total                                      4.737ns (1.344ns logic, 3.393ns route)
+                                                       (28.4% logic, 71.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     5.214ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd2 (FF)
+  Destination:          sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      4.652ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.016ns (0.289 - 0.305)
+  Source Clock:         sd_card_clk rising at 0.000ns
+  Destination Clock:    sd_card_clk rising at 10.000ns
+  Clock Uncertainty:    0.118ns
+
+  Clock Uncertainty:          0.118ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.226ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd2 to sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y53.BQ      Tcko                  0.476   sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd2
+                                                       sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd2
+    SLICE_X6Y48.B4       net (fanout=55)       1.658   sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd2
+    SLICE_X6Y48.B        Tilo                  0.235   frame_read_write_m0/frame_fifo_write_m0/write_req_ack
+                                                       sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3-In1
+    SLICE_X16Y58.B5      net (fanout=1)        1.650   sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3-In1
+    SLICE_X16Y58.CLK     Tas                   0.633   sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3
+                                                       sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3-In2_lut1
+                                                       sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3-In3_cy
+                                                       sd_card_bmp_m0/bmp_read_m0/state_FSM_FFd3
+    -------------------------------------------------  ---------------------------
+    Total                                      4.652ns (1.344ns logic, 3.308ns route)
+                                                       (28.9% logic, 71.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_14 (SLICE_X14Y47.CE), 50 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     3.530ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_5 (FF)
+  Destination:          sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_14 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      6.340ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.012ns (0.298 - 0.310)
+  Source Clock:         sd_card_clk rising at 0.000ns
+  Destination Clock:    sd_card_clk rising at 10.000ns
+  Clock Uncertainty:    0.118ns
+
+  Clock Uncertainty:          0.118ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.226ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_5 to sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_14
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X17Y44.CMUX    Tshcko                0.518   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt<6>
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_5
+    SLICE_X13Y44.C4      net (fanout=5)        1.507   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt<5>
+    SLICE_X13Y44.C       Tilo                  0.259   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/block_read_data<7>
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt[15]_data_recv[7]_OR_180_o3
+    SLICE_X13Y45.A2      net (fanout=2)        0.732   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt[15]_data_recv[7]_OR_180_o3
+    SLICE_X13Y45.A       Tilo                  0.259   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0500_inv5
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt[15]_data_recv[7]_OR_180_o4
+    SLICE_X10Y44.B6      net (fanout=3)        0.636   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt[15]_data_recv[7]_OR_180_o
+    SLICE_X10Y44.B       Tilo                  0.235   N222
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0404_inv4_SW0
+    SLICE_X10Y44.A3      net (fanout=1)        0.468   N222
+    SLICE_X10Y44.A       Tilo                  0.235   N222
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0404_inv4
+    SLICE_X14Y47.CE      net (fanout=5)        1.177   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0404_inv
+    SLICE_X14Y47.CLK     Tceck                 0.314   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt<14>
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_14
+    -------------------------------------------------  ---------------------------
+    Total                                      6.340ns (1.820ns logic, 4.520ns route)
+                                                       (28.7% logic, 71.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     3.826ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_card_bmp_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_r1_0 (FF)
+  Destination:          sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_14 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      6.033ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.023ns (0.298 - 0.321)
+  Source Clock:         sd_card_clk rising at 0.000ns
+  Destination Clock:    sd_card_clk rising at 10.000ns
+  Clock Uncertainty:    0.118ns
+
+  Clock Uncertainty:          0.118ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.226ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sd_card_bmp_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_r1_0 to sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_14
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y47.AQ      Tcko                  0.525   sd_card_bmp_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd<38>
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_r1_0
+    SLICE_X15Y43.B6      net (fanout=2)        1.032   sd_card_bmp_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_r1<0>
+    SLICE_X15Y43.B       Tilo                  0.259   sd_card_bmp_m0/sd_card_top_m0/spi_master_m0/_n0135_inv
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/n00258_SW0
+    SLICE_X15Y43.A5      net (fanout=2)        0.238   N63
+    SLICE_X15Y43.A       Tilo                  0.259   sd_card_bmp_m0/sd_card_top_m0/spi_master_m0/_n0135_inv
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/n00258
+    SLICE_X10Y44.B1      net (fanout=5)        1.291   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/n0025
+    SLICE_X10Y44.B       Tilo                  0.235   N222
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0404_inv4_SW0
+    SLICE_X10Y44.A3      net (fanout=1)        0.468   N222
+    SLICE_X10Y44.A       Tilo                  0.235   N222
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0404_inv4
+    SLICE_X14Y47.CE      net (fanout=5)        1.177   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0404_inv
+    SLICE_X14Y47.CLK     Tceck                 0.314   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt<14>
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_14
+    -------------------------------------------------  ---------------------------
+    Total                                      6.033ns (1.827ns logic, 4.206ns route)
+                                                       (30.3% logic, 69.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.054ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_7 (FF)
+  Destination:          sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_14 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      5.816ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.012ns (0.298 - 0.310)
+  Source Clock:         sd_card_clk rising at 0.000ns
+  Destination Clock:    sd_card_clk rising at 10.000ns
+  Clock Uncertainty:    0.118ns
+
+  Clock Uncertainty:          0.118ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.226ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_7 to sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_14
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X17Y44.DMUX    Tshcko                0.518   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt<6>
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_7
+    SLICE_X13Y44.C2      net (fanout=6)        0.983   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt<7>
+    SLICE_X13Y44.C       Tilo                  0.259   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/block_read_data<7>
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt[15]_data_recv[7]_OR_180_o3
+    SLICE_X13Y45.A2      net (fanout=2)        0.732   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt[15]_data_recv[7]_OR_180_o3
+    SLICE_X13Y45.A       Tilo                  0.259   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0500_inv5
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt[15]_data_recv[7]_OR_180_o4
+    SLICE_X10Y44.B6      net (fanout=3)        0.636   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt[15]_data_recv[7]_OR_180_o
+    SLICE_X10Y44.B       Tilo                  0.235   N222
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0404_inv4_SW0
+    SLICE_X10Y44.A3      net (fanout=1)        0.468   N222
+    SLICE_X10Y44.A       Tilo                  0.235   N222
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0404_inv4
+    SLICE_X14Y47.CE      net (fanout=5)        1.177   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0404_inv
+    SLICE_X14Y47.CLK     Tceck                 0.314   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt<14>
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_14
+    -------------------------------------------------  ---------------------------
+    Total                                      5.816ns (1.820ns logic, 3.996ns route)
+                                                       (31.3% logic, 68.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_15 (SLICE_X14Y47.CE), 50 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     3.537ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_5 (FF)
+  Destination:          sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_15 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      6.333ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.012ns (0.298 - 0.310)
+  Source Clock:         sd_card_clk rising at 0.000ns
+  Destination Clock:    sd_card_clk rising at 10.000ns
+  Clock Uncertainty:    0.118ns
+
+  Clock Uncertainty:          0.118ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.226ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_5 to sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X17Y44.CMUX    Tshcko                0.518   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt<6>
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_5
+    SLICE_X13Y44.C4      net (fanout=5)        1.507   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt<5>
+    SLICE_X13Y44.C       Tilo                  0.259   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/block_read_data<7>
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt[15]_data_recv[7]_OR_180_o3
+    SLICE_X13Y45.A2      net (fanout=2)        0.732   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt[15]_data_recv[7]_OR_180_o3
+    SLICE_X13Y45.A       Tilo                  0.259   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0500_inv5
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt[15]_data_recv[7]_OR_180_o4
+    SLICE_X10Y44.B6      net (fanout=3)        0.636   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt[15]_data_recv[7]_OR_180_o
+    SLICE_X10Y44.B       Tilo                  0.235   N222
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0404_inv4_SW0
+    SLICE_X10Y44.A3      net (fanout=1)        0.468   N222
+    SLICE_X10Y44.A       Tilo                  0.235   N222
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0404_inv4
+    SLICE_X14Y47.CE      net (fanout=5)        1.177   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0404_inv
+    SLICE_X14Y47.CLK     Tceck                 0.307   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt<14>
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_15
+    -------------------------------------------------  ---------------------------
+    Total                                      6.333ns (1.813ns logic, 4.520ns route)
+                                                       (28.6% logic, 71.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     3.833ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_card_bmp_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_r1_0 (FF)
+  Destination:          sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_15 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      6.026ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.023ns (0.298 - 0.321)
+  Source Clock:         sd_card_clk rising at 0.000ns
+  Destination Clock:    sd_card_clk rising at 10.000ns
+  Clock Uncertainty:    0.118ns
+
+  Clock Uncertainty:          0.118ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.226ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sd_card_bmp_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_r1_0 to sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y47.AQ      Tcko                  0.525   sd_card_bmp_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd<38>
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_r1_0
+    SLICE_X15Y43.B6      net (fanout=2)        1.032   sd_card_bmp_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_r1<0>
+    SLICE_X15Y43.B       Tilo                  0.259   sd_card_bmp_m0/sd_card_top_m0/spi_master_m0/_n0135_inv
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/n00258_SW0
+    SLICE_X15Y43.A5      net (fanout=2)        0.238   N63
+    SLICE_X15Y43.A       Tilo                  0.259   sd_card_bmp_m0/sd_card_top_m0/spi_master_m0/_n0135_inv
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/n00258
+    SLICE_X10Y44.B1      net (fanout=5)        1.291   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/n0025
+    SLICE_X10Y44.B       Tilo                  0.235   N222
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0404_inv4_SW0
+    SLICE_X10Y44.A3      net (fanout=1)        0.468   N222
+    SLICE_X10Y44.A       Tilo                  0.235   N222
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0404_inv4
+    SLICE_X14Y47.CE      net (fanout=5)        1.177   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0404_inv
+    SLICE_X14Y47.CLK     Tceck                 0.307   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt<14>
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_15
+    -------------------------------------------------  ---------------------------
+    Total                                      6.026ns (1.820ns logic, 4.206ns route)
+                                                       (30.2% logic, 69.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.061ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_7 (FF)
+  Destination:          sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_15 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      5.809ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.012ns (0.298 - 0.310)
+  Source Clock:         sd_card_clk rising at 0.000ns
+  Destination Clock:    sd_card_clk rising at 10.000ns
+  Clock Uncertainty:    0.118ns
+
+  Clock Uncertainty:          0.118ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.226ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_7 to sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X17Y44.DMUX    Tshcko                0.518   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt<6>
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_7
+    SLICE_X13Y44.C2      net (fanout=6)        0.983   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt<7>
+    SLICE_X13Y44.C       Tilo                  0.259   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/block_read_data<7>
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt[15]_data_recv[7]_OR_180_o3
+    SLICE_X13Y45.A2      net (fanout=2)        0.732   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt[15]_data_recv[7]_OR_180_o3
+    SLICE_X13Y45.A       Tilo                  0.259   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0500_inv5
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt[15]_data_recv[7]_OR_180_o4
+    SLICE_X10Y44.B6      net (fanout=3)        0.636   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt[15]_data_recv[7]_OR_180_o
+    SLICE_X10Y44.B       Tilo                  0.235   N222
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0404_inv4_SW0
+    SLICE_X10Y44.A3      net (fanout=1)        0.468   N222
+    SLICE_X10Y44.A       Tilo                  0.235   N222
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0404_inv4
+    SLICE_X14Y47.CE      net (fanout=5)        1.177   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/_n0404_inv
+    SLICE_X14Y47.CLK     Tceck                 0.307   sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt<14>
+                                                       sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_15
+    -------------------------------------------------  ---------------------------
+    Total                                      5.809ns (1.813ns logic, 3.996ns route)
+                                                       (31.2% logic, 68.8% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_sys_pll_m0_clkout0 = PERIOD TIMEGRP "sys_pll_m0_clkout0" TS_sys_clk_pin * 2
+        HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d1 (SLICE_X14Y61.AX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.394ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg (FF)
+  Destination:          frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.042 - 0.040)
+  Source Clock:         sd_card_clk rising at 10.000ns
+  Destination Clock:    sd_card_clk rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg to frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y61.AQ      Tcko                  0.198   frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg
+                                                       frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg
+    SLICE_X14Y61.AX      net (fanout=2)        0.150   frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg
+    SLICE_X14Y61.CLK     Tckdi       (-Th)    -0.048   frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d2
+                                                       frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.246ns logic, 0.150ns route)
+                                                       (62.1% logic, 37.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_6 (SLICE_X7Y58.C5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.405ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_6 (FF)
+  Destination:          frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_6 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.405ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         sd_card_clk rising at 10.000ns
+  Destination Clock:    sd_card_clk rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_6 to frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y58.CQ       Tcko                  0.198   frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<7>
+                                                       frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_6
+    SLICE_X7Y58.C5       net (fanout=1)        0.052   frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<6>
+    SLICE_X7Y58.CLK      Tah         (-Th)    -0.155   frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<7>
+                                                       frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<6>_rt
+                                                       frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_6
+    -------------------------------------------------  ---------------------------
+    Total                                      0.405ns (0.353ns logic, 0.052ns route)
+                                                       (87.2% logic, 12.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_2 (SLICE_X7Y60.C5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.405ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_2 (FF)
+  Destination:          frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.405ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         sd_card_clk rising at 10.000ns
+  Destination Clock:    sd_card_clk rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_2 to frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y60.CQ       Tcko                  0.198   frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<3>
+                                                       frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_2
+    SLICE_X7Y60.C5       net (fanout=1)        0.052   frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<2>
+    SLICE_X7Y60.CLK      Tah         (-Th)    -0.155   frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<3>
+                                                       frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<2>_rt
+                                                       frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.405ns (0.353ns logic, 0.052ns route)
+                                                       (87.2% logic, 12.8% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_sys_pll_m0_clkout0 = PERIOD TIMEGRP "sys_pll_m0_clkout0" TS_sys_clk_pin * 2
+        HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 6.430ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKA(Fmax))
+  Physical resource: frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram/CLKAWRCLK
+  Logical resource: frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram/CLKAWRCLK
+  Location pin: RAMB8_X0Y26.CLKAWRCLK
+  Clock network: sd_card_clk
+--------------------------------------------------------------------------------
+Slack: 7.334ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: sys_pll_m0/clkout1_buf/I0
+  Logical resource: sys_pll_m0/clkout1_buf/I0
+  Location pin: BUFGMUX_X2Y1.I0
+  Clock network: sys_pll_m0/clkout0
+--------------------------------------------------------------------------------
+Slack: 9.520ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt<0>/CLK
+  Logical resource: sd_card_bmp_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_0/CK
+  Location pin: SLICE_X12Y46.CLK
+  Clock network: sd_card_clk
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_sys_pll_m0_clkout2 = PERIOD TIMEGRP "sys_pll_m0_clkout2" 
+TS_sys_clk_pin * 2         PHASE 2.5 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 10870 paths analyzed, 1207 endpoints analyzed, 10 failing endpoints
+ 10 timing errors detected. (10 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  97.410ns.
+--------------------------------------------------------------------------------
+
+Paths for end point frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_0 (SLICE_X18Y19.AX), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     -2.430ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_gc_0 (FF)
+  Destination:          frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_0 (FF)
+  Requirement:          0.278ns
+  Data Path Delay:      1.110ns (Levels of Logic = 0)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.639ns (1.722 - 2.361)
+  Source Clock:         video_clk rising at 222.222ns
+  Destination Clock:    mem_ref_clk rising at 222.500ns
+  Clock Uncertainty:    0.959ns
+
+  Clock Uncertainty:          0.959ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       1.330ns
+    Phase Error (PE):           0.293ns
+
+  Maximum Data Path at Slow Process Corner: frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_gc_0 to frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X17Y19.AMUX    Tshcko                0.518   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/D<6>
+                                                       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_gc_0
+    SLICE_X18Y19.AX      net (fanout=1)        0.478   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/D<0>
+    SLICE_X18Y19.CLK     Tdick                 0.114   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<2>
+                                                       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_0
+    -------------------------------------------------  ---------------------------
+    Total                                      1.110ns (0.632ns logic, 0.478ns route)
+                                                       (56.9% logic, 43.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_3 (SLICE_X16Y19.DX), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     -2.403ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_gc_3 (FF)
+  Destination:          frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_3 (FF)
+  Requirement:          0.278ns
+  Data Path Delay:      1.082ns (Levels of Logic = 0)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.640ns (1.722 - 2.362)
+  Source Clock:         video_clk rising at 222.222ns
+  Destination Clock:    mem_ref_clk rising at 222.500ns
+  Clock Uncertainty:    0.959ns
+
+  Clock Uncertainty:          0.959ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       1.330ns
+    Phase Error (PE):           0.293ns
+
+  Maximum Data Path at Slow Process Corner: frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_gc_3 to frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X17Y18.CMUX    Tshcko                0.518   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/D<4>
+                                                       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_gc_3
+    SLICE_X16Y19.DX      net (fanout=1)        0.479   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/D<3>
+    SLICE_X16Y19.CLK     Tdick                 0.085   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<3>
+                                                       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_3
+    -------------------------------------------------  ---------------------------
+    Total                                      1.082ns (0.603ns logic, 0.479ns route)
+                                                       (55.7% logic, 44.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_7 (SLICE_X14Y19.C5), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     -2.385ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_gc_7 (FF)
+  Destination:          frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_7 (FF)
+  Requirement:          0.278ns
+  Data Path Delay:      1.064ns (Levels of Logic = 1)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.640ns (1.722 - 2.362)
+  Source Clock:         video_clk rising at 222.222ns
+  Destination Clock:    mem_ref_clk rising at 222.500ns
+  Clock Uncertainty:    0.959ns
+
+  Clock Uncertainty:          0.959ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       1.330ns
+    Phase Error (PE):           0.293ns
+
+  Maximum Data Path at Slow Process Corner: frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_gc_7 to frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y18.CQ      Tcko                  0.430   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/D<7>
+                                                       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_gc_7
+    SLICE_X14Y19.C5      net (fanout=1)        0.413   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/D<7>
+    SLICE_X14Y19.CLK     Tas                   0.221   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg<6>
+                                                       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/D<7>_rt
+                                                       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_7
+    -------------------------------------------------  ---------------------------
+    Total                                      1.064ns (0.651ns logic, 0.413ns route)
+                                                       (61.2% logic, 38.8% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_sys_pll_m0_clkout2 = PERIOD TIMEGRP "sys_pll_m0_clkout2" TS_sys_clk_pin * 2
+        PHASE 2.5 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_2 (SLICE_X18Y19.C5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.382ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_2 (FF)
+  Destination:          frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.382ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         mem_ref_clk rising at 12.500ns
+  Destination Clock:    mem_ref_clk rising at 12.500ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_2 to frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X18Y19.CQ      Tcko                  0.200   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<2>
+                                                       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_2
+    SLICE_X18Y19.C5      net (fanout=1)        0.061   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<2>
+    SLICE_X18Y19.CLK     Tah         (-Th)    -0.121   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<2>
+                                                       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<2>_rt
+                                                       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.382ns (0.321ns logic, 0.061ns route)
+                                                       (84.0% logic, 16.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point frame_read_write_m0/frame_fifo_write_m0/write_req_d2 (SLICE_X6Y41.DX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.385ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               frame_read_write_m0/frame_fifo_write_m0/write_req_d1 (FF)
+  Destination:          frame_read_write_m0/frame_fifo_write_m0/write_req_d2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.385ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         mem_ref_clk rising at 12.500ns
+  Destination Clock:    mem_ref_clk rising at 12.500ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: frame_read_write_m0/frame_fifo_write_m0/write_req_d1 to frame_read_write_m0/frame_fifo_write_m0/write_req_d2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y41.CQ       Tcko                  0.200   frame_read_write_m0/frame_fifo_write_m0/write_req_d2
+                                                       frame_read_write_m0/frame_fifo_write_m0/write_req_d1
+    SLICE_X6Y41.DX       net (fanout=1)        0.137   frame_read_write_m0/frame_fifo_write_m0/write_req_d1
+    SLICE_X6Y41.CLK      Tckdi       (-Th)    -0.048   frame_read_write_m0/frame_fifo_write_m0/write_req_d2
+                                                       frame_read_write_m0/frame_fifo_write_m0/write_req_d2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.385ns (0.248ns logic, 0.137ns route)
+                                                       (64.4% logic, 35.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_6 (SLICE_X14Y19.DX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.385ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_6 (FF)
+  Destination:          frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_6 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.385ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         mem_ref_clk rising at 12.500ns
+  Destination Clock:    mem_ref_clk rising at 12.500ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_6 to frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y19.CQ      Tcko                  0.200   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg<6>
+                                                       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_6
+    SLICE_X14Y19.DX      net (fanout=1)        0.137   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<6>
+    SLICE_X14Y19.CLK     Tckdi       (-Th)    -0.048   frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg<6>
+                                                       frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_6
+    -------------------------------------------------  ---------------------------
+    Total                                      0.385ns (0.248ns logic, 0.137ns route)
+                                                       (64.4% logic, 35.6% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_sys_pll_m0_clkout2 = PERIOD TIMEGRP "sys_pll_m0_clkout2" TS_sys_clk_pin * 2
+        PHASE 2.5 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 6.430ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram/CLKBRDCLK
+  Logical resource: frame_read_write_m0/write_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram/CLKBRDCLK
+  Location pin: RAMB8_X0Y26.CLKBRDCLK
+  Clock network: mem_ref_clk
+--------------------------------------------------------------------------------
+Slack: 6.430ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKA(Fmax))
+  Physical resource: frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram/CLKAWRCLK
+  Logical resource: frame_read_write_m0/read_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram/CLKAWRCLK
+  Location pin: RAMB8_X1Y11.CLKAWRCLK
+  Clock network: mem_ref_clk
+--------------------------------------------------------------------------------
+Slack: 7.334ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: sys_pll_m0/clkout3_buf/I0
+  Logical resource: sys_pll_m0/clkout3_buf/I0
+  Location pin: BUFGMUX_X2Y2.I0
+  Clock network: sys_pll_m0/clkout2
+--------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Derived Constraints for TS_sys_clk_pin
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_sys_clk_pin                 |     20.000ns|      7.410ns|    194.820ns|            0|           20|        35561|        26655|
+| TS_video_pll_m0_clkfx         |    111.111ns|    431.238ns|          N/A|           10|            0|          996|            0|
+| TS_sys_pll_m0_clkout0         |     10.000ns|      6.470ns|          N/A|            0|            0|        14789|            0|
+| TS_sys_pll_m0_clkout2         |     10.000ns|     97.410ns|          N/A|           10|            0|        10870|            0|
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+2 constraints not met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    7.410|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 20  Score: 41004  (Setup/Max: 41004, Hold: 0)
+
+Constraints cover 62216 paths, 0 nets, and 4675 connections
+
+Design statistics:
+   Minimum period: 431.238ns{1}   (Maximum frequency:   2.319MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Thu May 02 18:43:58 2019 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 236 MB
+
+
+
