@@ -26,6 +26,7 @@ module drawunit(
 localparam STATE_IDLE = 4'd0;
 localparam STATE_DRAW = 4'd1;
 
+reg [3:0] prev_state;
 reg [3:0] state;
 reg [7:0] command_r;
 reg [255:0] data_r;
@@ -33,29 +34,39 @@ reg [255:0] data_r;
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
         state <= STATE_IDLE;
+        prev_state <= STATE_IDLE;
+
         command_r <= 8'd0;
         data_r <= 256'd0;
-        running_signal <= 1'b0;
     end else begin
         case (state)
             STATE_IDLE: begin
                 if (commit) begin
                     state <= STATE_DRAW;
+                    prev_state <= state;
+
                     command_r <= command;
                     data_r <= data;
+                end else begin
+                    prev_state <= state;
                 end
             end
             STATE_DRAW: begin
                 if (done) begin
                     state <= STATE_IDLE;
+                end else begin
+                    prev_state <= state;
                 end
             end
             default: begin
                 state <= STATE_IDLE;
+                prev_state <= STATE_IDLE;
             end
         endcase
     end
 end 
+
+assign ack = (prev_state == STATE_IDLE) & (state == STATE_DRAW);
 
 wire dr_enable;
 wire dr_wr_burst_req;
@@ -64,7 +75,7 @@ wire [23:0] dr_addr;
 wire [9:0] dr_wr_burst_len;
 wire dr_done;
 
-assign dr_enable = (state == STATE_DRAW) && (command_r == DRAW_CMD_RECT);
+assign dr_enable = (state == STATE_DRAW) & (command_r == DRAW_CMD_RECT);
 
 drawrect dr_0(
     .clk(clk), 
