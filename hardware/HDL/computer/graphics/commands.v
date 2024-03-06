@@ -1,0 +1,1 @@
+`define DRAW_CMD_RECT 8'h01
