@@ -68,7 +68,7 @@ module vgadisplay #(parameter
 		
 		if (vcount == 0) vsync <= 0;
 		else if (vcount == V_SYNC_O) vsync <= 1;
-		else if (vcount == V_LAST_POS) vsync <= 1;
+		else if (vcount == V_LAST_POS) vsync <= 0;
 		
 		if (vcount > V_SYNC_O && vcount < V_LAST_POS) begin
 			if (hcount > H_SYNC_A && hcount < H_LAST_POS) begin
