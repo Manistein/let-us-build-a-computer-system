@@ -2,6 +2,7 @@
 
 `include "../../HDL/computer/io/vgadisplay.v"
 `include "../../HDL/computer/sdram/sdram_core.v"
+`include "../../HDL/computer/graphics/drawrect.v"
 
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
