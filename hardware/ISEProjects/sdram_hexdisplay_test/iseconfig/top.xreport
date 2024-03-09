@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-02-24T17:10:46</DateModified>
+  <DateModified>2024-03-09T10:34:05</DateModified>
   <ModuleName>top</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/ise/hardware/ISEProjects/sdram_hexdisplay_test/iseconfig/top.xreport</SavedFilePath>

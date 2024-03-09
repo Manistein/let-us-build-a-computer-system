@@ -1,0 +1,2 @@
+verilog work ../../chip_pll.v
+verilog work ../example_design/chip_pll_exdes.v

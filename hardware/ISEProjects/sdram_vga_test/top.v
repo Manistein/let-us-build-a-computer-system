@@ -2,7 +2,7 @@
 
 `include "../../HDL/computer/io/vgadisplay.v"
 `include "../../HDL/computer/sdram/sdram_core.v"
-`include "../../HDL/computer/graphics/drawrect.v"
+`include "../../HDL/computer/graphics/drawunit.v"
 
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
@@ -36,7 +36,7 @@ module top(
         output vsync,
         output [4:0] r,
         output [5:0] g,
-        output [4:0] b
+        output [4:0] b,
 
         output sdram_clk,
         output sdram_cke,
@@ -50,5 +50,23 @@ module top(
         inout [15:0] sdram_dq
     );
 
+localparam X_POS = 10'd100;
+localparam Y_POS = 10'd100;
+localparam WIDTH = 10'd100;
+localparam HEIGHT = 10'd100;
+
+wire sdram_clk_ref;
+wire vga_clk;
+
+chip_pll pll_0 (
+    .clk_in(clk_50m),
+    .sdram_clk(sdram_clk),
+    .sdram_clk_ref(sdram_clk_ref),
+    .vga_clk(vga_clk)
+);
+
+drawunit du_0();
+sdram_core sdram_core_0();
+vgadisplay vgadisplay_0();
 
 endmodule
