@@ -55,17 +55,53 @@ localparam Y_POS = 10'd100;
 localparam WIDTH = 10'd100;
 localparam HEIGHT = 10'd100;
 
-wire sdram_clk_ref;
+wire clk_100m;
 wire vga_clk;
+
+reg [15:0] color;
+reg commit;
+
+reg [1:0] du_bank;
+reg [1:0] vga_bank;
+
+wire write_burst_req;
+wire write_burst_data_req;
+wire write_burst_data_finish;
+
+wire [15:0] rgb;
+wire [23:0] addr;
+wire [9:0] write_burst_len;
+wire done;
+wire ack;
 
 chip_pll pll_0 (
     .clk_in(clk_50m),
     .sdram_clk(sdram_clk),
-    .sdram_clk_ref(sdram_clk_ref),
+    .sdram_clk_ref(clk_100m),
     .vga_clk(vga_clk)
 );
 
-drawunit du_0();
+drawunit du_0(
+    .clk(clk_100m),
+    .rst_n(rst_n),
+
+    .command(DRAW_CMD_RECT),
+    .data({200'b0, color, HEIGHT, WIDTH, Y_POS, X_POS}),
+    .commit(commit),
+
+    .bank(du_bank),
+    .write_burst_data_req(write_burst_data_req),
+    .write_burst_data_finish(write_burst_data_finish),
+
+    .write_burst_req(write_burst_req),
+    .rgb(rgb),
+    .addr(addr),
+    .write_burst_len(write_burst_len),
+
+    .done(done),
+    .ack(ack)
+);
+
 sdram_core sdram_core_0();
 vgadisplay vgadisplay_0();
 
