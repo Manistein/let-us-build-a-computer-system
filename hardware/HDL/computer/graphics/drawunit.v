@@ -16,7 +16,7 @@ module drawunit(
     input write_burst_data_finish,
     output write_burst_req,
     output [15:0] rgb,
-    output [23:0] addr,
+    output [21:0] addr,
     output [BURST_BITS-1:0] write_burst_len,
     output  done,
 
@@ -71,7 +71,7 @@ assign ack = (prev_state == STATE_IDLE) & (state == STATE_DRAW);
 wire dr_enable;
 wire dr_wr_burst_req;
 wire [15:0] dr_rgb;
-wire [23:0] dr_addr;
+wire [21:0] dr_addr;
 wire [9:0] dr_wr_burst_len;
 wire dr_done;
 
@@ -111,7 +111,7 @@ always @(*) begin
         default: begin
             write_burst_req = 0;
             rgb = 16'd0;
-            addr = 24'd0;
+            addr = 21'd0;
             write_burst_len = 10'd0;
             done = 0;
         end

@@ -18,13 +18,12 @@ module drawrect#(
     input [BIT_SIZE - 1 : 0] width,
     input [BIT_SIZE - 1 : 0] height, 
     input [15 : 0] color,
-    input [1 : 0] bank,
 
     input write_burst_data_req,
     input write_burst_data_finish,
     output write_burst_req,
     output [15 : 0] rgb,
-    output [23 : 0] addr,
+    output [21 : 0] addr,
     output [BURST_BITS - 1 : 0] write_burst_len,
     output  done
 );
@@ -74,7 +73,7 @@ always @(posedge clk or negedge rst_n) begin
     end
 end
 
-assign addr = { bank, (current_y * SCREEN_WIDTH) + current_x };
+assign addr = (current_y * SCREEN_WIDTH) + current_x;
 assign write_burst_req = enable && (current_x < x_limit) && (current_y < y_limit) && !write_burst_data_finish; 
 assign rgb = color;
 assign write_burst_len = width < MAX_WRITE_BURST_LEN ? width : MAX_WRITE_BURST_LEN;

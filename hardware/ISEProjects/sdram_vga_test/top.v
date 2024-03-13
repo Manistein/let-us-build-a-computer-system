@@ -69,10 +69,11 @@ wire write_burst_data_req;
 wire write_burst_data_finish;
 
 wire [15:0] rgb;
-wire [23:0] addr;
+wire [21:0] addr;
 wire [9:0] write_burst_len;
 wire done;
 wire ack;
+
 
 chip_pll pll_0 (
     .clk_in(clk_50m),
@@ -102,7 +103,38 @@ drawunit du_0(
     .ack(ack)
 );
 
-sdram_core sdram_core_0();
+sdram_core sdram_core_0(
+    .clk(clk_100m),
+    .rst(!rst_n),
+
+    .wr_burst_req(write_burst_req),
+    .wr_burst_data(rgb),
+    .wr_burst_len(write_burst_len),
+    .wr_burst_addr({du_bank, addr}),
+
+    .wr_burst_data_req(write_burst_data_req),
+    .wr_burst_data_finish(write_burst_data_finish),
+
+    .rd_burst_req(read_burst_req & ~full),
+    .rd_burst_len(10'd128),
+    .rd_burst_addr({vga_bank, read_burst_addr}),
+
+    .rd_burst_data(read_burst_data),
+    .rd_burst_data_valid(read_burst_data_valid),
+    .rd_burst_finish(read_burst_finish),
+
+    .sdram_cke(sdram_cke),
+    .sdram_cs_n(sdram_cs_n),
+    .sdram_ras_n(sdram_ras_n),
+    .sdram_cas_n(sdram_cas_n),
+    .sdram_we_n(sdram_we_n),
+    .sdram_ba(sdram_ba),
+    .sdram_addr(sdram_addr),
+    .sdram_dqm(sdram_dqm),
+    .sdram_dq(sdram_dq)
+);
+
+
 vgadisplay vgadisplay_0();
 
 endmodule
