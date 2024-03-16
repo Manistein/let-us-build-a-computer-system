@@ -1,8 +1,9 @@
 `timescale 1ns / 1ps
 
-`include "../../HDL/computer/io/vgadisplay.v"
 `include "../../HDL/computer/sdram/sdram_core.v"
 `include "../../HDL/computer/graphics/drawunit.v"
+`include "../../HDL/computer/sdram/frame_fifo_read.v"
+`include "../../HDL/computer/sdram/video_timing_data.v"
 
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
@@ -62,7 +63,6 @@ reg [15:0] color;
 reg commit;
 
 reg [1:0] du_bank;
-reg [1:0] vga_bank;
 
 wire write_burst_req;
 wire write_burst_data_req;
@@ -73,7 +73,6 @@ wire [21:0] addr;
 wire [9:0] write_burst_len;
 wire done;
 wire ack;
-
 
 chip_pll pll_0 (
     .clk_in(clk_50m),
@@ -103,6 +102,83 @@ drawunit du_0(
     .ack(ack)
 );
 
+wire read_data;
+wire read_req_ack;
+
+wire read_req;
+wire read_en;
+wire [15:0] vout_data;
+
+wire [8:0] wr_data_count;
+wire read_fifo_aclr;
+
+video_timing_data vtd_0(
+    .clk(vga_clk),
+    .rst(!rst_n),
+
+    .read_req(read_req),
+    .read_req_ack(read_req_ack),
+
+    .read_en(read_en),
+    .read_data(read_data),
+    .hs(hsync),
+    .vs(vsync),
+    .de(),
+    .vout_data(vout_data)
+);
+assign {r, g, b} = vout_data;
+
+fifo fifo_i0(
+    .rst(read_fifo_aclr),
+    .wr_clk(clk_100m),
+    .rd_clk(vga_clk),
+    .din(rd_burst_data),
+    .wr_en(rd_burst_data_valid),
+    .rd_en(read_en),
+    .dout(read_data),
+    .full(),
+    .empty(),
+    .rd_data_count(),
+    .wr_data_count(wr_data_count)
+);
+
+wire rd_burst_req;
+wire [9:0] rd_burst_len;
+wire [23:0] rd_burst_addr;
+wire [15:0] rd_burst_data;
+wire rd_burst_data_valid
+wire rd_burst_finish;
+
+frame_fifo_read
+#
+(
+	.MEM_DATA_BITS              (10'd16),
+	.ADDR_BITS                  (10'd24),
+	.BUSRT_BITS                 (10'd10),
+	.BURST_SIZE                 (10'd128)
+)
+frame_fifo_read_m0
+(
+	.rst                        (!rst_n),
+	.mem_clk                    (clk_100m),
+	.rd_burst_req               (rd_burst_req),   
+	.rd_burst_len               (rd_burst_len),  
+	.rd_burst_addr              (rd_burst_addr),
+	.rd_burst_data_valid        (rd_burst_data_valid),    
+	.rd_burst_finish            (rd_burst_finish),
+	.read_req                   (read_req),
+	.read_req_ack               (read_req_ack),
+	.read_finish                (),
+	.read_addr_0                (24'd0),
+	.read_addr_1                (24'd0),
+	.read_addr_2                (24'd0),
+	.read_addr_3                (24'd0),
+	.read_addr_index            (2'd0),    
+	.read_len                   (24'd307200), // 640*480
+	.fifo_aclr                  (read_fifo_aclr),
+	.wr_data_count              (wr_data_count)
+);
+
 sdram_core sdram_core_0(
     .clk(clk_100m),
     .rst(!rst_n),
@@ -110,18 +186,18 @@ sdram_core sdram_core_0(
     .wr_burst_req(write_burst_req),
     .wr_burst_data(rgb),
     .wr_burst_len(write_burst_len),
-    .wr_burst_addr({du_bank, addr}),
+    .wr_burst_addr({2'b00, addr}),
 
     .wr_burst_data_req(write_burst_data_req),
     .wr_burst_data_finish(write_burst_data_finish),
 
-    .rd_burst_req(read_burst_req & ~full),
-    .rd_burst_len(10'd128),
-    .rd_burst_addr({vga_bank, read_burst_addr}),
+    .rd_burst_req(rd_burst_req),
+    .rd_burst_len(rd_burst_len),
+    .rd_burst_addr(rd_burst_addr),
 
-    .rd_burst_data(read_burst_data),
-    .rd_burst_data_valid(read_burst_data_valid),
-    .rd_burst_finish(read_burst_finish),
+    .rd_burst_data(rd_burst_data),
+    .rd_burst_data_valid(rd_burst_data_valid),
+    .rd_burst_finish(rd_burst_finish),
 
     .sdram_cke(sdram_cke),
     .sdram_cs_n(sdram_cs_n),
@@ -133,8 +209,5 @@ sdram_core sdram_core_0(
     .sdram_dqm(sdram_dqm),
     .sdram_dq(sdram_dq)
 );
-
-
-vgadisplay vgadisplay_0();
 
 endmodule
