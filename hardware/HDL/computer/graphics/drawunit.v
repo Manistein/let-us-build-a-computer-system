@@ -11,13 +11,12 @@ module drawunit(
     input [255:0] data,
     input commit,
 
-    input [1:0] bank,
     input write_burst_data_req,
     input write_burst_data_finish,
     output write_burst_req,
     output [15:0] rgb,
     output [21:0] addr,
-    output [BURST_BITS-1:0] write_burst_len,
+    output [9:0] write_burst_len,
     output  done,
 
     output ack  // if drawunit is busy, ack is 0
@@ -88,7 +87,6 @@ drawrect dr_0(
     .height(data_r[39:30]), 
     .color(data_r[55:40]), 
     
-    .bank(bank), 
     .write_burst_data_req(write_burst_data_req), 
     .write_burst_data_finish(write_burst_data_finish), 
 

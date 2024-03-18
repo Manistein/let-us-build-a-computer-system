@@ -28,6 +28,10 @@ module drawrect#(
     output  done
 );
 
+localparam STATE_IDLE = 2'b00;
+localparam STATE_DRAW = 2'b01;
+reg [1:0] state; 
+
 reg done_r;
 reg [BIT_SIZE - 1 : 0] delta_x;
 reg [BIT_SIZE - 1 : 0] delta_y;
@@ -46,12 +50,33 @@ assign y_limit = (y_pixel + height) < SCREEN_HEIGHT ? (y_pixel + height) : SCREE
 
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
+        state <= STATE_IDLE;
+
         delta_x <= 0;
         delta_y <= 0;
         done_r <= 0;
     end else begin
-        if (enable) begin
-            if (write_burst_data_req) begin
+        case (state)
+        STATE_IDLE: begin 
+            if (enable && write_burst_data_req) begin
+                state <= STATE_DRAW;
+                delta_x <= 0;
+                delta_y <= 0;
+                done_r <= 0;
+            end else begin
+                done_r <= 0;
+            end 
+        end
+        STATE_DRAW: begin
+            if (write_burst_data_finish) begin
+                if (current_y >= y_limit) begin
+                    done_r <= 1;
+                    delta_x <= 0;
+                    delta_y <= 0;
+
+                    state <= STATE_IDLE;
+                end
+            end else begin 
                 if (current_x < x_limit) begin
                     delta_x <= delta_x + 1;
                 end else begin
@@ -60,21 +85,17 @@ always @(posedge clk or negedge rst_n) begin
                         delta_y <= delta_y + 1;
                     end
                 end
-            end else if (write_burst_data_finish) begin 
-                if (current_y >= y_limit) begin
-                    done_r <= 1;
-                    delta_x <= 0;
-                    delta_y <= 0;
-                end
-            end else begin
-                done_r <= 0;
-            end
+            end 
         end
+        default: begin
+            state <= STATE_IDLE;
+        end 
+        endcase
     end
 end
 
 assign addr = (current_y * SCREEN_WIDTH) + current_x;
-assign write_burst_req = enable && (current_x < x_limit) && (current_y < y_limit) && !write_burst_data_finish; 
+assign write_burst_req = (state == STATE_IDLE) & enable; 
 assign rgb = color;
 assign write_burst_len = width < MAX_WRITE_BURST_LEN ? width : MAX_WRITE_BURST_LEN;
 assign done = done_r;

@@ -5,33 +5,11 @@
 `include "../../HDL/computer/sdram/frame_fifo_read.v"
 `include "../../HDL/computer/sdram/video_timing_data.v"
 
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    12:51:01 02/28/2024 
-// Design Name: 
-// Module Name:    top 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
 module top(
         input clk_50m,
         input rst_n,
 
         input key1,
-        input key2,
-        input key3,
-        input key4,
 
         output hsync,
         output vsync,
@@ -62,8 +40,6 @@ wire vga_clk;
 reg [15:0] color;
 reg commit;
 
-reg [1:0] du_bank;
-
 wire write_burst_req;
 wire write_burst_data_req;
 wire write_burst_data_finish;
@@ -81,6 +57,16 @@ chip_pll pll_0 (
     .vga_clk(vga_clk)
 );
 
+always @(posedge clk_100m or posedge key1) begin
+    if (key1) begin
+        color <= 16'hf800;
+        commit <= 1;
+    end else begin
+        color <= 16'h07e0;
+        commit <= 0;
+    end
+end
+
 drawunit du_0(
     .clk(clk_100m),
     .rst_n(rst_n),
@@ -89,7 +75,6 @@ drawunit du_0(
     .data({200'b0, color, HEIGHT, WIDTH, Y_POS, X_POS}),
     .commit(commit),
 
-    .bank(du_bank),
     .write_burst_data_req(write_burst_data_req),
     .write_burst_data_finish(write_burst_data_finish),
 
