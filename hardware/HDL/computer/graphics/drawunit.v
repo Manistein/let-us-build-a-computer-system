@@ -1,6 +1,5 @@
 `timescale 1ns / 1ps
 
-`include "commands.v"
 `include "drawrect.v"
 
 module drawunit(
@@ -21,6 +20,8 @@ module drawunit(
 
     output ack  // if drawunit is busy, ack is 0
 );
+
+localparam DRAW_CMD_RECT = 8'h01;
 
 localparam STATE_IDLE = 4'd0;
 localparam STATE_DRAW = 4'd1;
@@ -97,23 +98,35 @@ drawrect dr_0(
 
     .done(dr_done));
 
+reg write_burst_req_r;
+reg [15:0] rgb_r;
+reg [21:0] addr_r;
+reg [9:0] write_burst_len_r;
+reg done_r;
+
 always @(*) begin
     case (command_r)
         DRAW_CMD_RECT: begin
-            write_burst_req = dr_wr_burst_req;
-            rgb = dr_rgb;
-            addr = dr_addr;
-            write_burst_len = dr_wr_burst_len;
-            done = dr_done;
+            write_burst_req_r = dr_wr_burst_req;
+            rgb_r = dr_rgb;
+            addr_r = dr_addr;
+            write_burst_len_r = dr_wr_burst_len;
+            done_r = dr_done;
         end
         default: begin
-            write_burst_req = 0;
-            rgb = 16'd0;
-            addr = 21'd0;
-            write_burst_len = 10'd0;
-            done = 0;
+            write_burst_req_r = 0;
+            rgb_r = 16'd0;
+            addr_r = 21'd0;
+            write_burst_len_r = 10'd0;
+            done_r = 0;
         end
     endcase
 end
+
+assign write_burst_req = write_burst_req_r;
+assign rgb = rgb_r;
+assign addr = addr_r;
+assign write_burst_len = write_burst_len_r;
+assign done = done_r;
 
 endmodule

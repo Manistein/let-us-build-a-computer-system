@@ -2,14 +2,14 @@
 
 `include "../../HDL/computer/sdram/sdram_core.v"
 `include "../../HDL/computer/graphics/drawunit.v"
-`include "../../HDL/computer/sdram/frame_fifo_read.v"
-`include "../../HDL/computer/sdram/video_timing_data.v"
+`include "../../HDL/computer/io/frame_fifo_read.v"
+`include "../../HDL/computer/io/video_timing_data.v"
 
 module top(
         input clk_50m,
         input rst_n,
 
-        input key1,
+        input key1_n,
 
         output hsync,
         output vsync,
@@ -28,6 +28,8 @@ module top(
         output [1:0] sdram_dqm,
         inout [15:0] sdram_dq
     );
+
+localparam DRAW_CMD_RECT = 8'h01;
 
 localparam X_POS = 10'd100;
 localparam Y_POS = 10'd100;
@@ -57,8 +59,8 @@ chip_pll pll_0 (
     .vga_clk(vga_clk)
 );
 
-always @(posedge clk_100m or posedge key1) begin
-    if (key1) begin
+always @(posedge clk_100m or negedge key1_n) begin
+    if (!key1_n) begin
         color <= 16'hf800;
         commit <= 1;
     end else begin
@@ -87,7 +89,7 @@ drawunit du_0(
     .ack(ack)
 );
 
-wire read_data;
+wire [15:0] read_data;
 wire read_req_ack;
 
 wire read_req;
@@ -98,7 +100,7 @@ wire [8:0] wr_data_count;
 wire read_fifo_aclr;
 
 video_timing_data vtd_0(
-    .clk(vga_clk),
+    .video_clk(vga_clk),
     .rst(!rst_n),
 
     .read_req(read_req),
@@ -112,6 +114,13 @@ video_timing_data vtd_0(
     .vout_data(vout_data)
 );
 assign {r, g, b} = vout_data;
+
+wire rd_burst_req;
+wire [9:0] rd_burst_len;
+wire [23:0] rd_burst_addr;
+wire [15:0] rd_burst_data;
+wire rd_burst_data_valid;
+wire rd_burst_finish;
 
 fifo fifo_i0(
     .rst(read_fifo_aclr),
@@ -127,20 +136,14 @@ fifo fifo_i0(
     .wr_data_count(wr_data_count)
 );
 
-wire rd_burst_req;
-wire [9:0] rd_burst_len;
-wire [23:0] rd_burst_addr;
-wire [15:0] rd_burst_data;
-wire rd_burst_data_valid
-wire rd_burst_finish;
-
 frame_fifo_read
 #
 (
 	.MEM_DATA_BITS              (10'd16),
 	.ADDR_BITS                  (10'd24),
 	.BUSRT_BITS                 (10'd10),
-	.BURST_SIZE                 (10'd128)
+	.BURST_SIZE                 (256'd128),
+    .FIFO_DEPTH                 (10'd512)
 )
 frame_fifo_read_m0
 (
@@ -161,7 +164,7 @@ frame_fifo_read_m0
 	.read_addr_index            (2'd0),    
 	.read_len                   (24'd307200), // 640*480
 	.fifo_aclr                  (read_fifo_aclr),
-	.wr_data_count              (wr_data_count)
+	.wr_data_count              ({6'b0, wr_data_count})
 );
 
 sdram_core sdram_core_0(
@@ -174,7 +177,7 @@ sdram_core sdram_core_0(
     .wr_burst_addr({2'b00, addr}),
 
     .wr_burst_data_req(write_burst_data_req),
-    .wr_burst_data_finish(write_burst_data_finish),
+    .wr_burst_finish(write_burst_data_finish),
 
     .rd_burst_req(rd_burst_req),
     .rd_burst_len(rd_burst_len),

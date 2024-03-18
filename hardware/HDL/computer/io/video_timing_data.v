@@ -27,6 +27,7 @@
 //  2017/7/19     meisq          1.0         Original
 //*******************************************************************************/
 
+`include "color_bar.v"
 module video_timing_data
 #(
 	parameter DATA_WIDTH = 16                       // Video data one clock data width
