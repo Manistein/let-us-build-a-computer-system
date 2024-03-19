@@ -1,4 +1,4 @@
-NET "clk" LOC = P22 | TNM_NET = sys_clk_pin;
+NET "clk_50m" LOC = P22 | TNM_NET = sys_clk_pin;
 TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;
 
 ##
@@ -52,4 +52,4 @@ NET sdram_dq<13>                LOC = P62 | IOSTANDARD = "LVCMOS33";        ## S
 NET sdram_dq<14>                LOC = P66 | IOSTANDARD = "LVCMOS33";        ## SDRAM DATA14
 NET sdram_dq<15>                LOC = P67 | IOSTANDARD = "LVCMOS33";        ## SDRAM DATA15
 
-PIN "sdram_pll0/clkout1_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN "pll_0/clkout1_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;

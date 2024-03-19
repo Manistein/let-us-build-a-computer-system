@@ -8,5 +8,36 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/home/ise/hardware/ISEProjects/sdram_vga_test/top.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">/home/ise/hardware/ISEProjects/sdram_vga_test/top.v</arg>&quot; Line <arg fmt="%d" index="2">3</arg>. <arg fmt="%s" index="3">Include file found: &apos;/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/../../HDL/computer/sdram/sdram_core.v&apos; in file &quot;/home/ise/hardware/ISEProjects/sdram_vga_test/top.v&quot; line 3
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">/home/ise/hardware/ISEProjects/sdram_vga_test/top.v</arg>&quot; Line <arg fmt="%d" index="2">4</arg>. <arg fmt="%s" index="3">Include file found: &apos;/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/../../HDL/computer/graphics/drawunit.v&apos; in file &quot;/home/ise/hardware/ISEProjects/sdram_vga_test/top.v&quot; line 4
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">../../HDL/computer/graphics/drawunit.v</arg>&quot; Line <arg fmt="%d" index="2">3</arg>. <arg fmt="%s" index="3">Include file found: &apos;/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/../../HDL/computer/graphics/drawrect.v&apos; in file &quot;../../HDL/computer/graphics/drawunit.v&quot; line 3
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">/home/ise/hardware/ISEProjects/sdram_vga_test/top.v</arg>&quot; Line <arg fmt="%d" index="2">5</arg>. <arg fmt="%s" index="3">Include file found: &apos;/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/../../HDL/computer/io/frame_fifo_read.v&apos; in file &quot;/home/ise/hardware/ISEProjects/sdram_vga_test/top.v&quot; line 5
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">/home/ise/hardware/ISEProjects/sdram_vga_test/top.v</arg>&quot; Line <arg fmt="%d" index="2">6</arg>. <arg fmt="%s" index="3">Include file found: &apos;/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/../../HDL/computer/io/video_timing_data.v&apos; in file &quot;/home/ise/hardware/ISEProjects/sdram_vga_test/top.v&quot; line 6
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">../../HDL/computer/io/video_timing_data.v</arg>&quot; Line <arg fmt="%d" index="2">30</arg>. <arg fmt="%s" index="3">Include file found: &apos;/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/../../HDL/computer/io/color_bar.v&apos; in file &quot;../../HDL/computer/io/video_timing_data.v&quot; line 30
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">../../HDL/computer/io/color_bar.v</arg>&quot; Line <arg fmt="%d" index="2">32</arg>. <arg fmt="%s" index="3">Include file found: &apos;/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/../../HDL/computer/io/video_define.v&apos; in file &quot;../../HDL/computer/io/color_bar.v&quot; line 32
+</arg>
+</msg>
+
 </messages>
 

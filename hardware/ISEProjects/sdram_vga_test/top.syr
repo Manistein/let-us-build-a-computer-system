@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> 
 Reading design: top.prj
@@ -152,13 +152,8 @@ Elaborating module <BUFG>.
 Elaborating module <drawunit>.
 
 Elaborating module <drawrect>.
-WARNING:HDLCompiler:413 - "../../HDL/computer/graphics/drawrect.v" Line 48: Result of 32-bit expression is truncated to fit in 10-bit target.
-WARNING:HDLCompiler:413 - "../../HDL/computer/graphics/drawrect.v" Line 49: Result of 32-bit expression is truncated to fit in 10-bit target.
 WARNING:HDLCompiler:413 - "../../HDL/computer/graphics/drawrect.v" Line 81: Result of 11-bit expression is truncated to fit in 10-bit target.
 WARNING:HDLCompiler:413 - "../../HDL/computer/graphics/drawrect.v" Line 85: Result of 11-bit expression is truncated to fit in 10-bit target.
-WARNING:HDLCompiler:413 - "../../HDL/computer/graphics/drawrect.v" Line 100: Result of 32-bit expression is truncated to fit in 10-bit target.
-WARNING:HDLCompiler:1127 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" Line 88: Assignment to done ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" Line 89: Assignment to ack ignored, since the identifier is never used
 
 Elaborating module <video_timing_data>.
 
@@ -168,7 +163,6 @@ Elaborating module <fifo>.
 WARNING:HDLCompiler:1499 - "/home/ise/hardware/ISEProjects/sdram_vga_test/ipcore_dir/fifo.v" Line 39: Empty module <fifo> remains a black box.
 
 Elaborating module <frame_fifo_read(MEM_DATA_BITS=10'b010000,ADDR_BITS=10'b011000,BUSRT_BITS=10'b01010,BURST_SIZE=256'b010000000,FIFO_DEPTH=10'b1000000000)>.
-WARNING:HDLCompiler:189 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" Line 167: Size mismatch in connection of port <wr_data_count>. Formal port size is 16-bit while actual signal size is 15-bit.
 
 Elaborating module <sdram_core>.
 
@@ -178,28 +172,16 @@ Elaborating module <sdram_core>.
 
 Synthesizing Unit <top>.
     Related source file is "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v".
-INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 72: Output port <done> of the instance <du_0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 72: Output port <ack> of the instance <du_0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 102: Output port <de> of the instance <vtd_0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 125: Output port <rd_data_count> of the instance <fifo_i0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 125: Output port <full> of the instance <fifo_i0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 125: Output port <empty> of the instance <fifo_i0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 148: Output port <read_finish> of the instance <frame_fifo_read_m0> is unconnected or connected to loadless signal.
-    Register <color_dummy_dummy_dummy_dummy_dummy_dummy_dummy_dummy_dummy_dummy> equivalent to <color_dummy_dummy_dummy_dummy_dummy> has been removed
-    Register <color_dummy_dummy_dummy_dummy_dummy_dummy_dummy_dummy_dummy> equivalent to <color_dummy_dummy_dummy_dummy_dummy> has been removed
-    Register <color_dummy_dummy_dummy_dummy_dummy_dummy_dummy_dummy> equivalent to <color_dummy_dummy_dummy_dummy_dummy> has been removed
-    Register <color_dummy_dummy_dummy_dummy_dummy_dummy_dummy> equivalent to <color_dummy_dummy_dummy_dummy_dummy> has been removed
-    Register <color_dummy_dummy_dummy_dummy_dummy_dummy> equivalent to <color_dummy_dummy_dummy_dummy_dummy> has been removed
-    Register <color_dummy_dummy_dummy_dummy> equivalent to <commit> has been removed
-    Register <color_dummy_dummy_dummy> equivalent to <commit> has been removed
-    Register <color_dummy_dummy> equivalent to <commit> has been removed
-    Register <color_dummy> equivalent to <commit> has been removed
-    Register <color> equivalent to <commit> has been removed
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 69: Output port <done> of the instance <du_0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 69: Output port <ack> of the instance <du_0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 99: Output port <de> of the instance <vtd_0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 122: Output port <rd_data_count> of the instance <fifo_i0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 122: Output port <full> of the instance <fifo_i0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 122: Output port <empty> of the instance <fifo_i0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 145: Output port <read_finish> of the instance <frame_fifo_read_m0> is unconnected or connected to loadless signal.
     Found 1-bit register for signal <commit>.
-    Found 1-bit register for signal <color_dummy_dummy_dummy_dummy_dummy>.
-    WARNING:Xst:2404 -  FFs/Latches <color<1:5>> (without init value) have a constant value of 0 in block <top>.
     Summary:
-	inferred   2 D-type flip-flop(s).
+	inferred   1 D-type flip-flop(s).
 Unit <top> synthesized.
 
 Synthesizing Unit <chip_pll>.
@@ -210,8 +192,8 @@ Unit <chip_pll> synthesized.
 
 Synthesizing Unit <drawunit>.
     Related source file is "/home/ise/hardware/HDL/computer/graphics/drawunit.v".
-    Found 4-bit register for signal <prev_state>.
-    Found 4-bit register for signal <state>.
+    Found 2-bit register for signal <prev_state>.
+    Found 2-bit register for signal <state>.
     Found 8-bit register for signal <command_r>.
     Found 256-bit register for signal <data_r>.
     Found finite state machine <FSM_0> for signal <state>.
@@ -223,23 +205,23 @@ Synthesizing Unit <drawunit>.
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst_n (negative)                               |
     | Reset type         | asynchronous                                   |
-    | Reset State        | 0000                                           |
+    | Reset State        | 00                                             |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
     Summary:
-	inferred 268 D-type flip-flop(s).
+	inferred 266 D-type flip-flop(s).
 	inferred   6 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <drawunit> synthesized.
 
 Synthesizing Unit <drawrect>.
     Related source file is "/home/ise/hardware/HDL/computer/graphics/drawrect.v".
-        BURST_BITS = 10
-        SCREEN_WIDTH = 640
-        SCREEN_HEIGHT = 480
-        MAX_WRITE_BURST_LEN = 128
-        BIT_SIZE = 10
+        BURST_BITS = 10'b0000001010
+        SCREEN_WIDTH = 10'b1010000000
+        SCREEN_HEIGHT = 10'b0111100000
+        MAX_WRITE_BURST_LEN = 10'b0010000000
+        BIT_SIZE = 10'b0000001010
     Found 10-bit register for signal <delta_x>.
     Found 10-bit register for signal <delta_y>.
     Found 2-bit register for signal <state>.
@@ -259,14 +241,14 @@ Synthesizing Unit <drawrect>.
     -----------------------------------------------------------------------
     Found 10-bit adder for signal <current_x> created at line 45.
     Found 10-bit adder for signal <current_y> created at line 46.
-    Found 11-bit adder for signal <n0087> created at line 48.
-    Found 11-bit adder for signal <n0089> created at line 49.
+    Found 10-bit adder for signal <x_pixel[9]_width[9]_add_4_OUT> created at line 48.
+    Found 10-bit adder for signal <y_pixel[9]_height[9]_add_8_OUT> created at line 49.
     Found 10-bit adder for signal <delta_x[9]_GND_7_o_add_18_OUT> created at line 81.
     Found 10-bit adder for signal <delta_y[9]_GND_7_o_add_20_OUT> created at line 85.
-    Found 21-bit adder for signal <n0116[20:0]> created at line 97.
+    Found 21-bit adder for signal <n0111[20:0]> created at line 97.
     Found 10x10-bit multiplier for signal <current_y[9]_PWR_7_o_MuLt_38_OUT> created at line 97.
-    Found 11-bit comparator greater for signal <BUS_0003_GND_7_o_LessThan_4_o> created at line 48
-    Found 11-bit comparator greater for signal <BUS_0005_GND_7_o_LessThan_8_o> created at line 49
+    Found 10-bit comparator greater for signal <x_pixel[9]_PWR_7_o_LessThan_4_o> created at line 48
+    Found 10-bit comparator greater for signal <y_pixel[9]_GND_7_o_LessThan_8_o> created at line 49
     Found 10-bit comparator greater for signal <n0013> created at line 72
     Found 10-bit comparator greater for signal <current_x[9]_x_limit[9]_LessThan_18_o> created at line 80
     Found 10-bit comparator greater for signal <width[9]_GND_7_o_LessThan_43_o> created at line 100
@@ -509,17 +491,17 @@ Macro Statistics
 # Multipliers                                          : 1
  10x10-bit multiplier                                  : 1
 # Adders/Subtractors                                   : 20
- 10-bit adder                                          : 6
+ 10-bit adder                                          : 8
  10-bit subtractor                                     : 1
- 11-bit adder                                          : 4
+ 11-bit adder                                          : 2
  11-bit subtractor                                     : 2
  12-bit adder                                          : 2
  12-bit subtractor                                     : 1
  15-bit adder                                          : 1
  21-bit adder                                          : 1
  24-bit adder                                          : 2
-# Registers                                            : 58
- 1-bit register                                        : 34
+# Registers                                            : 57
+ 1-bit register                                        : 33
  10-bit register                                       : 4
  11-bit register                                       : 1
  12-bit register                                       : 3
@@ -527,16 +509,15 @@ Macro Statistics
  15-bit register                                       : 1
  16-bit register                                       : 3
  19-bit register                                       : 1
- 2-bit register                                        : 1
+ 2-bit register                                        : 2
  24-bit register                                       : 3
  256-bit register                                      : 1
- 4-bit register                                        : 1
  8-bit register                                        : 4
 # Comparators                                          : 16
- 10-bit comparator greater                             : 5
+ 10-bit comparator greater                             : 7
  10-bit comparator lessequal                           : 1
  11-bit comparator equal                               : 1
- 11-bit comparator greater                             : 3
+ 11-bit comparator greater                             : 1
  12-bit comparator greater                             : 1
  15-bit comparator greater                             : 1
  16-bit comparator greater                             : 1
@@ -544,16 +525,14 @@ Macro Statistics
  32-bit comparator equal                               : 2
 # Multiplexers                                         : 89
  1-bit 2-to-1 multiplexer                              : 34
- 10-bit 2-to-1 multiplexer                             : 12
+ 10-bit 2-to-1 multiplexer                             : 15
  11-bit 2-to-1 multiplexer                             : 1
  12-bit 2-to-1 multiplexer                             : 2
  13-bit 2-to-1 multiplexer                             : 7
  16-bit 2-to-1 multiplexer                             : 2
- 2-bit 2-to-1 multiplexer                              : 6
+ 2-bit 2-to-1 multiplexer                              : 7
  22-bit 2-to-1 multiplexer                             : 1
  24-bit 2-to-1 multiplexer                             : 3
- 32-bit 2-to-1 multiplexer                             : 3
- 4-bit 2-to-1 multiplexer                              : 1
  8-bit 2-to-1 multiplexer                              : 17
 # Tristates                                            : 16
  1-bit tristate buffer                                 : 16
@@ -567,48 +546,16 @@ Macro Statistics
 
 Reading core <ipcore_dir/fifo.ngc>.
 Loading core <fifo> for timing and area information for instance <fifo_i0>.
-INFO:Xst:2261 - The FF/Latch <command_r_1> in Unit <du_0> is equivalent to the following 6 FFs/Latches, which will be removed : <command_r_2> <command_r_3> <command_r_4> <command_r_5> <command_r_6> <command_r_7> 
+INFO:Xst:2261 - The FF/Latch <command_r_0> in Unit <du_0> is equivalent to the following 20 FFs/Latches, which will be removed : <data_r_2> <data_r_5> <data_r_6> <data_r_12> <data_r_15> <data_r_16> <data_r_22> <data_r_25> <data_r_26> <data_r_32> <data_r_35> <data_r_36> <data_r_44> <data_r_45> <data_r_46> <data_r_47> <data_r_48> <data_r_49> <data_r_50> <data_r_51> 
+INFO:Xst:2261 - The FF/Latch <command_r_1> in Unit <du_0> is equivalent to the following 42 FFs/Latches, which will be removed : <command_r_2> <command_r_3> <command_r_4> <command_r_5> <command_r_6> <command_r_7> <data_r_0> <data_r_1> <data_r_3> <data_r_4> <data_r_7> <data_r_8> <data_r_9> <data_r_10> <data_r_11> <data_r_13> <data_r_14> <data_r_17> <data_r_18> <data_r_19> <data_r_20> <data_r_21> <data_r_23> <data_r_24> <data_r_27> <data_r_28> <data_r_29> <data_r_30> <data_r_31> <data_r_33> <data_r_34> <data_r_37> <data_r_38> <data_r_39> <data_r_40> <data_r_41> <data_r_42> <data_r_43> <data_r_52> <data_r_53> <data_r_54> <data_r_55> 
 INFO:Xst:2261 - The FF/Latch <read_len_d1_0> in Unit <frame_fifo_read_m0> is equivalent to the following 14 FFs/Latches, which will be removed : <read_len_d1_1> <read_len_d1_2> <read_len_d1_3> <read_len_d1_4> <read_len_d1_5> <read_len_d1_6> <read_len_d1_7> <read_len_d1_8> <read_len_d1_9> <read_len_d1_10> <read_len_d1_11> <read_len_d1_14> <read_len_d1_16> <read_len_d1_17> 
 INFO:Xst:2261 - The FF/Latch <read_len_latch_19> in Unit <frame_fifo_read_m0> is equivalent to the following 4 FFs/Latches, which will be removed : <read_len_latch_20> <read_len_latch_21> <read_len_latch_22> <read_len_latch_23> 
 INFO:Xst:2261 - The FF/Latch <rd_burst_len_0> in Unit <frame_fifo_read_m0> is equivalent to the following 8 FFs/Latches, which will be removed : <rd_burst_len_1> <rd_burst_len_2> <rd_burst_len_3> <rd_burst_len_4> <rd_burst_len_5> <rd_burst_len_6> <rd_burst_len_8> <rd_burst_len_9> 
 INFO:Xst:2261 - The FF/Latch <read_len_d1_12> in Unit <frame_fifo_read_m0> is equivalent to the following 3 FFs/Latches, which will be removed : <read_len_d1_13> <read_len_d1_15> <read_len_d1_18> 
-WARNING:Xst:1710 - FF/Latch <data_r_28> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_29> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_30> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_31> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_33> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_34> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_37> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_38> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_39> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_40> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_41> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_42> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_43> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_44> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <read_len_latch_19> (without init value) has a constant value of 0 in block <frame_fifo_read_m0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <read_len_d1_0> (without init value) has a constant value of 0 in block <frame_fifo_read_m0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <command_r_1> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <rd_burst_len_0> (without init value) has a constant value of 0 in block <frame_fifo_read_m0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <read_len_d1_0> (without init value) has a constant value of 0 in block <frame_fifo_read_m0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <read_len_latch_19> (without init value) has a constant value of 0 in block <frame_fifo_read_m0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_0> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_1> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_3> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_4> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_7> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_8> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_9> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_10> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_11> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_27> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_24> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_23> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_21> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_20> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_13> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_14> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_19> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_17> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_r_18> (without init value) has a constant value of 0 in block <du_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_0> (without init value) has a constant value of 0 in block <frame_fifo_read_m0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_1> (without init value) has a constant value of 0 in block <frame_fifo_read_m0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_2> (without init value) has a constant value of 0 in block <frame_fifo_read_m0>. This FF/Latch will be trimmed during the optimization process.
@@ -825,6 +772,7 @@ WARNING:Xst:2677 - Node <data_r_253> of sequential type is unconnected in block 
 WARNING:Xst:2677 - Node <data_r_254> of sequential type is unconnected in block <du_0>.
 WARNING:Xst:2677 - Node <data_r_255> of sequential type is unconnected in block <du_0>.
 WARNING:Xst:2404 -  FFs/Latches <command_r<7:1>> (without init value) have a constant value of 0 in block <drawunit>.
+WARNING:Xst:2404 -  FFs/Latches <data_r<255:52>> (without init value) have a constant value of 0 in block <drawunit>.
 WARNING:Xst:2404 -  FFs/Latches <read_len_latch<23:19>> (without init value) have a constant value of 0 in block <frame_fifo_read>.
 WARNING:Xst:2404 -  FFs/Latches <rd_burst_len<9:8>> (without init value) have a constant value of 0 in block <frame_fifo_read>.
 
@@ -834,7 +782,7 @@ The following registers are absorbed into counter <v_cnt>: 1 register on signal 
 Unit <color_bar> synthesized (advanced).
 
 Synthesizing (advanced) Unit <drawrect>.
-	Multiplier <Mmult_current_y[9]_PWR_7_o_MuLt_38_OUT> in block <drawrect> and adder/subtractor <Madd_n0116[20:0]> in block <drawrect> are combined into a MAC<Maddsub_current_y[9]_PWR_7_o_MuLt_38_OUT>.
+	Multiplier <Mmult_current_y[9]_PWR_7_o_MuLt_38_OUT> in block <drawrect> and adder/subtractor <Madd_n0111[20:0]> in block <drawrect> are combined into a MAC<Maddsub_current_y[9]_PWR_7_o_MuLt_38_OUT>.
 Unit <drawrect> synthesized (advanced).
 
 Synthesizing (advanced) Unit <sdram_core>.
@@ -842,206 +790,6 @@ The following registers are absorbed into counter <cnt_7p5us>: 1 register on sig
 The following registers are absorbed into counter <cnt_clk_r>: 1 register on signal <cnt_clk_r>.
 The following registers are absorbed into counter <cnt_200us>: 1 register on signal <cnt_200us>.
 Unit <sdram_core> synthesized (advanced).
-WARNING:Xst:2677 - Node <data_r_56> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_57> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_58> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_59> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_60> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_61> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_62> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_63> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_64> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_65> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_66> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_67> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_68> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_69> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_70> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_71> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_72> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_73> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_74> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_75> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_76> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_77> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_78> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_79> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_80> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_81> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_82> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_83> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_84> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_85> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_86> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_87> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_88> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_89> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_90> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_91> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_92> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_93> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_94> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_95> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_96> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_97> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_98> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_99> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_100> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_101> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_102> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_103> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_104> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_105> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_106> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_107> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_108> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_109> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_110> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_111> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_112> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_113> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_114> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_115> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_116> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_117> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_118> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_119> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_120> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_121> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_122> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_123> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_124> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_125> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_126> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_127> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_128> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_129> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_130> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_131> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_132> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_133> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_134> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_135> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_136> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_137> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_138> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_139> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_140> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_141> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_142> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_143> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_144> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_145> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_146> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_147> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_148> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_149> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_150> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_151> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_152> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_153> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_154> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_155> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_156> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_157> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_158> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_159> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_160> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_161> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_162> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_163> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_164> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_165> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_166> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_167> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_168> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_169> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_170> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_171> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_172> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_173> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_174> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_175> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_176> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_177> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_178> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_179> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_180> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_181> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_182> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_183> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_184> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_185> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_186> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_187> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_188> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_189> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_190> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_191> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_192> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_193> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_194> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_195> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_196> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_197> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_198> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_199> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_200> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_201> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_202> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_203> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_204> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_205> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_206> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_207> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_208> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_209> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_210> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_211> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_212> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_213> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_214> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_215> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_216> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_217> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_218> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_219> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_220> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_221> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_222> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_223> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_224> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_225> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_226> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_227> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_228> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_229> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_230> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_231> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_232> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_233> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_234> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_235> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_236> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_237> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_238> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_239> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_240> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_241> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_242> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_243> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_244> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_245> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_246> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_247> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_248> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_249> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_250> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_251> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_252> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_253> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_254> of sequential type is unconnected in block <drawunit>.
-WARNING:Xst:2677 - Node <data_r_255> of sequential type is unconnected in block <drawunit>.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -1050,9 +798,9 @@ Macro Statistics
 # MACs                                                 : 1
  10x10-to-21-bit MAC                                   : 1
 # Adders/Subtractors                                   : 14
- 10-bit adder                                          : 5
+ 10-bit adder                                          : 7
  10-bit subtractor                                     : 1
- 11-bit adder                                          : 3
+ 11-bit adder                                          : 1
  11-bit subtractor                                     : 2
  12-bit subtractor                                     : 1
  24-bit adder                                          : 2
@@ -1061,28 +809,26 @@ Macro Statistics
  11-bit up counter                                     : 1
  12-bit up counter                                     : 2
  15-bit up counter                                     : 1
-# Registers                                            : 308
- Flip-Flops                                            : 308
+# Registers                                            : 301
+ Flip-Flops                                            : 301
 # Comparators                                          : 16
- 10-bit comparator greater                             : 5
+ 10-bit comparator greater                             : 7
  10-bit comparator lessequal                           : 1
  11-bit comparator equal                               : 1
- 11-bit comparator greater                             : 3
+ 11-bit comparator greater                             : 1
  12-bit comparator greater                             : 1
  15-bit comparator greater                             : 1
  16-bit comparator greater                             : 1
  24-bit comparator greater                             : 1
  32-bit comparator equal                               : 2
-# Multiplexers                                         : 85
- 1-bit 2-to-1 multiplexer                              : 34
- 10-bit 2-to-1 multiplexer                             : 11
+# Multiplexers                                         : 86
+ 1-bit 2-to-1 multiplexer                              : 36
+ 10-bit 2-to-1 multiplexer                             : 14
  13-bit 2-to-1 multiplexer                             : 7
  16-bit 2-to-1 multiplexer                             : 2
  2-bit 2-to-1 multiplexer                              : 6
  22-bit 2-to-1 multiplexer                             : 1
  24-bit 2-to-1 multiplexer                             : 3
- 32-bit 2-to-1 multiplexer                             : 3
- 4-bit 2-to-1 multiplexer                              : 1
  8-bit 2-to-1 multiplexer                              : 17
 # FSMs                                                 : 4
 
@@ -1091,6 +837,38 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1710 - FF/Latch <data_r_43> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_42> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_41> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_40> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_39> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_38> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_37> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_34> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_33> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_31> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_30> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_29> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_28> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_27> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_24> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_23> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_21> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_20> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_19> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_18> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_17> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_14> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_13> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_11> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_10> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_9> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_8> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_7> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_4> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_3> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_1> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_r_0> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <read_len_d1_17> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_d1_16> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_d1_14> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
@@ -1128,20 +906,16 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_3> (
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_2> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_1> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_len_latch_0> (without init value) has a constant value of 0 in block <frame_fifo_read>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <command_r> in Unit <drawunit> is equivalent to the following 20 FFs/Latches, which will be removed : <data_r_2> <data_r_5> <data_r_6> <data_r_12> <data_r_15> <data_r_16> <data_r_22> <data_r_25> <data_r_26> <data_r_32> <data_r_35> <data_r_36> <data_r_44> <data_r_45> <data_r_46> <data_r_47> <data_r_48> <data_r_49> <data_r_50> <data_r_51> 
 INFO:Xst:2261 - The FF/Latch <read_len_d1_12> in Unit <frame_fifo_read> is equivalent to the following 3 FFs/Latches, which will be removed : <read_len_d1_13> <read_len_d1_15> <read_len_d1_18> 
 INFO:Xst:2261 - The FF/Latch <read_len_latch_12> in Unit <frame_fifo_read> is equivalent to the following 3 FFs/Latches, which will be removed : <read_len_latch_13> <read_len_latch_15> <read_len_latch_18> 
-INFO:Xst:2261 - The FF/Latch <data_r_2> in Unit <drawunit> is equivalent to the following 12 FFs/Latches, which will be removed : <data_r_5> <data_r_6> <data_r_12> <data_r_15> <data_r_16> <data_r_22> <data_r_25> <data_r_26> <data_r_32> <data_r_35> <data_r_36> <command_r> 
-INFO:Xst:2261 - The FF/Latch <data_r_45> in Unit <drawunit> is equivalent to the following 5 FFs/Latches, which will be removed : <data_r_46> <data_r_47> <data_r_48> <data_r_49> <data_r_50> 
-INFO:Xst:2261 - The FF/Latch <data_r_51> in Unit <drawunit> is equivalent to the following 4 FFs/Latches, which will be removed : <data_r_52> <data_r_53> <data_r_54> <data_r_55> 
-INFO:Xst:2261 - The FF/Latch <data_r_0> in Unit <drawunit> is equivalent to the following 32 FFs/Latches, which will be removed : <data_r_1> <data_r_3> <data_r_4> <data_r_7> <data_r_8> <data_r_9> <data_r_10> <data_r_11> <data_r_13> <data_r_14> <data_r_17> <data_r_18> <data_r_19> <data_r_20> <data_r_21> <data_r_23> <data_r_24> <data_r_27> <data_r_28> <data_r_29> <data_r_30> <data_r_31> <data_r_33> <data_r_34> <data_r_37> <data_r_38> <data_r_39> <data_r_40> <data_r_41> <data_r_42> <data_r_43> <data_r_44> 
-WARNING:Xst:1710 - FF/Latch <data_r_0> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <du_0/FSM_0> on signal <state[1:1]> with sequential encoding.
 -------------------
  State | Encoding
 -------------------
- 0000  | 0
- 0001  | 1
+ 00    | 0
+ 01    | 1
 -------------------
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <du_0/dr_0/FSM_1> on signal <state[1:1]> with sequential encoding.
@@ -1215,11 +989,7 @@ Optimizing unit <top> ...
 
 Optimizing unit <drawunit> ...
 WARNING:Xst:1710 - FF/Latch <prev_state_1> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <prev_state_2> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <prev_state_3> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <prev_state_1> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <prev_state_2> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <prev_state_3> (without init value) has a constant value of 0 in block <drawunit>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <drawrect> ...
 
@@ -1228,7 +998,10 @@ Optimizing unit <frame_fifo_read> ...
 Optimizing unit <video_timing_data> ...
 
 Optimizing unit <color_bar> ...
-WARNING:Xst:1710 - FF/Latch <sdram_core_0/sdr_dq_out_4> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sdram_core_0/sdr_dq_out_15> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sdram_core_0/sdr_dq_out_14> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sdram_core_0/sdr_dq_out_13> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <sdram_core_0/sdr_dq_out_12> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <sdram_core_0/sdr_dq_out_3> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <sdram_core_0/sdr_dq_out_2> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <sdram_core_0/sdr_dq_out_1> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
@@ -1250,14 +1023,18 @@ WARNING:Xst:2677 - Node <vtd_0/color_bar_m0/active_x_3> of sequential type is un
 WARNING:Xst:2677 - Node <vtd_0/color_bar_m0/active_x_2> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <vtd_0/color_bar_m0/active_x_1> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <vtd_0/color_bar_m0/active_x_0> of sequential type is unconnected in block <top>.
-INFO:Xst:2261 - The FF/Latch <sdram_core_0/sdr_dq_out_10> in Unit <top> is equivalent to the following 5 FFs/Latches, which will be removed : <sdram_core_0/sdr_dq_out_9> <sdram_core_0/sdr_dq_out_8> <sdram_core_0/sdr_dq_out_7> <sdram_core_0/sdr_dq_out_6> <sdram_core_0/sdr_dq_out_5> 
-INFO:Xst:2261 - The FF/Latch <sdram_core_0/sdr_dq_out_15> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <sdram_core_0/sdr_dq_out_14> <sdram_core_0/sdr_dq_out_13> <sdram_core_0/sdr_dq_out_12> <sdram_core_0/sdr_dq_out_11> 
-INFO:Xst:2261 - The FF/Latch <du_0/data_r_2> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <du_0/data_r_51> 
+WARNING:Xst:1710 - FF/Latch <du_0/dr_0/delta_y_9> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <du_0/dr_0/delta_y_8> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <du_0/dr_0/delta_y_7> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <du_0/dr_0/delta_x_9> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <du_0/dr_0/delta_x_8> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <du_0/dr_0/delta_x_7> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <sdram_core_0/sdr_dq_out_11> in Unit <top> is equivalent to the following 7 FFs/Latches, which will be removed : <sdram_core_0/sdr_dq_out_10> <sdram_core_0/sdr_dq_out_9> <sdram_core_0/sdr_dq_out_8> <sdram_core_0/sdr_dq_out_7> <sdram_core_0/sdr_dq_out_6> <sdram_core_0/sdr_dq_out_5> <sdram_core_0/sdr_dq_out_4> 
 INFO:Xst:2261 - The FF/Latch <frame_fifo_read_m0/fifo_aclr> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <frame_fifo_read_m0/read_req_ack> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 11.
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 10.
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <fifo_i0> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <fifo_i0> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <fifo_i0> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
@@ -1266,7 +1043,7 @@ INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <fifo_i0> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <fifo_i0> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <fifo_i0> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
-FlipFlop du_0/data_r_2 has been replicated 2 time(s)
+FlipFlop du_0/command_r has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -1274,8 +1051,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 212
- Flip-Flops                                            : 212
+# Registers                                            : 202
+ Flip-Flops                                            : 202
 
 =========================================================================
 
@@ -1298,23 +1075,23 @@ Top Level Output File Name         : top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 881
+# BELS                             : 787
 #      GND                         : 3
 #      INV                         : 12
-#      LUT1                        : 82
-#      LUT2                        : 145
-#      LUT3                        : 46
-#      LUT4                        : 71
-#      LUT5                        : 55
-#      LUT6                        : 141
-#      MUXCY                       : 159
+#      LUT1                        : 68
+#      LUT2                        : 131
+#      LUT3                        : 47
+#      LUT4                        : 64
+#      LUT5                        : 47
+#      LUT6                        : 142
+#      MUXCY                       : 132
 #      MUXF7                       : 27
 #      VCC                         : 2
-#      XORCY                       : 138
-# FlipFlops/Latches                : 362
+#      XORCY                       : 112
+# FlipFlops/Latches                : 352
 #      FD                          : 4
-#      FDC                         : 202
-#      FDCE                        : 118
+#      FDC                         : 195
+#      FDCE                        : 115
 #      FDE                         : 2
 #      FDP                         : 33
 #      FDPE                        : 2
@@ -1340,16 +1117,16 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             362  out of  11440     3%  
- Number of Slice LUTs:                  552  out of   5720     9%  
-    Number used as Logic:               552  out of   5720     9%  
+ Number of Slice Registers:             352  out of  11440     3%  
+ Number of Slice LUTs:                  511  out of   5720     8%  
+    Number used as Logic:               511  out of   5720     8%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    667
-   Number with an unused Flip Flop:     305  out of    667    45%  
-   Number with an unused LUT:           115  out of    667    17%  
-   Number of fully used LUT-FF pairs:   247  out of    667    37%  
-   Number of unique control sets:        24
+ Number of LUT Flip Flop pairs used:    624
+   Number with an unused Flip Flop:     272  out of    624    43%  
+   Number with an unused LUT:           113  out of    624    18%  
+   Number of fully used LUT-FF pairs:   239  out of    624    38%  
+   Number of unique control sets:        23
 
 IO Utilization: 
  Number of IOs:                          60
@@ -1383,7 +1160,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-pll_0/pll_base_inst/CLKOUT1        | BUFG                   | 240   |
+pll_0/pll_base_inst/CLKOUT1        | BUFG                   | 230   |
 pll_0/pll_base_inst/CLKOUT2        | BUFG                   | 124   |
 -----------------------------------+------------------------+-------+
 
@@ -1395,8 +1172,8 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 9.626ns (Maximum Frequency: 103.891MHz)
-   Minimum input arrival time before clock: 5.262ns
+   Minimum period: 9.314ns (Maximum Frequency: 107.365MHz)
+   Minimum input arrival time before clock: 5.258ns
    Maximum output required time after clock: 5.554ns
    Maximum combinational path delay: No path found
 
@@ -1406,10 +1183,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'pll_0/pll_base_inst/CLKOUT1'
-  Clock period: 9.626ns (frequency: 103.891MHz)
-  Total number of paths / destination ports: 25120 / 405
+  Clock period: 9.314ns (frequency: 107.365MHz)
+  Total number of paths / destination ports: 13651 / 395
 -------------------------------------------------------------------------
-Delay:               9.626ns (Levels of Logic = 12)
+Delay:               9.314ns (Levels of Logic = 4)
   Source:            du_0/dr_0/delta_y_2 (FF)
   Destination:       sdram_core_0/sdram_addr_r_5 (FF)
   Source Clock:      pll_0/pll_base_inst/CLKOUT1 rising
@@ -1419,23 +1196,15 @@ Delay:               9.626ns (Levels of Logic = 12)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              8   0.525   0.944  du_0/dr_0/delta_y_2 (du_0/dr_0/delta_y_2)
-     LUT2:I1->O            1   0.254   0.000  du_0/dr_0/Madd_current_y_lut<2> (du_0/dr_0/Madd_current_y_lut<2>)
-     MUXCY:S->O            1   0.215   0.000  du_0/dr_0/Madd_current_y_cy<2> (du_0/dr_0/Madd_current_y_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  du_0/dr_0/Madd_current_y_cy<3> (du_0/dr_0/Madd_current_y_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  du_0/dr_0/Madd_current_y_cy<4> (du_0/dr_0/Madd_current_y_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  du_0/dr_0/Madd_current_y_cy<5> (du_0/dr_0/Madd_current_y_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  du_0/dr_0/Madd_current_y_cy<6> (du_0/dr_0/Madd_current_y_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  du_0/dr_0/Madd_current_y_cy<7> (du_0/dr_0/Madd_current_y_cy<7>)
-     MUXCY:CI->O           0   0.023   0.000  du_0/dr_0/Madd_current_y_cy<8> (du_0/dr_0/Madd_current_y_cy<8>)
-     XORCY:CI->O           4   0.206   0.803  du_0/dr_0/Madd_current_y_xor<9> (du_0/dr_0/current_y<9>)
-     DSP48A1:B9->P14       1   5.145   0.910  du_0/dr_0/Maddsub_current_y[9]_PWR_7_o_MuLt_38_OUT (du_0/dr_addr<14>)
+     FDC:C->Q             11   0.525   1.315  du_0/dr_0/delta_y_2 (du_0/dr_0/delta_y_2)
+     LUT6:I2->O            1   0.254   0.681  du_0/dr_0/Madd_current_y_xor<6>11 (du_0/dr_0/current_y<6>)
+     DSP48A1:B6->P14       1   5.145   0.910  du_0/dr_0/Maddsub_current_y[9]_PWR_7_o_MuLt_38_OUT (du_0/dr_addr<14>)
      LUT5:I2->O            1   0.235   0.000  sdram_core_0/Mmux_state[4]_PWR_13_o_wide_mux_91_OUT153_G (N145)
      MUXF7:I1->O           1   0.175   0.000  sdram_core_0/Mmux_state[4]_PWR_13_o_wide_mux_91_OUT153 (sdram_core_0/state[4]_PWR_13_o_wide_mux_91_OUT<5>)
      FDP:D                     0.074          sdram_core_0/sdram_addr_r_5
     ----------------------------------------
-    Total                      9.626ns (6.969ns logic, 2.657ns route)
-                                       (72.4% logic, 27.6% route)
+    Total                      9.314ns (6.408ns logic, 2.906ns route)
+                                       (68.8% logic, 31.2% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'pll_0/pll_base_inst/CLKOUT2'
@@ -1464,9 +1233,9 @@ Delay:               6.915ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'pll_0/pll_base_inst/CLKOUT1'
-  Total number of paths / destination ports: 176 / 176
+  Total number of paths / destination ports: 166 / 166
 -------------------------------------------------------------------------
-Offset:              5.262ns (Levels of Logic = 2)
+Offset:              5.258ns (Levels of Logic = 2)
   Source:            rst_n (PAD)
   Destination:       sdram_core_0/cnt_200us_14 (FF)
   Destination Clock: pll_0/pll_base_inst/CLKOUT1 rising
@@ -1476,17 +1245,17 @@ Offset:              5.262ns (Levels of Logic = 2)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             4   1.328   0.803  rst_n_IBUF (rst_n_IBUF)
-     INV:I->O            207   0.255   2.417  rst_n_INV_30_o1_INV_0 (du_0/dr_0/rst_n_inv)
+     INV:I->O            198   0.255   2.413  rst_n_INV_29_o1_INV_0 (du_0/dr_0/rst_n_inv)
      FDC:CLR                   0.459          du_0/dr_0/delta_x_0
     ----------------------------------------
-    Total                      5.262ns (2.042ns logic, 3.220ns route)
+    Total                      5.258ns (2.042ns logic, 3.216ns route)
                                        (38.8% logic, 61.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'pll_0/pll_base_inst/CLKOUT2'
   Total number of paths / destination ports: 53 / 53
 -------------------------------------------------------------------------
-Offset:              5.262ns (Levels of Logic = 2)
+Offset:              5.258ns (Levels of Logic = 2)
   Source:            rst_n (PAD)
   Destination:       vtd_0/vout_data_r_15 (FF)
   Destination Clock: pll_0/pll_base_inst/CLKOUT2 rising
@@ -1496,10 +1265,10 @@ Offset:              5.262ns (Levels of Logic = 2)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             4   1.328   0.803  rst_n_IBUF (rst_n_IBUF)
-     INV:I->O            207   0.255   2.417  rst_n_INV_30_o1_INV_0 (du_0/dr_0/rst_n_inv)
+     INV:I->O            198   0.255   2.413  rst_n_INV_29_o1_INV_0 (du_0/dr_0/rst_n_inv)
      FDC:CLR                   0.459          vtd_0/video_vs_d0
     ----------------------------------------
-    Total                      5.262ns (2.042ns logic, 3.220ns route)
+    Total                      5.258ns (2.042ns logic, 3.216ns route)
                                        (38.8% logic, 61.2% route)
 
 =========================================================================
@@ -1523,7 +1292,7 @@ Offset:              4.118ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'pll_0/pll_base_inst/CLKOUT1'
-  Total number of paths / destination ports: 45 / 34
+  Total number of paths / destination ports: 42 / 34
 -------------------------------------------------------------------------
 Offset:              5.554ns (Levels of Logic = 2)
   Source:            sdram_core_0/sdr_dq_oe (FF)
@@ -1536,7 +1305,7 @@ Offset:              5.554ns (Levels of Logic = 2)
     ----------------------------------------  ------------
      FDC:C->Q              1   0.525   0.681  sdram_core_0/sdr_dq_oe (sdram_core_0/sdr_dq_oe)
      INV:I->O             16   0.255   1.181  sdram_core_0/sdr_dq_oe_inv1_INV_0 (sdram_core_0/sdr_dq_oe_inv)
-     IOBUF:T->IO               2.912          sdram_dq_13_IOBUF (sdram_dq<13>)
+     IOBUF:T->IO               2.912          sdram_dq_15_IOBUF (sdram_dq<15>)
     ----------------------------------------
     Total                      5.554ns (3.692ns logic, 1.862ns route)
                                        (66.5% logic, 33.5% route)
@@ -1551,7 +1320,7 @@ Clock to Setup on destination clock pll_0/pll_base_inst/CLKOUT1
                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------------------+---------+---------+---------+---------+
-pll_0/pll_base_inst/CLKOUT1|    9.626|         |         |         |
+pll_0/pll_base_inst/CLKOUT1|    9.314|         |         |         |
 pll_0/pll_base_inst/CLKOUT2|    1.324|         |         |         |
 ---------------------------+---------+---------+---------+---------+
 
@@ -1567,15 +1336,15 @@ pll_0/pll_base_inst/CLKOUT2|    6.915|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.29 secs
+Total REAL time to Xst completion: 23.00 secs
+Total CPU time to Xst completion: 21.49 secs
  
 --> 
 
 
-Total memory usage is 490336 kilobytes
+Total memory usage is 490196 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  556 (   0 filtered)
-Number of infos    :   37 (   0 filtered)
+Number of warnings :  353 (   0 filtered)
+Number of infos    :   33 (   0 filtered)
 

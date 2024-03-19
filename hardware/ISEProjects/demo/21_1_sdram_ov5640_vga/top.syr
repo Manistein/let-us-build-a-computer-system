@@ -1,18 +1,21 @@
-Release 14.7 - xst P.20131013 (nt64)
+Release 14.7 - xst P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to xst/projnav.tmp
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total CPU time to Xst completion: 0.08 secs
  
---> Parameter xsthdpdir set to xst
+--> 
+Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total CPU time to Xst completion: 0.09 secs
  
---> Reading design: top.prj
+--> 
+Reading design: top.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -108,42 +111,42 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\ipcore_dir\sys_pll.v" into library work
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/ipcore_dir/sys_pll.v" into library work
 Parsing module <sys_pll>.
-Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\ipcore_dir\video_pll.v" into library work
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/ipcore_dir/video_pll.v" into library work
 Parsing module <video_pll>.
-Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_master_bit_ctrl.v" into library work
-Parsing verilog file "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\/i2c_master_defines.v" included at line 141.
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_master_bit_ctrl.v" into library work
+Parsing verilog file "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_master_defines.v" included at line 141.
 Parsing module <i2c_master_bit_ctrl>.
-Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_master_byte_ctrl.v" into library work
-Parsing verilog file "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\/i2c_master_defines.v" included at line 73.
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_master_byte_ctrl.v" into library work
+Parsing verilog file "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_master_defines.v" included at line 73.
 Parsing module <i2c_master_byte_ctrl>.
-Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_master_top.v" into library work
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_master_top.v" into library work
 Parsing module <i2c_master_top>.
-Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\frame_fifo_write.v" into library work
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/frame_fifo_write.v" into library work
 Parsing module <frame_fifo_write>.
-Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\frame_fifo_read.v" into library work
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/frame_fifo_read.v" into library work
 Parsing module <frame_fifo_read>.
-Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\color_bar.v" into library work
-Parsing verilog file "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\/video_define.v" included at line 32.
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/color_bar.v" into library work
+Parsing verilog file "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/video_define.v" included at line 32.
 Parsing module <color_bar>.
-Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\ipcore_dir\afifo_16_512.v" into library work
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/ipcore_dir/afifo_16_512.v" into library work
 Parsing module <afifo_16_512>.
-Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\video_timing_data.v" into library work
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/video_timing_data.v" into library work
 Parsing module <video_timing_data>.
-Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\sdram\sdram_core_v2.v" into library work
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/sdram/sdram_core_v2.v" into library work
 Parsing module <sdram_core>.
-Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\lut_ov5640_rgb565_1024_768.v" into library work
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/lut_ov5640_rgb565_1024_768.v" into library work
 Parsing module <lut_ov5640_rgb565_1024_768>.
-Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_config.v" into library work
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_config.v" into library work
 Parsing module <i2c_config>.
-Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\frame_read_write.v" into library work
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/frame_read_write.v" into library work
 Parsing module <frame_read_write>.
-Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\cmos_write_req_gen.v" into library work
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/cmos_write_req_gen.v" into library work
 Parsing module <cmos_write_req_gen>.
-Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\cmos_8_16bit.v" into library work
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/cmos_8_16bit.v" into library work
 Parsing module <cmos_8_16bit>.
-Analyzing Verilog file "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\top.v" into library work
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/top.v" into library work
 Parsing module <top>.
 
 =========================================================================
@@ -157,34 +160,34 @@ Elaborating module <IBUFG>.
 Elaborating module <sys_pll>.
 
 Elaborating module <PLL_BASE(BANDWIDTH="OPTIMIZED",CLK_FEEDBACK="CLKFBOUT",COMPENSATION="SYSTEM_SYNCHRONOUS",DIVCLK_DIVIDE=1,CLKFBOUT_MULT=12,CLKFBOUT_PHASE=0.0,CLKOUT0_DIVIDE=25,CLKOUT0_PHASE=0.0,CLKOUT0_DUTY_CYCLE=0.5,CLKOUT1_DIVIDE=6,CLKOUT1_PHASE=0.0,CLKOUT1_DUTY_CYCLE=0.5,CLKOUT2_DIVIDE=6,CLKOUT2_PHASE=90.0,CLKOUT2_DUTY_CYCLE=0.5,CLKIN_PERIOD=20.0,REF_JITTER=0.01)>.
-WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\ipcore_dir\sys_pll.v" Line 124: Assignment to clkout3_unused ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\ipcore_dir\sys_pll.v" Line 125: Assignment to clkout4_unused ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\ipcore_dir\sys_pll.v" Line 126: Assignment to clkout5_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/ipcore_dir/sys_pll.v" Line 124: Assignment to clkout3_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/ipcore_dir/sys_pll.v" Line 125: Assignment to clkout4_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/ipcore_dir/sys_pll.v" Line 126: Assignment to clkout5_unused ignored, since the identifier is never used
 
 Elaborating module <BUFG>.
 
 Elaborating module <video_pll>.
 
 Elaborating module <DCM_SP(CLKDV_DIVIDE=2.0,CLKFX_DIVIDE=10,CLKFX_MULTIPLY=13,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=20.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
-WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\ipcore_dir\video_pll.v" Line 128: Assignment to status_int ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/ipcore_dir/video_pll.v" Line 128: Assignment to status_int ignored, since the identifier is never used
 
 Elaborating module <i2c_config>.
 
 Elaborating module <i2c_master_top>.
-WARNING:HDLCompiler:413 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_master_top.v" Line 117: Result of 32-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_master_top.v" Line 146: Result of 32-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_master_top.v" Line 117: Result of 32-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_master_top.v" Line 146: Result of 32-bit expression is truncated to fit in 4-bit target.
 
 Elaborating module <i2c_master_byte_ctrl>.
 
 Elaborating module <i2c_master_bit_ctrl>.
-WARNING:HDLCompiler:413 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_master_bit_ctrl.v" Line 258: Result of 32-bit expression is truncated to fit in 14-bit target.
-WARNING:HDLCompiler:1308 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_master_bit_ctrl.v" Line 406: Found full_case directive in module i2c_master_bit_ctrl. Use of full_case directives may cause differences between RTL and post-synthesis simulation
-WARNING:HDLCompiler:1309 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_master_byte_ctrl.v" Line 230: Found full_case directive. Use of full_case directives may cause differences between RTL and post-synthesis simulation
-WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_master_top.v" Line 276: Assignment to i2c_busy ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_master_top.v" Line 277: Assignment to i2c_al ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_config.v" Line 149: Assignment to i2c_read_req_ack ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_config.v" Line 155: Assignment to i2c_read_data ignored, since the identifier is never used
-WARNING:HDLCompiler:634 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_config.v" Line 57: Net <i2c_read_req> does not have a driver.
+WARNING:HDLCompiler:413 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_master_bit_ctrl.v" Line 258: Result of 32-bit expression is truncated to fit in 14-bit target.
+WARNING:HDLCompiler:1308 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_master_bit_ctrl.v" Line 406: Found full_case directive in module i2c_master_bit_ctrl. Use of full_case directives may cause differences between RTL and post-synthesis simulation
+WARNING:HDLCompiler:1309 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_master_byte_ctrl.v" Line 230: Found full_case directive. Use of full_case directives may cause differences between RTL and post-synthesis simulation
+WARNING:HDLCompiler:1127 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_master_top.v" Line 276: Assignment to i2c_busy ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_master_top.v" Line 277: Assignment to i2c_al ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_config.v" Line 149: Assignment to i2c_read_req_ack ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_config.v" Line 155: Assignment to i2c_read_data ignored, since the identifier is never used
+WARNING:HDLCompiler:634 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_config.v" Line 57: Net <i2c_read_req> does not have a driver.
 
 Elaborating module <lut_ov5640_rgb565_1024_768>.
 
@@ -199,11 +202,11 @@ Elaborating module <color_bar>.
 Elaborating module <frame_read_write>.
 
 Elaborating module <afifo_16_512>.
-WARNING:HDLCompiler:1499 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\ipcore_dir\afifo_16_512.v" Line 39: Empty module <afifo_16_512> remains a black box.
-WARNING:HDLCompiler:189 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\frame_read_write.v" Line 97: Size mismatch in connection of port <rd_data_count>. Formal port size is 9-bit while actual signal size is 16-bit.
+WARNING:HDLCompiler:1499 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/ipcore_dir/afifo_16_512.v" Line 39: Empty module <afifo_16_512> remains a black box.
+WARNING:HDLCompiler:189 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/frame_read_write.v" Line 97: Size mismatch in connection of port <rd_data_count>. Formal port size is 9-bit while actual signal size is 16-bit.
 
 Elaborating module <frame_fifo_write(MEM_DATA_BITS=16,ADDR_BITS=24,BUSRT_BITS=10,BURST_SIZE=256)>.
-WARNING:HDLCompiler:189 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\frame_read_write.v" Line 144: Size mismatch in connection of port <wr_data_count>. Formal port size is 9-bit while actual signal size is 16-bit.
+WARNING:HDLCompiler:189 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/frame_read_write.v" Line 144: Size mismatch in connection of port <wr_data_count>. Formal port size is 9-bit while actual signal size is 16-bit.
 
 Elaborating module <frame_fifo_read(MEM_DATA_BITS=16,ADDR_BITS=24,BUSRT_BITS=10,FIFO_DEPTH=512,BURST_SIZE=256)>.
 
@@ -214,38 +217,38 @@ Elaborating module <sdram_core>.
 =========================================================================
 
 Synthesizing Unit <top>.
-    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\top.v".
+    Related source file is "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/top.v".
         MEM_DATA_BITS = 16
         ADDR_BITS = 24
         BUSRT_BITS = 10
-INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\top.v" line 114: Output port <locked> of the instance <sys_pll_m0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\top.v" line 124: Output port <locked> of the instance <video_pll_m0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\top.v" line 132: Output port <error> of the instance <i2c_config_m0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\top.v" line 132: Output port <done> of the instance <i2c_config_m0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\top.v" line 154: Output port <hblank> of the instance <cmos_8_16bit_m0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\top.v" line 176: Output port <de> of the instance <video_timing_data_m0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\top.v" line 190: Output port <read_finish> of the instance <frame_read_write_m0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\top.v" line 190: Output port <write_finish> of the instance <frame_read_write_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/top.v" line 114: Output port <locked> of the instance <sys_pll_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/top.v" line 124: Output port <locked> of the instance <video_pll_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/top.v" line 132: Output port <error> of the instance <i2c_config_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/top.v" line 132: Output port <done> of the instance <i2c_config_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/top.v" line 154: Output port <hblank> of the instance <cmos_8_16bit_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/top.v" line 176: Output port <de> of the instance <video_timing_data_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/top.v" line 190: Output port <read_finish> of the instance <frame_read_write_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/top.v" line 190: Output port <write_finish> of the instance <frame_read_write_m0> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <top> synthesized.
 
 Synthesizing Unit <sys_pll>.
-    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\ipcore_dir\sys_pll.v".
+    Related source file is "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/ipcore_dir/sys_pll.v".
     Summary:
 	no macro.
 Unit <sys_pll> synthesized.
 
 Synthesizing Unit <video_pll>.
-    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\ipcore_dir\video_pll.v".
+    Related source file is "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/ipcore_dir/video_pll.v".
     Summary:
 	no macro.
 Unit <video_pll> synthesized.
 
 Synthesizing Unit <i2c_config>.
-    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_config.v".
-INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_config.v" line 130: Output port <i2c_read_data> of the instance <i2c_master_top_m0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_config.v" line 130: Output port <i2c_read_req_ack> of the instance <i2c_master_top_m0> is unconnected or connected to loadless signal.
+    Related source file is "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_config.v".
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_config.v" line 130: Output port <i2c_read_data> of the instance <i2c_master_top_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_config.v" line 130: Output port <i2c_read_req_ack> of the instance <i2c_master_top_m0> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <i2c_read_req> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Found 10-bit register for signal <lut_index>.
     Found 3-bit register for signal <state>.
@@ -276,10 +279,10 @@ WARNING:Xst:653 - Signal <i2c_read_req> is used but never assigned. This sourcel
 Unit <i2c_config> synthesized.
 
 Synthesizing Unit <i2c_master_top>.
-    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_master_top.v".
+    Related source file is "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_master_top.v".
 WARNING:Xst:647 - Input <i2c_slave_dev_addr<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_master_top.v" line 261: Output port <i2c_busy> of the instance <byte_controller> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_master_top.v" line 261: Output port <i2c_al> of the instance <byte_controller> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_master_top.v" line 261: Output port <i2c_busy> of the instance <byte_controller> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_master_top.v" line 261: Output port <i2c_al> of the instance <byte_controller> is unconnected or connected to loadless signal.
     Found 8-bit register for signal <i2c_read_data>.
     Found 8-bit register for signal <txr>.
     Found 4-bit register for signal <state>.
@@ -315,7 +318,7 @@ INFO:Xst:1799 - State 1111 is never reached in FSM <state>.
 Unit <i2c_master_top> synthesized.
 
 Synthesizing Unit <i2c_master_byte_ctrl>.
-    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_master_byte_ctrl.v".
+    Related source file is "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_master_byte_ctrl.v".
         ST_IDLE = 5'b00000
         ST_START = 5'b00001
         ST_READ = 5'b00010
@@ -353,7 +356,7 @@ Synthesizing Unit <i2c_master_byte_ctrl>.
 Unit <i2c_master_byte_ctrl> synthesized.
 
 Synthesizing Unit <i2c_master_bit_ctrl>.
-    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\i2c_master\i2c_master_bit_ctrl.v".
+    Related source file is "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/i2c_master/i2c_master_bit_ctrl.v".
         idle = 18'b000000000000000000
         start_a = 18'b000000000000000001
         start_b = 18'b000000000000000010
@@ -418,7 +421,7 @@ Synthesizing Unit <i2c_master_bit_ctrl>.
 Unit <i2c_master_bit_ctrl> synthesized.
 
 Synthesizing Unit <lut_ov5640_rgb565_1024_768>.
-    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\lut_ov5640_rgb565_1024_768.v".
+    Related source file is "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/lut_ov5640_rgb565_1024_768.v".
     Found 512x32-bit Read Only RAM for signal <_n0914>
     Summary:
 	inferred   1 RAM(s).
@@ -426,7 +429,7 @@ Synthesizing Unit <lut_ov5640_rgb565_1024_768>.
 Unit <lut_ov5640_rgb565_1024_768> synthesized.
 
 Synthesizing Unit <cmos_8_16bit>.
-    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\cmos_8_16bit.v".
+    Related source file is "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/cmos_8_16bit.v".
     Found 12-bit register for signal <x_cnt>.
     Found 16-bit register for signal <pdata_o>.
     Found 1-bit register for signal <de_o>.
@@ -440,7 +443,7 @@ Synthesizing Unit <cmos_8_16bit>.
 Unit <cmos_8_16bit> synthesized.
 
 Synthesizing Unit <cmos_write_req_gen>.
-    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\cmos_write_req_gen.v".
+    Related source file is "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/cmos_write_req_gen.v".
     Found 2-bit register for signal <write_addr_index>.
     Found 2-bit register for signal <read_addr_index>.
     Found 1-bit register for signal <cmos_vsync_d1>.
@@ -455,11 +458,11 @@ Synthesizing Unit <cmos_write_req_gen>.
 Unit <cmos_write_req_gen> synthesized.
 
 Synthesizing Unit <video_timing_data>.
-    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\video_timing_data.v".
+    Related source file is "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/video_timing_data.v".
         DATA_WIDTH = 16
-INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\video_timing_data.v" line 103: Output port <rgb_r> of the instance <color_bar_m0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\video_timing_data.v" line 103: Output port <rgb_g> of the instance <color_bar_m0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\video_timing_data.v" line 103: Output port <rgb_b> of the instance <color_bar_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/video_timing_data.v" line 103: Output port <rgb_r> of the instance <color_bar_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/video_timing_data.v" line 103: Output port <rgb_g> of the instance <color_bar_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/video_timing_data.v" line 103: Output port <rgb_b> of the instance <color_bar_m0> is unconnected or connected to loadless signal.
     Found 16-bit register for signal <vout_data_r>.
     Found 1-bit register for signal <video_vs_d0>.
     Found 1-bit register for signal <video_de_d0>.
@@ -474,7 +477,7 @@ INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src
 Unit <video_timing_data> synthesized.
 
 Synthesizing Unit <color_bar>.
-    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\color_bar.v".
+    Related source file is "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/color_bar.v".
         H_ACTIVE = 16'b0000010000000000
         H_FP = 16'b0000000000011000
         H_SYNC = 16'b0000000010001000
@@ -536,25 +539,25 @@ Synthesizing Unit <color_bar>.
 Unit <color_bar> synthesized.
 
 Synthesizing Unit <frame_read_write>.
-    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\frame_read_write.v".
+    Related source file is "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/frame_read_write.v".
         MEM_DATA_BITS = 16
         READ_DATA_BITS = 16
         WRITE_DATA_BITS = 16
         ADDR_BITS = 24
         BUSRT_BITS = 10
         BURST_SIZE = 256
-INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\frame_read_write.v" line 87: Output port <wr_data_count> of the instance <write_buf> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\frame_read_write.v" line 87: Output port <full> of the instance <write_buf> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\frame_read_write.v" line 87: Output port <empty> of the instance <write_buf> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\frame_read_write.v" line 133: Output port <rd_data_count> of the instance <read_buf> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\frame_read_write.v" line 133: Output port <full> of the instance <read_buf> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\frame_read_write.v" line 133: Output port <empty> of the instance <read_buf> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/frame_read_write.v" line 87: Output port <wr_data_count> of the instance <write_buf> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/frame_read_write.v" line 87: Output port <full> of the instance <write_buf> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/frame_read_write.v" line 87: Output port <empty> of the instance <write_buf> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/frame_read_write.v" line 133: Output port <rd_data_count> of the instance <read_buf> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/frame_read_write.v" line 133: Output port <full> of the instance <read_buf> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/frame_read_write.v" line 133: Output port <empty> of the instance <read_buf> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <frame_read_write> synthesized.
 
 Synthesizing Unit <frame_fifo_write>.
-    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\frame_fifo_write.v".
+    Related source file is "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/frame_fifo_write.v".
         MEM_DATA_BITS = 16
         ADDR_BITS = 24
         BUSRT_BITS = 10
@@ -606,7 +609,7 @@ Synthesizing Unit <frame_fifo_write>.
 Unit <frame_fifo_write> synthesized.
 
 Synthesizing Unit <frame_fifo_read>.
-    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\frame_fifo_read.v".
+    Related source file is "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/frame_fifo_read.v".
         MEM_DATA_BITS = 16
         ADDR_BITS = 24
         BUSRT_BITS = 10
@@ -659,7 +662,7 @@ Synthesizing Unit <frame_fifo_read>.
 Unit <frame_fifo_read> synthesized.
 
 Synthesizing Unit <sdram_core>.
-    Related source file is "E:\BaiduYunDownload\AX309.190502\demo\18_1_sdram_ov5640_vga\src\sdram\sdram_core_v2.v".
+    Related source file is "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/src/sdram/sdram_core_v2.v".
         T_RP = 4
         T_RC = 6
         T_MRD = 6
@@ -1685,12 +1688,13 @@ sys_pll_m0/pll_base_inst/CLKOUT2|    7.141|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 12.52 secs
+Total REAL time to Xst completion: 29.00 secs
+Total CPU time to Xst completion: 26.14 secs
  
 --> 
 
-Total memory usage is 272172 kilobytes
+
+Total memory usage is 497752 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  222 (   0 filtered)

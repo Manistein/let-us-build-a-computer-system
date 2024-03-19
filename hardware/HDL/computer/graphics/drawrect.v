@@ -2,11 +2,11 @@
 
 // Draw a solid rectangle on the screen
 module drawrect#(
-    parameter BURST_BITS = 10,
-    parameter SCREEN_WIDTH = 640,
-    parameter SCREEN_HEIGHT = 480,
-    parameter MAX_WRITE_BURST_LEN = 128,
-    parameter BIT_SIZE = 10
+    parameter BURST_BITS = 10'd10,
+    parameter SCREEN_WIDTH = 10'd640,
+    parameter SCREEN_HEIGHT = 10'd480,
+    parameter MAX_WRITE_BURST_LEN = 10'd128,
+    parameter BIT_SIZE = 10'd10
 )
 (
     input clk,

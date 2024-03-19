@@ -23,11 +23,11 @@ module drawunit(
 
 localparam DRAW_CMD_RECT = 8'h01;
 
-localparam STATE_IDLE = 4'd0;
-localparam STATE_DRAW = 4'd1;
+localparam STATE_IDLE = 2'd0;
+localparam STATE_DRAW = 2'd1;
 
-reg [3:0] prev_state;
-reg [3:0] state;
+reg [1:0] prev_state;
+reg [1:0] state;
 reg [7:0] command_r;
 reg [255:0] data_r;
 
@@ -36,8 +36,8 @@ always @(posedge clk or negedge rst_n) begin
         state <= STATE_IDLE;
         prev_state <= STATE_IDLE;
 
-        command_r <= 8'd0;
-        data_r <= 256'd0;
+        command_r <= 8'b0;
+        data_r <= 256'b0;
     end else begin
         case (state)
             STATE_IDLE: begin
@@ -114,11 +114,11 @@ always @(*) begin
             done_r = dr_done;
         end
         default: begin
-            write_burst_req_r = 0;
-            rgb_r = 16'd0;
-            addr_r = 21'd0;
-            write_burst_len_r = 10'd0;
-            done_r = 0;
+            write_burst_req_r = 1'b0;
+            rgb_r = 16'b0;
+            addr_r = 21'b0;
+            write_burst_len_r = 10'b0;
+            done_r = 1'b0;
         end
     endcase
 end

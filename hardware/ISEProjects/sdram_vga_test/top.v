@@ -39,7 +39,6 @@ localparam HEIGHT = 10'd100;
 wire clk_100m;
 wire vga_clk;
 
-reg [15:0] color;
 reg commit;
 
 wire write_burst_req;
@@ -49,8 +48,8 @@ wire write_burst_data_finish;
 wire [15:0] rgb;
 wire [21:0] addr;
 wire [9:0] write_burst_len;
-wire done;
-wire ack;
+// wire done;
+// wire ack;
 
 chip_pll pll_0 (
     .clk_in(clk_50m),
@@ -61,11 +60,9 @@ chip_pll pll_0 (
 
 always @(posedge clk_100m or negedge key1_n) begin
     if (!key1_n) begin
-        color <= 16'hf800;
-        commit <= 1;
+        commit <= 1'b1;
     end else begin
-        color <= 16'h07e0;
-        commit <= 0;
+        commit <= 1'b0;
     end
 end
 
@@ -74,7 +71,7 @@ drawunit du_0(
     .rst_n(rst_n),
 
     .command(DRAW_CMD_RECT),
-    .data({200'b0, color, HEIGHT, WIDTH, Y_POS, X_POS}),
+    .data({200'b0, 16'h0ff0, HEIGHT, WIDTH, Y_POS, X_POS}),
     .commit(commit),
 
     .write_burst_data_req(write_burst_data_req),
@@ -85,8 +82,8 @@ drawunit du_0(
     .addr(addr),
     .write_burst_len(write_burst_len),
 
-    .done(done),
-    .ack(ack)
+    .done(),
+    .ack()
 );
 
 wire [15:0] read_data;
@@ -164,7 +161,7 @@ frame_fifo_read_m0
 	.read_addr_index            (2'd0),    
 	.read_len                   (24'd307200), // 640*480
 	.fifo_aclr                  (read_fifo_aclr),
-	.wr_data_count              ({6'b0, wr_data_count})
+	.wr_data_count              ({7'b0, wr_data_count})
 );
 
 sdram_core sdram_core_0(

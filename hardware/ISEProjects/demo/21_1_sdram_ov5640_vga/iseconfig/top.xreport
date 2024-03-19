@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-05-02T14:19:01</DateModified>
+  <DateModified>2024-03-19T03:00:28</DateModified>
   <ModuleName>top</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>E:/BaiduYunDownload/AX309.190502/demo/18_1_sdram_ov5640_vga/iseconfig/top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>E:/BaiduYunDownload/AX309.190502/demo/18_1_sdram_ov5640_vga\</ImplementationReportsDirectory>
+  <SummaryTimeStamp>2024-03-19T02:50:58</SummaryTimeStamp>
+  <SavedFilePath>/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/iseconfig/top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/</ImplementationReportsDirectory>
   <DateInitialized>2017-08-04T10:13:02</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
