@@ -6,3 +6,4 @@ trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top
 bitgen -intstyle ise -f top.ut top.ncd 
 xst -intstyle ise -ifn "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/top.xst" -ofn "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/top.syr" 
 xst -intstyle ise -ifn "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/top.xst" -ofn "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/top.syr" 
+xst -intstyle ise -ifn "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/top.xst" -ofn "/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/top.syr" 

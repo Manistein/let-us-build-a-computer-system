@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-05-06T19:12:21</DateModified>
+  <DateModified>2024-03-21T13:15:58</DateModified>
   <ModuleName>led_test</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>E:/Project/01_led_test/iseconfig/led_test.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>E:/Project/01_led_test\</ImplementationReportsDirectory>
+  <SavedFilePath>/home/ise/hardware/ISEProjects/demo/01_led_test/iseconfig/led_test.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/ise/hardware/ISEProjects/demo/01_led_test/</ImplementationReportsDirectory>
   <DateInitialized>2017-09-22T09:40:49</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

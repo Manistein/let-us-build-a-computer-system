@@ -52,6 +52,7 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="fifo_test.ut" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:fileType="FILE_XPI" xil_pn:name="fifo_test.xpi"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="fifo_test.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="fifo_test_envsettings.html"/>
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="fifo_test_guide.ncd" xil_pn:origination="imported"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="fifo_test_map.map" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="fifo_test_map.mrp" xil_pn:subbranch="Map"/>
@@ -77,6 +78,7 @@
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
     <transform xil_pn:end_ts="1556878074" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1556878074">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1556878074" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="7303018047572311032" xil_pn:start_ts="1556878074">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -104,7 +106,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1556878085" xil_pn:in_ck="-3665196178396789513" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-6393929941251345713" xil_pn:start_ts="1556878074">
+    <transform xil_pn:end_ts="1710906526" xil_pn:in_ck="-3665196178396789513" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-6393929941251345713" xil_pn:start_ts="1710906497">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -126,7 +128,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1556878092" xil_pn:in_ck="9062416280271872809" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-8101185814658566847" xil_pn:start_ts="1556878085">
+    <transform xil_pn:end_ts="1710906736" xil_pn:in_ck="9062416280271872809" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-8101185814658566847" xil_pn:start_ts="1710906723">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="_ngo"/>
@@ -135,11 +137,10 @@
       <outfile xil_pn:name="fifo_test.ngd"/>
       <outfile xil_pn:name="fifo_test_ngdbuild.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1556878104" xil_pn:in_ck="-8800858522216743207" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="111412226054857016" xil_pn:start_ts="1556878092">
+    <transform xil_pn:end_ts="1710906769" xil_pn:in_ck="-8800858522216743207" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="111412226054857016" xil_pn:start_ts="1710906736">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
       <outfile xil_pn:name="fifo_test.pcf"/>
       <outfile xil_pn:name="fifo_test_map.map"/>
@@ -150,7 +151,7 @@
       <outfile xil_pn:name="fifo_test_summary.xml"/>
       <outfile xil_pn:name="fifo_test_usage.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1556878122" xil_pn:in_ck="-2087027748012455278" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="93661965788626211" xil_pn:start_ts="1556878104">
+    <transform xil_pn:end_ts="1710906811" xil_pn:in_ck="-2087027748012455278" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="93661965788626211" xil_pn:start_ts="1710906769">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
@@ -164,7 +165,7 @@
       <outfile xil_pn:name="fifo_test_pad.txt"/>
       <outfile xil_pn:name="fifo_test_par.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1556878136" xil_pn:in_ck="-8874277609047847386" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="396117104113915555" xil_pn:start_ts="1556878122">
+    <transform xil_pn:end_ts="1710906838" xil_pn:in_ck="-8874277609047847386" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1710906818">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -180,8 +181,10 @@
     <transform xil_pn:end_ts="1556878142" xil_pn:in_ck="-8874277609047860240" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="8482462020707587906" xil_pn:start_ts="1556878141">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
     </transform>
-    <transform xil_pn:end_ts="1556878122" xil_pn:in_ck="-6110420615855896619" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1556878117">
+    <transform xil_pn:end_ts="1710906811" xil_pn:in_ck="-6110420615855896619" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1710906800">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>

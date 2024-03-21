@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Sat Mar  9 10:41:24 2024
+# Date: Thu Mar 21 13:59:50 2024
 #
 ##############################################################
 #
@@ -28,7 +28,7 @@ SET flowvendor = Other
 SET formalverification = false
 SET foundationsym = false
 SET implementationfiletype = Ngc
-SET package = tqg144
+SET package = ftg256
 SET removerpms = false
 SET simulationfiles = Behavioral
 SET speedgrade = -2
@@ -80,7 +80,7 @@ CSET clkout2_used=true
 CSET clkout3_drives=BUFG
 CSET clkout3_requested_duty_cycle=50.000
 CSET clkout3_requested_out_freq=25.000
-CSET clkout3_requested_phase=90.000
+CSET clkout3_requested_phase=0.000
 CSET clkout3_used=true
 CSET clkout4_drives=BUFG
 CSET clkout4_requested_duty_cycle=50.000
@@ -208,7 +208,7 @@ CSET pll_clkout1_duty_cycle=0.500
 CSET pll_clkout1_phase=90.000
 CSET pll_clkout2_divide=16
 CSET pll_clkout2_duty_cycle=0.500
-CSET pll_clkout2_phase=90.000
+CSET pll_clkout2_phase=0.000
 CSET pll_clkout3_divide=1
 CSET pll_clkout3_duty_cycle=0.500
 CSET pll_clkout3_phase=0.000
@@ -266,4 +266,4 @@ CSET use_status=false
 MISC pkg_timestamp=2012-05-10T12:44:55Z
 # END Extra information
 GENERATE
-# CRC: 3871e85c
+# CRC: fcf41018

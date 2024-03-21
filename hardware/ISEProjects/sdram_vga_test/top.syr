@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> 
 Reading design: top.prj
@@ -49,7 +49,7 @@ Ignore Synthesis Constraint File   : NO
 ---- Target Parameters
 Output File Name                   : "top"
 Output Format                      : NGC
-Target Device                      : xc6slx9-2-tqg144
+Target Device                      : xc6slx9-2-ftg256
 
 ---- Source Options
 Top Module Name                    : top
@@ -141,7 +141,7 @@ Elaborating module <chip_pll>.
 
 Elaborating module <IBUFG>.
 
-Elaborating module <PLL_BASE(BANDWIDTH="OPTIMIZED",CLK_FEEDBACK="CLKFBOUT",COMPENSATION="SYSTEM_SYNCHRONOUS",DIVCLK_DIVIDE=1,CLKFBOUT_MULT=8,CLKFBOUT_PHASE=0.0,CLKOUT0_DIVIDE=4,CLKOUT0_PHASE=0.0,CLKOUT0_DUTY_CYCLE=0.5,CLKOUT1_DIVIDE=4,CLKOUT1_PHASE=90.0,CLKOUT1_DUTY_CYCLE=0.5,CLKOUT2_DIVIDE=16,CLKOUT2_PHASE=90.0,CLKOUT2_DUTY_CYCLE=0.5,CLKIN_PERIOD=20.0,REF_JITTER=0.01)>.
+Elaborating module <PLL_BASE(BANDWIDTH="OPTIMIZED",CLK_FEEDBACK="CLKFBOUT",COMPENSATION="SYSTEM_SYNCHRONOUS",DIVCLK_DIVIDE=1,CLKFBOUT_MULT=8,CLKFBOUT_PHASE=0.0,CLKOUT0_DIVIDE=4,CLKOUT0_PHASE=0.0,CLKOUT0_DUTY_CYCLE=0.5,CLKOUT1_DIVIDE=4,CLKOUT1_PHASE=90.0,CLKOUT1_DUTY_CYCLE=0.5,CLKOUT2_DIVIDE=16,CLKOUT2_PHASE=0.0,CLKOUT2_DUTY_CYCLE=0.5,CLKIN_PERIOD=20.0,REF_JITTER=0.01)>.
 WARNING:HDLCompiler:1127 - "/home/ise/hardware/ISEProjects/sdram_vga_test/ipcore_dir/chip_pll.v" Line 124: Assignment to clkout3_unused ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "/home/ise/hardware/ISEProjects/sdram_vga_test/ipcore_dir/chip_pll.v" Line 125: Assignment to clkout4_unused ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "/home/ise/hardware/ISEProjects/sdram_vga_test/ipcore_dir/chip_pll.v" Line 126: Assignment to clkout5_unused ignored, since the identifier is never used
@@ -158,6 +158,7 @@ WARNING:HDLCompiler:413 - "../../HDL/computer/graphics/drawrect.v" Line 85: Resu
 Elaborating module <video_timing_data>.
 
 Elaborating module <color_bar>.
+WARNING:HDLCompiler:1127 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" Line 113: Assignment to vout_data ignored, since the identifier is never used
 
 Elaborating module <fifo>.
 WARNING:HDLCompiler:1499 - "/home/ise/hardware/ISEProjects/sdram_vga_test/ipcore_dir/fifo.v" Line 39: Empty module <fifo> remains a black box.
@@ -174,11 +175,11 @@ Synthesizing Unit <top>.
     Related source file is "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v".
 INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 69: Output port <done> of the instance <du_0> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 69: Output port <ack> of the instance <du_0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 99: Output port <de> of the instance <vtd_0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 122: Output port <rd_data_count> of the instance <fifo_i0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 122: Output port <full> of the instance <fifo_i0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 122: Output port <empty> of the instance <fifo_i0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 145: Output port <read_finish> of the instance <frame_fifo_read_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 101: Output port <vout_data> of the instance <vtd_0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 124: Output port <rd_data_count> of the instance <fifo_i0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 124: Output port <full> of the instance <fifo_i0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 124: Output port <empty> of the instance <fifo_i0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/sdram_vga_test/top.v" line 147: Output port <read_finish> of the instance <frame_fifo_read_m0> is unconnected or connected to loadless signal.
     Found 1-bit register for signal <commit>.
     Summary:
 	inferred   1 D-type flip-flop(s).
@@ -1007,7 +1008,22 @@ WARNING:Xst:1710 - FF/Latch <sdram_core_0/sdr_dq_out_2> (without init value) has
 WARNING:Xst:1710 - FF/Latch <sdram_core_0/sdr_dq_out_1> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <sdram_core_0/sdr_dq_out_0> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <du_0/prev_state_0> of sequential type is unconnected in block <top>.
-WARNING:Xst:2677 - Node <vtd_0/video_de_d1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <vtd_0/vout_data_r_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <vtd_0/vout_data_r_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <vtd_0/vout_data_r_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <vtd_0/vout_data_r_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <vtd_0/vout_data_r_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <vtd_0/vout_data_r_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <vtd_0/vout_data_r_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <vtd_0/vout_data_r_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <vtd_0/vout_data_r_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <vtd_0/vout_data_r_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <vtd_0/vout_data_r_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <vtd_0/vout_data_r_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <vtd_0/vout_data_r_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <vtd_0/vout_data_r_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <vtd_0/vout_data_r_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <vtd_0/vout_data_r_0> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <vtd_0/color_bar_m0/rgb_b_reg_0> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <vtd_0/color_bar_m0/rgb_r_reg_0> of sequential type is unconnected in block <top>.
 WARNING:Xst:2677 - Node <vtd_0/color_bar_m0/rgb_g_reg_0> of sequential type is unconnected in block <top>.
@@ -1034,7 +1050,7 @@ INFO:Xst:2261 - The FF/Latch <frame_fifo_read_m0/fifo_aclr> in Unit <top> is equ
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 10.
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 9.
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <fifo_i0> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <fifo_i0> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <fifo_i0> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
@@ -1051,8 +1067,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 202
- Flip-Flops                                            : 202
+# Registers                                            : 187
+ Flip-Flops                                            : 187
 
 =========================================================================
 
@@ -1075,11 +1091,11 @@ Top Level Output File Name         : top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 787
+# BELS                             : 771
 #      GND                         : 3
 #      INV                         : 12
 #      LUT1                        : 68
-#      LUT2                        : 131
+#      LUT2                        : 115
 #      LUT3                        : 47
 #      LUT4                        : 64
 #      LUT5                        : 47
@@ -1088,11 +1104,11 @@ Primitive and Black Box Usage:
 #      MUXF7                       : 27
 #      VCC                         : 2
 #      XORCY                       : 112
-# FlipFlops/Latches                : 352
+# FlipFlops/Latches                : 337
 #      FD                          : 4
-#      FDC                         : 195
+#      FDC                         : 179
 #      FDCE                        : 115
-#      FDE                         : 2
+#      FDE                         : 3
 #      FDP                         : 33
 #      FDPE                        : 2
 #      FDSE                        : 1
@@ -1113,24 +1129,24 @@ Primitive and Black Box Usage:
 Device utilization summary:
 ---------------------------
 
-Selected Device : 6slx9tqg144-2 
+Selected Device : 6slx9ftg256-2 
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             352  out of  11440     3%  
- Number of Slice LUTs:                  511  out of   5720     8%  
-    Number used as Logic:               511  out of   5720     8%  
+ Number of Slice Registers:             337  out of  11440     2%  
+ Number of Slice LUTs:                  495  out of   5720     8%  
+    Number used as Logic:               495  out of   5720     8%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    624
-   Number with an unused Flip Flop:     272  out of    624    43%  
-   Number with an unused LUT:           113  out of    624    18%  
-   Number of fully used LUT-FF pairs:   239  out of    624    38%  
+ Number of LUT Flip Flop pairs used:    609
+   Number with an unused Flip Flop:     272  out of    609    44%  
+   Number with an unused LUT:           114  out of    609    18%  
+   Number of fully used LUT-FF pairs:   223  out of    609    36%  
    Number of unique control sets:        23
 
 IO Utilization: 
  Number of IOs:                          60
- Number of bonded IOBs:                  60  out of    102    58%  
+ Number of bonded IOBs:                  60  out of    186    32%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                1  out of     32     3%  
@@ -1161,7 +1177,7 @@ Clock Information:
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
 pll_0/pll_base_inst/CLKOUT1        | BUFG                   | 230   |
-pll_0/pll_base_inst/CLKOUT2        | BUFG                   | 124   |
+pll_0/pll_base_inst/CLKOUT2        | BUFG                   | 109   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -1173,7 +1189,7 @@ Timing Summary:
 Speed Grade: -2
 
    Minimum period: 9.314ns (Maximum Frequency: 107.365MHz)
-   Minimum input arrival time before clock: 5.258ns
+   Minimum input arrival time before clock: 5.278ns
    Maximum output required time after clock: 5.554ns
    Maximum combinational path delay: No path found
 
@@ -1209,7 +1225,7 @@ Delay:               9.314ns (Levels of Logic = 4)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'pll_0/pll_base_inst/CLKOUT2'
   Clock period: 6.915ns (frequency: 144.613MHz)
-  Total number of paths / destination ports: 1179 / 218
+  Total number of paths / destination ports: 1148 / 203
 -------------------------------------------------------------------------
 Delay:               6.915ns (Levels of Logic = 4)
   Source:            vtd_0/color_bar_m0/h_cnt_3 (FF)
@@ -1235,7 +1251,7 @@ Delay:               6.915ns (Levels of Logic = 4)
 Timing constraint: Default OFFSET IN BEFORE for Clock 'pll_0/pll_base_inst/CLKOUT1'
   Total number of paths / destination ports: 166 / 166
 -------------------------------------------------------------------------
-Offset:              5.258ns (Levels of Logic = 2)
+Offset:              5.278ns (Levels of Logic = 2)
   Source:            rst_n (PAD)
   Destination:       sdram_core_0/cnt_200us_14 (FF)
   Destination Clock: pll_0/pll_base_inst/CLKOUT1 rising
@@ -1244,51 +1260,51 @@ Offset:              5.258ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             4   1.328   0.803  rst_n_IBUF (rst_n_IBUF)
-     INV:I->O            198   0.255   2.413  rst_n_INV_29_o1_INV_0 (du_0/dr_0/rst_n_inv)
+     IBUF:I->O             5   1.328   0.840  rst_n_IBUF (rst_n_IBUF)
+     INV:I->O            182   0.255   2.396  rst_n_INV_29_o1_INV_0 (du_0/dr_0/rst_n_inv)
      FDC:CLR                   0.459          du_0/dr_0/delta_x_0
     ----------------------------------------
-    Total                      5.258ns (2.042ns logic, 3.216ns route)
-                                       (38.8% logic, 61.2% route)
+    Total                      5.278ns (2.042ns logic, 3.236ns route)
+                                       (38.7% logic, 61.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'pll_0/pll_base_inst/CLKOUT2'
-  Total number of paths / destination ports: 53 / 53
+  Total number of paths / destination ports: 38 / 38
 -------------------------------------------------------------------------
-Offset:              5.258ns (Levels of Logic = 2)
+Offset:              5.278ns (Levels of Logic = 2)
   Source:            rst_n (PAD)
-  Destination:       vtd_0/vout_data_r_15 (FF)
+  Destination:       vtd_0/video_hs_d0 (FF)
   Destination Clock: pll_0/pll_base_inst/CLKOUT2 rising
 
-  Data Path: rst_n to vtd_0/vout_data_r_15
+  Data Path: rst_n to vtd_0/video_hs_d0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             4   1.328   0.803  rst_n_IBUF (rst_n_IBUF)
-     INV:I->O            198   0.255   2.413  rst_n_INV_29_o1_INV_0 (du_0/dr_0/rst_n_inv)
+     IBUF:I->O             5   1.328   0.840  rst_n_IBUF (rst_n_IBUF)
+     INV:I->O            182   0.255   2.396  rst_n_INV_29_o1_INV_0 (du_0/dr_0/rst_n_inv)
      FDC:CLR                   0.459          vtd_0/video_vs_d0
     ----------------------------------------
-    Total                      5.258ns (2.042ns logic, 3.216ns route)
-                                       (38.8% logic, 61.2% route)
+    Total                      5.278ns (2.042ns logic, 3.236ns route)
+                                       (38.7% logic, 61.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'pll_0/pll_base_inst/CLKOUT2'
-  Total number of paths / destination ports: 18 / 18
+  Total number of paths / destination ports: 12 / 12
 -------------------------------------------------------------------------
-Offset:              4.118ns (Levels of Logic = 1)
-  Source:            vtd_0/vout_data_r_15 (FF)
+Offset:              4.444ns (Levels of Logic = 1)
+  Source:            vtd_0/video_de_d1 (FF)
   Destination:       r<4> (PAD)
   Source Clock:      pll_0/pll_base_inst/CLKOUT2 rising
 
-  Data Path: vtd_0/vout_data_r_15 to r<4>
+  Data Path: vtd_0/video_de_d1 to r<4>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              1   0.525   0.681  vtd_0/vout_data_r_15 (vtd_0/vout_data_r_15)
+     FDE:C->Q             10   0.525   1.007  vtd_0/video_de_d1 (vtd_0/video_de_d1)
      OBUF:I->O                 2.912          r_4_OBUF (r<4>)
     ----------------------------------------
-    Total                      4.118ns (3.437ns logic, 0.681ns route)
-                                       (83.5% logic, 16.5% route)
+    Total                      4.444ns (3.437ns logic, 1.007ns route)
+                                       (77.3% logic, 22.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'pll_0/pll_base_inst/CLKOUT1'
@@ -1337,14 +1353,14 @@ pll_0/pll_base_inst/CLKOUT2|    6.915|         |         |         |
 
 
 Total REAL time to Xst completion: 23.00 secs
-Total CPU time to Xst completion: 21.49 secs
+Total CPU time to Xst completion: 21.13 secs
  
 --> 
 
 
-Total memory usage is 490196 kilobytes
+Total memory usage is 490176 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  353 (   0 filtered)
+Number of warnings :  369 (   0 filtered)
 Number of infos    :   33 (   0 filtered)
 

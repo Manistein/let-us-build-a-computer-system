@@ -1,18 +1,21 @@
-Release 14.7 - xst P.20131013 (nt64)
+Release 14.7 - xst P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to xst/projnav.tmp
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.15 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
  
---> Parameter xsthdpdir set to xst
+--> 
+Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.15 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
  
---> Reading design: fifo_test.prj
+--> 
+Reading design: fifo_test.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -108,13 +111,13 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "E:\Project\AX309\CD\09_VERILOG\13_fifo_test\ipcore_dir\fifo_ip.v" into library work
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/13_fifo_test/ipcore_dir/fifo_ip.v" into library work
 Parsing module <fifo_ip>.
-Analyzing Verilog file "E:\Project\AX309\CD\09_VERILOG\13_fifo_test\chipscope_ila.v" into library work
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/13_fifo_test/chipscope_ila.v" into library work
 Parsing module <chipscope_ila>.
-Analyzing Verilog file "E:\Project\AX309\CD\09_VERILOG\13_fifo_test\chipscope_icon.v" into library work
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/13_fifo_test/chipscope_icon.v" into library work
 Parsing module <chipscope_icon>.
-Analyzing Verilog file "E:\Project\AX309\CD\09_VERILOG\13_fifo_test\fifo_test.v" into library work
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/13_fifo_test/fifo_test.v" into library work
 Parsing module <fifo_test>.
 
 =========================================================================
@@ -124,19 +127,19 @@ Parsing module <fifo_test>.
 Elaborating module <fifo_test>.
 
 Elaborating module <fifo_ip>.
-WARNING:HDLCompiler:1499 - "E:\Project\AX309\CD\09_VERILOG\13_fifo_test\ipcore_dir\fifo_ip.v" Line 39: Empty module <fifo_ip> remains a black box.
+WARNING:HDLCompiler:1499 - "/home/ise/hardware/ISEProjects/demo/13_fifo_test/ipcore_dir/fifo_ip.v" Line 39: Empty module <fifo_ip> remains a black box.
 
 Elaborating module <chipscope_icon>.
 
 Elaborating module <chipscope_ila>.
-WARNING:HDLCompiler:634 - "E:\Project\AX309\CD\09_VERILOG\13_fifo_test\fifo_test.v" Line 117: Net <TRIG0[255]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/ise/hardware/ISEProjects/demo/13_fifo_test/fifo_test.v" Line 117: Net <TRIG0[255]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <fifo_test>.
-    Related source file is "E:\Project\AX309\CD\09_VERILOG\13_fifo_test\fifo_test.v".
+    Related source file is "/home/ise/hardware/ISEProjects/demo/13_fifo_test/fifo_test.v".
 WARNING:Xst:653 - Signal <TRIG0<255:54>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Found 16-bit register for signal <w_data>.
     Found 3-bit register for signal <read_state>.
@@ -730,12 +733,13 @@ icon_debug/U0/iUPDATE_OUT|    2.300|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 8.51 secs
+Total REAL time to Xst completion: 24.00 secs
+Total CPU time to Xst completion: 22.69 secs
  
 --> 
 
-Total memory usage is 268204 kilobytes
+
+Total memory usage is 490084 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    3 (   0 filtered)

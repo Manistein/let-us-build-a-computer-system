@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-03-19T03:00:28</DateModified>
+  <DateModified>2024-03-20T06:36:55</DateModified>
   <ModuleName>top</ModuleName>
   <SummaryTimeStamp>2024-03-19T02:50:58</SummaryTimeStamp>
   <SavedFilePath>/home/ise/hardware/ISEProjects/demo/21_1_sdram_ov5640_vga/iseconfig/top.xreport</SavedFilePath>

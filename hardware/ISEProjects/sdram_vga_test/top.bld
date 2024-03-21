@@ -2,7 +2,7 @@ Release 14.7 ngdbuild P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
-ise -dd _ngo -sd ipcore_dir -nt timestamp -uc top.ucf -p xc6slx9-tqg144-2
+ise -dd _ngo -sd ipcore_dir -nt timestamp -uc top2.ucf -p xc6slx9-ftg256-2
 top.ngc top.ngd
 
 Reading NGO file "/home/ise/hardware/ISEProjects/sdram_vga_test/top.ngc" ...
@@ -10,7 +10,7 @@ Loading design module "ipcore_dir/fifo.ngc"...
 Gathering constraint information from source properties...
 Done.
 
-Annotating constraints to design from ucf file "top.ucf" ...
+Annotating constraints to design from ucf file "top2.ucf" ...
 Resolving constraint associations...
 Checking Constraint Associations...
 INFO:ConstraintSystem:178 - TNM 'sys_clk_pin', used in period specification
@@ -25,7 +25,7 @@ INFO:ConstraintSystem:178 - TNM 'sys_clk_pin', used in period specification
    TNM groups and period specifications were generated at the PLL_ADV output(s):
     
    CLKOUT2: <TIMESPEC TS_pll_0_clkout2 = PERIOD "pll_0_clkout2" TS_sys_clk_pin *
-   0.5 PHASE 10 ns HIGH 50%>
+   0.5 HIGH 50%>
 
 Done...
 
@@ -42,10 +42,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 503500 kilobytes
+Total memory usage is 500748 kilobytes
 
 Writing NGD file "top.ngd" ...
-Total REAL time to NGDBUILD completion:  8 sec
+Total REAL time to NGDBUILD completion:  7 sec
 Total CPU time to NGDBUILD completion:   7 sec
 
 Writing NGDBUILD log file "top.bld"...

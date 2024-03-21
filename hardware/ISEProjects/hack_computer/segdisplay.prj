@@ -1,2 +1,0 @@
-verilog work "../HDL/computer/rom/test/test_rom.v"
-verilog work "../HDL/computer/segdisplay.v"

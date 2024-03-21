@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2017-11-16T11:24:00</DateModified>
+  <DateModified>2024-03-21T13:42:28</DateModified>
   <ModuleName>top</ModuleName>
-  <SummaryTimeStamp>2017-07-27T16:17:31</SummaryTimeStamp>
-  <SavedFilePath>D:/new/AX309/demo/12_1_vga_test/iseconfig/top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>D:/new/AX309/demo/12_1_vga_test\</ImplementationReportsDirectory>
+  <SummaryTimeStamp>2024-03-21T13:34:58</SummaryTimeStamp>
+  <SavedFilePath>/home/ise/hardware/ISEProjects/demo/15_1_vga_test/iseconfig/top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/ise/hardware/ISEProjects/demo/15_1_vga_test/</ImplementationReportsDirectory>
   <DateInitialized>2017-07-27T16:03:30</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

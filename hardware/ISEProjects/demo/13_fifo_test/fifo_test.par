@@ -1,15 +1,21 @@
-Release 14.7 par P.20131013 (nt64)
+Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-LAOLUO-PC::  Fri May 03 18:08:25 2019
+localhost.localdomain::  Wed Mar 20 03:52:51 2024
 
 par -w -intstyle ise -ol high -mt off fifo_test_map.ncd fifo_test.ncd
 fifo_test.pcf 
 
 
 Constraints file: fifo_test.pcf.
-Loading device for application Rf_Device from file '6slx9.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
+Loading device for application Rf_Device from file '6slx9.nph' in environment /opt/Xilinx/14.7/ISE_DS/ISE/.
    "fifo_test" is an NCD, version 3.2, device xc6slx9, package ftg256, speed -2
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+INFO:Security:54 - 'xc6slx9' is a WebPack part.
+WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue
+to function, but you no longer qualify for Xilinx software updates or new releases.
+
+----------------------------------------------------------------------
 
 Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
 Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.260 Volts)
@@ -94,35 +100,35 @@ Specific Feature Utilization:
 Overall effort level (-ol):   High 
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 3 secs 
-Finished initial Timing Analysis.  REAL time: 3 secs 
+Starting initial Timing Analysis.  REAL time: 8 secs 
+Finished initial Timing Analysis.  REAL time: 8 secs 
 
 Starting Router
 
 
-Phase  1  : 7023 unrouted;      REAL time: 4 secs 
+Phase  1  : 7023 unrouted;      REAL time: 8 secs 
 
-Phase  2  : 4097 unrouted;      REAL time: 4 secs 
+Phase  2  : 4097 unrouted;      REAL time: 10 secs 
 
-Phase  3  : 1172 unrouted;      REAL time: 6 secs 
+Phase  3  : 1172 unrouted;      REAL time: 16 secs 
 
-Phase  4  : 1172 unrouted; (Setup:0, Hold:263, Component Switching Limit:0)     REAL time: 6 secs 
+Phase  4  : 1172 unrouted; (Setup:0, Hold:263, Component Switching Limit:0)     REAL time: 17 secs 
 
 Updating file: fifo_test.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:265, Component Switching Limit:0)     REAL time: 9 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:265, Component Switching Limit:0)     REAL time: 23 secs 
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:265, Component Switching Limit:0)     REAL time: 9 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:265, Component Switching Limit:0)     REAL time: 23 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:265, Component Switching Limit:0)     REAL time: 9 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:265, Component Switching Limit:0)     REAL time: 23 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:265, Component Switching Limit:0)     REAL time: 9 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:265, Component Switching Limit:0)     REAL time: 23 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 9 secs 
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 24 secs 
 
-Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 9 secs 
-Total REAL time to Router completion: 9 secs 
-Total CPU time to Router completion: 9 secs 
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 24 secs 
+Total REAL time to Router completion: 24 secs 
+Total CPU time to Router completion: 23 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -179,10 +185,10 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 9 secs 
-Total CPU time to PAR completion: 9 secs 
+Total REAL time to PAR completion: 26 secs 
+Total CPU time to PAR completion: 25 secs 
 
-Peak Memory Usage:  639 MB
+Peak Memory Usage:  635 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

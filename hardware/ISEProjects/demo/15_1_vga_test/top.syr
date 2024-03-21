@@ -1,0 +1,505 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> 
+Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc6slx9-2-ftg256
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/15_1_vga_test/ipcore_dir/video_pll.v" into library work
+Parsing module <video_pll>.
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/15_1_vga_test/src/color_bar.v" into library work
+Parsing verilog file "/home/ise/hardware/ISEProjects/demo/15_1_vga_test/src/video_define.v" included at line 33.
+Parsing module <color_bar>.
+Analyzing Verilog file "/home/ise/hardware/ISEProjects/demo/15_1_vga_test/src/top.v" into library work
+Parsing module <top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <top>.
+
+Elaborating module <video_pll>.
+
+Elaborating module <IBUFG>.
+
+Elaborating module <DCM_SP(CLKDV_DIVIDE=2.0,CLKFX_DIVIDE=10,CLKFX_MULTIPLY=13,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=20.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
+WARNING:HDLCompiler:1127 - "/home/ise/hardware/ISEProjects/demo/15_1_vga_test/ipcore_dir/video_pll.v" Line 130: Assignment to status_int ignored, since the identifier is never used
+
+Elaborating module <BUFG>.
+WARNING:HDLCompiler:1127 - "/home/ise/hardware/ISEProjects/demo/15_1_vga_test/src/top.v" Line 61: Assignment to LOCKED ignored, since the identifier is never used
+
+Elaborating module <color_bar>.
+WARNING:HDLCompiler:1127 - "/home/ise/hardware/ISEProjects/demo/15_1_vga_test/src/top.v" Line 68: Assignment to video_de ignored, since the identifier is never used
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <top>.
+    Related source file is "/home/ise/hardware/ISEProjects/demo/15_1_vga_test/src/top.v".
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/15_1_vga_test/src/top.v" line 57: Output port <LOCKED> of the instance <video_pll_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/hardware/ISEProjects/demo/15_1_vga_test/src/top.v" line 63: Output port <de> of the instance <color_bar_m0> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <top> synthesized.
+
+Synthesizing Unit <video_pll>.
+    Related source file is "/home/ise/hardware/ISEProjects/demo/15_1_vga_test/ipcore_dir/video_pll.v".
+    Summary:
+	no macro.
+Unit <video_pll> synthesized.
+
+Synthesizing Unit <color_bar>.
+    Related source file is "/home/ise/hardware/ISEProjects/demo/15_1_vga_test/src/color_bar.v".
+        H_ACTIVE = 16'b0000010000000000
+        H_FP = 16'b0000000000011000
+        H_SYNC = 16'b0000000010001000
+        H_BP = 16'b0000000010100000
+        V_ACTIVE = 16'b0000001100000000
+        V_FP = 16'b0000000000000011
+        V_SYNC = 16'b0000000000000110
+        V_BP = 16'b0000000000011101
+        HS_POL = 1'b0
+        VS_POL = 1'b0
+        H_TOTAL = 16'b0000010101000000
+        V_TOTAL = 16'b0000001100100110
+        WHITE_R = 8'b11111111
+        WHITE_G = 8'b11111111
+        WHITE_B = 8'b11111111
+        YELLOW_R = 8'b11111111
+        YELLOW_G = 8'b11111111
+        YELLOW_B = 8'b00000000
+        CYAN_R = 8'b00000000
+        CYAN_G = 8'b11111111
+        CYAN_B = 8'b11111111
+        GREEN_R = 8'b00000000
+        GREEN_G = 8'b11111111
+        GREEN_B = 8'b00000000
+        MAGENTA_R = 8'b11111111
+        MAGENTA_G = 8'b00000000
+        MAGENTA_B = 8'b11111111
+        RED_R = 8'b11111111
+        RED_G = 8'b00000000
+        RED_B = 8'b00000000
+        BLUE_R = 8'b00000000
+        BLUE_G = 8'b00000000
+        BLUE_B = 8'b11111111
+        BLACK_R = 8'b00000000
+        BLACK_G = 8'b00000000
+        BLACK_B = 8'b00000000
+    Found 12-bit register for signal <h_cnt>.
+    Found 12-bit register for signal <active_x>.
+    Found 12-bit register for signal <v_cnt>.
+    Found 8-bit register for signal <rgb_r_reg>.
+    Found 8-bit register for signal <rgb_g_reg>.
+    Found 8-bit register for signal <rgb_b_reg>.
+    Found 1-bit register for signal <vs_reg_d0>.
+    Found 1-bit register for signal <video_active_d0>.
+    Found 1-bit register for signal <hs_reg>.
+    Found 1-bit register for signal <h_active>.
+    Found 1-bit register for signal <vs_reg>.
+    Found 1-bit register for signal <v_active>.
+    Found 1-bit register for signal <hs_reg_d0>.
+    Found 12-bit subtractor for signal <h_cnt[11]_GND_6_o_sub_12_OUT> created at line 221.
+    Found 12-bit adder for signal <h_cnt[11]_GND_6_o_add_6_OUT> created at line 213.
+    Found 12-bit adder for signal <v_cnt[11]_GND_6_o_add_17_OUT> created at line 234.
+    Found 12-bit comparator greater for signal <n0015> created at line 220
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  67 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  21 Multiplexer(s).
+Unit <color_bar> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 12-bit adder                                          : 2
+ 12-bit subtractor                                     : 1
+# Registers                                            : 13
+ 1-bit register                                        : 7
+ 12-bit register                                       : 3
+ 8-bit register                                        : 3
+# Comparators                                          : 1
+ 12-bit comparator greater                             : 1
+# Multiplexers                                         : 21
+ 1-bit 2-to-1 multiplexer                              : 2
+ 12-bit 2-to-1 multiplexer                             : 2
+ 8-bit 2-to-1 multiplexer                              : 17
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2677 - Node <rgb_g_reg_0> of sequential type is unconnected in block <color_bar_m0>.
+WARNING:Xst:2677 - Node <rgb_g_reg_1> of sequential type is unconnected in block <color_bar_m0>.
+WARNING:Xst:2677 - Node <rgb_r_reg_0> of sequential type is unconnected in block <color_bar_m0>.
+WARNING:Xst:2677 - Node <rgb_r_reg_1> of sequential type is unconnected in block <color_bar_m0>.
+WARNING:Xst:2677 - Node <rgb_r_reg_2> of sequential type is unconnected in block <color_bar_m0>.
+WARNING:Xst:2677 - Node <rgb_b_reg_0> of sequential type is unconnected in block <color_bar_m0>.
+WARNING:Xst:2677 - Node <rgb_b_reg_1> of sequential type is unconnected in block <color_bar_m0>.
+WARNING:Xst:2677 - Node <rgb_b_reg_2> of sequential type is unconnected in block <color_bar_m0>.
+
+Synthesizing (advanced) Unit <color_bar>.
+The following registers are absorbed into counter <h_cnt>: 1 register on signal <h_cnt>.
+The following registers are absorbed into counter <v_cnt>: 1 register on signal <v_cnt>.
+Unit <color_bar> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 12-bit subtractor                                     : 1
+# Counters                                             : 2
+ 12-bit up counter                                     : 2
+# Registers                                            : 43
+ Flip-Flops                                            : 43
+# Comparators                                          : 1
+ 12-bit comparator greater                             : 1
+# Multiplexers                                         : 19
+ 1-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 17
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <rgb_b_reg_0> in Unit <color_bar> is equivalent to the following 7 FFs/Latches, which will be removed : <rgb_b_reg_1> <rgb_b_reg_2> <rgb_b_reg_3> <rgb_b_reg_4> <rgb_b_reg_5> <rgb_b_reg_6> <rgb_b_reg_7> 
+INFO:Xst:2261 - The FF/Latch <rgb_r_reg_0> in Unit <color_bar> is equivalent to the following 7 FFs/Latches, which will be removed : <rgb_r_reg_1> <rgb_r_reg_2> <rgb_r_reg_3> <rgb_r_reg_4> <rgb_r_reg_5> <rgb_r_reg_6> <rgb_r_reg_7> 
+INFO:Xst:2261 - The FF/Latch <rgb_g_reg_0> in Unit <color_bar> is equivalent to the following 7 FFs/Latches, which will be removed : <rgb_g_reg_1> <rgb_g_reg_2> <rgb_g_reg_3> <rgb_g_reg_4> <rgb_g_reg_5> <rgb_g_reg_6> <rgb_g_reg_7> 
+
+Optimizing unit <top> ...
+
+Optimizing unit <color_bar> ...
+WARNING:Xst:2677 - Node <color_bar_m0/video_active_d0> of sequential type is unconnected in block <top>.
+WARNING:Xst:1710 - FF/Latch <color_bar_m0/h_cnt_11> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <color_bar_m0/active_x_11> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 43
+ Flip-Flops                                            : 43
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 164
+#      GND                         : 1
+#      INV                         : 7
+#      LUT1                        : 28
+#      LUT2                        : 4
+#      LUT3                        : 13
+#      LUT4                        : 3
+#      LUT5                        : 17
+#      LUT6                        : 25
+#      MUXCY                       : 31
+#      VCC                         : 1
+#      XORCY                       : 34
+# FlipFlops/Latches                : 43
+#      FDC                         : 20
+#      FDCE                        : 23
+# Clock Buffers                    : 2
+#      BUFG                        : 2
+# IO Buffers                       : 20
+#      IBUF                        : 1
+#      IBUFG                       : 1
+#      OBUF                        : 18
+# DCMs                             : 1
+#      DCM_SP                      : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9ftg256-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              43  out of  11440     0%  
+ Number of Slice LUTs:                   97  out of   5720     1%  
+    Number used as Logic:                97  out of   5720     1%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     99
+   Number with an unused Flip Flop:      56  out of     99    56%  
+   Number with an unused LUT:             2  out of     99     2%  
+   Number of fully used LUT-FF pairs:    41  out of     99    41%  
+   Number of unique control sets:         3
+
+IO Utilization: 
+ Number of IOs:                          20
+ Number of bonded IOBs:                  20  out of    186    10%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | DCM_SP:CLKFX           | 43    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 5.984ns (Maximum Frequency: 167.115MHz)
+   Minimum input arrival time before clock: 4.426ns
+   Maximum output required time after clock: 4.346ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 5.984ns (frequency: 167.115MHz)
+  Total number of paths / destination ports: 898 / 66
+-------------------------------------------------------------------------
+Delay:               4.603ns (Levels of Logic = 3)
+  Source:            color_bar_m0/v_cnt_10 (FF)
+  Destination:       color_bar_m0/v_cnt_11 (FF)
+  Source Clock:      clk rising 1.3X
+  Destination Clock: clk rising 1.3X
+
+  Data Path: color_bar_m0/v_cnt_10 to color_bar_m0/v_cnt_11
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.525   1.196  color_bar_m0/v_cnt_10 (color_bar_m0/v_cnt_10)
+     LUT5:I0->O           15   0.254   1.383  color_bar_m0/GND_6_o_GND_6_o_equal_17_o<11>21 (color_bar_m0/GND_6_o_GND_6_o_equal_17_o<11>2)
+     LUT5:I2->O            1   0.235   0.682  color_bar_m0/Mcount_v_cnt_eqn_101 (color_bar_m0/Mcount_v_cnt_eqn_10)
+     LUT3:I2->O            1   0.254   0.000  color_bar_m0/v_cnt_10_dpot (color_bar_m0/v_cnt_10_dpot)
+     FDCE:D                    0.074          color_bar_m0/v_cnt_10
+    ----------------------------------------
+    Total                      4.603ns (1.342ns logic, 3.261ns route)
+                                       (29.2% logic, 70.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 43 / 43
+-------------------------------------------------------------------------
+Offset:              4.426ns (Levels of Logic = 2)
+  Source:            rst_n (PAD)
+  Destination:       color_bar_m0/h_cnt_10 (FF)
+  Destination Clock: clk rising 1.3X
+
+  Data Path: rst_n to color_bar_m0/h_cnt_10
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.681  rst_n_IBUF (rst_n_IBUF)
+     INV:I->O             43   0.255   1.703  rst_n_INV_1_o1_INV_0 (rst_n_INV_1_o)
+     FDC:CLR                   0.459          color_bar_m0/vs_reg_d0
+    ----------------------------------------
+    Total                      4.426ns (2.042ns logic, 2.384ns route)
+                                       (46.1% logic, 53.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 18 / 18
+-------------------------------------------------------------------------
+Offset:              4.346ns (Levels of Logic = 1)
+  Source:            color_bar_m0/rgb_g_reg_0 (FF)
+  Destination:       vga_out_g<5> (PAD)
+  Source Clock:      clk rising 1.3X
+
+  Data Path: color_bar_m0/rgb_g_reg_0 to vga_out_g<5>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              7   0.525   0.909  color_bar_m0/rgb_g_reg_0 (color_bar_m0/rgb_g_reg_0)
+     OBUF:I->O                 2.912          vga_out_g_5_OBUF (vga_out_g<5>)
+    ----------------------------------------
+    Total                      4.346ns (3.437ns logic, 0.909ns route)
+                                       (79.1% logic, 20.9% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    4.603|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 10.53 secs
+ 
+--> 
+
+
+Total memory usage is 483288 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   14 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
+

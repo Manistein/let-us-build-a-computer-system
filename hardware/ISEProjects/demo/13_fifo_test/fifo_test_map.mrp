@@ -1,4 +1,4 @@
-Release 14.7 Map P.20131013 (nt64)
+Release 14.7 Map P.20131013 (lin64)
 Xilinx Mapping Report File for Design 'fifo_test'
 
 Design Information
@@ -10,7 +10,7 @@ Target Device  : xc6slx9
 Target Package : ftg256
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Fri May 03 18:08:13 2019
+Mapped Date    : Wed Mar 20 03:52:18 2024
 
 Design Summary
 --------------
@@ -88,9 +88,9 @@ Specific Feature Utilization:
 
 Average Fanout of Non-Clock Nets:                2.38
 
-Peak Memory Usage:  532 MB
-Total REAL time to MAP completion:  10 secs 
-Total CPU time to MAP completion:   10 secs 
+Peak Memory Usage:  781 MB
+Total REAL time to MAP completion:  29 secs 
+Total CPU time to MAP completion:   28 secs 
 
 Table of Contents
 -----------------
@@ -113,6 +113,9 @@ Section 1 - Errors
 
 Section 2 - Warnings
 --------------------
+WARNING:Security:42 - Your software subscription period has lapsed. Your current
+version of Xilinx tools will continue to function, but you no longer qualify for
+Xilinx software updates or new releases.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net CONTROL0<13> is sourced by
    a combinatorial pin. This is not good design practice. Use the CE pin to
    control the loading of data into the flip-flop.
@@ -123,6 +126,7 @@ WARNING:PhysDesignRules:2410 - This design is using one or more 9K Block RAMs
 
 Section 3 - Informational
 -------------------------
+INFO:Security:54 - 'xc6slx9' is a WebPack part.
 INFO:LIT:243 - Logical network CONTROL0<35> has no load.
 INFO:LIT:395 - The above info message is repeated 22 more times for the
    following (max. 5 shown):

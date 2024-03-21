@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=/home/ise/hack_computer/segdisplay.ncd
-OUTFILE=/home/ise/hack_computer/segdisplay.bit
-FAMILY=Spartan6
-PART=xc6slx9-3tqg144
-WORKINGDIR=/home/ise/hack_computer
-LICENSE=ISE
-USER_INFO=8416_11442_1478797146_620

@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-03-19T03:01:44</DateModified>
+  <DateModified>2024-03-21T13:47:15</DateModified>
   <ModuleName>top</ModuleName>
-  <SummaryTimeStamp>2024-03-19T02:55:04</SummaryTimeStamp>
+  <SummaryTimeStamp>2024-03-21T13:11:18</SummaryTimeStamp>
   <SavedFilePath>/home/ise/hardware/ISEProjects/sdram_vga_test/iseconfig/top.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/home/ise/hardware/ISEProjects/sdram_vga_test/</ImplementationReportsDirectory>
   <DateInitialized>2024-02-28T12:51:01</DateInitialized>

@@ -1,9 +1,9 @@
 --------------------------------------------------------------------------------
-Release 14.7 Trace  (nt64)
+Release 14.7 Trace  (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
--n 3 -fastpaths -xml fifo_test.twx fifo_test.ncd -o fifo_test.twr fifo_test.pcf
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 2 -n
+3 -fastpaths -xml fifo_test.twx fifo_test.ncd -o fifo_test.twr fifo_test.pcf
 -ucf fifo_test.ucf
 
 Design file:              fifo_test.ncd
@@ -786,14 +786,14 @@ Design statistics:
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Fri May 03 18:08:40 2019 
+Analysis completed Wed Mar 20 03:53:30 2024 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 238 MB
+Peak Memory Usage: 414 MB
 
 
 

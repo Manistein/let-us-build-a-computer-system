@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/ise/hardware/ISEProjects/hack_computer_test/TestSegdisplay_isim_beh.exe" -prj "/home/ise/hardware/ISEProjects/hack_computer_test/TestSegdisplay_beh.prj" "work.TestSegdisplay" "work.glbl" 

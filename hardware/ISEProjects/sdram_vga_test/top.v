@@ -96,9 +96,11 @@ wire [15:0] vout_data;
 wire [8:0] wr_data_count;
 wire read_fifo_aclr;
 
+wire de;
+
 video_timing_data vtd_0(
     .video_clk(vga_clk),
-    .rst(!rst_n),
+    .rst(~rst_n),
 
     .read_req(read_req),
     .read_req_ack(read_req_ack),
@@ -107,10 +109,10 @@ video_timing_data vtd_0(
     .read_data(read_data),
     .hs(hsync),
     .vs(vsync),
-    .de(),
+    .de(de),
     .vout_data(vout_data)
 );
-assign {r, g, b} = vout_data;
+assign {r, g, b} = de ? 16'b1111100000011111 : 16'b0;
 
 wire rd_burst_req;
 wire [9:0] rd_burst_len;
@@ -144,7 +146,7 @@ frame_fifo_read
 )
 frame_fifo_read_m0
 (
-	.rst                        (!rst_n),
+	.rst                        (~rst_n),
 	.mem_clk                    (clk_100m),
 	.rd_burst_req               (rd_burst_req),   
 	.rd_burst_len               (rd_burst_len),  
@@ -166,7 +168,7 @@ frame_fifo_read_m0
 
 sdram_core sdram_core_0(
     .clk(clk_100m),
-    .rst(!rst_n),
+    .rst(~rst_n),
 
     .wr_burst_req(write_burst_req),
     .wr_burst_data(rgb),

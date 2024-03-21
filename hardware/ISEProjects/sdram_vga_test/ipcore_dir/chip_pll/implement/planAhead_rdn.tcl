@@ -47,7 +47,7 @@
 # PART OF THIS FILE AT ALL TIMES.
 # 
 
-set device xc6slx9tqg144-2
+set device xc6slx9ftg256-2
 set projName chip_pll
 set design chip_pll
 set projDir [file dirname [info script]]
