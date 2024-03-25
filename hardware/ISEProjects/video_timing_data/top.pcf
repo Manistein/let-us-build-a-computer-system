@@ -1,0 +1,55 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Mon Mar 25 16:16:31 2024
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "vga_out_r<0>" LOCATE = SITE "M11" LEVEL 1;
+COMP "vga_out_r<1>" LOCATE = SITE "M12" LEVEL 1;
+COMP "clk" LOCATE = SITE "T8" LEVEL 1;
+COMP "vga_out_r<2>" LOCATE = SITE "L12" LEVEL 1;
+COMP "vga_out_r<3>" LOCATE = SITE "N14" LEVEL 1;
+COMP "vga_out_r<4>" LOCATE = SITE "M13" LEVEL 1;
+COMP "vga_out_g<0>" LOCATE = SITE "M9" LEVEL 1;
+COMP "vga_out_hs" LOCATE = SITE "M14" LEVEL 1;
+COMP "vga_out_g<1>" LOCATE = SITE "N9" LEVEL 1;
+COMP "vga_out_g<2>" LOCATE = SITE "P9" LEVEL 1;
+COMP "vga_out_g<3>" LOCATE = SITE "L10" LEVEL 1;
+COMP "vga_out_g<4>" LOCATE = SITE "M10" LEVEL 1;
+COMP "vga_out_g<5>" LOCATE = SITE "P11" LEVEL 1;
+COMP "vga_out_vs" LOCATE = SITE "L13" LEVEL 1;
+COMP "rst_n" LOCATE = SITE "L3" LEVEL 1;
+COMP "vga_out_b<0>" LOCATE = SITE "P7" LEVEL 1;
+COMP "vga_out_b<1>" LOCATE = SITE "M7" LEVEL 1;
+COMP "vga_out_b<2>" LOCATE = SITE "P8" LEVEL 1;
+COMP "vga_out_b<3>" LOCATE = SITE "N8" LEVEL 1;
+COMP "vga_out_b<4>" LOCATE = SITE "L7" LEVEL 1;
+TIMEGRP video_pll_m0_clkfx = BEL "video_pll_m0/clkout1_buf" BEL
+        "vtd0/video_vs_d1" BEL "vtd0/video_hs_d1" BEL "vtd0/vout_data_r_11"
+        BEL "vtd0/video_hs_d0" BEL "vtd0/video_de_d0" BEL "vtd0/video_vs_d0"
+        BEL "vtd0/color_bar_m0/h_cnt_11" BEL "vtd0/color_bar_m0/h_cnt_10" BEL
+        "vtd0/color_bar_m0/h_cnt_9" BEL "vtd0/color_bar_m0/h_cnt_8" BEL
+        "vtd0/color_bar_m0/h_cnt_7" BEL "vtd0/color_bar_m0/h_cnt_6" BEL
+        "vtd0/color_bar_m0/h_cnt_5" BEL "vtd0/color_bar_m0/h_cnt_4" BEL
+        "vtd0/color_bar_m0/h_cnt_3" BEL "vtd0/color_bar_m0/h_cnt_2" BEL
+        "vtd0/color_bar_m0/h_cnt_1" BEL "vtd0/color_bar_m0/h_cnt_0" BEL
+        "vtd0/color_bar_m0/v_cnt_11" BEL "vtd0/color_bar_m0/v_cnt_10" BEL
+        "vtd0/color_bar_m0/v_cnt_9" BEL "vtd0/color_bar_m0/v_cnt_8" BEL
+        "vtd0/color_bar_m0/v_cnt_7" BEL "vtd0/color_bar_m0/v_cnt_6" BEL
+        "vtd0/color_bar_m0/v_cnt_5" BEL "vtd0/color_bar_m0/v_cnt_4" BEL
+        "vtd0/color_bar_m0/v_cnt_3" BEL "vtd0/color_bar_m0/v_cnt_2" BEL
+        "vtd0/color_bar_m0/v_cnt_1" BEL "vtd0/color_bar_m0/v_cnt_0" BEL
+        "vtd0/color_bar_m0/hs_reg_d0" BEL "vtd0/color_bar_m0/vs_reg_d0" BEL
+        "vtd0/color_bar_m0/video_active_d0" BEL "vtd0/color_bar_m0/vs_reg" BEL
+        "vtd0/color_bar_m0/hs_reg" BEL "vtd0/color_bar_m0/h_active" BEL
+        "vtd0/color_bar_m0/v_active";
+PIN SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0> = BEL "SP6_BUFIO_INSERT_ML_BUFIO2_0"
+        PINNAME DIVCLK;
+PIN video_pll_m0/dcm_sp_inst_pins<3> = BEL "video_pll_m0/dcm_sp_inst" PINNAME
+        CLKIN;
+TIMEGRP sys_clk_pin = PIN "SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0>" PIN
+        "video_pll_m0/dcm_sp_inst_pins<3>";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+TS_video_pll_m0_clkfx = PERIOD TIMEGRP "video_pll_m0_clkfx" TS_sys_clk_pin *
+        1.3 HIGH 50%;
+SCHEMATIC END;
+

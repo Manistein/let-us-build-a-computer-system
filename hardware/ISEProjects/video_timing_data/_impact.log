@@ -1,0 +1,79 @@
+iMPACT Version: 14.7
+
+iMPACT log file Started on Mon Mar 25 14:58:11 2024
+
+Welcome to iMPACT
+iMPACT Version: 14.7
+Project: /home/ise/hardware/ISEProjects/sdram_vga_test//auto_project.ipfcreated.
+// *** BATCH CMD : setMode -bs
+GUI --- Auto connect to cable...
+// *** BATCH CMD : setCable -port auto
+INFO:iMPACT - Digilent Plugin: Plugin Version: 2.5.2
+INFO:iMPACT - Digilent Plugin: found 1 device(s).
+INFO:iMPACT - Digilent Plugin: opening device: "JtagHs1", SN:210512180081
+INFO:iMPACT - Digilent Plugin: User Name: JtagHs1
+INFO:iMPACT - Digilent Plugin: Product Name: Digilent JTAG-HS1
+INFO:iMPACT - Digilent Plugin: Serial Number: 210512180081
+INFO:iMPACT - Digilent Plugin: Product ID: 30900152
+INFO:iMPACT - Digilent Plugin: Firmware Version: 010B
+INFO:iMPACT - Digilent Plugin: JTAG Port Number: 0
+INFO:iMPACT - Digilent Plugin: JTAG Clock Frequency: 10000000 Hz
+Attempting to identify devices in the boundary-scan chain configuration...
+INFO:iMPACT - Current time: 3/25/24 2:58 PM
+// *** BATCH CMD : Identify -inferir 
+PROGRESS_START - Starting Operation.
+Identifying chain contents...'0': : Manufacturer's ID = Xilinx xc6slx9, Version : 2
+INFO:iMPACT:1777 - 
+   Reading /opt/Xilinx/14.7/ISE_DS/ISE/spartan6/data/xc6slx9.bsd...
+INFO:iMPACT:501 - '1': Added Device xc6slx9 successfully.
+----------------------------------------------------------------------
+done.
+PROGRESS_END - End Operation.
+Elapsed time =      0 sec.
+// *** BATCH CMD : identifyMPM 
+// *** BATCH CMD : assignFile -p 1 -file"/home/ise/hardware/ISEProjects/demo/15_1_vga_test/top.bit"
+'1': Loading file '/home/ise/hardware/ISEProjects/demo/15_1_vga_test/top.bit'...
+done.
+INFO:iMPACT:2257 - Startup Clock has been changed to 'JtagClk' in the bitstream   stored in memory,
+   but the original bitstream file remains unchanged.
+UserID read from the bitstream file = 0xFFFFFFFF.
+Data width read from the bitstream file = 1.
+INFO:iMPACT:501 - '1': Added Device xc6slx9 successfully.
+----------------------------------------------------------------------
+INFO:iMPACT - Current time: 3/25/24 2:58 PM
+// *** BATCH CMD : Program -p 1 
+PROGRESS_START - Starting Operation.
+Maximum TCK operating frequency for this device chain: 25000000.
+Validating chain...
+Boundary-scan chain validated successfully.
+'1': Programming device...
+ LCK_cycle = NoWait.
+LCK cycle: NoWait
+done.
+'1': Reading status register contents...
+[0] CRC ERROR                                                              :        0
+[1] IDCODE ERROR                                                           :        0
+[2] DCM LOCK STATUS                                                        :        1
+[3] GTS_CFG_B STATUS                                                       :        1
+[4] GWE STATUS                                                             :        1
+[5] GHIGH STATUS                                                           :        1
+[6] DECRYPTION ERROR                                                       :        0
+[7] DECRYPTOR ENABLE                                                       :        0
+[8] HSWAPEN PIN                                                            :        1
+[9] MODE PIN M[0]                                                          :        1
+[10] MODE PIN M[1]                                                         :        1
+[11] RESERVED                                                              :        0
+[12] INIT_B PIN                                                            :        1
+[13] DONE PIN                                                              :        1
+[14] SUSPEND STATUS                                                        :        0
+[15] FALLBACK STATUS                                                       :        0
+INFO:iMPACT:2219 - Status register values:
+INFO:iMPACT - 0011 1100 1110 1100 
+INFO:iMPACT:579 - '1': Completed downloading bit file to device.
+INFO:iMPACT:188 - '1': Programming completed successfully.
+ LCK_cycle = NoWait.
+LCK cycle: NoWait
+INFO:iMPACT - '1': Checking done pin....done.
+'1': Programmed successfully.
+PROGRESS_END - End Operation.
+Elapsed time =      1 sec.
