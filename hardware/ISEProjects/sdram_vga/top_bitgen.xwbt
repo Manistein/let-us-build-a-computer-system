@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/ise/hardware/ISEProjects/20_1_sd_sdram_vga/top.ncd
+OUTFILE=/home/ise/hardware/ISEProjects/20_1_sd_sdram_vga/top.bit
+FAMILY=Spartan6
+PART=xc6slx9-2ftg256
+WORKINGDIR=/home/ise/hardware/ISEProjects/20_1_sd_sdram_vga
+LICENSE=ISE
+USER_INFO=8416_11442_1478797146_620

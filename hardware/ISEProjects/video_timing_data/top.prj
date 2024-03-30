@@ -1,3 +1,0 @@
-verilog work "ipcore_dir/video_pll.v"
-verilog work "src/color_bar.v"
-verilog work "src/top.v"

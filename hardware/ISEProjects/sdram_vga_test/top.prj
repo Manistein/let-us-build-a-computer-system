@@ -1,3 +1,0 @@
-verilog work "ipcore_dir/chip_pll.v"
-verilog work "ipcore_dir/fifo.v"
-verilog work "top.v"
