@@ -11,10 +11,16 @@ module cpu(
     input [15:0] instruction,
 
     input [15:0] in_mem_data,   // from memory
+    input read_mem_valid,       // the response from memory
+    input read_mem_finish,
+    output read_mem_req,        // the request to read from memory
 
     output [15:0] addr,         // address to memory 
+
+    input write_mem_valid,      // the response from memory
+    input write_mem_finish,
     output [15:0] out_mem_data, // to memory
-    output write_mem_enable,    // the request to write to memory
+    output write_mem_req,       // the request to write to memory
 
     output [15:0] pc
 );
@@ -59,6 +65,10 @@ load load_inst(
     .instruction(IR),
     .MDR(MDR),
     .in_mem_data(in_mem_data),
+
+    .read_mem_valid(read_mem_valid),
+    .read_mem_finish(read_mem_finish),
+    .read_mem_req(read_mem_req),
 
     .load_out(load_to_mdr),
     .is_loaded(is_loaded)
