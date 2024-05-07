@@ -3,6 +3,7 @@
 
 `include "mov.v"
 `include "load.v"
+`include "hub.v"
 
 module cpu(
     input clk,
@@ -74,9 +75,36 @@ load load_inst(
     .is_loaded(is_loaded)
 );
 
-assign X = mov_out_x;
-assign Y = mov_out_y;
-assign MAR = mov_out_mar;
-assign MDR = mov_out_mdr;
+wire [15:0] final_x, final_y, final_mar, final_mdr;
+wire [15:0] final_pc;
+hub hub_inst(
+    .instruction(IR),
+    .pc_in(PC),
+
+    .mov_in_x(mov_out_x),
+    .mov_in_y(mov_out_y),
+    .mov_in_mar(mov_out_mar),
+    .mov_in_mdr(mov_out_mdr),
+
+    .load_to_mdr(load_to_mdr),
+    .is_loaded(is_loaded),
+
+    .final_x(final_x),
+    .final_y(final_y),
+    .final_mar(final_mar),
+    .final_mdr(final_mdr),
+    .pc_out(final_pc)
+);
+
+always @* begin 
+    X = final_x;
+    Y = final_y;
+    MAR = final_mar;
+    MDR = final_mdr;
+    PC = final_pc;
+end 
+
+assign pc = PC;
+assign addr = MAR;
 
 endmodule

@@ -62,7 +62,7 @@ end
 
 assign load_out = (state == STATE_LOADED) ? read_buffer : MDR;
 assign is_loaded = (state == STATE_LOADED);
-assign read_mem_req = read_mem_req;
+assign read_mem_req = read_req;
 
 endmodule
 
