@@ -23,20 +23,22 @@ module hub(
 );
 
 always @* begin 
+    final_x = mov_in_x;
+    final_y = mov_in_y;
+    final_mar = mov_in_mar;
+    final_mdr = mov_in_mdr;
+
     case (instruction[15:8])
         OP_MOVE: begin
-            final_x = mov_in_x;
-            final_y = mov_in_y;
-            final_mar = mov_in_mar;
-            final_mdr = mov_in_mdr;
             pc_out = pc_in + 1;
         end
         OP_LOAD: begin
-            final_x = mov_in_x;
-            final_y = mov_in_y;
-            final_mar = mov_in_mar;
-            final_mdr = load_to_mdr;
-            pc_out = pc_in + 1;
+            if (is_loaded) begin 
+                final_mdr = load_to_mdr;
+                pc_out = pc_in + 1;
+            end else begin
+                pc_out = pc_in;
+            end 
         end
         default: begin
             final_x = 16'b0;
@@ -45,6 +47,7 @@ always @* begin
             final_mdr = 16'b0;
             pc_out = pc_in;
         end
+    endcase
 end 
 
 endmodule

@@ -2,9 +2,8 @@
 `define _load_v_
 
 // logic circuit for load
-// opcode: 8'b00000001
-// LOAD X/Y/MAR/MDR, in_s
-// in_s = X/Y/MAR/MDR
+// opcode: 8'b00000010
+// LOAD MDR, in_s
 module load(
     input clk,
     input rst_n,

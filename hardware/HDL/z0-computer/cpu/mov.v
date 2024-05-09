@@ -2,7 +2,7 @@
 `define _mov_v_
 
 // logic circuit for mov
-// opcode: 8'b00000000
+// opcode: 8'b00000001
 // MOV X/Y/MAR/MDR, in_s
 // in_s = X/Y/MAR/MDR
 module mov(

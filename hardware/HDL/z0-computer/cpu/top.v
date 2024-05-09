@@ -96,12 +96,12 @@ hub hub_inst(
     .pc_out(final_pc)
 );
 
-always @* begin 
-    X = final_x;
-    Y = final_y;
-    MAR = final_mar;
-    MDR = final_mdr;
-    PC = final_pc;
+always @(posedge clk) begin 
+    X <= final_x;
+    Y <= final_y;
+    MAR <= final_mar;
+    MDR <= final_mdr;
+    PC <= final_pc;
 end 
 
 assign pc = PC;
